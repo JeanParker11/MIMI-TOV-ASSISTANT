@@ -1,0 +1,41 @@
+{
+  "57312647610606@lid": {
+    "nom": "The mobile dick.",
+    "faction": "La rue.",
+    "surnom": "",
+    "grade": "Aventurier",
+    "titre_honorifique": "",
+    "guilde": "",
+    "coequipiers": [],
+    "reputation": {
+      "peuple": 0,
+      "autorites": 0
+    }
+  },
+  "141287764295866@lid": {
+    "nom": "Why le message vient dans la console mais pas ici",
+    "faction": "Ares",
+    "surnom": "",
+    "grade": "Aventurier",
+    "titre_honorifique": "",
+    "guilde": "",
+    "coequipiers": [],
+    "reputation": {
+      "peuple": 0,
+      "autorites": 0
+    }
+  },
+  "15483994640452@lid": {
+    "nom": "Parker",
+    "faction": "Hermes",
+    "surnom": "",
+    "grade": "Aventurier",
+    "titre_honorifique": "",
+    "guilde": "",
+    "coequipiers": [],
+    "reputation": {
+      "peuple": 0,
+      "autorites": 0
+    }
+  }
+}

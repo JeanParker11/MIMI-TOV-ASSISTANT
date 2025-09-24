@@ -1,0 +1,28 @@
+{
+  "141287764295866@lid": {
+    "pseudo": "Why le message vient dans la console mais pas ici",
+    "tel": "2289813388",
+    "faction": "Ares",
+    "corps": [],
+    "sorts": [],
+    "stats": {
+      "force": "50",
+      "esprit": "50",
+      "pouvoir": "50"
+    },
+    "validéePar": "Altheos."
+  },
+  "15483994640452@lid": {
+    "pseudo": "Parker",
+    "tel": "22898144388",
+    "faction": "Ares",
+    "corps": [],
+    "sorts": [],
+    "stats": {
+      "force": "50",
+      "esprit": "50",
+      "pouvoir": "50"
+    },
+    "validéePar": "Altheos."
+  }
+}
