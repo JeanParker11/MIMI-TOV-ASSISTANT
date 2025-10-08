@@ -2,12 +2,14 @@
 require('./lib/watcher');
 require('./settings');
 require('./telegram/index');
+require('./web/server');
 
 const fs = require('fs');
 const path = require('path');
 const { Boom } = require('@hapi/boom');
 const pino = require('pino');
 const chalk = require('chalk');
+const crypto = require('crypto');
 
 const { smsg } = require('./lib/fonction');
 global.smsg = smsg;
@@ -24,6 +26,7 @@ const maintenance = require('./IA/maintenance');
 const handleAllIA = require('./IA');
 const { chargerRappels } = require('./commands/rappel');
 const startConnection = require('./lib/connexion');
+const { connectMongo, getModels } = require('./lib/mongo');
 
 // Configuration logger détaillée
 const logger = pino({ 
@@ -72,6 +75,9 @@ async function main() {
   try {
     logger.info("🚀 Démarrage de l'application principale");
     fancyStartLog();
+
+    // Connexion Mongo (optionnelle)
+    await connectMongo().catch(() => {});
 
     const sock = await startConnection();
     logger.debug("✅ Connexion WhatsApp établie avec succès");
@@ -179,6 +185,32 @@ async function main() {
           chalk.greenBright("📥 Message reçu") +
           ` de ${chalk.yellow(senderName)} dans ${chalk.cyan(chatName)} (${chalk.magenta(msgType)}) : ${chalk.white(contentPreview)}`
         );
+
+        // Sauvegarde média (Mongo)
+        try {
+          if (process.env.SAVE_MEDIA === 'true') {
+            const { Media } = getModels();
+            const mediaTypes = ['imageMessage', 'videoMessage', 'documentMessage'];
+            if (Media && mediaTypes.includes(m.mtype)) {
+              const buf = await sock.downloadMediaMessage(m);
+              const meta = m.message?.[m.mtype] || m.msg || {};
+              const sha256 = crypto.createHash('sha256').update(buf).digest('hex');
+              await Media.create({
+                chat: chatJid,
+                sender: senderJid,
+                type: m.mtype.replace('Message',''),
+                mimetype: meta.mimetype || null,
+                caption: meta.caption || null,
+                size: buf.length,
+                sha256,
+                data: buf,
+              });
+              logger.debug({ messageId: m.key?.id }, "💾 Média enregistré en base");
+            }
+          }
+        } catch (e) {
+          logger.error(e, "❌ Erreur sauvegarde média");
+        }
 
         // 🛠️ Maintenance
         try {
