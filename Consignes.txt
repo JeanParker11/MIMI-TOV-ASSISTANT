@@ -1,0 +1,131 @@
+1. Identification de celui qui lance la commande: s'il est enregistré, et qu'il ne fait l'objet d'aucune sanction, on lui propose le menu de la boutique
+
+Identification du groupe depuis lequel cette commande sera exécutée: si ce n'est pas le groupe prévu à cet effet, un message redirigeant vers le bon groupe doit s'afficher
+
+2. Le menu s'affiche, il a les options suivantes:
+Acheter: acheter une ou plusieurs objets 
+Vendre: vendre un ou plusieurs objets 
+Convertir: convertir les RU en gemmes et inversement 
+
+Si l'utilisateur choisit l'option "acheter": il verra un menu avec les différentes catégories de choses qu'il peut acheter, notamment des armes, des vêtements, des runes, et d'autres catégories d'objets
+
+Si l'utilisateur choisit l'option "vendre": il verra un menu qui liste son inventaire et qui lui demande de sélectionner ce qu'il veut vendre, la quantité possédée à côté, ainsi que le prix unitaire de chaque objet
+
+3. Le menu acheter 
+
+Le menu acheter va proposer plusieurs options, notamment:
+
+Vêtements & armures: c'est ici que nous retrouverons tout ce qui est en rapport avec l'équipement de corps. Les achats effectués dans cette section se font uniquement avec des Ruliths (RU)
+
+Armes: c'est ici qu'on aura les armes, ainsi que tout ce qui pourrait être considéré comme une arme (pendentifs et autres inclus). Ici les achats se font uniquement avec des Ruliths (RU)
+
+Runes: ici on va retrouver le système de vente et de gestion de stocks de runes. Ici les achats se font uniquement avec des gemmes 
+
+
+Choisir l'une de ces options fera apparaître une liste numérotée présentée comme suit:
+
+1. [ Nom de l'objet |rang de l'objet | quantité disponible | prix unitaire ]
+
+Nb: Juste à titre illustratif
+
+Sélectionner un objet en renseignant son numéro va afficher une vue détaillée de l'article. Dans cette vue détaillée on aura 
+
+Le nom
+
+Le rang 
+
+La description 
+
+La disponibilité (en stock/épuisé)
+
+La quantité disponible 
+
+Le prix
+
+Ainsi qu'une section supplémentaire avec les options suivantes 
+
+ 
+Acheter (quantité)
+Retour 
+
+Si l'utilisateur veut acheter, un message de confirmation lui sera présenté, montrant le total à payer, avant de lui demander s'il valide l'opération ou non
+
+S'il veut effectuer un achat dont le montant total dépasse son solde dans la monnaie concernée, le paiement échoue et la session de l'utilisateur en cours prend fin avec ce message
+
+Message: 
+
+"solde insuffisant, voici quelques conseils pour gagner des ressources:
+L'exploration 
+Les pvp 
+La revente d'objets d'explorations 
+Et bien plus encore"
+
+Si l'utilisateur effectue un achat d'une quantité d'un objet supérieure à celle disponible en stock, le paiement échoue, sa session prend fin sur l'affichage de ce message 
+
+Message:
+
+"Malheureusement, nous n'avons pas suffisamment d'unités de l'article que vous voulez. Pensez à en acheter selon la disponibilité des stocks, ou a attendre le prochain restock, généralement prévu pour le mois prochain
+
+Nb: 
+1. chaque achat décrémente la quantité de l'objet acheté d'une valeur équivalente à celle prise
+2. Un objet avec une quantité ≠ 0 a pour statut "en stock", sinon son statut passe à "épuisé", et son achat n'est plus possible
+
+4. Le menu vendre 
+
+Ce menu là est assez simple: 
+
+Il affiche l'inventaire de l'utilisateur, avec la quantité possédée, ainsi que la valeur d'une unité de l'objet concerné sous la forme d'une liste numérotée selon le modèle suivant 
+
+1. [ Nom de l'objet | rang de l'objet | quantité possédée | prix de revente d'une unité]
+
+S'il sélectionne un numéro, et que la quantité possédée est différente de 1, un message de confirmation lui sera envoyé afin de lui demander de préciser la quantité à vendre 
+
+Une fois chose faite, un autre message apparaîtra. Cette fois-ci il devra répondre par oui ou par non pour valider la transaction 
+
+S'il sélectionne un objet possédé en un seul exemplaire, il n'y a pas le message de confirmation de la quantité à vendre, il reçoit directement le message de confirmation 
+
+Nb: pour la vente, toutes les opérations se font en Ruliths
+
+La quantité de RU à gagner est égale au tiers de la valeur initiale de l'objet vendu (arrondie à l'unité supérieure)
+
+5. Le menu convertir 
+
+Le menu le plus important: c'est le centre économique de la boutique 
+
+Lorsque cette option est sélectionnée, des informations s'affichent:
+
+Message:
+
+Concernant la conversion : un montant équivalant à 1% du montant total de la transaction vous sera demandé pour chaque opération. Ceci est obligatoire et contribue au bon fonctionnement du bot
+
+Devises disponibles 
+
+1 gemme = 1000 R.U
+
+Pour la conversion de Ruliths en gemmes, prévoyez les 1% sur le montant à convertir pour recevoir exactement le montant de gemmes que vous voulez 
+
+Exemple:
+
+1 gemme -> 990 RU
+1010 RU -> 1 gemme 
+
+Il y aura ensuite deux options:
+
+Convertir les gemmes en RU (l'utilisateur saisit le montant, reçoit un message de confirmation puis confirme avant que la transaction ne soit effectuée)
+
+Et 
+
+Convertir les RU en gemmes (l'utilisateur saisit le montant, reçoit un message de confirmation puis confirme avant que la transaction ne soit effectuée)
+
+
+Si l'utilisateur entre une valeur incorrecte au moment de la conversion (nombres à virgules, ainsi que tout ce qui n'est pas nombre entier), il sera amené à recommencer
+
+S'il oublie les 1% au moment de la conversion des RU en gemmes, l'opération échoue 
+
+Chaque échec entraîne un retrait de 10 RU sur le solde de celui qui effectue l'opération
+
+Nb:
+1. prévoir des boutons "retour" et "quitter" pour faciliter la navigation entre les menus
+2. Prévoir des commandes pour rajouter d'autres catégories d'objets (admin only)
+3. Prévoir une commande de restock qui renvoie la quantité de tous les articles à leurs valeurs d'origine (admin only)
+4. Prévoir une commande pour ajouter/modifier/supprimer un objet/une catégorie d'objets
