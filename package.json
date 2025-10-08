@@ -10,7 +10,8 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "web": "node web/server.js",
-    "telegram": "node telegram/index.js"
+    "telegram": "node telegram/index.js",
+    "migrate:mongo": "node scripts/migrate-to-mongo.js"
   },
   "repository": {
     "type": "git",
@@ -57,6 +58,7 @@
     "jimp": "^0.16.13",
     "localtunnel": "^2.0.2",
     "moment-timezone": "^0.6.0",
+    "mongoose": "^8.5.0",
     "ngrok": "^5.0.0-beta.2",
     "node-fetch": "^2.7.0",
     "node-webpmux": "^3.2.1",
