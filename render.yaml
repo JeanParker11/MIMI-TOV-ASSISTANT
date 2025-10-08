@@ -6,14 +6,15 @@ services:
     startCommand: "node index.js"
     envVars:
       - key: GEMINI_API_KEY
+        value: AIzaSyDipWRFerNNmOy_bcKjWKjjgKjjJgKjjg
         sync: false
       - key: TELEGRAM_BOT_TOKEN
-        sync: false
+        value: "7383402260:AAFktvtrk2Bao6LlIXoPUNnROZsxVhnpyTE"
       - key: TELEGRAM_ADMIN_ID
-        sync: false
+        value: "1849519763"
       - key: MONGODB_URI
         sync: false
       - key: SAVE_MEDIA
         value: "false"
       - key: WA_PHONE_NUMBER
-        sync: false
+        value: "+22896896296"

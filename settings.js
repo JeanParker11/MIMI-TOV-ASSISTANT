@@ -15,22 +15,17 @@ global.imgthumb = "https://files.catbox.moe/9h4sys.jpg";
 global.menuGroupLink = "https://chat.whatsapp.com/LwkMUc4eoF50OhoKCYYZAf";
 global.QUETE_GROUP_JID = "120363366068015316@g.us";
 global.menuNewsletterJid = "";
-global.menuNewsletterName = "‣ᴜɴɪʀᴏʟɪꜱᴛ 🍃";
 global.menuChannelLink = "https://whatsapp.com/channel/0029VbB8HEnGZNCkf0BPG01o";
 
 // 🔥 Configuration Gemini AI
 global.GEMINI_API_KEY = process.env.GEMINI_API_KEY || "AIzaSyCt-XKn9vTftIR2v9O0vfYR5G2DaOBAz1M";
 
-// 📱 Configuration Telegram
-global.TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || "7383402260:AAFktvtrk2Bao6LlIXoPUNnROZsxVhnpyTE";
-global.TELEGRAM_ADMIN_ID = process.env.TELEGRAM_ADMIN_ID || 1849519763;
-global.TELEGRAM_OWNER = [1849519763];
+// 📱 Configuration WhatsApp
+global.WA_PHONE_NUMBER = process.env.WA_PHONE_NUMBER || "+22896896296";
 
 // 📦 Configuration de sauvegarde
 global.BACKUP_ZIP_NAME = "Données UNIROLIST";
 global.BACKUP_PATH = "./data";
-
-// 📁 Chemins
 const dataFolder = path.join(__dirname, "data");
 const paramPath = path.join(dataFolder, "parametres.json");
 const iaFolder = path.join(__dirname, "IA");
@@ -122,5 +117,6 @@ module.exports = {
   GEMINI_API_KEY: global.GEMINI_API_KEY,
   TELEGRAM_BOT_TOKEN: global.TELEGRAM_BOT_TOKEN,
   TELEGRAM_ADMIN_ID: global.TELEGRAM_ADMIN_ID,
+  WA_PHONE_NUMBER: global.WA_PHONE_NUMBER,
   parametres: global.parametres
 };
