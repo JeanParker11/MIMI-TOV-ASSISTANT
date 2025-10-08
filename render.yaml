@@ -18,3 +18,4 @@ services:
         value: "false"
       - key: WA_PHONE_NUMBER
         value: "+22896896296"
+        sync: false
