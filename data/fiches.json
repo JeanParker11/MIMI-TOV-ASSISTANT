@@ -1,0 +1,756 @@
+{
+  "149667295842488@lid": {
+    "pseudo": "Regulus de Valor",
+    "tel": "+243 835 216 861",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "65",
+      "esprit": "50",
+      "pouvoir": "35"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "150006430445773@lid": {
+    "pseudo": "Lone Tecraso Winter",
+    "tel": "+242066070176",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "Tache invisible : Rend une tache sur un vêtement invisible pendant 3 heures. La tache est toujours présente mais ne peut être vue. Nécessite 6 points de Mana.",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "40",
+      "esprit": "55",
+      "pouvoir": "55"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "201644973240574@lid": {
+    "pseudo": "DĒVIL Yû... Nº3",
+    "tel": "+2290154583352",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "40",
+      "esprit": "40",
+      "pouvoir": "70"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "17193173573705@lid": {
+    "pseudo": "Irito nava",
+    "tel": "+237656431187",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "Accélération des ongles : Les ongles poussent d'un centimètre. Nécessite 1 point de Mana.",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "40",
+      "esprit": "55",
+      "pouvoir": "55"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "275522722504856@lid": {
+    "pseudo": "Marsh Jun",
+    "tel": "+242069940229",
+    "faction": "Atlas",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "100",
+      "esprit": "0",
+      "pouvoir": "50"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "48103767945356@lid": {
+    "pseudo": "Oreki C. Sloth",
+    "tel": "+225 0143350985",
+    "faction": "Hécates",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "Pépin répulsif : En crachant un pépin de fruit, celui-ci rebondit magiquement trois fois avant de s'arrêter. Nécessite 1 point de Mana.",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "20",
+      "esprit": "60",
+      "pouvoir": "70"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "39268919578754@lid": {
+    "pseudo": "Black Night",
+    "tel": "+228 91148065",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "Cheveux en mouvement : Fait onduler doucement les cheveux comme s'ils flottaient dans l'eau pendant 1 minute. Effet purement esthétique. Nécessite 2 points de Mana.",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "60",
+      "esprit": "40",
+      "pouvoir": "50"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "249005376274580@lid": {
+    "pseudo": "Kærus Vön Wölfyr",
+    "tel": "+237 6 56 54 88 41",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Ensemble Valorien [Def : 2]",
+      ""
+    ],
+    "sorts": [
+      "*Bourdonnement d'oreilles :* Provoque un léger bourdonnement dans les oreilles de la cible pendant 3 minutes. Agaçant mais pas handicapant. Nécessite un contact physique pour l'activation et consomme 3 points de Mana.",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "60",
+      "esprit": "30",
+      "pouvoir": "60"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "253313547280545@lid": {
+    "pseudo": "Cim Jean",
+    "tel": "+237 651144369",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "60",
+      "esprit": "40",
+      "pouvoir": "50"
+    },
+    "validéePar": "Manouel_🪽🎧",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "192466242261055@lid": {
+    "pseudo": "Kanki",
+    "tel": "+237 692846444",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Valoria : La politique\nUn bouquin renfermant des informations sur la famille royale et les têtes qui gouvernent le royaume.",
+      ""
+    ],
+    "sorts": [
+      "Yeux luisants : Fait briller légèrement les yeux dans l'obscurité et permet donc d'y voir. Effet similaire à celui des chats. Nécessite 3 points de Mana par minute.",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "55",
+      "esprit": "45",
+      "pouvoir": "50"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "231031022043313@lid": {
+    "pseudo": "Psycho Arhyel",
+    "tel": "+242 067759034",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "70",
+      "esprit": "50",
+      "pouvoir": "30"
+    },
+    "validéePar": "Manouel_🪽🎧",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "197728047001675@lid": {
+    "pseudo": "CASSIAN",
+    "tel": "+233 27 524 9576",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "Réveil des papilles : Augmente temporairement la sensibilité gustative pendant 10 minutes. Les saveurs semblent plus intenses. Nécessite 3 points de Mana.",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "50",
+      "esprit": "50",
+      "pouvoir": "50"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "98947657920580@lid": {
+    "pseudo": "Kaizen",
+    "tel": "+241 60 26 40 24",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "50",
+      "esprit": "50",
+      "pouvoir": "50"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "60430307307540@lid": {
+    "pseudo": "Kaiser Crimson Fallen",
+    "tel": "+2250797350514",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "30",
+      "esprit": "60",
+      "pouvoir": "60"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "33827867107438@lid": {
+    "pseudo": "Kilby Stein",
+    "tel": "+242 055451908",
+    "faction": "Atlas",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "55",
+      "esprit": "25",
+      "pouvoir": "70"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "281290595127500@lid": {
+    "pseudo": "Killshot",
+    "tel": "+225 0152832892",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "50",
+      "esprit": "50",
+      "pouvoir": "50"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "101933129924854@lid": {
+    "pseudo": "Zaraki Vernesis",
+    "tel": "+237 687623723",
+    "faction": "Atlas",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "85",
+      "esprit": "35",
+      "pouvoir": "30"
+    },
+    "validéePar": "Manouel_🪽🎧",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "72057001906230@lid": {
+    "pseudo": "White TowerLow",
+    "tel": "+2250748807131",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "70",
+      "esprit": "40",
+      "pouvoir": "40"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "63097985343661@lid": {
+    "pseudo": "Kuroro Lucifer",
+    "tel": "237656257421",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "40",
+      "esprit": "60",
+      "pouvoir": "50"
+    },
+    "validéePar": "Altheos.",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "240939662590055@lid": {
+    "pseudo": "Valt C. Kaëin",
+    "tel": "+223 76744998",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "40",
+      "esprit": "50",
+      "pouvoir": "60"
+    },
+    "validéePar": "Manouel_🪽🎧",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "69123757326414@lid": {
+    "pseudo": "Jean",
+    "tel": "+22898133388",
+    "faction": "Hécates",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "50",
+      "esprit": "50",
+      "pouvoir": "50"
+    },
+    "validéePar": "✠ 𝓚𝓪𝓶𝓫𝓮 𝓗𝓸𝓵𝓶𝓮𝓼",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "279998262980655@lid": {
+    "pseudo": "Bishop Feiderius Encilion",
+    "tel": "+2250705060367",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "40",
+      "esprit": "55",
+      "pouvoir": "55"
+    },
+    "validéePar": "Manouel_🪽🎧"
+  },
+  "272030981193786@lid": {
+    "pseudo": "Sazuki",
+    "tel": "+242067280802",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "75",
+      "esprit": "50",
+      "pouvoir": "25"
+    },
+    "validéePar": "Manouel_🪽🎧"
+  },
+  "72753088606220@lid": {
+    "pseudo": "Kenin jean",
+    "tel": "+242 06 977 6223",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "65",
+      "esprit": "55",
+      "pouvoir": "30"
+    },
+    "validéePar": "Manouel_🪽🎧"
+  },
+  "57312647610606@lid": {
+    "pseudo": "Lexender Meris",
+    "tel": "+22898224802",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "70",
+      "esprit": "45",
+      "pouvoir": "35"
+    },
+    "validéePar": "✠ 𝓚𝓪𝓶𝓫𝓮 𝓗𝓸𝓵𝓶𝓮𝓼"
+  },
+  "232684634804323@lid": {
+    "pseudo": "Albert",
+    "tel": "+228 96 29 03 56",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "60",
+      "esprit": "50",
+      "pouvoir": "40"
+    },
+    "validéePar": "ŌSSHUN"
+  },
+  "267967489163401@lid": {
+    "pseudo": "Moussa Fadji Fragra Jean Désiré le Saoudien aka Ronaldo",
+    "tel": "+2441234567890",
+    "faction": "Hécates",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "100",
+      "esprit": "25",
+      "pouvoir": "25"
+    },
+    "validéePar": "✠ 𝓚𝓪𝓶𝓫𝓮 𝓗𝓸𝓵𝓶𝓮𝓼"
+  },
+  "141287764295866@lid": {
+    "pseudo": "The tester",
+    "tel": "0000000",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "148",
+      "esprit": "1",
+      "pouvoir": "1"
+    },
+    "validéePar": "Altheos."
+  },
+  "216071667720206@lid": {
+    "pseudo": "Loxsika L. Moriarty..",
+    "tel": "+212 720-816423",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "50",
+      "esprit": "60",
+      "pouvoir": "40"
+    },
+    "validéePar": "ŌSSHUN"
+  }
+}

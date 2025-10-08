@@ -1,0 +1,60 @@
+{
+  "articles": {
+    "conversion": {
+      "1": {
+        "nom": "💎 Diamants → Rulith",
+        "description": "Convertir des Diamants en Rulith (taux: 1💎 = 1,000Ru)",
+        "type": "conversion"
+      },
+      "2": {
+        "nom": "💰 Rulith → Diamants",
+        "description": "Convertir des Rulith en Diamants (taux: 1,000Ru = 1💎)",
+        "type": "conversion"
+      }
+    },
+    "Armes": {
+      "1": {
+        "nom": "Test",
+        "description": "Tester",
+        "prix": 1000,
+        "devise": "Ru",
+        "type": "Arme",
+        "faction": "Hécates",
+        "stock": 100,
+        "createdAt": "2025-10-06T15:09:11.078Z",
+        "updatedAt": "2025-10-06T15:09:11.078Z"
+      },
+      "2": {
+        "nom": "Test",
+        "description": "Tester",
+        "prix": 1000,
+        "devise": "Ru",
+        "type": "Arme",
+        "faction": "Hécates",
+        "stock": 100,
+        "createdAt": "2025-10-06T15:09:28.903Z",
+        "updatedAt": "2025-10-06T15:09:28.903Z"
+      },
+      "3": {
+        "nom": "Test",
+        "description": "Tester",
+        "prix": 1000,
+        "devise": "Ru",
+        "type": "Arme",
+        "faction": "Hécates",
+        "stock": 100,
+        "createdAt": "2025-10-06T15:09:45.168Z",
+        "updatedAt": "2025-10-06T15:09:45.168Z"
+      }
+    }
+  },
+  "valoria": {
+    "diamants": 0,
+    "rulith": 0,
+    "transactions": []
+  },
+  "settings": {
+    "taxe_rate": 0.01,
+    "taux_change": 1000
+  }
+}
