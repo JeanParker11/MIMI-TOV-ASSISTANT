@@ -1,0 +1,544 @@
+{
+  "settings": {
+    "taxe_rate": 0.01,
+    "taux_change": 1000
+  },
+  "valoria": {
+    "diamants": 10000001572671920,
+    "rulith": 99000109697,
+    "transactions": [
+      {
+        "date": "2025-10-17T10:09:27.996Z",
+        "type": "conversion",
+        "montant": 1,
+        "devise": "Ru",
+        "joueur": "57312647610606@lid",
+        "article": "Taxe conversion 💎→Ru",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-10-17T10:11:16.195Z",
+        "type": "conversion",
+        "montant": 1,
+        "devise": "Ru",
+        "joueur": "28561666744498@lid",
+        "article": "Taxe conversion 💎→Ru",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-10-17T21:14:49.436Z",
+        "type": "conversion",
+        "montant": 1,
+        "devise": "Ru",
+        "joueur": "206259097656@lid",
+        "article": "Taxe conversion Ru→💎",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-10-18T12:55:38.545Z",
+        "type": "conversion",
+        "montant": 1,
+        "devise": "Ru",
+        "joueur": "63097985343661@lid",
+        "article": "Taxe conversion Ru→💎",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-10-18T12:58:41.699Z",
+        "type": "conversion",
+        "montant": 1,
+        "devise": "Ru",
+        "joueur": "63097985343661@lid",
+        "article": "Taxe conversion Ru→💎",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-10-19T17:25:48.573Z",
+        "type": "conversion",
+        "montant": 1,
+        "devise": "Ru",
+        "joueur": "48103767945356@lid",
+        "article": "Taxe conversion 💎→Ru",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-10-23T14:00:29.275Z",
+        "type": "conversion",
+        "montant": 1,
+        "devise": "Ru",
+        "joueur": "141287764295866@lid",
+        "article": "Taxe conversion 💎→Ru",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-10-23T14:34:08.293Z",
+        "type": "achat",
+        "montant": 28,
+        "devise": "Ru",
+        "joueur": "141287764295866@lid",
+        "article": "Tenue d'Hiver",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-10-23T14:34:08.298Z",
+        "type": "vente",
+        "montant": 2772,
+        "devise": "Ru",
+        "joueur": "141287764295866@lid",
+        "article": "Tenue d'Hiver",
+        "description": "Vente Tenue d'Hiver"
+      },
+      {
+        "date": "2025-10-23T14:34:32.536Z",
+        "type": "achat",
+        "montant": 28,
+        "devise": "Ru",
+        "joueur": "141287764295866@lid",
+        "article": "Tenue d'Hiver",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-10-23T14:34:32.541Z",
+        "type": "vente",
+        "montant": 2772,
+        "devise": "Ru",
+        "joueur": "141287764295866@lid",
+        "article": "Tenue d'Hiver",
+        "description": "Vente Tenue d'Hiver"
+      }
+    ]
+  },
+  "articles": {
+    "conversion": {
+      "1": {
+        "nom": "💎 Diamants en Rulith",
+        "description": "Convertir des Diamants en Rulith (taux: 1💎 = 1,000Ru)",
+        "type": "conversion"
+      },
+      "2": {
+        "nom": "💰 Rulith en Diamants",
+        "description": "Convertir des Rulith en Diamants (taux: 1,000Ru = 1💎)",
+        "type": "conversion"
+      }
+    },
+    "vetements": {
+      "tenue_hiver": {
+        "id": "tenue_hiver",
+        "nom": "Tenue d'Hiver",
+        "description": "Tissée à partir des peaux épaisses des bêtes boréales, cette tenue protège efficacement du froid sans gêner les mouvements. Les artisans du Nord y intègrent souvent des plumes et des fibres pour alléger la charge tout en préservant la chaleur corporelle.",
+        "prix": 2800,
+        "devise": "Ru",
+        "resistance": 3,
+        "effets": "Résistance au froid extrême, conservation de la mobilité",
+        "malus": "Aucun",
+        "stock": 8,
+        "image": "https://files.catbox.moe/iy27pv.jpg",
+        "updatedAt": "2025-10-23T14:34:32.531Z"
+      },
+      "tenue_mineur": {
+        "id": "tenue_mineur",
+        "nom": "Tenue de Mineur",
+        "description": "Conçue par les ouvriers d'Ishvar qui travaillent le fer dans des conditions thermiques défavorables, cette armure lourde est capable de filtrer le vent ambiant pour en extraire un air pur et respirable.",
+        "prix": 4500,
+        "devise": "Ru",
+        "resistance": 5,
+        "effets": "Filtre le vent en air pur, forte isolation thermique",
+        "malus": "-1 à la vitesse",
+        "stock": 5,
+        "image": "https://files.catbox.moe/p2rhh5.jpg"
+      },
+      "tenue_martiale": {
+        "id": "tenue_martiale",
+        "nom": "Tenue Martiale Valorienne",
+        "description": "Un ensemble léger mêlant toile et fine cotte de mailles. Symbole d'unité, elle est la seule tenue reconnue officiellement par tous les aventuriers de Valoria. On dit qu'elle s'adapte instinctivement au style de combat de son porteur.",
+        "prix": 2000,
+        "devise": "Ru",
+        "resistance": 2,
+        "effets": "Polyvalente, légère, adaptée à tous les types d'affrontement",
+        "malus": "Aucun",
+        "stock": 15,
+        "image": "https://files.catbox.moe/t3i4oe.jpg"
+      },
+      "tenue_chapardeur": {
+        "id": "tenue_chapardeur",
+        "nom": "Tenue de Chapardeur",
+        "description": "Souple et discrète, elle épouse les formes du corps et absorbe la lumière ambiante, idéale pour ceux qui préfèrent la ruse à la force. Les aventuriers à la carrure modeste deviennent presque invisibles dans l'ombre.",
+        "prix": 3600,
+        "devise": "Ru",
+        "resistance": 2,
+        "effets": "+1 en vitesse maximale (sauf Hermès : bonus de discrétion renforcé). Facilite les déplacements agiles et l'escalade",
+        "malus": "Aucun",
+        "stock": 8,
+        "image": "https://files.catbox.moe/ol5e5j.jpg"
+      },
+      "sacoche_explorateur": {
+        "id": "sacoche_explorateur",
+        "nom": "Sacoche d'Explorateur",
+        "description": "Sac en cuir tanné et résistant, muni de plusieurs attaches. Bien qu'il soit petit et ne puisse accueillir que trois objets volumineux, il est essentiel pour les aventuriers. Il libère les hands du porteur et assure que les objets transportés ne se mélangent pas.",
+        "prix": 3500,
+        "devise": "Ru",
+        "resistance": 1,
+        "effets": "Permet de transporter 3 objets volumineux sans pénalité de poids immédiate. Réduit la chance que les consommables se brisent",
+        "malus": "Aucun",
+        "stock": 12,
+        "image": "https://files.catbox.moe/1002705618.jpg"
+      }
+    },
+    "potions": {
+      "bouteille_verre": {
+        "id": "bouteille_verre",
+        "nom": "Bouteille de Verre Vide",
+        "description": "Récipient en verre simple et solide, standard dans les villes valoriennes. Indispensable pour stocker des liquides, que ce soit de l'eau, du vin, ou une substance alchimique.",
+        "prix": 1000,
+        "devise": "Ru",
+        "type": "Récipient",
+        "effets": "Permet de contenir 1 unité de liquide. Peut être remplie à n'importe quelle source (eau, alcool, etc.). Sert de base pour les concoctions alchimiques",
+        "stock": 20,
+        "image": "https://files.catbox.moe/1002705617.jpg"
+      },
+      "potion_energie": {
+        "id": "potion_energie",
+        "nom": "Fiole de Potion d'Énergie Magique",
+        "description": "Épaisse fiole de verre bleu-nuit, contenant un liquide éthéré et scintillant. Cette potion est un standard de Valoria et est utilisée par les Hécates et tous ceux qui dépendent du mana.",
+        "prix": 3000,
+        "devise": "Ru",
+        "type": "Potion",
+        "effets": "Restaure 30% de Mana (énergie magique) instantanément. Les potions ne sont pas permises en duels.",
+        "stock": 12,
+        "image": "https://files.catbox.moe/1002705617.jpg"
+      },
+      "potion_regeneration": {
+        "id": "potion_regeneration",
+        "nom": "Fiole de Régénération Physique",
+        "description": "Une fiole circulaire contenant un liquide verdâtre. Cette potion est un incontournable de Valoria, créée pour restaurer votre forme physique.",
+        "prix": 3000,
+        "devise": "Ru",
+        "type": "Potion",
+        "effets": "Restaure 50% de votre forme physique. Les potions ne sont pas permises en duels.",
+        "stock": 12,
+        "image": "https://files.catbox.moe/1002705617.jpg"
+      },
+      "malice_medusa": {
+        "id": "malice_medusa",
+        "nom": "Malice de Médusa",
+        "description": "Ne vous laissez pas tromper par la beauté fascinante de ce masque, car il dissimule un puissant maléfice.",
+        "prix": 15000,
+        "devise": "Ru",
+        "type": "Artéfact",
+        "effets": "Immobilise pendant 2 secondes tout ce qui se trouve dans un rayon de 4 mètres en face d'elle",
+        "malus": "-10 points de Puissance et d'Esprit",
+        "stock": 3,
+        "image": "https://files.catbox.moe/1002705617.jpg"
+      }
+    },
+    "hermes": {
+      "hermes_epée_lumière": {
+        "id": "hermes_epée_lumière",
+        "nom": "Épée de Lumière",
+        "description": "Une épée légendaire des messagers d'Hermes, rapide et précise",
+        "prix": 5000,
+        "devise": "Ru",
+        "rang": "A",
+        "degats": "2d8+3",
+        "poids": 2.5,
+        "stock": 1,
+        "image": "https://files.catbox.moe/4wx890.jpg"
+      },
+      "hermes_lance_valorienne": {
+        "id": "hermes_lance_valorienne",
+        "nom": "Lance Valorienne",
+        "description": "Avec sa prise en main parfaite et sa manipulation facile, cette lance est très prisée par les voyageurs qui doivent se protéger des animaux sauvages, comme le loup.",
+        "prix": 1800,
+        "devise": "Ru",
+        "rang": "C",
+        "degats": "3",
+        "poids": 2.8,
+        "stock": 5,
+        "image": "https://files.catbox.moe/1002705622.jpg"
+      },
+      "hermes_boomerang": {
+        "id": "hermes_boomerang",
+        "nom": "Boomerang",
+        "description": "La forme singulière de cette arme lui permette de revenir vers son porteur après avoir été lancée. Conçu avec précision, il s'appuie sur des principes aérodynamiques pour effectuer son retour.",
+        "prix": 600,
+        "devise": "Ru",
+        "rang": "E",
+        "degats": "2",
+        "poids": 0.8,
+        "stock": 8,
+        "image": "https://files.catbox.moe/1002705616.jpg"
+      },
+      "hermes_rateau": {
+        "id": "hermes_rateau",
+        "nom": "Râteau",
+        "description": "Cet outil agricole doté de quatre dents affûtées est idéal pour rassembler le foin en un rien de temps. Sa légèreté permet à chacun de l'utiliser avec aisance.",
+        "prix": 600,
+        "devise": "Ru",
+        "rang": "E",
+        "degats": "2",
+        "poids": 1.2,
+        "stock": 10,
+        "image": "https://files.catbox.moe/1002705632.jpg"
+      },
+      "hermes_houve": {
+        "id": "hermes_houve",
+        "nom": "Houve",
+        "description": "Cet outil agricole sert habituellement à travailler la terre et à labourer les champs, mais sa confection robuste en fait aussi une arme efficace.",
+        "prix": 900,
+        "devise": "Ru",
+        "rang": "D",
+        "degats": "3",
+        "poids": 1.8,
+        "stock": 7,
+        "image": "https://files.catbox.moe/1002705632.jpg"
+      },
+      "hermes_arc_bois": {
+        "id": "hermes_arc_bois",
+        "nom": "Arc en bois",
+        "description": "Cet arc en bois, parfait pour la chasse au petit gibier, se révèle peu efficace contre les monstres. Il permet de tirer 6 flèches avant de se briser automatiquement.",
+        "prix": 1200,
+        "devise": "Ru",
+        "rang": "D",
+        "degats": "4",
+        "poids": 1.5,
+        "stock": 6,
+        "image": "https://files.catbox.moe/1002705632.jpg"
+      }
+    },
+    "hecate": {
+      "hecate_bâton_mystique": {
+        "id": "hecate_bâton_mystique",
+        "nom": "Bâton Mystique",
+        "description": "Bâton des magiciens d'Hécate, canalise les énergies magiques",
+        "prix": 8000,
+        "devise": "Ru",
+        "rang": "B",
+        "degats": "1d10+5",
+        "poids": 1.2,
+        "stock": 1,
+        "image": "https://i.imgur.com/example2.jpg"
+      },
+      "hecate_baguette_feu": {
+        "id": "hecate_baguette_feu",
+        "nom": "Baguette de feu",
+        "description": "Cette baguette magique dégage une aura magique et génère des boules de feu qui réduisent en cendres tout ce qu'elles touchent. Évitez de frapper directement avec, sous peine de la voir se briser rapidement.",
+        "prix": 1500,
+        "devise": "Ru",
+        "rang": "D",
+        "degats": "5",
+        "poids": 0.6,
+        "stock": 4,
+        "image": "https://files.catbox.moe/1002705622.jpg"
+      },
+      "hecate_baguette_glace": {
+        "id": "hecate_baguette_glace",
+        "nom": "Baguette de glace",
+        "description": "Cette baguette magique, qui aurait été créée dans les glaces de la chaîne Lara, utilise des pouvoirs magiques pour générer des vagues gelées et n'est pas vraiment faite pour les combats au corps à corps.",
+        "prix": 1500,
+        "devise": "Ru",
+        "rang": "D",
+        "degats": "5",
+        "poids": 0.7,
+        "stock": 4,
+        "image": "https://files.catbox.moe/1002705622.jpg"
+      }
+    },
+    "arès": {
+      "ares_hache_guerre": {
+        "id": "ares_hache_guerre",
+        "nom": "Hache de Guerre",
+        "description": "Hache redoutable des guerriers d'Arès, inflige des dégâts massifs",
+        "prix": 6000,
+        "devise": "Ru",
+        "rang": "C",
+        "degats": "3d6+2",
+        "poids": 4,
+        "stock": 1,
+        "image": "https://i.imgur.com/example3.jpg"
+      },
+      "ares_epée_voyageur": {
+        "id": "ares_epée_voyageur",
+        "nom": "Épée de voyageur",
+        "description": "Cette épée est la marque de fabrique d'Elaine, souvent utilisée en pour se défendre contre les animaux sauvages. Peu solide, sa lame n'est pas très utile contre les montres, malheureusement.",
+        "prix": 1200,
+        "devise": "Ru",
+        "rang": "E",
+        "degats": "4",
+        "poids": 2.2,
+        "stock": 8,
+        "image": "https://files.catbox.moe/1002705619.jpg"
+      },
+      "ares_epée_soldat": {
+        "id": "ares_epée_soldat",
+        "nom": "Épée de soldat",
+        "description": "Les soldats du château utilisent cette épée à la lame affûtée pour combattre les monstres. Signature de Rothan, époux d'Élaine, cette arme en métal se distingue par sa remarquable résistance.",
+        "prix": 1500,
+        "devise": "Ru",
+        "rang": "E",
+        "degats": "5",
+        "poids": 2.5,
+        "stock": 6,
+        "image": "https://files.catbox.moe/1002705619.jpg"
+      },
+      "ares_epée_chevalier": {
+        "id": "ares_epée_chevalier",
+        "nom": "Épée de chevalier",
+        "description": "La facilité d'utilisation et la grande puissance de l'arme de prédilection des chevaliers du château de Valor en font aujourd'hui une épée très appréciée des aventuriers aguerris. Une signature de Rothan",
+        "prix": 1800,
+        "devise": "Ru",
+        "rang": "D",
+        "degats": "6",
+        "poids": 2.8,
+        "stock": 4,
+        "image": "https://files.catbox.moe/1002705619.jpg"
+      },
+      "ares_epée_rouillée": {
+        "id": "ares_epée_rouillée",
+        "nom": "Épée rouillée",
+        "description": "Cette antique épée, couverte de rouille, a sans doute appartenu à un bretteur de renom dans les temps anciens. Bien qu'elle puisse encore être utilisée, elle risque de se briser très rapidement.",
+        "prix": 1200,
+        "devise": "Ru",
+        "rang": "D",
+        "degats": "4",
+        "poids": 2.3,
+        "stock": 3,
+        "image": "https://files.catbox.moe/1002705620.jpg"
+      },
+      "ares_hache_bucheron": {
+        "id": "ares_hache_bucheron",
+        "nom": "Hache de bûcheron",
+        "description": "Les bûcherons des montagnes sont particulièrement friands de cet outil, spécialement conçu pour abattre les plus grands arbres en un rien de temps.",
+        "prix": 2700,
+        "devise": "Ru",
+        "rang": "D",
+        "degats": "9",
+        "poids": 3.8,
+        "stock": 5,
+        "image": "https://files.catbox.moe/1002705621.jpg"
+      }
+    },
+    "atlas": {
+      "atlas_marteau_forge": {
+        "id": "atlas_marteau_forge",
+        "nom": "Marteau de Forge",
+        "description": "Marteau puissant des forgerons d'Atlas, aussi solide que son porteur",
+        "prix": 4000,
+        "devise": "Ru",
+        "rang": "D",
+        "degats": "2d6+1",
+        "poids": 3.5,
+        "stock": 1,
+        "image": "https://i.imgur.com/example4.jpg"
+      },
+      "atlas_epée_deux_mains": {
+        "id": "atlas_epée_deux_mains",
+        "nom": "Épée à deux mains",
+        "description": "Cette épée à deux mains est particulièrement prisée par les aventuriers, qui exploitent son poids considérable pour balayer le bouclier de l'ennemi essayant de se défendre.",
+        "prix": 1800,
+        "devise": "Ru",
+        "rang": "D",
+        "degats": "6",
+        "poids": 4.2,
+        "stock": 4,
+        "image": "https://files.catbox.moe/1002705621.jpg"
+      },
+      "atlas_rame": {
+        "id": "atlas_rame",
+        "nom": "Rame",
+        "description": "Conçu en bois durable, cet outil, présent dans chaque bonne embarcation, s'avère également être un moyen de défense très efficace.",
+        "prix": 1200,
+        "devise": "Ru",
+        "rang": "E",
+        "degats": "4",
+        "poids": 2.1,
+        "stock": 7,
+        "image": "https://files.catbox.moe/1002705621.jpg"
+      }
+    },
+    "toutes_factions": {
+      "torche": {
+        "id": "torche",
+        "nom": "Torche",
+        "description": "Allumez cette torche afin qu'elle brûle continuellement, ou du moins jusqu'à ce que vous décidiez de l'éteindre. Tant qu'elle est allumée, elle inflige des dégâts continus.",
+        "prix": 600,
+        "devise": "Ru",
+        "rang": "E",
+        "degats": "3",
+        "poids": 1,
+        "stock": 15,
+        "image": "https://files.catbox.moe/1002705620.jpg"
+      },
+      "louche_soupe": {
+        "id": "louche_soupe",
+        "nom": "Louche à soupe",
+        "description": "Cet outil, qui est aussi utile pour servir la soupe que pour cuisiner, est fabriqué à partir d'un bois très résistant, ce qui peut causer des douleurs considérables s'il est utilisé comme une arme.",
+        "prix": 900,
+        "devise": "Ru",
+        "rang": "D",
+        "degats": "3",
+        "poids": 1.3,
+        "stock": 10,
+        "image": "https://files.catbox.moe/1002705620.jpg"
+      },
+      "bouclier_valorien": {
+        "id": "bouclier_valorien",
+        "nom": "Bouclier Valorien",
+        "description": "Les voyageurs s'équipent souvent de ce bouclier fait de cuir et de bois robuste pour se protéger des attaques de bêtes sauvages ou de monstres peu puissants.",
+        "prix": 1200,
+        "devise": "Ru",
+        "rang": "E",
+        "degats": "2",
+        "poids": 2.5,
+        "stock": 8,
+        "image": "https://files.catbox.moe/1002705616.jpg"
+      },
+      "branche_arbre": {
+        "id": "branche_arbre",
+        "nom": "Branche d'arbre",
+        "description": "On peut trouver partout des branches d'arbre comme celle-ci. Elle est très agréable à manier, et peut tout à fait servir d'arme une fois équipée. En contact avec du feu, leur efficacité augmente.",
+        "prix": 600,
+        "devise": "Ru",
+        "rang": "E",
+        "degats": "2",
+        "poids": 1.1,
+        "stock": 20,
+        "image": "https://files.catbox.moe/1002705616.jpg"
+      }
+    },
+    "insignes": {
+      "insigne_cuivre": {
+        "id": "insigne_cuivre",
+        "nom": "Insigne de Cuivre de la Patte de Loup",
+        "description": "Une pierre de cuivre gravée d'une empreinte de loup. Elle confère l'accès aux missions de rang E à D, les plus courantes et les plus proches du peuple.",
+        "prix": 0,
+        "devise": "Ru",
+        "type": "Insigne",
+        "effets": "Accès aux missions de rang E à D. S'illumine légèrement à chaque mission réussie.",
+        "stock": 999,
+        "image": "https://files.catbox.moe/1002705618.jpg"
+      },
+      "insigne_argent": {
+        "id": "insigne_argent",
+        "nom": "Insigne d'Argent de la Patte de Loup",
+        "description": "Un médaillon d'argent pur orné d'une patte de loup finement ciselée. Il permet d'accéder aux missions de rang C et B, souvent liées à la sécurité du royaume.",
+        "prix": 0,
+        "devise": "Ru",
+        "type": "Insigne",
+        "effets": "Accès aux missions de rang C et B. Symbole de vigilance et d'honneur.",
+        "stock": 999,
+        "image": "https://files.catbox.moe/1002705618.jpg"
+      },
+      "insigne_cristal": {
+        "id": "insigne_cristal",
+        "nom": "Insigne de Cristal de l'Aube des Loups",
+        "description": "Taillé dans un cristal capable de capturer et de réfléchir la lumière, cet insigne est réservé aux missions de rang A et S, confiées uniquement aux plus valeureux.",
+        "prix": 0,
+        "devise": "Ru",
+        "type": "Insigne",
+        "effets": "Accès aux missions de rang A et S. L'esprit de l'Ordre veille sur son porteur.",
+        "stock": 999,
+        "image": "https://files.catbox.moe/1002705618.jpg"
+      }
+    }
+  }
+}

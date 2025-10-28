@@ -1,0 +1,1016 @@
+{
+  "149667295842488@lid": {
+    "pseudo": "Regulus de Valor",
+    "tel": "+243 835 216 861",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "Renforcement énergétique : l'utilisateur insuffle son énergie dans un objet de contact (arme, outil, support), augmentant temporairement sa résistance structurelle. Plus l'énergie investie est élevée, plus l'objet résiste aux chocs, à l'érosion ou aux impacts magiques. À ce rang, l'effet dure entre 7 et 8 secondes selon la puissance du flux. (Arès, Hermès, Atlas)",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "65",
+      "esprit": "50",
+      "pouvoir": "35"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "150006430445773@lid": {
+    "pseudo": "Lone Tecraso Winter",
+    "tel": "+242066070176",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "Tache invisible : Rend une tache sur un vêtement invisible pendant 3 heures. La tache est toujours présente mais ne peut être vue. Nécessite 6 points de Mana.",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "40",
+      "esprit": "55",
+      "pouvoir": "55"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "201644973240574@lid": {
+    "pseudo": "DĒVIL Yû... Nº3",
+    "tel": "+2290154583352",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "40",
+      "esprit": "40",
+      "pouvoir": "70"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "17193173573705@lid": {
+    "pseudo": "Irito nava",
+    "tel": "+237656431187",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "Accélération des ongles : Les ongles poussent d'un centimètre. Nécessite 1 point de Mana.",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "40",
+      "esprit": "55",
+      "pouvoir": "55"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "275522722504856@lid": {
+    "pseudo": "Marsh Jun",
+    "tel": "+242069940229",
+    "faction": "Atlas",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "100",
+      "esprit": "0",
+      "pouvoir": "50"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "48103767945356@lid": {
+    "pseudo": "Oreki C. Sloth",
+    "tel": "+225 0143350985",
+    "faction": "Hécates",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      "*TAMPON DE STABILISATION MAGIQUE*"
+    ],
+    "sorts": [
+      "Minéal de Cerisiers 🌸 : permet de generer des lianes eh des branches de cerisiers. Consomme 9PM pour la construction de 1m et coûte le double à chaque mètre supplémentaire. Necessite un stabilisateur pour effectuer une quelconque créations.",
+      "Oreilles attentives 👂🏽: Augmente légèrement l’acuité auditive, permettant d’entendre les chuchotements à 5 mètres de distance. 4pm necessaire par seconde.",
+      "Cercle de répulsion🌀: Un sceau circulaire apparaît sous les pieds de l’utilisateur. En libérant son énergie, celui-ci déclenche une onde de choc semblable à une puissante poussée d’air. Tout ce qui se trouve dans le cercle est repoussé à 2m au délà de sa limite. Les flux magiques des ennemis touchés sont perturbés. Peu efficace contre les attaques magiques ciblées. Portée : 9m de rayon / nécessite une seconde de preparation. (Hécate only)."
+    ],
+    "stats": {
+      "force": "20",
+      "esprit": "60",
+      "pouvoir": "70"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "39268919578754@lid": {
+    "pseudo": "Black Night",
+    "tel": "+228 91148065",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "Cheveux en mouvement : Fait onduler doucement les cheveux comme s'ils flottaient dans l'eau pendant 1 minute. Effet purement esthétique. Nécessite 2 points de Mana.",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "60",
+      "esprit": "40",
+      "pouvoir": "50"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "249005376274580@lid": {
+    "pseudo": "Kærus Vön Wölfyr",
+    "tel": "+237 6 56 54 88 41",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "*Bourdonnement d'oreilles :* Provoque un léger bourdonnement dans les oreilles de la cible pendant 3 minutes. Agaçant mais pas handicapant. Nécessite un contact physique pour l'activation et consomme 3 points de Mana.",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "60",
+      "esprit": "30",
+      "pouvoir": "60"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "253313547280545@lid": {
+    "pseudo": "Cim Jean",
+    "tel": "+237 651144369",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "Sensation de déjà-vu : Provoque chez la personne touchée une intense sensation de déjà-vu pendant quelques secondes. Nécessite 4 points de Mana.",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "60",
+      "esprit": "40",
+      "pouvoir": "50"
+    },
+    "validéePar": "Manouel_🪽🎧",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "192466242261055@lid": {
+    "pseudo": "Kanki",
+    "tel": "+237 692846444",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "Yeux luisants : Fait briller légèrement les yeux dans l'obscurité et permet donc d'y voir. Effet similaire à celui des chats. Nécessite 3 points de Mana par minute.",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "55",
+      "esprit": "45",
+      "pouvoir": "50"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "231031022043313@lid": {
+    "pseudo": "Psycho Arhyel",
+    "tel": "+242 067759034",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "70",
+      "esprit": "50",
+      "pouvoir": "30"
+    },
+    "validéePar": "Manouel_🪽🎧",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "197728047001675@lid": {
+    "pseudo": "CASSIAN",
+    "tel": "+233 27 524 9576",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "Réveil des papilles : Augmente temporairement la sensibilité gustative pendant 10 minutes. Les saveurs semblent plus intenses. Nécessite 3 points de Mana.",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "50",
+      "esprit": "50",
+      "pouvoir": "50"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "98947657920580@lid": {
+    "pseudo": "Kaizen",
+    "tel": "+241 60 26 40 24",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "50",
+      "esprit": "50",
+      "pouvoir": "50"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "60430307307540@lid": {
+    "pseudo": "Kaiser Crimson Fallen",
+    "tel": "+2250797350514",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "*Main magnétique :* Permet d'attirer de très petits objets métalliques (comme des trombones) à moins de 5 cm de la paume. Nécessite 5 points de Mana par attraction.",
+      "Doigt aimant : Transforme temporairement l'index en aimant à poussière pendant 1 minute. Parfait pour nettoyer des surfaces délicates. Nécessite 2 points de Mana.",
+      ""
+    ],
+    "stats": {
+      "force": "30",
+      "esprit": "60",
+      "pouvoir": "60"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "33827867107438@lid": {
+    "pseudo": "Kilby Stein",
+    "tel": "+242 055451908",
+    "faction": "Atlas",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "55",
+      "esprit": "25",
+      "pouvoir": "70"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "281290595127500@lid": {
+    "pseudo": "Killshot",
+    "tel": "+225 0152832892",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "50",
+      "esprit": "50",
+      "pouvoir": "50"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "101933129924854@lid": {
+    "pseudo": "Zaraki Vernesis",
+    "tel": "+237 687623723",
+    "faction": "Atlas",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "85",
+      "esprit": "35",
+      "pouvoir": "30"
+    },
+    "validéePar": "Manouel_🪽🎧",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "72057001906230@lid": {
+    "pseudo": "White TowerLow",
+    "tel": "+2250748807131",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "70",
+      "esprit": "40",
+      "pouvoir": "40"
+    },
+    "validéePar": "𝒪𝓈𝓈𝒽𝓊𝓃",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "63097985343661@lid": {
+    "pseudo": "Kuroro Lucifer",
+    "tel": "237656257421",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "*Renforcement énergétique :* l'utilisateur insuffle son énergie dans un objet de contact (arme, outil, support), augmentant temporairement sa résistance structurelle. Plus l'énergie investie est élevée, plus l'objet résiste aux chocs, à l'érosion ou aux impacts magiques. À ce rang, l'effet dure entre 7 et 8 secondes selon la puissance du flux. (Arès, Hermès, Atlas)",
+      "Marche-Rêve : Le lanceur peut marcher sur toute surface, y compris les murs ou l’eau, tant qu’il garde les yeux fermés. Il tombe s’il les ouvre.\nCoût : 9 Points de Mana par seconde.",
+      "Toucher glacial : Refroidit l'extrémité des doigts jusqu'à atteindre une température très basse (-2 degrés) permettant de rafraîchir une boisson, soulager une petite brûlure ou créer de légères traces de givre sur une surface. Nécessite 8 points de Mana."
+    ],
+    "stats": {
+      "force": "40",
+      "esprit": "60",
+      "pouvoir": "50"
+    },
+    "validéePar": "Altheos.",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "240939662590055@lid": {
+    "pseudo": "Valt C. Kaëin",
+    "tel": "+223 76744998",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "Éclat buccal : Fait briller les dents. Nécessite 1 point de Mana.",
+      "Fourmillement digital : Crée une sensation de fourmillement dans la main de la personne touchée pendant 30 secondes. Totalement inoffensif. Nécessite 3 points de Mana.",
+      "Frisson contrôlé : Provoque un frisson qui parcourt le corps entier. Utile pour simuler la peur ou le froid. Nécessite 2 point de Mana."
+    ],
+    "stats": {
+      "force": "40",
+      "esprit": "50",
+      "pouvoir": "60"
+    },
+    "validéePar": "Manouel_🪽🎧",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "279998262980655@lid": {
+    "pseudo": "Bishop Feiderius Encilion",
+    "tel": "+2250705060367",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "40",
+      "esprit": "55",
+      "pouvoir": "55"
+    },
+    "validéePar": "Manouel_🪽🎧"
+  },
+  "272030981193786@lid": {
+    "pseudo": "Sazuki",
+    "tel": "+242067280802",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "75",
+      "esprit": "50",
+      "pouvoir": "25"
+    },
+    "validéePar": "Manouel_🪽🎧"
+  },
+  "72753088606220@lid": {
+    "pseudo": "Kenin jean",
+    "tel": "+242 06 977 6223",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "65",
+      "esprit": "55",
+      "pouvoir": "30"
+    },
+    "validéePar": "Manouel_🪽🎧"
+  },
+  "57312647610606@lid": {
+    "pseudo": "Lexender Meris",
+    "tel": "+22898224802",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "70",
+      "esprit": "45",
+      "pouvoir": "35"
+    },
+    "validéePar": "✠ 𝓚𝓪𝓶𝓫𝓮 𝓗𝓸𝓵𝓶𝓮𝓼"
+  },
+  "232684634804323@lid": {
+    "pseudo": "Albert",
+    "tel": "+228 96 29 03 56",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "60",
+      "esprit": "50",
+      "pouvoir": "40"
+    },
+    "validéePar": "ŌSSHUN"
+  },
+  "267967489163401@lid": {
+    "pseudo": "Moussa Fadji Fragra Jean Désiré le Saoudien aka Ronaldo",
+    "tel": "+2441234567890",
+    "faction": "Hécates",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "100",
+      "esprit": "25",
+      "pouvoir": "25"
+    },
+    "validéePar": "✠ 𝓚𝓪𝓶𝓫𝓮 𝓗𝓸𝓵𝓶𝓮𝓼"
+  },
+  "141287764295866@lid": {
+    "pseudo": "The tester",
+    "tel": "0000000",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "148",
+      "esprit": "1",
+      "pouvoir": "1"
+    },
+    "validéePar": "Altheos."
+  },
+  "216071667720206@lid": {
+    "pseudo": "Loxsika L. Moriarty..",
+    "tel": "+212 720-816423",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "50",
+      "esprit": "60",
+      "pouvoir": "40"
+    },
+    "validéePar": "ŌSSHUN"
+  },
+  "65374133452802@lid": {
+    "pseudo": "Tempest",
+    "tel": "+237691436927",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "70",
+      "esprit": "40",
+      "pouvoir": "40"
+    },
+    "validéePar": "ŌSSHUN"
+  },
+  "206259097656@lid": {
+    "pseudo": "Millénium Luslec Crimson",
+    "tel": "+225 0787285786",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "Échos des pas : Fait résonner chaque pas comme si on marchait dans une grande cathédrale vide pendant 3 minutes. Nécessite 3 points de Mana.",
+      "Canalisation énergétique : permet de canaliser son énergie magique dans une partie du corps afin de la rendre plus endurante. Cette technique est l’une des bases fondamentales de l’attaque et de la défense dans les combats magiques. (Arès = 8, Hermes = 7, Atlas = 7)",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "50",
+      "esprit": "60",
+      "pouvoir": "40"
+    },
+    "validéePar": "Manouel_🪽🎧"
+  },
+  "254399955894388@lid": {
+    "pseudo": "Phamtome D kagetora",
+    "tel": "+242 068963671",
+    "faction": "Atlas",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "50",
+      "esprit": "50",
+      "pouvoir": "50"
+    },
+    "validéePar": "Manouel_🪽🎧"
+  },
+  "108272115810466@lid": {
+    "pseudo": "Zetsuu",
+    "tel": "+226 52565000",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "70",
+      "esprit": "45",
+      "pouvoir": "35"
+    },
+    "validéePar": "Manouel_🪽🎧"
+  },
+  "55886701703283@lid": {
+    "pseudo": "INFERNO ⛩️🔥",
+    "tel": "+225 0720536250",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "80",
+      "esprit": "50",
+      "pouvoir": "20"
+    },
+    "validéePar": "ŌSSHUN"
+  },
+  "265816129941672@lid": {
+    "pseudo": "Ashley forger",
+    "tel": "+23751690868",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "50",
+      "esprit": "50",
+      "pouvoir": "50"
+    },
+    "validéePar": "ŌSSHUN"
+  },
+  "176128706768918@lid": {
+    "pseudo": "Pantheon",
+    "tel": "+225 0161708929",
+    "faction": "Atlas",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "100",
+      "esprit": "20",
+      "pouvoir": "30"
+    },
+    "validéePar": "ŌSSHUN"
+  },
+  "28561666744498@lid": {
+    "pseudo": "Fenrir",
+    "tel": "+22870425073",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "90",
+      "esprit": "30",
+      "pouvoir": "30"
+    },
+    "validéePar": "Ōsshun"
+  },
+  "166164332302368@lid": {
+    "pseudo": "Kaiser Oni-Link",
+    "tel": "+225 0153716699",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "60",
+      "esprit": "45",
+      "pouvoir": "45"
+    },
+    "validéePar": "Ōsshun"
+  },
+  "162199976816689@lid": {
+    "pseudo": "Black Killer",
+    "tel": "+242064905307",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "55",
+      "esprit": "45",
+      "pouvoir": "50"
+    },
+    "validéePar": "Altheos."
+  },
+  "16781041242297@lid": {
+    "pseudo": "Rudéus Crimį.H",
+    "tel": "+242064379833",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "55",
+      "esprit": "50",
+      "pouvoir": "45"
+    },
+    "validéePar": "Lexender Crimson‡"
+  }
+}

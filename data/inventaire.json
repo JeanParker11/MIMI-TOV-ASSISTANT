@@ -1,0 +1,23 @@
+{
+  "141287764295866@lid": {
+    "armes": [],
+    "armures": [
+      {
+        "id": "tenue_hiver",
+        "nom": "Tenue d'Hiver",
+        "description": "Tissée à partir des peaux épaisses des bêtes boréales, cette tenue protège efficacement du froid sans gêner les mouvements. Les artisans du Nord y intègrent souvent des plumes et des fibres pour alléger la charge tout en préservant la chaleur corporelle.",
+        "prix": 2800,
+        "devise": "Ru",
+        "resistance": 3,
+        "effets": "Résistance au froid extrême, conservation de la mobilité",
+        "malus": "Aucun",
+        "image": "https://files.catbox.moe/iy27pv.jpg",
+        "achetéLe": "2025-10-23T14:34:32.550Z",
+        "equipé": false
+      }
+    ],
+    "objets": [],
+    "sorts": [],
+    "lastUpdated": "2025-10-23T14:34:32.550Z"
+  }
+}

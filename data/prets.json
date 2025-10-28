@@ -1,0 +1,81 @@
+{
+  "267967489163401@lid": {
+    "1759938615537": {
+      "emprunteur": "48103767945356@lid",
+      "montant": 1000,
+      "devise": "rulith",
+      "symbole": "Ru",
+      "dateEmission": "2025-10-08T15:50:15.536Z",
+      "dateEcheance": "2025-10-09T15:50:15.536Z",
+      "delaiJours": 1,
+      "statut": "rembourse",
+      "montantRestant": 1000,
+      "dateRemboursement": "2025-10-08T15:57:55.174Z"
+    }
+  },
+  "253313547280545@lid": {
+    "1759951354527": {
+      "emprunteur": "141287764295866@lid",
+      "montant": 1,
+      "devise": "diamants",
+      "symbole": "💎",
+      "dateEmission": "2025-10-08T19:22:34.499Z",
+      "dateEcheance": "2025-10-15T19:22:34.499Z",
+      "delaiJours": 7,
+      "statut": "rembourse",
+      "montantRestant": 1,
+      "dateRemboursement": "2025-10-08T19:24:46.505Z"
+    }
+  },
+  "48103767945356@lid": {
+    "1760194571147": {
+      "emprunteur": "206259097656@lid",
+      "montant": 5,
+      "devise": "diamants",
+      "symbole": "💎",
+      "dateEmission": "2025-10-11T14:56:11.137Z",
+      "dateEcheance": "2025-10-21T14:56:11.137Z",
+      "delaiJours": 10,
+      "statut": "rembourse",
+      "montantRestant": 5,
+      "dateRemboursement": "2025-10-14T16:35:50.497Z"
+    },
+    "1760892596178": {
+      "emprunteur": "206259097656@lid",
+      "montant": 10,
+      "devise": "diamants",
+      "symbole": "💎",
+      "dateEmission": "2025-10-19T16:49:56.175Z",
+      "dateEcheance": "2025-10-29T16:49:56.175Z",
+      "delaiJours": 10,
+      "statut": "en_cours",
+      "montantRestant": 10
+    }
+  },
+  "201644973240574@lid": {
+    "1760710021399": {
+      "emprunteur": "63097985343661@lid",
+      "montant": 50,
+      "devise": "rulith",
+      "symbole": "Ru",
+      "dateEmission": "2025-10-17T14:07:01.390Z",
+      "dateEcheance": "2025-10-18T14:07:01.390Z",
+      "delaiJours": 1,
+      "statut": "en_cours",
+      "montantRestant": 50
+    }
+  },
+  "101933129924854@lid": {
+    "1760898309906": {
+      "emprunteur": "63097985343661@lid",
+      "montant": 1,
+      "devise": "diamants",
+      "symbole": "💎",
+      "dateEmission": "2025-10-19T18:25:09.891Z",
+      "dateEcheance": "2025-10-24T18:25:09.891Z",
+      "delaiJours": 5,
+      "statut": "en_cours",
+      "montantRestant": 1
+    }
+  }
+}
