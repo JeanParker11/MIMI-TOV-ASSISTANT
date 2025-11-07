@@ -24,41 +24,19 @@ const maintenance = require('./IA/maintenance');
 const handleAllIA = require('./IA');
 const { chargerRappels } = require('./commands/rappel');
 const startConnection = require('./lib/connexion');
-
-// 🔧 Obtenir le nom lisible d’un utilisateur/groupe
-const getDisplayName = async (sock, jid) => {
-  try {
-    if (!jid) return 'Inconnu';
-    if (jid.endsWith('@g.us')) {
-      if (!sock.groupMetadata[jid]) {
-        try {
-          const metadata = await sock.groupMetadata(jid);
-          sock.groupMetadata[jid] = metadata;
-        } catch (e) {
-          return jid.split('@')[0];
-        }
-      }
-      return sock.groupMetadata[jid]?.subject || jid.split('@')[0];
-    }
-    const contact = sock.contacts?.[jid];
-    return (
-      contact?.name ||
-      contact?.notify ||
-      jid.split("@")[0]
-    );
-  } catch (err) {
-    return jid?.split('@')[0] || 'Inconnu';
-  }
-};
+const { getDisplayName } = require('./lib/utils');
 
 async function main() {
   try {
+    // Affiche un message de démarrage stylisé
     fancyStartLog();
 
+    // Initialise la connexion WhatsApp
     const sock = await startConnection();
     sock.contacts = sock.contacts || {};
     sock.groupMetadata = sock.groupMetadata || {};
 
+    // Gère la mise à jour des contacts
     sock.ev.on("contacts.update", updates => {
       try {
         for (let update of updates) {
@@ -71,12 +49,13 @@ async function main() {
     });
 
     try {
+      // Charge les rappels programmés
       chargerRappels(sock);
     } catch (e) {
       logError("❌ Erreur chargement rappels : " + e.message);
     }
 
-    // 📥 Réception des messages
+    // 📥 Gère la réception des nouveaux messages
     sock.ev.on("messages.upsert", async ({ messages }) => {
       try {
         const mek = messages?.[0];
@@ -95,23 +74,28 @@ async function main() {
           return;
         }
 
+        // Standardise le format du message
         mek.message = mek.message?.ephemeralMessage?.message || mek.message;
 
         let m;
         try {
+          // Enrichit l'objet message avec des informations supplémentaires
           m = await smsg(sock, mek);
         } catch (e) {
           logError(`❌ Message illisible de ${mek.key?.remoteJid} : ${e.message}`);
           return;
         }
 
+        // Récupère les identifiants de l'expéditeur et de la conversation
         const senderJid = m.sender || m.key?.participant || m.key?.remoteJid;
         const chatJid = m.chat || m.key?.remoteJid;
 
+        // Récupère les noms pour l'affichage
         const senderName = await getDisplayName(sock, senderJid);
         const chatName = await getDisplayName(sock, chatJid);
         const msgType = Object.keys(m.message || {})[0] || "unknown";
 
+        // Crée un aperçu du contenu du message pour le journal
         const contentPreview =
           m.text ||
           m.message?.conversation ||
@@ -120,12 +104,14 @@ async function main() {
           m.message?.videoMessage?.caption ||
           '[Contenu non affichable]';
 
+        // Affiche le message reçu dans la console
         console.log(
           chalk.greenBright("📥 Message reçu") +
           ` de ${chalk.yellow(senderName)} dans ${chalk.cyan(chatName)} (${chalk.magenta(msgType)}) : ${chalk.white(contentPreview)}`
         );
 
         try {
+          // Vérifie si le mode maintenance est actif
           await maintenance(sock, m);
         } catch (e) {
           if (e.message.includes("⛔ Maintenance active")) return;
@@ -133,7 +119,9 @@ async function main() {
           return;
         }
 
+        // Traite le message avec les IA
         await handleAllIA(sock, m);
+        // Traite le message avec les plugins (commandes)
         require('./lib/plugins')(sock, m, messages);
 
       } catch (err) {

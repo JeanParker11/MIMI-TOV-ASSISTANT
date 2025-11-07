@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appairage WhatsApp</title>
+    <style>
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background-color: #f0f2f5; }
+        #container { text-align: center; padding: 2rem; background: white; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        #pairing-code { font-size: 2rem; font-weight: bold; margin: 1rem 0; color: #128C7E; }
+        #status { font-style: italic; color: #666; }
+        input { padding: 0.5rem; margin-right: 0.5rem; border: 1px solid #ccc; border-radius: 5px; }
+        button { padding: 0.5rem 1rem; border: none; background-color: #128C7E; color: white; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Connecter WhatsApp</h1>
+        <div id="phone-input-container">
+            <input type="text" id="phone-number" placeholder="Entrez votre numéro WhatsApp">
+            <button id="get-code-btn">Obtenir le code</button>
+        </div>
+        <div id="pairing-container" style="display: none;">
+            <p>Entrez ce code sur votre téléphone pour connecter WhatsApp.</p>
+            <div id="pairing-code">En attente du code...</div>
+            <p id="status">Statut: en attente de connexion</p>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>
