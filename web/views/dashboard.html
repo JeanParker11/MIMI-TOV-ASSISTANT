@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIROLIST-LABS - Tableau de Bord</title>
+    <link rel="stylesheet" href="/modern-style.css">
+    <style>
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        .widget {
+            background: var(--primary-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px var(--shadow-color);
+        }
+        .widget h3 {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .stat:last-child {
+            border-bottom: none;
+        }
+        .stat-label { color: var(--text-secondary); }
+        .stat-value { color: var(--text-color); font-weight: 700; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">UNIROLIST-LABS</div>
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/sheets">Fiches</a></li>
+                <li><a href="/dashboard" class="active">Tableau de Bord</a></li>
+                <li><a href="/logout-player">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2 id="welcome-message" style="text-align: center;">Tableau de Bord</h2>
+
+        <div class="dashboard-grid">
+            <!-- Fiche Personnage -->
+            <div class="widget">
+                <h3>Fiche Personnage</h3>
+                <div id="fiche-content"></div>
+            </div>
+
+            <!-- Palmarès -->
+            <div class="widget">
+                <h3>Palmarès</h3>
+                <div id="palmares-content"></div>
+            </div>
+
+            <!-- Banque & Économie -->
+            <div class="widget">
+                <h3>Banque & Économie</h3>
+                <div id="banque-content"></div>
+            </div>
+
+            <!-- Informations Sociales -->
+            <div class="widget">
+                <h3>Informations Sociales</h3>
+                <div id="social-content"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 UNIROLIST-LABS - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('/api/player-dashboard');
+                if (!response.ok) throw new Error('Erreur de chargement des données.');
+
+                const data = await response.json();
+
+                // Message de bienvenue
+                document.getElementById('welcome-message').textContent = `Bienvenue, ${data.fiche.pseudo || 'Aventurier'}`;
+
+                // Fiche
+                const ficheContent = document.getElementById('fiche-content');
+                ficheContent.innerHTML = `
+                    <div class="stat"><span class="stat-label">Pseudo:</span> <span class="stat-value">${data.fiche.pseudo}</span></div>
+                    <div class="stat"><span class="stat-label">Faction:</span> <span class="stat-value">${data.fiche.faction}</span></div>
+                    <div class="stat"><span class="stat-label">Force:</span> <span class="stat-value">${data.fiche.force}</span></div>
+                    <div class="stat"><span class="stat-label">Esprit:</span> <span class="stat-value">${data.fiche.esprit}</span></div>
+                    <div class="stat"><span class="stat-label">Pouvoir:</span> <span class="stat-value">${data.fiche.pouvoir}</span></div>
+                `;
+
+                // Palmarès
+                const palmaresContent = document.getElementById('palmares-content');
+                if (data.palmares) {
+                    palmaresContent.innerHTML = `
+                        <div class="stat"><span class="stat-label">Victoires:</span> <span class="stat-value">${data.palmares.victoires}</span></div>
+                        <div class="stat"><span class="stat-label">Défaites:</span> <span class="stat-value">${data.palmares.defaites}</span></div>
+                        <div class="stat"><span class="stat-label">Nuls:</span> <span class="stat-value">${data.palmares.nuls}</span></div>
+                    `;
+                } else {
+                    palmaresContent.innerHTML = '<p>Aucun combat enregistré.</p>';
+                }
+
+                // Banque
+                const banqueContent = document.getElementById('banque-content');
+                if (data.banque) {
+                    banqueContent.innerHTML = `
+                        <div class="stat"><span class="stat-label">Diamants:</span> <span class="stat-value">${data.banque.diamants}</span></div>
+                        <div class="stat"><span class="stat-label">Rulith:</span> <span class="stat-value">${data.banque.rulith}</span></div>
+                    `;
+                } else {
+                    banqueContent.innerHTML = '<p>Compte en banque vide.</p>';
+                }
+
+                // Social
+                const socialContent = document.getElementById('social-content');
+                if (data.social) {
+                    socialContent.innerHTML = `
+                        <div class="stat"><span class="stat-label">Grade:</span> <span class="stat-value">${data.social.grade}</span></div>
+                        <div class="stat"><span class="stat-label">Équipe:</span> <span class="stat-value">${data.social.equipe || 'Aucune'}</span></div>
+                        <div class="stat"><span class="stat-label">Réputation (Peuple):</span> <span class="stat-value">${data.social.reputation.peuple}</span></div>
+                        <div class="stat"><span class="stat-label">Réputation (Autorités):</span> <span class="stat-value">${data.social.reputation.autorites}</span></div>
+                    `;
+                } else {
+                    socialContent.innerHTML = '<p>Aucune information sociale.</p>';
+                }
+
+            } catch (error) {
+                document.querySelector('.dashboard-grid').innerHTML = `<p style="color: red; text-align: center;">${error.message}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>

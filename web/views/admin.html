@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIROLIST-LABS - Administration</title>
+    <link rel="stylesheet" href="/modern-style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">UNIROLIST-LABS</div>
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/register">Enregistrement</a></li>
+                <li><a href="/sheets">Fiches</a></li>
+                <li><a href="/login-player">Connexion Joueur</a></li>
+                <li><a href="/admin" class="active">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2 style="text-align: center;">Fiches en Attente de Validation</h2>
+        <div id="pending-fiches-container" class="card-container">
+            <!-- Les fiches en attente seront injectées ici par JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 UNIROLIST-LABS - Tous droits réservés</p>
+    </footer>
+
+    <script src="/admin.js"></script>
+</body>
+</html>

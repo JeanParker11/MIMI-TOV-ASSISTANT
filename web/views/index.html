@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIROLIST-LABS - Accueil</title>
+    <link rel="stylesheet" href="/modern-style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">UNIROLIST-LABS</div>
+        <nav>
+            <ul>
+                <li><a href="/" class="active">Accueil</a></li>
+                <li><a href="/register">Enregistrement</a></li>
+                <li><a href="/sheets">Fiches</a></li>
+                <li><a href="/login-player">Connexion Joueur</a></li>
+                <li><a href="/admin">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bienvenue dans l'Univers d'UNIROLIST</h1>
+                <p>Votre aventure commence ici. Créez votre personnage, rejoignez une faction et forgez votre destinée dans un monde de mystères et de batailles.</p>
+                <a href="/register" class="btn">Créez votre Fiche</a>
+            </div>
+        </section>
+
+        <section class="container" style="margin-top: 3rem; text-align: center;">
+            <h2>Explorez le Monde</h2>
+            <p>Découvrez les fiches des autres aventuriers, préparez-vous pour les quêtes et grimpez dans le classement.</p>
+            <a href="/sheets" class="btn">Voir les Fiches Approuvées</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 UNIROLIST-LABS - Tous droits réservés</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/api/settings')
+                .then(response => response.json())
+                .then(settings => {
+                    const hero = document.querySelector('.hero');
+                    if (settings.imgthumb) {
+                        hero.style.backgroundImage = `url('${settings.imgthumb}')`;
+                    }
+                });
+        });
+    </script>
+</body>
+</html>
