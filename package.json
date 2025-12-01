@@ -7,8 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "concurrently \"node index.js\" \"node web/server.js\"",
+    "dev": "concurrently \"nodemon index.js\" \"nodemon web/server.js\"",
     "web": "node web/server.js",
     "telegram": "node telegram/index.js"
   },
@@ -40,6 +40,7 @@
     "chalk": "^4.1.2",
     "cheerio": "^1.1.0",
     "chokidar": "^4.0.3",
+    "concurrently": "^8.2.2",
     "dotenv": "^17.2.3",
     "express": "^4.18.2",
     "express-session": "^1.18.1",

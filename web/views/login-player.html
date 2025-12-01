@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIROLIST-LABS - Connexion Joueur</title>
+    <link rel="stylesheet" href="/modern-style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">UNIROLIST-LABS</div>
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/register">Enregistrement</a></li>
+                <li><a href="/sheets">Fiches</a></li>
+                <li><a href="/login-player" class="active">Connexion Joueur</a></li>
+                <li><a href="/admin">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <form action="/login-player" method="POST">
+            <h2>Connexion à votre Espace</h2>
+
+            <label for="tel">Numéro de téléphone :</label>
+            <input type="text" id="tel" name="tel" required>
+
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="btn">Se connecter</button>
+            <p style="text-align: center; margin-top: 1rem;">Pas encore de compte ? <a href="/register-player">Inscrivez-vous</a></p>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 UNIROLIST-LABS - Tous droits réservés</p>
+    </footer>
+</body>
+</html>

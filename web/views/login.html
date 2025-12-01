@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIROLIST-LABS - Connexion Administrateur</title>
+    <link rel="stylesheet" href="/modern-style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">UNIROLIST-LABS</div>
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/register">Enregistrement</a></li>
+                <li><a href="/sheets">Fiches</a></li>
+                <li><a href="/login-player">Connexion Joueur</a></li>
+                <li><a href="/admin" class="active">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <form action="/login" method="POST">
+            <h2>Accès Administrateur</h2>
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" class="btn">Se connecter</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 UNIROLIST-LABS - Tous droits réservés</p>
+    </footer>
+</body>
+</html>
