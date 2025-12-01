@@ -4,6 +4,7 @@
 require('./lib/watcher');
 require('./settings');
 require('./telegram/index');
+require('./web/server');
 
 const fs = require('fs');
 const path = require('path');
