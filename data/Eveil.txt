@@ -1,0 +1,7 @@
+En éveil, les Hermes ont la capacité Hawkeye qui réduit leur temps de réaction de moitié peu importe la vitesse à laquelle ils vont. Cette règle s'applique uniquement s'il ont un champ de vision dégagé et une posture équilibrée.
+
+En état d'éveil, les membres de la faction Hécate possèdent tous la capacité Arcane Void, leur permettant de réduire, voire annuler une attaque magique en l'étouffant avec leur propre magie. Cet effet doit être déclenché manuellement et ne fonctionne pas contre les techniques physiques.
+
+Lorsqu'un Arès entre en état d'Éveil, il active automatiquement le skill Ascendence: chaque coup réussi augmente le temps de réaction de son adversaire de +0,1 sec. Cet effet est cumulable jusqu'à 3 fois et disparaît dès qu'il quitte cet état.
+
+En état d'éveil, les Atlas ont la capacité Colossus Inertia qui leur permet d'encaisser des attaques de force inférieure ou égale à 15Rs sans être interrompu dans leur actions. Ils ne peuvent aussi être projeté au loin et leur corps subissent une mutation qui les rendent plutôt durs mais le tout possède des limites.

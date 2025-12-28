@@ -1,0 +1,69 @@
+Le bot devra lire le nom et la description du groupe, et vérifier que les noms/descriptions du groupe correspondent avec les noms/descriptions des arènes renseignées ici (les différences de quelques caractères spéciaux sont à considérer)
+
+𝗟'𝗔𝗿𝗲̀𝗻𝗲 𝗦𝘆𝗹𝘃𝗲𝘀𝘁𝗿𝗲 🌿🍃
+▔▔▔▔▔▔▔▔▔▔▔
+L'Arène sylvestre était un lieu de combat niché au cœur de la forêt ancienne proche d'Eldoria. Entourée de majestueux arbres centenaires, l'arène s'ouvre sur un paysage vibrant de fleurs sauvages colorées. Des poteaux en bois parsèment le terrain dans ses moindres sens, utilisés initialement pour l'entraînement des gardes. Autrefois abandonnée pendant des décennies, cette arène renaît grâce à une nouvelle génération de guerriers déterminés à lui redonner sa splendeur d'antan. 
+
+➠ Périmètre : 125 m (20 m de rayon)
+➠ Température : 32°c ☀ / 15°c 🌕
+➠ Poteaux de bois (10 Rs l'une)
+➠ Sol en terre battue (20 Rs)
+➠ Distance entre poteaux : 1 m
+➠ Hauteur des poteaux : 170 cm
+
+Toute tentative de tricherie sera sanctionné, de même que toute contestation injustifiée des verdicts. Le concerné s'expose à une perte de ses points ou de ses Ruliths, une exclusion temporaire voire même définitive, selon la gravité de la peine évaluée.
+
+𝗟'𝗮𝗶𝗿𝗲 𝗱𝗲𝘀 𝗯𝗿𝗮𝘃𝗲𝘀 👑
+▔▔▔▔▔▔▔▔▔
+L'Aire des braves est une ancienne arène en ruines, reliée au château de Valoria, où les chevaliers s'affrontent pour défendre leur honneur et perpétuer les traditions séculaires du royaume. Si elle servait autrefois à l'entraînement des écuyers, elle est aujourd'hui le théâtre de duels agressants, où la gloire des vainqueurs est célébrée sous les regards avides des spectateurs.
+
+➠ Périmètre : 50 m² pour 180 spectateurs
+➠ Température : 28°c ☀/16°c 🌕
+➠ Sol en terre battue (20 Rs)
+
+Toute tentative de tricherie sera sanctionné, de même que toute contestation injustifiée des verdicts. Le concerné s'expose à une perte de ses points ou de ses Ruliths, une exclusion temporaire voire même définitive, selon la gravité de la peine évaluée.
+☇ Meryss Arena 🐚🦑
+▔▔▔▔▔▔▔▔▔▔
+La Meryss Arena s’étend comme un miroir d’eau immobile au cœur de la mer de l’Équinoxe, pourtant célèbre pour ses vagues tumultueuses. On raconte qu’autrefois, une fillette venait régulièrement pêcher dans les environs. Touchés par ses offrandes, les dieux de la mer auraient apaisé cette parcelle d’océan pour qu’elle y trouve toujours le calme et l’abondance.
+
+➠ Périmètre : 10 m de rayon / 000 spectateurs
+➠ Température : 12 °C (☀ / 🌕)
+➠ Sol : fine nappe d’eau de 7 cm recouvre le sol, constellée de galets (3 Rs)
+
+ⓘ Aujourd’hui, l’arène est considérée comme un lieu de bénédiction. En échange d’1💎, elle triple les gains du vainqueur. Ce rituel ne peut être accompli qu’avant le début des duels, et trois fois par semaine au maximum.
+
+Autrefois, un vieil homme et sa femme s'établirent dans cette clairière isolée. Lors d’un hiver magique, une tempête emporta la femme, laissant l'homme seul dans sa douleur. Depuis, chaque année, ce dernier revenait pleurer sa perte jusqu’à ce que son dernier souffle se fige à cet endroit. Le lieu, pris au piège dans un hiver sans fin, fut baptisé Neive, signifiant « neige » dans l'ancienne langue Valorienne. Des années plus tard, ce creux parmi les montagnes fut élevé au rang de sanctuaire, un hommage silencieux à cet amour figé dans le temps...
+
+➠ Périmètre : 251 m (40 m de rayon)
+➠ Température : -10°C ☀ / 🌕.
+➠ Hypothermie et mort après 4 tours.
+➠ Sol en terre enneigée (30 Rs).
+
+𝗜𝗻𝘀𝘁𝗿𝘂𝗰𝘁𝗶𝗼𝗻𝘀
+Le sanctuaire est entouré d'une épaisse forêt après les 40 mètres. La pénétrer revient à perdre le duel. La température constante de ce lieu piégé en hiver est de -10 degrés. Une durée de 30 minutes dans ce froid entraîne une hypothermie aiguë. En combats, après 4 tours vient la mort, ce qui peut s'éviter avec une source de chaleur présente dans les 3 mètres. La neige n'est pas épaisse donc aucune rectification de vitesse n'interviendra ici.
+
+☇ 𝗔𝗿𝗲̀𝗻𝗲 𝗧𝗶𝘁𝗮𝗻 ⛰
+▔▔▔▔▔▔▔▔
+L'arène Titan, encore connue sous le nom Gaïa, est une majestueuse arène, située dans les profondeurs du souterrain d'Eldoria. Elle est un mélange de styles gothique et romain, avec des colonnes imposantes, des arches majestueuses et des statues décoratives. Le sol est en marbre renforcé par des enchantements, résistant aux impacts des combats. L'arène est un sanctuaire de bravoure où des combats sont régulièrement organisés. 
+
+➠ Périmètre : 40 m de rayon pour 800 spectateurs.
+➠ Température : 17°c (☀ / 🌕)
+➠ Sol extrêmement dur et régulier (50 Rs)
+
+Toute tentative de tricherie sera sanctionné, de même que toute contestation injustifiée des verdicts. Le concerné s'expose à une perte de ses points ou de ses Ruliths, une exclusion temporaire voire même définitive, selon la gravité de la peine évaluée.
+
+< Arène des Rois braves
+
+L'Arène des Rois Braves est un lieu légendaire réservé exclusivement aux combats entre les finalistes et champions d'Eldoria. Nichée au cœur de la cité, cette arène majestueuse est un symbole de courage et de détermination. Elle est entourée de gradins imposants où les spectateurs se pressent pour assister aux affrontements épiques.
+
+Périmètre: 251 m (40 m de rayon).
+
+Température: 32°c / 15°c
+
+Sol régulier et plat (40 Rs).
+
+Toute tentative de tricherie sera sévèrement punie, de même que toute contestation injustifiée des verdicts. Le concerné s'expose à une perte de ses points ou de ses Ruliths, une exclusion temporaire voire même définitive, selon la gravité de la peine évaluée.
+
+
+
+

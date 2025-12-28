@@ -1,0 +1,66 @@
+Tu as parfaitement raison. C'est une correction logique cruciale. Le système d'esquive abstrait que tu as analysé n'a pas de sens sans le système de repérage. L'un est la fondation de l'autre.
+En liant le système de repérage (la grille tactique) à l'esquive, le combat devient un véritable jeu de physique et de timing.
+Voici la décomposition de toutes les formules nécessaires, basées sur les variables que tu as définies.
+Le Principe Fondamental : La Course contre la Montre
+L'esquive est une simple question : le défenseur peut-il réagir et bouger avant que l'attaque ne l'atteigne ?
+La condition de réussite est donc la suivante, comme l'indique ta documentation :
+> Formule d'Or (Le Verdict)
+> Temps_Esquive_Total (Défenseur) < Temps_Impact (Attaquant)
+> 
+Si le temps total du défenseur est inférieur au temps de l'impact, l'esquive réussit.
+1. Calcul du Temps_Impact (L'Horloge de l'Attaquant)
+C'est le temps, en secondes, nécessaire pour que l'attaque traverse la distance qui la sépare de la cible.
+Formule A : Temps_Impact
+> Temps_Impact = Distance_Attaque / Vitesse_Attaque
+> 
+ * Distance_Attaque (en mètres) : C'est la variable que notre système de repérage doit calculer. Elle est issue de la distance 3D entre l'attaquant (x1, y1, z1) et le défenseur (x2, y2, z2).
+ * Vitesse_Attaque (en m/s) : C'est une nouvelle variable critique que nous devons ajouter à chaque arme et compétence.
+   * Exemple : Un coup de poing peut avoir une Vitesse_Attaque de 10 m/s, tandis qu'une hache lourde aura une Vitesse_Attaque de 4 m/s.
+2. Calcul du Temps_Esquive_Total (Le Chronomètre du Défenseur)
+C'est le temps total, en secondes, que le défenseur met pour réagir puis se déplacer hors de la zone de danger.
+Formule B : Temps_Esquive_Total
+> Temps_Esquive_Total = Temps_Reaction + Temps_Mouvement_Esquive
+> 
+3. Sous-Formules du Défenseur
+Formule C : Temps_Reaction (Le temps de "voir" le coup)
+C'est là que la statistique Vitesse du défenseur et la pénalité d'action interviennent.
+> Temps_Reaction = Temps_Reaction_Base * Modificateur_Action_En_Cours
+> 
+ * Temps_Reaction_Base (en secondes) : Cette valeur provient directement de la statistique Vitesse du défenseur, en utilisant le barème que tu as fourni.
+   * Vitesse 9 = 0.2s
+   * Vitesse 8 = 0.3s
+   * Vitesse 7 = 0.4s
+   * Vitesse 6 = 0.5s
+   * Vitesse 5 = 0.6s
+   * Vitesse <= 4 = 0.7s
+ * Modificateur_Action_En_Cours (Multiplicateur) : C'est le boolean que tu as mentionné, qui applique la pénalité "En Action".
+   * Si Action_En_Cours = True : Le modificateur est 2 (temps de réaction doublé).
+   * Si Action_En_Cours = False : Le modificateur est 1 (pas de pénalité).
+Formule D : Temps_Mouvement_Esquive (Le temps de "bouger")
+C'est le temps physique nécessaire pour que le défenseur déplace son corps hors de la case ciblée.
+> Temps_Mouvement_Esquive = Distance_Esquive_Requise / Vitesse_Deplacement_Reelle
+> 
+ * Distance_Esquive_Requise (en mètres) : C'est la distance minimale pour éviter le coup. Nous pouvons la fixer à une constante : 1 mètre (soit 1 case sur notre grille).
+ * Vitesse_Deplacement_Reelle (en m/s) : C'est la statistique de vitesse de déplacement du défenseur. C'est une nouvelle variable que nous devons calculer, basée sur ses stats (probablement Vitesse et Force). Note : C'est cette variable qui est référencée dans ta documentation comme getTempsMouvementFromVitesse().
+Résumé de l'Algorithme pour le Bot
+Voici l'algorithme complet que le bot devra exécuter à chaque tentative d'esquive :
+ * Récupérer les Données :
+   * Vitesse_Attaque (de l'arme/compétence utilisée).
+   * Stats_Vitesse_Defenseur (sa stat de 1 à 10).
+   * Vitesse_Deplacement_Defenseur (sa stat en m/s).
+   * Defenseur_Est_En_Action (le boolean).
+ * Calculs du Repérage :
+   * Calculer la Distance_Attaque (en mètres) entre les deux joueurs.
+ * Calcul de l'Attaquant :
+   * Temps_Impact = Distance_Attaque / Vitesse_Attaque.
+ * Calculs du Défenseur :
+   * Temps_Reaction_Base = (Utiliser le barème de Vitesse).
+   * Modificateur_Action = (Si Defenseur_Est_En_Action, alors 2, sinon 1).
+   * Temps_Reaction_Final = Temps_Reaction_Base * Modificateur_Action.
+   * Temps_Mouvement_Esquive = 1 (mètre) / Vitesse_Deplacement_Defenseur.
+   * Temps_Esquive_Total = Temps_Reaction_Final + Temps_Mouvement_Esquive.
+ * Le Verdict :
+   * SI Temps_Esquive_Total < Temps_Impact ALORS
+     * Retourner SUCCÈS DE L'ESQUIVE.
+   * SINON
+     * Retourner ÉCHEC DE L'ESQUIVE (et procéder au calcul des dégâts).

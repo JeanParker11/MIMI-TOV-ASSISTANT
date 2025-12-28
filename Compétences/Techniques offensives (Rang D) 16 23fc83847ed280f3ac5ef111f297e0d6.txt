@@ -1,0 +1,41 @@
+# Techniques offensives (Rang D) : 16
+
+Description: Cette page regroupe les techniques offensives de rang E.
+
+**L’Élément feu inflige des dégâts supplémentaires de -3 par seconde s'il n'est pas maîtrisé ou éteint.** 
+
+1- Poing de braise : Condense une grande quantité de mana dans le poing. Lors de l'impact, le poing libère une onde de chaleur brûlante qui consume l'ennemi. Factions : (Arès = 8, Hermès = 7, Atlas = 7)
+
+2- Scalpel de Fournaise : Fait converger une chaleur intense sur le tranchant d'une arme. Au contact, la lame brûle la zone ciblée. Factions : (Arès = 8, Hermès = 7, Atlas = 7)
+
+3- Lame incendiaire : Fait apparaître une ou plusieurs lames de feu (9 max) projetables à distance (jusqu'à 9 mètres). La trajectoire est droite et la chaleur persistante. Factions : (Hécate = 9)
+
+4- Éclat du brasier : Tire une boule de feu concentrée d'un rouge vif. Explose au contact avec une petite zone d'effet (1 mètre). Factions : (Hécate = 9)
+
+5- Morsure aqueuse : Transforme une arme en serpent d'eau grâce à l'énergie de l'utilisateur. Ce serpent peut s'étendre et mordre des cibles. Factions : (Arès = 8, Hermès = 7, Atlas = 7)
+
+6- Danseuse : Recouvre l'utilisateur d'une aura aqueuse qui augmente sa flexibilité et sa vitesse de +0,5 seconde sans améliorer son temps de réaction. Consomme 3 Points par seconde. Factions : (Arès, Hermès, Atlas)
+
+7- Aiguilles d'écume : Projette une rafale de fines lames d'eau très rapides. Peu puissantes mais difficiles à esquiver. Minimum 5 Points d'énergie. Factions : (Hécate = 9)
+
+8- Bulls Bulls : Lance une bulle d'eau vibrante qui explose sur commande ou au contact de l'ennemi, troublant momentanément ses sens et lui infligeant des dégâts. Factions : (Hécate = 9)
+
+9- Coup de rafale : Charge un coup de paume libérant une onde de vent sec. Repousse l'adversaire et les obstacles.
+
+Factions : (Arès = 8, Hermès = 7, Atlas = 7)
+
+10- Bond ascensionnel : Utilise l'air comprimé sous les pieds pour sauter plus haut.
+
+Factions : (Arès = 8, Hermès = 7, Atlas = 7)
+
+11- Serpent du zéphyr : Fait naître un souffle de vent fin et rapide qui se faufile à distance vers sa cible. Factions : (Hécate = 9)
+
+12- Aile tranchante : Projette une lame d'air en arc horizontal ou vertical. Peut trancher la peau si elle touche avec précision. Factions : (Hécate = 9)
+
+13- Poing tellurique : Solidifie le bras en une masse de pierre lourde. Au contact, provoque une onde sismique dans un rayon de 1 m. Factions : (Arès = 8, Hermès = 7, Atlas = 7)
+
+14- Marteau sédimentaire : Crée brièvement une excroissance rocheuse en forme de marteau autour du bras. Le coup assène un choc assourdissant. Factions : (Arès = 8, Hermès = 7, Atlas = 7)
+
+15- Fronde minérale : Projette une salve de pierres chauffées qui tournent sur elles-mêmes. Leur irrégularité les rend difficiles à bloquer. Factions : (Hécate = 9)
+
+16- Éclat géodique : Fait surgir une pointe de pierre cristalline depuis le sol sous l'adversaire. Nécessite une préparation d'une seconde. Factions : (Hécate = 9)

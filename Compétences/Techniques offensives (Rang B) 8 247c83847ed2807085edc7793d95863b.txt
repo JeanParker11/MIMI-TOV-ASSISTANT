@@ -1,0 +1,19 @@
+# Techniques offensives (Rang B) : 8
+
+Description: Cette page regroupe les techniques offensives de rang B.
+
+**1. Sang Primordial** : Le sang de l’utilisateur entre en ébullition, décuplant la puissance musculaire brute par deux pendant deux tours. Chaque coup porté provoque une onde de choc mineure qui déséquilibre les ennemis proches. Durée : 2 tours. Coût : 18 PM. L’utilisateur subit une fatigue intense après la fin de l’effet, notamment une immobilité pendant 2 tours). **Arès-Atlas-Hermès**
+
+**2. Pacte de l’Ancêtre** : Invoque brièvement l’ombre d’un ancêtre combattant. Tant que l’effet est actif, chaque mouvement de l’utilisateur est doublé par une image rémanente qui inflige 30 % des dégâts initiaux. Durée : 3 tours. Coût : 22 PM Limite : Ne fonctionne que si le lanceur ne recule jamais (aucune retraite possible pendant la durée). **Arès-Atlas-Hermès**
+
+**3. Cri de Faille** : En hurlant au moment de l’activation, l’utilisateur fracture légèrement le tissu sonore autour de lui. Pendant 2 tours, toutes ses attaques physiques génèrent un écho destructeur infligeant des dégâts supplémentaires à courte portée. Durée : 2 tours. Coût : 20 PM. Effet secondaire : Peut briser les armes fragiles dans un rayon de 2 mètres. **Arès-Atlas-Hermès**
+
+**4. Ancrage du Colosse** : L’utilisateur devient presque impossible à repousser ou renverser. Sa stabilité est parfaite, et il peut maintenir une posture offensive implacable. Durée : 3 tours. Coût : 19 PM. Effet secondaire : Réduit la vitesse de déplacement de moitié pendant la durée. **Arès-Atlas-Hermès**
+
+**5. Chant de l’Entropie** : L’utilisateur entonne un chant inaudible pour les vivants, accordant à ses sorts une instabilité volatile. Pendant 2 tours, chaque sort lancé a une chance sur deux d’avoir un effet secondaire destructeur (explosion mineure, paralysie locale, corrosion). Durée : 2 tours. Coût : 24 PM. Effet secondaire : L’utilisateur ne peut pas choisir l’effet secondaire ; il est aléatoire et peut affecter la zone alliée. **Hécate**
+
+**6. Marche du destructeur** : L’utilisateur trace des symboles flottants sous ses pieds, qui suivent ses mouvements. Pendant 3 tours, ses déplacements laissent des résidus magiques qui explosent 1 seconde après son passage. Notons que l'explosion de l'une entraîne celle de l'autre. Durée : 3 tours. Coût : 21 PM. Effet secondaire : La vitesse de déplacement est augmentée de 20 % pendant l’effet (aucun impact sur la vitesse de réaction). **Hécate**
+
+**7. Œil d’Iskalyon** : Cette rune confère à l'utilisateur une perception accrue des flux magiques. Pendant 2 tours, il peut prédire les attaques magiques ennemies. Durée : 2 tours. Coût : 23 PM. Limite : N’affecte que les attaques magiques et ne marche pas en duel. **Hécate**
+
+**8. Sérénade Inversée** : L’utilisateur active une vibration magique inversée autour de lui. Pendant 3 tours, tout sort lancé à proximité (allié comme ennemi) inverse ses propriétés : soin devient dégât, chaleur devient glace, lumière devient ombre, etc. Durée : 3 tours. Coût : 25 PM. Effet secondaire : L’effet touche indistinctement tous les sorts dans un rayon de 10 mètres, y compris ceux de l’utilisateur. **Hécate.**

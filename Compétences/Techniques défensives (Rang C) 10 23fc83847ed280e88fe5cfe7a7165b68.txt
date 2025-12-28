@@ -1,0 +1,23 @@
+# Techniques défensives (Rang C) : 10
+
+Description: Cette page regroupe les techniques déffensives de rang C.
+
+1. **Marque de Maurus :** Forme une marque d’ombre sur tout le corps de l'utilisateur, annulant toute attaque frontale physique ou magique de rang égal ou inférieur. **Coût** : 14 PM
+
+2. **Épines :** Quand l’utilisateur est touché, une barrière réflexive de piques se déploie autour de lui, blessant tous les ennemis dans un rayon de 1 mètre. **Coût** : 12 PM par déploiement.
+
+3. **Fleur de Vragne :** Invoque une grande corolle autour de l’utilisateur. Pendant 6 secondes, les attaques magiques sont absorbées et stockées (jusqu’à 17 PM) avant d’être dispersées dans le sol qui se voit remplit de fleurs de printemps. **Coût** : 15 PM
+
+4. **Peau d’Élydre :** Enduit temporairement le corps d’une protection minéral semi-organique qui divise par deux les dégâts physiques reçus pendant 10 secondes. **Coût** : 13 PM
+
+5. **Transe du Miroir :** Crée un double immobile de l’utilisateur en position de garde. Le double attire automatiquement la première attaque magique lancée dans les 5 secondes suivantes. **Coût** : 11 PM
+
+6. **Kharïn :** Un filet spectral entoure l’utilisateur, ralentissant de 70% toute personne, attaque ou projectile entrant dans un rayon de 2 mètres. Dure 3 secondes. **Coût** : 14 PM
+
+7. **Écorce de Balvoar :** Fait pousser une couche d’écorce résistante sur une partie du corps ciblée (bras, torse ou jambes), réduisant les dégâts physiques de moitié pendant 15 secondes. **Coût** : 12 PM
+
+8. **Mer de Lune :** L’utilisateur reçoit une marque qui le rend totalement intangible sauf le bas de ses pieds.  **Coût** : 16 PM par seconde.
+
+9. **Champ de Syldra :** Crée un champ gravitationnel inversé sur 1 mètre autour de l’utilisateur. Les projectiles ralentissent considérablement et tombent avant impact. Se méfier des attaques ciblées. **Coût** : 13 PM par seconde.
+
+10. **Bannière d’Arkhyn :** Une bannière magique se plante au sol pendant 10 secondes. Tant qu’elle est debout, les alliés dans un rayon de 2 mètres reçoivent 30% de dégâts en moins. **Coût** : 15 PM

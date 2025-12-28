@@ -1,0 +1,36 @@
+# GLOSSAIRE TECHNIQUE DE COMBAT - VALORIA
+# Ce fichier décrit les coups, quand les utiliser et comment les contrer.
+
+# --- COUPS DE POING ---
+
+## COUP : Direct (Poing)
+- **Description:** Coup de poing linéaire, rapide mais prévisible.
+- **Comment le placer:** Idéal pour tester la garde, mesurer la distance, ou interrompre une action lente de l'adversaire.
+- **Comment l'éviter:** Parade avec la main avant, esquive latérale de la tête, léger retrait du buste.
+
+## COUP : Crochet (Hook)
+- **Description:** Coup de poing circulaire qui vise les flancs (tête ou corps) et contourne la garde frontale.
+- **Comment le placer:** Très efficace à mi-distance ou en corps-à-corps, particulièrement après une esquive ou quand l'adversaire ouvre sa garde sur les côtés.
+- **Comment l'éviter:** Garde haute et fermée (le coude protège les côtes), rotation du buste pour absorber l'impact, ou un pas de retrait.
+
+## COUP : Uppercut
+- **Description:** Coup de poing remontant, de bas en haut, visant le menton ou le plexus solaire.
+- **Comment le placer:** Dévastateur à très courte distance, surtout si l'adversaire se penche en avant ou tente de vous saisir.
+- **Comment l'éviter:** Maintenir la distance, reculer, ou bloquer le coup en poussant sur l'épaule de l'attaquant pour étouffer le mouvement.
+
+# --- COUPS DE PIED ---
+
+## COUP : Frontal (Mae Geri)
+- **Description:** Coup de pied direct vers l'avant, frappant avec la plante ou la pointe du pied.
+- **Comment le placer:** Excellent pour maintenir un adversaire à distance (push-kick) ou pour frapper le torse et couper la respiration.
+- **Comment l'éviter:** Déviation sur le côté avec le bras, esquive latérale, ou attraper la jambe si le coup n'est pas assez rapide.
+
+## COUP : Circulaire (Mawashi Geri)
+- **Description:** Coup de pied circulaire puissant, frappant avec le tibia ou le dessus du pied. Peut viser les jambes (low-kick), le corps (middle-kick) ou la tête (high-kick).
+- **Comment le placer:** Efficace après une feinte de poing pour ouvrir une garde, ou pour punir un adversaire dont les appuis sont lourds.
+- **Comment l'éviter:** Blocage avec le tibia ("check"), encaissement sur une partie musclée, ou esquive rapide en reculant ou en "cassant" la distance.
+
+## COUP : Balayage (Sweep)
+- **Description:** Coup de pied bas et rapide visant les chevilles ou les pieds pour faire perdre l'équilibre.
+- **Comment le placer:** Quand l'adversaire est en plein mouvement, a son poids sur une seule jambe, ou est statique avec les pieds joints.
+- **Comment l'éviter:** Saut léger pour éviter le balayage, ou retrait rapide de la jambe ciblée. Très risqué pour l'attaquant s'il est anticipé.

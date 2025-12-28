@@ -1,0 +1,359 @@
+{
+  "regeneration_pv_rune_e": {
+    "id": "regeneration_pv_rune_e",
+    "nom": "Régénération Mineure",
+    "rang": "E",
+    "type": "passive",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "taux_reussite": 20,
+    "description": "Restaure 5 PV au début de chaque tour.",
+    "mecanique": {
+      "declencheur": "debut_tour_joueur",
+      "condition": null,
+      "effet": {
+        "type": "soin_pv",
+        "valeur": 5
+      },
+      "cout": null
+    }
+  },
+  "fureur_du_blesse": {
+    "id": "fureur_du_blesse",
+    "nom": "Fureur du Blessé",
+    "rang": "C",
+    "type": "passive",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Atlas"],
+      "excluded": ["Hermès", "Hécate"]
+    },
+    "taux_reussite": 60,
+    "description": "Augmente l'Attaque de 10 points quand les PV sont sous 25%.",
+    "mecanique": {
+      "declencheur": "verification_continue",
+      "condition": {
+        "stat": "pv_pourcentage",
+        "operateur": "<",
+        "valeur": 25
+      },
+      "effet": {
+        "type": "buff_stat",
+        "stat": "force",
+        "valeur": 10
+      },
+      "cout": null
+    }
+  },
+  "reflexes_augmentes": {
+    "id": "reflexes_augmentes",
+    "nom": "Réflexes Augmentés",
+    "rang": "B",
+    "type": "passive",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hermès"],
+      "excluded": ["Atlas"]
+    },
+    "taux_reussite": 70,
+    "description": "Augmente la vitesse de réaction de 0,5 secondes en permanence.",
+    "mecanique": {
+      "declencheur": "permanent",
+      "condition": null,
+      "effet": {
+        "type": "buff_stat",
+        "stat": "temps_reaction",
+        "valeur": -0.5
+      },
+      "cout": null
+    }
+  },
+  "armure_naturelle": {
+    "id": "armure_naturelle",
+    "nom": "Armure Naturelle",
+    "rang": "A",
+    "type": "passive",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Atlas"],
+      "excluded": ["Hermès"]
+    },
+    "taux_reussite": 80,
+    "description": "Augmente la résistance de toutes les zones corporelles de 15%.",
+    "mecanique": {
+      "declencheur": "permanent",
+      "condition": null,
+      "effet": {
+        "type": "buff_stat",
+        "stat": "resistance_toutes_zones",
+        "valeur_pourcent": 15
+      },
+      "cout": null
+    }
+  },
+  "esquive_instinctive": {
+    "id": "esquive_instinctive",
+    "nom": "Esquive Instinctive",
+    "rang": "S",
+    "type": "passive",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hermès"],
+      "excluded": []
+    },
+    "taux_reussite": 90,
+    "description": "30% de chance d'esquiver automatiquement une attaque sans consommer d'action.",
+    "mecanique": {
+      "declencheur": "quand_attaque_recue",
+      "condition": null,
+      "effet": {
+        "type": "esquive_automatique",
+        "chance_pourcent": 30
+      },
+      "cout": null
+    }
+  },
+  "rage_berserker": {
+    "id": "rage_berserker",
+    "nom": "Rage du Berserker",
+    "rang": "B",
+    "type": "passive",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "taux_reussite": 70,
+    "description": "Augmente les dégâts de 15% lorsque les PV sont en dessous de 50%.",
+    "mecanique": {
+      "declencheur": "verification_continue",
+      "condition": {
+        "stat": "pv_pourcentage",
+        "operateur": "<",
+        "valeur": 50
+      },
+      "effet": {
+        "type": "buff_degats",
+        "valeur_pourcent": 15
+      },
+      "cout": null
+    }
+  },
+  "absorption_magique": {
+    "id": "absorption_magique",
+    "nom": "Absorption Magique",
+    "rang": "A",
+    "type": "passive",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": []
+    },
+    "taux_reussite": 80,
+    "description": "20% des dégâts magiques reçus sont convertis en Mana.",
+    "mecanique": {
+      "declencheur": "quand_degats_magiques_recus",
+      "condition": null,
+      "effet": {
+        "type": "conversion_degats_mana",
+        "pourcentage_conversion": 20
+      },
+      "cout": null
+    }
+  },
+  "contre_attaque": {
+    "id": "contre_attaque",
+    "nom": "Contre-Attaque",
+    "rang": "C",
+    "type": "passive",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Arès"],
+      "excluded": []
+    },
+    "taux_reussite": 60,
+    "description": "Après avoir paré une attaque, 25% de chance de riposter automatiquement.",
+    "mecanique": {
+      "declencheur": "apres_parade_reussie",
+      "condition": null,
+      "effet": {
+        "type": "attaque_automatique",
+        "chance_pourcent": 25,
+        "degats_pourcent": 50
+      },
+      "cout": null
+    }
+  },
+  "endurance_titanesque": {
+    "id": "endurance_titanesque",
+    "nom": "Endurance Titanesque",
+    "rang": "S",
+    "type": "passive",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Atlas"],
+      "excluded": []
+    },
+    "taux_reussite": 90,
+    "description": "Réduit tous les dégâts reçus de 10%. Effet permanent.",
+    "mecanique": {
+      "declencheur": "permanent",
+      "condition": null,
+      "effet": {
+        "type": "reduction_degats",
+        "valeur_pourcent": 10
+      },
+      "cout": null
+    }
+  },
+  "concentration_arcanique": {
+    "id": "concentration_arcanique",
+    "nom": "Concentration Arcanique",
+    "rang": "A",
+    "type": "passive",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": []
+    },
+    "taux_reussite": 80,
+    "description": "Réduit le coût en Mana de toutes les compétences actives de 10%.",
+    "mecanique": {
+      "declencheur": "permanent",
+      "condition": null,
+      "effet": {
+        "type": "reduction_cout_mana",
+        "valeur_pourcent": 10
+      },
+      "cout": null
+    }
+  },
+  "eveil_hawkeye": {
+    "id": "eveil_hawkeye",
+    "nom": "Éveil : Hawkeye",
+    "rang": "Éveil",
+    "type": "passive_eveil",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hermès"],
+      "excluded": []
+    },
+    "taux_reussite": 100,
+    "description": "En état d'éveil, réduit le temps de réaction de moitié peu importe la vitesse. Cette règle s'applique uniquement avec un champ de vision dégagé et une posture équilibrée.",
+    "mecanique": {
+      "declencheur": "pendant_eveil",
+      "condition": {
+        "champ_vision": "degage",
+        "posture": "equilibree"
+      },
+      "effet": {
+        "type": "reduction_temps_reaction",
+        "valeur_multiplicateur": 0.5
+      },
+      "cout": null,
+      "activation": {
+        "tour_debut": 3,
+        "duree_tours": 2
+      }
+    }
+  },
+  "eveil_arcane_void": {
+    "id": "eveil_arcane_void",
+    "nom": "Éveil : Arcane Void",
+    "rang": "Éveil",
+    "type": "passive_eveil",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": []
+    },
+    "taux_reussite": 100,
+    "description": "En état d'éveil, permet de réduire, voire annuler une attaque magique en l'étouffant avec sa propre magie. Cet effet doit être déclenché manuellement et ne fonctionne pas contre les techniques physiques.",
+    "mecanique": {
+      "declencheur": "pendant_eveil",
+      "condition": {
+        "activation": "manuelle",
+        "cible": "attaque_magique_uniquement"
+      },
+      "effet": {
+        "type": "annulation_magie",
+        "reduction_min_pourcent": 50,
+        "reduction_max_pourcent": 100,
+        "cout_mana_base": "egal_cout_sort_ennemi"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": "dynamique"
+      },
+      "activation": {
+        "tour_debut": 3,
+        "duree_tours": 2
+      }
+    }
+  },
+  "eveil_ascendence": {
+    "id": "eveil_ascendence",
+    "nom": "Éveil : Ascendence",
+    "rang": "Éveil",
+    "type": "passive_eveil",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès"],
+      "excluded": []
+    },
+    "taux_reussite": 100,
+    "description": "En état d'éveil, chaque coup réussi augmente le temps de réaction de l'adversaire de +0,1 sec. Cet effet est cumulable jusqu'à 3 fois et disparaît dès la sortie de l'état d'éveil.",
+    "mecanique": {
+      "declencheur": "pendant_eveil",
+      "condition": {
+        "type_action": "coup_reussi"
+      },
+      "effet": {
+        "type": "debuff_temps_reaction_ennemi",
+        "valeur_par_coup": 0.1,
+        "cumul_max": 3,
+        "duree": "tant_que_eveil_actif"
+      },
+      "cout": null,
+      "activation": {
+        "tour_debut": 3,
+        "duree_tours": 2
+      }
+    }
+  },
+  "eveil_colossus_inertia": {
+    "id": "eveil_colossus_inertia",
+    "nom": "Éveil : Colossus Inertia",
+    "rang": "Éveil",
+    "type": "passive_eveil",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Atlas"],
+      "excluded": []
+    },
+    "taux_reussite": 100,
+    "description": "En état d'éveil, permet d'encaisser des attaques de force inférieure ou égale à 15Rs sans être interrompu dans ses actions. Ne peut être projeté au loin et le corps subit une mutation le rendant très dur, avec certaines limites.",
+    "mecanique": {
+      "declencheur": "pendant_eveil",
+      "condition": null,
+      "effet": {
+        "type": "super_armure",
+        "seuil_resistance_rs": 15,
+        "immunite_interruption": true,
+        "immunite_projection": true,
+        "mutation_corps": {
+          "durete_augmentee": true,
+          "vitesse_reduite": true
+        }
+      },
+      "cout": null,
+      "activation": {
+        "tour_debut": 3,
+        "duree_tours": 2
+      }
+    }
+  }
+}

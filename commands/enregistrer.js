@@ -152,8 +152,8 @@ Une fois terminé, l'admin validera ta fiche manuellement ✅.`,
           return askNext();
         }
 
-        // Corps imposé pour premier enregistrement
-        const corps = ["Ensemble Usé (Défense : 0)", "", ""];
+        // Corps imposé pour premier enregistrement (5 emplacements)
+        const corps = ["Rien", "Haut usé", "Rien", "Rien", "Pantalon usé"];
         const sorts = ["", "", ""];
         const cartes = ["", "", ""];
 
@@ -161,6 +161,12 @@ Une fois terminé, l'admin validera ta fiche manuellement ✅.`,
           force: answers.force || "0",  
           esprit: answers.esprit || "0",  
           pouvoir: answers.pouvoir || "0"  
+        };
+
+        const statsMax = {
+          force: answers.force || "0",
+          esprit: answers.esprit || "0",
+          pouvoir: answers.pouvoir || "0"
         };  
 
         const recap = `𝐓𝐎𝐕 : 𝐅𝐈𝐂𝐇𝐄 𝐃'𝐈𝐍𝐒𝐂𝐑𝐈𝐏𝐓𝐈𝐎𝐍 🍃➕
@@ -171,9 +177,11 @@ Une fois terminé, l'admin validera ta fiche manuellement ✅.`,
 
 *Inventaire de corps*
 ═
-- 1️⃣: Ensemble Usé (Défense : 0)
-- 2️⃣: (vide)
-- 3️⃣: (vide)
+- 🎩 Tête: Rien
+- 👕 Torse: Haut usé
+- 🤚 Bras: Rien
+- ⚔️ Taille: Rien
+- 👖 Jambes: Pantalon usé
 
 *Inventaire de sorts*
 ═
@@ -240,7 +248,8 @@ L'admin @${adminId.split("@")[0]} peut taper *valider* ou *refuser*.
               corps,  
               sorts,  
               cartes,
-              stats,  
+              stats,
+              statsMax,  
               validéePar: m.pushName || "Admin"  
             };  
 
@@ -335,3 +344,5 @@ L'admin @${adminId.split("@")[0]} peut taper *valider* ou *refuser*.
     await askNext();
   }
 };
+
+

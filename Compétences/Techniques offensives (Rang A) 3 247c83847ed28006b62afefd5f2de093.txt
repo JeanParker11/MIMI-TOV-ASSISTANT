@@ -1,0 +1,29 @@
+# Techniques offensives (Rang A) : 3
+
+Description: Cette page regroupe les techniques offensives de rang A.
+
+**1. Arrêt Phasique**
+
+Factions : Arès / Atlas / Hermès
+
+Type : Magie du Temps
+
+L’utilisateur immobilise une zone circulaire de 6 mètres dans le temps pendant 5 secondes réelles. Toute entité ou projectile à l’intérieur reste figé dans sa position. L’utilisateur et ses alliés sont immunisés à l’effet. Permet de désarmer une situation tendue, contre-attaquer ou sauver un allié.
+
+Durée : 5 secondes. Coût : 26 PM. Limite : 1 fois toutes les 10 minutes ou par combat.
+
+**2. Transfert d’Ancrage**
+
+Factions : Arès / Atlas / Hermès
+
+Type : Magie de l’Espace
+
+L’utilisateur échange instantanément sa position avec n’importe quel allié ou objet non vivant qu’il voit dans un rayon de 20 mètres. Peut être utilisé pour intercepter un coup, désorienter l’ennemi ou piéger une cible. Autorise jusqu’à 2 échanges dans les 10 secondes après l’activation. Coût : 24 PM. Limite : Cible visible uniquement.
+
+**3.Demi-Lune Causale**
+
+Factions : Hécate uniquement
+
+Type : Magie du Temps
+
+Le mage scelle un événement dans le futur proche : pendant 12 secondes, tout dégât subi est retardé dans le temps. À la fin de l’effet, tous les dégâts accumulés sont compressés et réappliqués en un seul impact. Permet à l’utilisateur d’agir librement malgré des blessures. Utilité : Offensif (dissuasion) / Défensif (survie différée) Coût : 28 PM. Peut entraîner la mort brutale si les dégâts sont trop élevés.

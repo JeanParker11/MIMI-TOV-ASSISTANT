@@ -1,0 +1,35 @@
+# Techniques défensives (Rang D) : 16
+
+Description: Cette page regroupe les techniques offensives de rang E.
+
+**1- Rempart de Cendre :** L'utilisateur crée un mur de cendres denses et chaudes sur 2 mètres de largeur. Ce mur bloque la vision et les projectiles pendant 3 secondes. Factions : (Arès = 8, Hermès = 7, Atlas = 7)
+
+**2- Étreinte ardente :** Enveloppe temporairement le corps d’un voile de feu inoffensif pour l’utilisateur, mais brûlant pour ceux qui s’en approchent au corps-à-corps. Factions : (Arès = 8, Hermès = 7, Atlas = 7)
+
+**3- Spirale Ignée :** Crée une spirale de flammes circulaire autour du lanceur qui fait office de zone tampon, carbonisant les attaques physiques et magiques. Factions : (Hécate = 9)
+
+**4- Flamme Frémissante :** Génère un double illusoire en feu qui attire brièvement les attaques ennemies avant de disparaître en explosion légère. Factions : (Hécate = 9)
+
+**5- Peau Liquide :** Transforme temporairement la peau du lanceur en une surface aqueuse glissante, réduisant les dégâts de coup direct de 25% pendant 4 secondes. nécessite 7 points pour l'activation. Factions : (Arès = 8, Hermès = 7, Atlas = 7)
+
+**6- Murmure Sous-Marin :** Crée un cercle d’eau dense circulant autour du torse, réduisant la force d’impact et amortissant les sons sur 3 mètres. Factions : (Arès = 8, Hermès = 7, Atlas = 7)
+
+**7- Miroir d'Écume :** Dresse un miroir d’eau flottant vertical qui absorbe une attaque magique avant de se dissoudre. Factions : (Hécate = 9)
+
+**8- Guérison :** Le lanceur peut créer une sphère chargée d'énergie qui augmentera les PV de la première personne qu'elle touche. Idéal pour se guérir ou guérir des alliés. Factions : (Hécate = 9)
+
+**9- Bourrasque :** L’utilisateur déclenche une forte bourrasque par un coup qui repousse toutes les attaques dans un rayon de 1,5 mètre. Minimum 7 pour espérer repousser quelqu'un. Factions : (Arès = 8, Hermès = 7, Atlas = 7)
+
+**10- Plongeon Aérien :** Une poussée de vent est générée sous les pieds du lanceur pour esquiver une attaque vers l’arrière ou en hauteur. 2 Points par poussée. Factions : (Arès = 8, Hermès = 7, Atlas = 7)
+
+**11- Chambre d’Air :** Crée un champ d'air dense autour du corps, réduisant la vitesse d’approche des projectiles ennemis. Factions : (Hécate = 9)
+
+**12- Cône de Dissipation :** Projette une onde d’air vers l’avant en forme de cône, dissipant fumée, brume ou magie légère dans un angle de 60°. Factions : (Hécate = 9)
+
+**13- Écorce Sismique :** Renforce temporairement la peau de l’utilisateur en la rendant aussi résistante qu’une roche brute. Factions : (Arès = 8, Hermès = 7, Atlas = 7)
+
+**14- Pilier de Rappel :** Fait surgir un bloc de pierre derrière le lanceur pour amortir une charge ou un recul brutal. S’active au contact du sol avec les pieds puis s'effondre après absorption du choc. Factions : (Arès = 8, Hermès = 7, Atlas = 7)
+
+**15- Mur de Quartz :** Élève un mur cristallin transparent entre le lanceur et l’ennemi. Résiste aux impact. Factions : (Hécate = 9)
+
+**16- Sol Ascendant :** Soulève une dalle de pierre sous les pieds du lanceur pour le faire gagner de la hauteur ou l’extraire rapidement d’une zone dangereuse. Factions : (Hécate = 9)

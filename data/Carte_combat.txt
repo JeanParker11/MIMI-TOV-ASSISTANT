@@ -1,0 +1,127 @@
+Voici la feuille de route complète pour l'implémentation du système de repérage sur la zone de combat.
+1. 🗺 Les Repères et l'Échelle (Le Système de Coordonnées)
+Le combat se déroule dans un repère orthonormé en trois dimensions (3D) pour gérer la hauteur, ce qui est crucial pour les sauts, les vols ou les terrains en pente.
+ * Axe x : L'axe horizontal (par exemple, Ouest/Est).
+ * Axe y : L'axe horizontal (par exemple, Sud/Nord).
+ * Axe z : L'axe vertical (Hauteur/Altitude). Le sol de l'arène est à z = 0.
+ * L'Échelle : L'échelle fondamentale est validée : 1 case = 1 mètre. Toute la physique du jeu découle de cette règle.
+2. 🗂 Les Variables Fondamentales
+Pour que le système fonctionne, le bot doit stocker et suivre ces nouvelles variables.
+A. Pour l'Arène (combatState.arene)
+ * dimensions: { x_max: 40, y_max: 40, z_max: 10 }
+   * Définit la taille de la grille de combat (ex: 40m x 40m, avec une hauteur de 10m).
+ * obstacles: [ { x: 5, y: 10, z: 0 }, { x: 5, y: 11, z: 1 }, ... ]
+   * Une liste de toutes les coordonnées (voxels) qui sont bloquées (piliers, murs, etc.).
+B. Pour le Combattant (combatState.joueurX)
+ * position: { x: 5, y: 2, z: 0 }
+   * La coordonnée exacte du joueur sur la grille.
+ * points_mouvement (PM): { actuels: 7, max: 7 }
+   * Le nombre de cases (mètres) que le joueur peut parcourir ce tour-ci. La valeur max est calculée à partir de sa statistique Vitesse.
+C. Pour les Armes et Compétences (data/armes.json et data/competences.json)
+ * portee: { min: 0, max: 1 }
+   * La distance d'utilisation (en mètres/cases).
+   * Exemple (Lance) : { min: 1, max: 2 } (ne peut pas attaquer dans sa propre case).
+   * Exemple (Arc) : { min: 4, max: 20 }.
+ * zone_effet: { type: 'sphere', rayon: 3 }
+   * Définit comment la compétence frappe (ex: 'sphere', 'cone', 'ligne').
+ * vitesse_attaque: 15
+   * La vitesse de l'attaque en m/s (crucial pour le calcul d'esquive).
+3. 📐 Les Formules de Calcul
+Formule A : Calcul de Distance 3D (Euclidienne)
+C'est la formule la plus importante pour déterminer la portée.
+> 
+Le résultat est ensuite arrondi à l'entier le plus proche pour le comparer à la portée en cases.
+Formule B : Calcul du Coût de Mouvement
+Le coût en PM pour se déplacer.
+ * Mouvement Horizontal (Axe x ou y) : 1 case = 1 PM
+ * Mouvement Vertical (Axe z - grimper/sauter) : 1 case = 2 PM (ou plus, c'est plus difficile).
+4. ⚖ Les Conditions (Règles de Portée)
+Le bot utilise ces conditions pour valider chaque action.
+Condition 1 : Portée Générale
+L'action est valide UNIQUEMENT SI :
+> Distance_Arrondie \le competence.portee.max
+> ET
+> Distance_Arrondie \ge competence.portee.min
+> 
+Condition 2 : Règles de Mêlée Spécifiques (Prioritaires)
+Ces règles, que tu as définies, remplacent la portée de l'arme :
+ * Pour les Coups (Poings, Tête, Coudes...) :
+   * Condition : Distance_Arrondie doit être égale à 0 (les deux combattants sont dans la même case {x, y, z}).
+ * Pour les Coups de Pied :
+   * Condition : Distance_Arrondie doit être égale à 1 (la cible est dans une case adjacente).
+5. 🤖 Algorithme (Pseudo-code)
+Voici comment le combatManager et le combatLogic utilisent ces règles.
+Algorithme A : Tenter un Déplacement
+Géré par lib/combatManager.js et la bibliothèque pathfinding.js
+PROCÉDURE tenterDeplacement(joueur, cible_x, cible_y, cible_z)
+DEBUT
+    // 1. Définir les points de départ et d'arrivée
+    positionActuelle = joueur.position
+    positionCible = {x: cible_x, y: cible_y, z: cible_z}
+    
+    // 2. Demander à la bibliothèque de trouver le chemin
+    // (en lui donnant la grille et les obstacles)
+    chemin[] = pathfinding.trouverChemin(positionActuelle, positionCible, arene.grille)
+    
+    // 3. Si aucun chemin n'est trouvé (bloqué par un mur)
+    SI chemin EST NULL ALORS
+        RETOURNER ÉCHEC ("Chemin bloqué par un obstacle.")
+    FIN SI
+    
+    // 4. Calculer le coût en PM du chemin trouvé
+    coutPM = 0
+    POUR chaque case DANS chemin
+        SI case.z != case_precedente.z ALORS
+            coutPM = coutPM + 2 // Coût vertical
+        SINON
+            coutPM = coutPM + 1 // Coût horizontal
+        FIN SI
+    FIN POUR
+    
+    // 5. Vérifier si le joueur a assez de PM
+    SI coutPM > joueur.PM.actuels ALORS
+        RETOURNER ÉCHEC ("Points de Mouvement insuffisants. Coût : " + coutPM)
+    FIN SI
+    
+    // 6. Valider le déplacement
+    joueur.position = positionCible
+    joueur.PM.actuels = joueur.PM.actuels - coutPM
+    RETOURNER SUCCÈS ("Déplacement effectué.")
+FIN PROCÉDURE
+
+Algorithme B : Tenter une Action (Attaque / Compétence)
+Géré par lib/combatLogic.js
+PROCÉDURE tenterAction(attaquant, cible, action)
+DEBUT
+    // 1. Récupérer les positions
+    posAttaquant = attaquant.position
+    posCible = cible.position
+    
+    // 2. Calculer la distance
+    dist = calculerDistance3D(posAttaquant, posCible) // Formule A
+    distanceArrondie = ARRONDIR(dist)
+    
+    // 3. Vérifier les Règles de Mêlée Spécifiques (Condition 2)
+    SI action.type == "Poing" ET distanceArrondie != 0 ALORS
+        RETOURNER ÉCHEC ("Cible trop loin pour un coup de poing. Vous devez être dans la même case.")
+    FIN SI
+    
+    SI action.type == "Pied" ET distanceArrondie > 1 ALORS
+        RETOURNER ÉCHEC ("Cible trop loin pour un coup de pied. (Portée max: 1m)")
+    FIN SI
+    
+    // 4. Vérifier la Portée Générale (Condition 1)
+    portee = action.portee
+    SI distanceArrondie > portee.max ALORS
+        RETOURNER ÉCHEC ("Cible trop loin. (Distance: " + distanceArrondie + "m / Portée: " + portee.max + "m)")
+    FIN SI
+    SI distanceArrondie < portee.min ALORS
+        RETOURNER ÉCHEC ("Cible trop proche. (Distance: " + distanceArrondie + "m / Portée Min: " + portee.min + "m)")
+    FIN SI
+    
+    // 5. Si toutes les conditions de position sont bonnes :
+    // La position est valide. On passe à l'étape suivante.
+    RETOURNER tenterEsquive(attaquant, cible, action, distanceArrondie)
+    
+FIN PROCÉDURE
+

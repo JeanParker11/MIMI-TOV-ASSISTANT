@@ -1,0 +1,421 @@
+Maintenant passons aux compétences 
+
+Y'en a de deux types:
+
+Les compétences actives qui s'activent sur commande de l'utilisateur 
+
+Les compétences passives qui s'activent quand les conditions sont remplies
+
+Tout ça doit être stocké et traduit dans un langage que le bot peut interpréter pour le coup 
+
+Mais la subtilité: les skills interviennent dans plusieurs aspects du combat: les skills passifs que donnent les armures, les skills actifs possédés par les armes, les skills obtenus dans les runes...Y'en a vraiment beaucoup 
+
+Pour le coup il va falloir les référencer, les identifier et faire appel à ces identifiants là pour que le bot comprenne qu'il s'agit de la même compétence
+
+C'est l'étape la plus complexe de la logique de combat, et ton analyse est parfaitement correcte. Si on définit la compétence "Régénération" à la fois dans une armure et dans une rune, le bot ne saura pas que c'est la même compétence.
+La solution est exactement celle que tu as esquissée : nous devons créer un Compendium centralisé des Compétences.
+C'est un nouveau fichier, data/competences.json, qui sera le "dictionnaire" de toutes les compétences du jeu.
+1. La Philosophie : L'ID est la Clé
+ * Le Fichier data/competences.json : Contient la définition de chaque compétence (son nom, son type, et surtout, sa mécanique).
+ * Les Fichiers armes.json, armures.json, etc. : Ne contiennent pas la logique. Ils se contentent de lister les ID des compétences qu'ils octroient.
+Quand un joueur s'équipe d'une arme et d'une armure, le bot ne verra que les ID. Il saura que "regen_1" de l'armure et "regen_1" de la rune sont la même compétence et ne l'appliquera qu'une seule fois (ou les cumulera, selon nos règles).
+2. Le Langage du Bot : data/competences.json
+Voici la structure que je te propose. C'est le "langage" que le bot peut interpréter.
+Chaque compétence aura cette structure :
+{
+  "id": "SKILL_UNIQUE_ID",
+  "nom": "Nom lisible par l'humain",
+  "type": "passive" | "active",
+  "description": "Ce que ça fait, pour la commande !fiche",
+  "mecanique": {
+    "declencheur": "...",
+    "condition": { ... },
+    "effet": { ... },
+    "cout": { ... }
+  }
+}
+
+ * id: L'identifiant unique (ex: "regen_mineure", "eclat_solaire_1").
+ * type: active ou passive.
+ * mecanique: C'est le cerveau de la compétence.
+   * declencheur: (Pour les passifs) Quand le bot doit-il vérifier ce skill ?
+   * condition: (Optionnel) Le déclencheur est-il soumis à une condition ?
+   * effet: Qu'est-ce que la compétence fait ?
+   * cout: (Pour les actifs) Qu'est-ce que ça coûte de l'utiliser ?
+3. Exemples de Compétences
+Voici comment on traduit tes concepts dans ce langage :
+Exemple 1 : Compétence Passive (Régénération)
+Une compétence d'armure qui soigne le porteur à chaque tour.
+{
+  "id": "regen_pv_1",
+  "nom": "Régénération Mineure",
+  "type": "passive",
+  "description": "Restaure 5 PV au début de chaque tour.",
+  "mecanique": {
+    "declencheur": "debut_tour_joueur",
+    "condition": null,
+    "effet": {
+      "type": "soin_pv",
+      "valeur": 5
+    },
+    "cout": null
+  }
+}
+
+ * Le bot lit : Au "debut_tour_joueur", appliquer un "soin_pv" de 5.
+Exemple 2 : Compétence Active (Arme)
+L'effet de l'arme CRYONIA ❄.
+{
+  "id": "souffle_glace_1",
+  "nom": "Souffle Glacé",
+  "type": "active",
+  "description": "Libère un souffle glacé qui gèle l'adversaire.",
+  "mecanique": {
+    "declencheur": "commande_utilisateur",
+    "condition": null,
+    "effet": {
+      "type": "appliquer_statut",
+      "statut": "GELÉ",
+      "duree_tours": 1
+    },
+    "cout": {
+      "type": "cooldown",
+      "tours": 4
+    }
+  }
+}
+
+ * Le bot lit : Si le joueur tape !souffle_glace, vérifier le cooldown. Si c'est bon, appliquer le statut "GELÉ" à l'ennemi et lancer un cooldown de 4 tours.
+Exemple 3 : Compétence Passive (Conditionnelle)
+Une compétence de rune qui augmente l'attaque quand les PV sont bas.
+{
+  "id": "fureur_du_blesse_1",
+  "nom": "Fureur du Blessé",
+  "type": "passive",
+  "description": "Augmente l'Attaque de 10 points quand les PV sont sous 25%.",
+  "mecanique": {
+    "declencheur": "verification_continue",
+    "condition": {
+      "stat": "pv_pourcentage",
+      "operateur": "<",
+      "valeur": 25
+    },
+    "effet": {
+      "type": "buff_stat",
+      "stat": "attaque",
+      "valeur": 10
+    },
+    "cout": null
+  }
+}
+
+ * Le bot lit : À chaque instant ("verification_continue"), vérifier si les pv_pourcentage sont < à 25. Si oui, appliquer un buff_stat de 10 à l'Attaque.
+4. Intégration dans les Objets (Armes, Armures)
+Maintenant, la structure de tes armes et armures devient incroyablement simple.
+Modification de armes.json :
+On remplace l'objet capacite par un simple ID.
+Avant (CRYONIA ❄) :
+"capacite": {
+  "nom": "Souffle Glacé",
+  "type_skill": "active",
+  "description": "souffle glacé 1 fois tous les 4 tours"
+}
+
+Après :
+"capacite_active_id": "souffle_glace_1"
+
+Exemple armures.json :
+{
+  "nom": "Plastron de Vitalité",
+  "rang": "C",
+  "resistance": 40,
+  "competences_passives_ids": [ "regen_pv_1" ]
+}
+
+5. Algorithme (Comment le bot gère tout ça)
+ * Au Démarrage du Bot : Le bot charge data/competences.json une seule fois dans sa mémoire (le "Compendium").
+ * Au Début du Combat :
+   * Le bot scanne tout l'équipement du Joueur 1 (arme, armure, runes...).
+   * Il collecte tous les ID de compétences (ex: ["souffle_glace_1", "regen_pv_1", "fureur_du_blesse_1"]).
+   * Il crée une liste des compétences actives et passives du joueur pour ce combat en allant chercher les définitions complètes dans le Compendium.
+ * Pendant le Combat (lib/combatLogic.js) :
+   * Début de tour ? Le bot parcourt la liste des passifs du joueur et exécute tous ceux dont le declencheur est "debut_tour_joueur".
+   * Action !souffle_glace ? Le bot vérifie si "souffle_glace_1" est dans la liste des actifs du joueur, puis applique l'effet et le coût.
+   * Le joueur prend des dégâts ? Le bot parcourt les passifs et vérifie les conditions (ex: "fureur_du_blesse_1").
+C'est un système robuste qui centralise toute la logique de combat en un seul endroit.
+
+
+Exactement. Tu as mis le doigt sur un point crucial de l'ergonomie.
+Le joueur n'utilisera jamais l'ID ("souffle_glace_1"). Le joueur écrira le nom de la compétence.
+Notre système gère déjà cela. L'ID est pour la base de données, mais le champ "nom" est pour l'utilisateur.
+Voici comment le bot fera le lien :
+1. La "Table de Correspondance" (Lookup Map)
+Au démarrage du bot, en plus de charger le Compendium des compétences, il va créer un "dictionnaire" spécial pour les compétences actives. Ce dictionnaire fera le lien entre le nom lisible et l'ID de la compétence.
+ * "souffle glacé" (nom en minuscule) -> "souffle_glace_1" (ID)
+ * "coup puissant" (nom en minuscule) -> "coup_puissant_ares_1" (ID)
+ * "boule de feu" (nom en minuscule) -> "sort_feu_1" (ID)
+2. L'Algorithme de Reconnaissance (dans combatManager.js)
+Voici ce qui se passe quand le bot reçoit un message pendant un combat :
+PROCÉDURE traiterMessageDeCombat(messageUtilisateur)
+DEBUT
+    
+    // 1. Nettoyer l'entrée de l'utilisateur
+    // On enlève le "!" (si vous l'utilisez) et on met tout en minuscule
+    // "   !Souffle Glacé   " -> "souffle glacé"
+    commande = nettoyerMessage(messageUtilisateur) 
+    
+    // 2. Vérifier si c'est une compétence active
+    // Le bot consulte sa "Table de Correspondance"
+    competenceID = trouverIDparNom(commande) 
+    
+    // 3. Si une correspondance est trouvée...
+    SI competenceID N'EST PAS NUL ALORS
+        
+        // 4. Vérifier si le joueur POSSÈDE cette compétence
+        SI joueurActif.competencesActives CONTIENT competenceID ALORS
+            
+            // 5. Transmettre l'ID à la logique de combat
+            // C'est combatLogic qui gérera les cooldowns et les effets
+            resultat = combatLogic.executerCompetence(joueurActif, competenceID)
+            EnvoyerMessage(resultat.messageLog)
+            
+        SINON
+            EnvoyerMessage("Vous ne possédez pas cette compétence.")
+        FIN SI
+        
+    SINON
+        // Ce n'est pas une compétence connue, c'est une action de combat normale
+        // (ex: "frappe la tête", "esquive")
+        resultat = combatLogic.executerActionNormale(joueurActif, messageUtilisateur)
+        EnvoyerMessage(resultat.messageLog)
+    FIN SI
+
+FIN PROCÉDURE
+
+Conclusion :
+ * L'ID (souffle_glace_1) est la clé interne pour le code.
+ * Le Nom (Souffle Glacé) est la clé externe pour l'utilisateur.
+Le bot fera la traduction automatiquement à chaque message. C'est le seul moyen de garder un code propre tout en ayant une interface utilisateur intuitive.
+
+En plus des deux types de compétences (actives et passives), on a 3 catégories de compétences: offensives, défensives et mixtes 
+
+Tout ce qui n'est pas offensif et défensif est mixte
+
+Les compétences peuvent donc suivre le système de classification par faction et ont un rang qui définit leur nombre d'utilisation
+
+Rang E: 3 utilisations 
+Rang D: 6 utilisations 
+Rang C: 12 utilisations 
+Rang B: 24 utilisations 
+Rang A: 48 utilisations 
+Rang S: 96 utilisations 
+
+Nb: selon les compétences, le nombre d'utilisations peut varier 
+
+Les compétences acquises avec les Runes disparaissent avec le temps 
+
+Rang E: 1 semaine 
+Rang D: 2 semaines 
+Rang C: 1 mois 
+Rang B: 2 mois 
+Rang A: 4 mois 
+Rang S: 8 mois 
+
+On ne peut conserver que 3 compétences acquises par runes, pour en obtenir de nouvelles, on doit se séparer de celle(s) qu'on a déjà
+
+C'est une excellente stratification. Tu ajoutes des dimensions vitales pour l'équilibrage et la gestion à long terme du joueur.
+Nous allons intégrer ces nouvelles règles directement dans la structure de notre Compendium de Compétences (data/competences.json).
+1. La Nouvelle Structure de Données (Traduction en langage Bot)
+Voici la structure mise à jour pour une compétence dans le fichier data/competences.json, incluant tous tes nouveaux ajouts (Catégorie, Faction, Rang).
+{
+  "id": "boule_de_feu_1",
+  "nom": "Boule de Feu",
+  "rang": "D",
+  "type": "active",
+  "categorie": "offensif",
+  "faction": {
+    "allowed": ["Hécate"],
+    "excluded": []
+  },
+  "description": "Lance une boule de feu qui inflige des dégâts de brûlure.",
+  "mecanique": {
+    "declencheur": "commande_utilisateur",
+    "condition": null,
+    "effet": {
+      "type": "degats_magiques",
+      "valeur": 15,
+      "statut_applique": "BRÛLURE"
+    },
+    "cout": {
+      "type": "utilisation",
+      "cout_mana": 10
+    }
+  }
+}
+
+2. Explication de l'Intégration
+a. Catégorie et Faction
+ * "categorie": "offensif" : C'est un simple champ de métadonnées. Le bot l'utilisera pour les commandes !fiche ou pour trier les compétences.
+ * "faction": { ... } : J'ai ajouté l'objet de restriction de faction, exactement comme pour les armes. Le bot vérifiera que la faction du joueur correspond avant de lui permettre d'apprendre ou d'utiliser la compétence.
+b. Rang, Utilisations et Coûts
+C'est le point le plus important. Le Rang est la "source de vérité" qui dicte tout.
+ * Compétences Actives (Armes, Skills de Faction...)
+   * Le bot lira le "rang": "D".
+   * Au début du combat, il créera une variable pour ce joueur : charges_boule_de_feu: 6.
+   * À chaque utilisation, il décrémentera ce compteur.
+   * Note (pour ta remarque "le nombre d'utilisations peut varier") : Si une compétence de Rang D doit avoir 8 utilisations au lieu de 6, nous ajouterons un champ d'override : "utilisations_override": 8.
+ * Compétences Passives (Armures...)
+   * Le rang n'affecte pas les "utilisations", mais il peut affecter la puissance de l'effet.
+   * Exemple : regen_pv_rang_E soignera 5 PV, regen_pv_rang_C soignera 15 PV. Ce sera géré en créant des compétences différentes (id: "regen_pv_E", id: "regen_pv_C").
+3. L'Algorithme des Runes (Durée et Limite)
+Tu as raison, la logique des Runes est différente. Elle n'est pas stockée dans data/competences.json (le dictionnaire), mais dans la fiche du joueur (ex: data/joueurs/joueur_id.json).
+a. La Structure de Données du Joueur
+Le joueur.json aura un nouveau champ pour gérer les 3 "slots" de runes :
+{
+  "nom": "JoueurX",
+  "faction": "Arès",
+  "inventaire": [ ... ],
+  "competences_runes": [
+    {
+      "id": "regen_pv_1",
+      "rang": "E",
+      "date_acquisition": "2025-10-23T10:00:00Z",
+      "date_expiration": "2025-10-30T10:00:00Z"
+    },
+    {
+      "id": "fureur_du_blesse_1",
+      "rang": "C",
+      "date_acquisition": "2025-09-30T14:00:00Z",
+      "date_expiration": "2025-10-30T14:00:00Z"
+    }
+  ]
+}
+
+b. L'Algorithme du Bot
+1. Tâche de Fond (Vérification des Expirations) :
+ * Toutes les heures (ou au démarrage du bot), le bot scannera tous les fichiers joueurs.
+ * Il comparera date_expiration avec la date actuelle.
+ * Si une compétence est expirée, il l'enlèvera de la liste competences_runes du joueur et lui enverra un message : "Votre compétence de rune 'Régénération Mineure' s'est estompée."
+2. Commande !utiliser_rune (Apprentissage) :
+ * Le joueur tente d'apprendre une nouvelle rune (disons, Rang D).
+ * Étape 1 (Limite) : Le bot vérifie joueur.competences_runes.length.
+   * Si c'est 3 ou plus, il répond : "Limite de 3 compétences de runes atteinte. Oubliez-en une avec !oublier_rune [nom]."
+ * Étape 2 (Ajout) : Si la place est libre, le bot :
+   * Calcule la date d'expiration (Date actuelle + 2 semaines pour le Rang D).
+   * Ajoute la nouvelle compétence à la liste competences_runes du joueur.
+   * Répond : "Vous avez appris 'Nouveau Skill'. Il disparaîtra dans 2 semaines."
+
+Toutes les compétences ne s'activent pas dans 100% des cas 
+
+Les chances de réussites évoluent en fonction du rang
+
+Rang E: 20% de chances de réussite 
+Rang D: 40% de chances de réussite
+Rang C: 60% de chances de réussite
+Rang B: 70% de chances de réussite
+Rang A: 80% de chances de réussite
+Rang S: 90% de chances de réussite
+
+Compris. C'est un ajout crucial pour l'équilibrage du jeu. Une compétence de Rang S ne doit pas seulement être puissante, elle doit aussi être fiable.
+Nous n'avons rien à changer dans le data/competences.json que nous avons conçu. Le champ "rang" que nous avons déjà inclus est suffisant.
+Le changement se situe entièrement dans la logique du bot, plus précisément dans lib/combatLogic.js.
+Voici comment nous allons l'implémenter.
+1. Dictionnaire de Réussite (Logique Interne du Bot)
+D'abord, nous allons "coder en dur" ce tableau de chances de réussite dans lib/combatLogic.js. Ce sera la référence que le bot utilisera.
+// Dans lib/combatLogic.js
+const CHANCES_REUSSITE_PAR_RANG = {
+    'E': 20,
+    'D': 40,
+    'C': 60,
+    'B': 70,
+    'A': 80,
+    'S': 90
+};
+
+2. L'Algorithme du "Jet de Réussite" 🎲
+Nous créons une nouvelle fonction utilitaire qui sera appelée chaque fois qu'une compétence tente de s'activer.
+/* * Nouvelle fonction dans lib/combatLogic.js
+ * Elle vérifie si une compétence réussit son activation.
+ */
+FONCTION verifierReussite(rangDeLaCompetence)
+DEBUT
+    
+    // 1. Trouver le % de chance de base
+    chanceDeBase = CHANCES_REUSSITE_PAR_RANG[rangDeLaCompetence]
+    
+    // Si la compétence n'a pas de rang défini (ex: attaque de base), on assume 100%
+    SI chanceDeBase EST INDÉFINI ALORS
+        RETOURNER VRAI (Succès automatique)
+    FIN SI
+    
+    // 2. Lancer un dé de 100
+    jetAleatoire = ALEATOIRE(1, 100)
+    
+    // 3. Comparer le jet au seuil de réussite
+    SI jetAleatoire <= chanceDeBase ALORS
+        RETOURNER VRAI (Succès 🎯)
+    SINON
+        RETOURNER FAUX (Échec ❌)
+    FIN SI
+
+FIN FONCTION
+
+3. Intégration dans la Logique de Combat
+C'est l'étape la plus importante. Nous devons insérer ce "jet de réussite" au bon moment.
+Pour les Compétences Actives (ex: !boule_de_feu)
+La règle d'or est : Le coût (mana, utilisation) est payé d'abord, puis le jet de réussite est lancé. C'est ce qui crée la tension. Si tu rates, tu perds quand même ta ressource.
+PROCÉDURE executerCompetenceActive(joueur, competence)
+DEBUT
+    
+    // 1. Vérifier les coûts (mana, cooldown, charges d'utilisation)
+    SI le joueur NE PEUT PAS payer le coût ALORS
+        RETOURNER "Vous n'avez pas les ressources nécessaires."
+    FIN SI
+    
+    // 2. Payer le coût (!!!)
+    consommerRessources(joueur, competence.mecanique.cout)
+    
+    // 3. NOUVELLE ÉTAPE : Lancer le dé de réussite
+    reussite = verifierReussite(competence.rang)
+    
+    SI reussite == FAUX ALORS
+        RETOURNER "Échec ! Votre compétence '" + competence.nom + "' rate..."
+    FIN SI
+    
+    // 4. Si on arrive ici, c'est un succès. Appliquer l'effet.
+    appliquerEffet(joueur, competence.mecanique.effet)
+    RETOURNER "Succès ! '" + competence.nom + "' s'active !"
+
+FIN PROCÉDURE
+
+Pour les Compétences Passives (ex: Régénération)
+C'est similaire. Quand le déclencheur est atteint (ex: "début de tour"), le bot fait le jet de réussite avant d'appliquer l'effet.
+PROCÉDURE verifierPassifsAuDebutDuTour(joueur)
+DEBUT
+    POUR chaque competence DANS les passifs du joueur
+    DEBUT
+        // 1. Vérifier si c'est le bon déclencheur
+        SI competence.mecanique.declencheur == "debut_tour_joueur" ALORS
+            
+            // 2. NOUVELLE ÉTAPE : Lancer le dé de réussite
+            reussite = verifierReussite(competence.rang)
+            
+            SI reussite == VRAI ALORS
+                // 3. Appliquer l'effet
+                appliquerEffet(joueur, competence.mecanique.effet)
+                AjouterAuLog(competence.nom + " s'active !")
+            // SI FAUX, on ne fait rien (le passif ne s'active pas ce tour-ci)
+            FIN SI
+        FIN SI
+    FIN POUR
+FIN PROCÉDURE
+
+Note Importante : L'Override (La Règle d'Exception)
+Que faire si une compétence de Rang E doit réussir à 100% ? (Ex: un soin de base).
+Nous pouvons ajouter un champ optionnel dans data/competences.json :
+"mecanique": {
+    "taux_reussite_override": 100, // Ce champ ignore le rang
+    "declencheur": "..."
+}
+
+La fonction verifierReussite vérifiera d'abord si ce champ existe. Si oui, elle l'utilise. Sinon, elle utilise le rang.

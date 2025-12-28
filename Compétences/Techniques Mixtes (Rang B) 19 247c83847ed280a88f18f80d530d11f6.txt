@@ -1,0 +1,49 @@
+# Techniques Mixtes (Rang B) : 19
+
+Description: Cette page regroupe les techniques Mixtes de rang B.
+
+**1. Trombe d’Argile** : Le sol autour de l’utilisateur devient boueux, ralentissant les déplacements de tous, mais amortissant aussi les chocs et réduisant les dégâts de chute ou d’impact. Mana : 14 PM
+
+**2. Voix des Fourrés** : Permet de transmettre des messages vocaux à travers la végétation dans un rayon de 300 mètres. Tous les végétaux deviennent des relais. Mana : 13 PM. Communication furtive.
+
+**3. Carcan des Âmes Simulées** : Crée autour de l’utilisateur trois copies spectrales qui suivent les volontés de l'utilisateur. Mana : 15 PM (5 PM par clone). Doute stratégique, leurre, diversion.
+
+**4. Joug de la Bête** : L’utilisateur peut invoquer une bête sauvage (ours, wyverne, loup géant, etc.) avec des dimensions non exagérées. Mana : 12 PM
+
+**5. Braise Lente** : Une chaleur invisible se diffuse lentement dans une zone de 10 mètres, rendant les armes métalliques brûlantes au bout de 2 tours. Mana : 17 PM 
+
+**6. Langue d’Anathème** : Pendant deux tours, toute personne qui parle dans un rayon de 15 mètres voit ses mots se transformer en langue incompréhensible, sauf pour le lanceur. Mana : 15 PM
+
+**7. Prière Fossile** : Fait apparaître un autel en pierre ancienne, indestructible, qui amplifie ou affaiblit certains sorts selon l’élément dominant de la zone (feu, vent, cendre…). Mana : 18 PM
+
+**8. Bris de Convention** : L’utilisateur peut, pendant 3 tours, détourner les effets d’un sort défensif (le sien ou celui d’un autre) pour en faire une attaque instable. Mana : 16 PM
+
+**9. Miroir des Silences** : Pose au sol un cercle invisible qui, pendant 2 tours, reflète tout bruit produit dans un autre endroit aléatoire à 20 mètres.
+
+Mana : 15 PM
+
+**10. Faim du Néant** : Toute source magique mineure (torche enchantée, arme runique de bas niveau…) dans un rayon de 5 mètres est désactivée pendant un tour, et l’utilisateur regagne 3 PM par objet affecté.
+
+Mana : 14 PM
+
+**11. Flot de Nacre** : Une onde argentée balaye le sol, effaçant toutes traces de pas, d’odeur ou de sang sur 30 mètres. Mana : 12 PM
+
+**12. Cicatrice de Pacte** : L’utilisateur et un allié se lient pour 3 tours : si l’un reçoit un buff ou un soin, l’autre en bénéficie aussi, mais ils partagent aussi les malus. Mana : 16 PM
+
+**13. Tapisserie** : Change temporairement l’apparence de l’environnement (mur devient ciel, sol devient cascade, etc.) dans un rayon de 5 mètres. Mana : 17 PM
+
+**14. Balancier du Mépris** : Relance tous les effets de boost ou malus sur une cible (alliée ou ennemie), positifs comme négatifs. Mana : 18 PM
+
+Utilité : Reset stratégique. Peut être bien ou catastrophique.
+
+**15. Mue de Brèche** : Permet de traverser un mur, une porte ou une surface rigide non magique, mais laisse une empreinte de magie détectable. Mana : 19 PM
+
+**16. Semence d’Harmonie** : Plante une graine magique dans le sol qui, au bout de 2 tours, pousse en un arbre apaisant : il calme les tensions (interrompt les combats sauf volonté active). Mana : 20 PM
+
+**17. Tempest :** Permet de contrôler de l'eau à sa guise dans un rayon de 7 mètres. Mana : 8 PM par seconde
+
+**18. Foulée d’Hallali :** Tous les bruits de l’utilisateur (mouvement, respiration) sont amplifiés comme une charge de cavalerie pour une durée de 2 tours.
+
+Mana : 14 PM. Provoque la peur pendant deux tours.
+
+**19. Crypte Portative** : Permet de créer un petit caveau magique dans le sol, de 2 mètres de profondeur, pouvant contenir un corps, un objet, ou une créature. Disparaît après 24h. Mana : 18 PM. Cachette, sépulture, enfermement temporaire.

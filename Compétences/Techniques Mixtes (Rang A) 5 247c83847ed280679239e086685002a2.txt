@@ -1,0 +1,37 @@
+# Techniques Mixtes (Rang A) : 5
+
+Description: Cette page regroupe les techniques Mixtes de Rang A : 5
+
+**1.Dominium Fulguris (Contrôle de la Foudre)**
+
+Type : Magie métissée (Foudre)
+
+Pendant 20 secondes, l’utilisateur devient le conducteur suprême de tout courant électrique dans un rayon de 30 mètres. Il peut attirer, repousser, rediriger ou absorber toute source de foudre (magique ou naturelle). Permet de canaliser la foudre à travers les armes, de créer des champs électriques, ou de désarmer magiquement un ennemi en détournant son incantation. Affecte aussi l’équipement métallique des ennemis.
+
+Durée : 20 sec. Coût : 32 PM
+
+**2.Mantellum Ignilave (Contrôle de la Lave)**
+
+Type : Lave
+
+L’utilisateur fait émerger sous ses pieds un manteau de lave vivante qu’il peut modeler, propulser, solidifier ou liquéfier à volonté. Il devient intouchable par la chaleur ou la roche fondue, et peut marcher sur ou sous la lave. Peut emprisonner, ériger des murs de magma, lancer des geysers ou créer des pièges. Durée : 18 sec. Coût : 34 PM
+
+Danger : Affecte l’environnement, y compris les alliés si mal contrôlé.
+
+**3.Cercle de Virelie (Contrôle du Vent et du Son)**
+
+Type : Vent + Vibration
+
+L’utilisateur entre dans une transe auditive, et maîtrise toutes les vibrations de l’air dans un rayon de 25 mètres. Peut créer des zones de silence, des lames sonores tranchantes, ou faire imploser des tympans. Peut manipuler le son de sa voix pour détourner l’attention, ou imiter des bruits à distance. Rend toute communication ennemie impossible dans la zone. Durée : 25 sec. Coût : 31 PM
+
+**4 Cryosphère (Contrôle de la Glace vive)**
+
+Type : Eau + Vent, Glace complexe
+
+L’utilisateur invoque une sphère de glace intelligente orbitant autour de lui, capable d’agir par anticipation. Elle peut protéger, geler instantanément une attaque, ou lancer des pics vers plusieurs cibles. La glace générée est vivante et réactive, façonnée à la pensée. Elle peut créer des copies illusoires en givre dense, trompant la vision. Durée : Jusqu’à destruction ou 20 sec Coût : 30 PM. Limite : Une seule sphère active.
+
+**5 Incandescence Verte**
+
+Type : Feu + Plante
+
+L’utilisateur provoque une germination accélérée d'arbres incandescents, créant une végétation noire et de la fumée qui poussent à vue d’œil. Ces plantes brûlantes rampent, piègent, étranglent ou explosent. Peut réactiver les restes d’une ancienne forêt brûlée ou créer un dôme végétal vivant. Permet aussi de se régénérer lentement si l’on reste en contact avec le sol cendré. Durée : 22 sec. Coût : 33 PM. Risque : Instable si utilisé en zone humide ou sous vent fort.

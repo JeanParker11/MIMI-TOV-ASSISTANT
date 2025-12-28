@@ -1,0 +1,83 @@
+Voici le contenu des images retranscrit à l'écrit:
+GAMEPLAY & MECANISMES
+Avant de commencer, il faut savoir que chaque faction de Valoria a un potentiel unique :
+ * Hermès : rapides et agiles.
+ * Atlas : experts en destruction.
+ * Hécate : maîtres de la magie et des invocations.
+ * Arès : polyvalents, sans avantage particulier.
+Tous les combattants, quelle que soit leur faction, peuvent atteindre l'éveil ou l'état de libération au troisième tour.
+L'éveil est une phase où les capacités d'un combattant sont intensifiées jusqu'à son paroxysme. Mais cela n'est possible qu'après un temps de préparation.
+L'éveil est progressif et atteint son apogée au troisième tour pour ne perdurer que deux tours ensuite. Et ce processus d'amplification affecte trois aspects principaux : la vitesse, l'instinct et la magie.
+La vitesse
+La vitesse joue un rôle crucial dans les combats. Elle détermine qui a l'avantage en attaque rapide, en esquive et surtout en Réaction. Les combattants les plus rapides ont clairement un avantage significatif dans tous les aspects du déplacement lors d'un combat. À Valoria, chaque faction a une vitesse maximale qu'elle ne peut initialement excéder et la faction Hermès se distingue le plus par sa focalisation sur la vitesse et la précision des attaques, compensant au passage, leur manque de puissance brute.
+Les règles liées à la vitesse sont simples mais nécessitent une compréhension approfondie et une pratique régulière selon votre faction pour maîtriser le sujet.
+L'instinct primaire (La force)
+À Valoria, l'Instinct ou la force brute joue également un rôle décisif dans l'issue des combats. Peu importe la vitesse de votre adversaire, une frappe bien placée au bon moment et au bon endroit peut aisément le désorienter voire l'annihiler. Ici ce sont les Atlas qui se distinguent surtout par cette brutalité, allant plus loin jusqu'à privilégier le maniement des armes lourdes afin d'infliger encore plus de dégâts. Leurs coups affectent puissamment leurs ennemis l'environnement tout autour, au détriment de quelques points en vitesse. L'impact des coups que vous attribuez et que vous recevez est immédiatement retiré de votre force. Par exemple, un coup de 5 Rs réduit votre force de 5. Il en sera de même si vous vous prenez une raclée.
+Rs/c : Resolium par coup.
+La magie
+La magie est le troisième élément qui peut impacter l'issue d'un combat de manière significative. Elle est étroitement liée au statistique du pouvoir et c'est la caractéristique fondamentale de la faction Hécate. Le fort de cette faction réside dans la manipulation et dans l'utilisation avancée de la magie afin de se défendre contre leurs adversaires.
+Chaque fois que vous lancez un sort, cela aura pour effet de diminuer votre réservoir de pouvoir. Par exemple, lancer un sort de 5 Résolium réduit votre pouvoir de 5. La portée des sorts est déterminée soit par vos limites par faction (Par exemple, un sort de 7 Rs aura une portée de 7 mètres) soit prédéfinie par les Runes.
+Tableaux récapitulatifs:
+| Faction | V max | Conso |
+|---|---|---|
+| Hermes | 9 m/s | 9 Pf |
+| Ares | 8 m/s | 8 Pf |
+| Hecate | 7 m/s | 7 Pf |
+| Atlas | 7 m/s | 7 Pf |
+| Tableau sur la vitesse |  |  |
+| Faction | Coup max | Conso |
+|---|---|---|
+| Atlas | 9 | 9 Pf |
+| Ares | 8 | 8 Pf |
+| Hecate | 7 | 7 Pf |
+| Hermes | 7 | 7 Pf |
+| Tableau sur la force |  |  |
+| Faction | V max | Conso |
+|---|---|---|
+| Hecate | 9 | 9 PM |
+| Ares | 8 | 8 PM |
+| Atlas | 7 | 7 PM |
+| Hermes | 7 | 7 PM |
+| Tableau sur la magie |  |  |
+LES DIFFÉRENTS TYPES DE DÉGÂTS
+Les dégâts simples
+Ce sont les dégâts qui accompagnent généralement les coups simples et les entailles, les percées ou les tranchées.
+Les dégâts de percussion
+Les dégâts de percussion se produisent lorsqu'un combattant est projeté ou se heurte violemment contre un objet ou une surface (par exemple, un mur, un sol dur, une structure). Ce type de collision inflige des dégâts supplémentaires en plus des dégâts directs de l'attaque initiale. Lorsqu'un combattant est projeté contre une surface, il subit des dégâts équivalents à une fraction du Resolium de la surface impactée.
+| Vitesse et force de projection minimale | 5 m/s - 7 Rs |
+|---|---|
+| Pourcentage de dégât | 50% de la structure de percussion |
+Les étourdissements
+L'étourdissement est un état temporaire ou définitif de désorientation et de perte de capacités normales, souvent causé par des coups critiques ou à des points sensibles, une surcharge sensorielle, une fatigue extrême ou encore grâce à un sort de paralysie. Cet état peut grandement affecter la performance d'un combattant en réduisant sa capacité à se défendre ou à attaquer efficacement.
+Coup Critique Cumulatif
+En recevant un coup critique, vous avez 20 % de chances de vous faire étourdir. Si vous recevez trois coups critiques simultanément, le troisième entraîne automatiquement un étourdissement d'un tour. Et comme rappel, seuls les coups supérieurs ou égales à 7 sont considérés comme critique.
+Coup au Point Sensible
+En recevant un coup à un point sensible, vous avez plus de 50 % de chances de vous faire étourdir. Un deuxième coup sur le même point provoquera un étourdissement de deux tours. Les Points Sensibles sont : Le Crâne (surtout au niveau des tempes), la Gorge, le Plexus solaire, les seins (femmes uniquement) le Genoux, les Côtes, les Poignets, les Chevilles, l'Appareil reproducteur.
+Effet d'étourdissement en fonction de l'esprit
+Si vos points en Esprit sont inférieurs ou égal à 20, vos chances de vous faire étourdir augmentent encore plus :
+Coup Critique : 40 % de chances. Tout coup supplémentaire provoque un étourdissement.
+Coup au point sensible : 90 % de chances d'étourdissement.
+La peur
+Une fois que les points d'esprit d'un participant chutent à 10 % ou moins, ce dernier commence à ressentir de la peur ainsi que le désir de survivre (s'il n'est pas déjà mort). Dans cet état, toutes les offensives de la personne concernée ne fonctionnent qu'à 20 %.
+LE TEMPS DE REACTION
+Le temps de réaction représente la rapidité avec laquelle un joueur perçoit une menace et agit en conséquence. En combat, c'est le temps que prends un joueur avant de riposter à une attaque qu'il a perçu. Il détermine la capacité à esquiver, bloquer ou contre-attaquer avant qu'il ne soit trop tard.
+À Chaque vitesse est attribué un temps de réaction.
+| Vitesse | Temps de réaction |
+|---|---|
+| 9 m/s | 0,2 s |
+| 8 m/s | 0,3 s |
+| 7 m/s | 0,4 s |
+| 6 m/s | 0,5 s |
+| 5 m/s | 0,6 s |
+Plus votre vitesse est élevée, plus votre temps de réaction est court. À 9 m/s, vous réagissez en 0,2 seconde face à une attaque. Mais à mesure que votre vitesse diminue, votre temps de réaction s'allonge, laissant moins de marge pour esquiver ou contre-attaquer.
+PRÉMICES DU DUEL
+Le duel doit être fait avec l'accord des deux parties. L'initiateur du combat devient alors le joueur 1. Chaque joueur est ensuite prié de remettre sa fiche au modérateur avant de se positionner dans l'arène.
+La distance initiale entre les combattants est de 15 mètres.
+Le joueur 1 commence et le joueur 2 enchaine suite aux analyses et au next du modérateur.
+La passation de deux pavés lors d'un duel font 1 tour de jeu (tdj).
+Le combat peu importe sa nature un duel termine au 6 ième Tdj max avec le pavé du joueur 2.
+La latence est de 6 minutes + 2 minutes additionnels ce qui fait un total de 8 minutes par pavé.
+INTERDICTIONS FORMELLES
+ * Le Godmoding : Forcer le jeu en prenant un contrôle injustifié sur le personnage adverse ou les conséquences d'une action.
+ * Le Metagaming : Utiliser des informations hors de sa portée pour justifier son action. Cela va également dans le sens de Valoria et de ses règles.
+ * Le Time's up (Latence) : Chaque joueur dispose de 6 minutes pour rédiger son pavé, 2 minutes pour le relire et l'envoyer (ce qui fait 8 minutes). Une fois ces 8 minutes dépassés sans bouger, le joueur est considéré comme immobile et il subit de plein fouet tout assaut qui pointait vers lui.

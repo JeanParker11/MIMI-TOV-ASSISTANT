@@ -1,0 +1,578 @@
+#################################################################
+#
+#   VALORIA - DOCUMENT DES RÈGLES DE LA PHYSIQUE DE COMBAT
+#
+#################################################################
+
+### 1. PRINCIPES FONDAMENTAUX
+
+#### 1.1. La Force : Jauge de Fatigue et de Puissance
+La statistique "Force" (PF) est la ressource centrale du combat physique. Elle sert à la fois de jauge de puissance et d'endurance.
+- *Dépense Offensive :* Chaque attaque coûte un montant de PF que l'attaquant choisit d'investir.
+- *Dépense Défensive :* Bloquer, parer ou même subir un coup puissant consomme également des PF.
+- *Épuisement :* Un combattant dont la Force atteint un niveau bas ne peut ni frapper fort, ni se défendre efficacement.
+
+#### 1.2. La Résistance par Zone (Rs)
+Chaque partie du corps d'un combattant possède une valeur de Résistance (Rs) qui représente sa capacité à encaisser un coup. Les zones sont : Tête, Torse, Bras (x2), Jambes (x2).
+- *Calcul de Base :* La Rs est un pourcentage de la Force maximale du personnage.
+    - Torse : 35%
+    - Tête : 20%
+    - Chaque Jambe : 15%
+    - Chaque Bras : 7.5%
+- *Arrondi :* Toutes les valeurs calculées sont arrondies à l'entier le plus proche.
+- *Modificateurs de Faction :*
+    - *Atlas :* +15% sur toutes les valeurs de Rs finales.
+    - *Hermès :* -10% sur toutes les valeurs de Rs finales.
+
+#### 1.3. Le "Coup max" par Faction
+Chaque faction a une limite de PF qu'elle peut investir dans une seule attaque :
+- *Atlas :* 9 PF
+- *Arès :* 8 PF
+- *Hécate & Hermès :* 7 PF
+
+---
+
+### 2. LOGIQUE DES INTERACTIONS PHYSIQUES
+
+#### 2.1. Corps vs Corps
+- *Coup Critique (Force_Utilisée > Rs_Zone) :*
+    - L'attaque passe la garde et inflige des dégâts aux PV.
+    - Le défenseur perd autant de PF que la Force_Utilisée par l'attaquant.
+    - L'attaquant perd les PF utilisés.
+    - Déclenche un test d'étourdissement si la zone est un point sensible.
+
+- *Parade Réussie (Force_Utilisée = Rs_Zone) :*
+    - Aucun dégât aux PV.
+    - L'attaquant ET le défenseur perdent la Force_Utilisée en PF.
+    - La Rs_Zone du défenseur baisse de 1 point (sauf pour Arès en Éveil).
+
+- *Coup Faible (Force_Utilisée < Rs_Zone) :*
+    - Aucun dégât aux PV du défenseur.
+    - L'attaquant subit des dégâts de recul (Rs_Zone - Force_Utilisée).
+    - L'attaquant ET le défenseur perdent la Force_Utilisée en PF.
+
+#### 2.2. Corps vs Objet
+- *Force > Rs_Objet :* L'objet se brise.
+- *Force = Rs_Objet :* L'objet résiste, pas de conséquences.
+- *Force < Rs_Objet :* L'objet résiste, l'attaquant subit des dégâts de recul.
+
+#### 2.3. Objet vs Objet (Logique des Armes Contondantes)
+- *Étape 1 : Vérification de Surcharge :* Si Force_Utilisée > 2 * Rs_Arme, l'arme se brise avant l'impact.
+- *Étape 2 : Résolution de l'Impact :*
+    - **Arme Trop Faible (Rs_Arme < Rs_Cible) :** L'arme se brise. Le porteur subit des dégâts de recul (Rs_Cible - Rs_Arme).
+    - **Arme Supérieure (Rs_Arme > Rs_Cible) :** La cible subit des dégâts (Rs_Arme + Force_Utilisée). L'arme perd 1 Rs d'usure.
+    - **Égalité (Rs_Arme = Rs_Cible) :** L'arme et la cible perdent 2 Rs d'usure.
+
+---
+
+### 3. CLASSIFICATION DES ARMES ET EFFETS
+
+#### 3.1. Armes Contondantes (Masses, Marteaux)
+- *Effet "Écrasement" :* Infligent des dégâts de percussion supplémentaires égaux à 20% de la Rs de l'arme.
+- *Spécialité :* Provoquent facilement des projections et des tests d'étourdissement.
+
+#### 3.2. Armes Tranchantes (Épées, Haches)
+- *Effet "Pénétration d'Armure" :* Ignore un % de la Rs_Zone de la cible, basé sur le grade de l'arme.
+    - *Grade E [1-5 Rs] :* 10%
+    - *Grade D [6-15 Rs] :* 25%
+    - *Grade C [16-25 Rs] :* 40%
+    - *Grade B [26-35 Rs] :* 60%
+    - *Grade A [36-45 Rs] :* 80%
+    - *Grade S [46-100 Rs] :* 100%
+- *Effet "Saignement" :* Si l'attaque inflige des dégâts aux PV, la cible perd 5% de ses PV max à son prochain tour.
+- *Effet "Hémorragie" :* Après 3 saignements, la cible perd 10% de ses PV actuels à chaque action entreprise.
+
+#### 3.3. Armes Perforantes (Lances, Dagues, Projectiles)
+- *Étape 1 : Condition d'Engagement :* L'attaque n'a lieu que si Force_Impact > Rs_Zone * 0.10. Sinon, elle ricoche.
+- *Étape 2 : Résolution :*
+    - **Perforation (Force_Impact > Rs_Zone) :** Coup critique.
+    - **Implantation (Force_Impact = Rs_Zone) :** L'arme se plante. Dégâts = Force_Utilisée.
+    - **Rupture (Force_Impact < Rs_Zone) :** L'arme se brise. Dégâts de percussion = 10% de la Rs_Arme.
+
+---
+
+### 4. ACTIONS DÉFENSIVES ET DE MOUVEMENT
+
+#### 4.1. Parade
+La parade n'est pas une mécanique séparée, mais une application des logiques d'impact (Corps vs Corps ou Objet vs Objet) à but défensif.
+
+#### 4.2. Esquive
+L'esquive réussit si Temps_Total_Requis < Temps_Impact.
+- **Temps_Impact = Distance / Vitesse_Attaque**
+- **Temps_Total_Requis = Temps_Reaction_Defenseur + Temps_Mouvement_Esquive**
+- *Pénalité :* Si le défenseur est "En Action", son Temps_Reaction_Defenseur est doublé pour le calcul.
+
+---
+
+### 5. ÉTATS ET MÉCANIQUES SPÉCIALES
+
+#### 5.1. Étourdissement et Esprit
+- *Déclencheur :* Un coup reçu sur un "point sensible".
+- *Perte d'Esprit :* Chaque attaque ou parade ratée coûte 10% de l'Esprit max.
+- *Résistance :* Le personnage a une chance de résister complètement à l'étourdissement.
+    - *Si Esprit ≤ 20 :* 5% de chance.
+    - *Si Esprit > 20 :* 10% de base + 5% par palier de 10 points d'Esprit au-dessus de 20.
+- *Résultats de l'Échec :*
+    - *Interruption :* L'action en cours est annulée.
+    - *Étourdissement :* Toutes les actions restantes du tour sont annulées.
+
+#### 5.2. L'Éveil
+- *Activation :* Début du 3ème tour, dure 2 tours (3 et 4).
+- *Effets par Faction :*
+    - *Atlas :* Coup max passe à 11 PF. Double l'usure infligée aux armes en parade.
+    - *Hermès :* +2 m/s en Vitesse. La 1ère esquive de chaque tour ignore la pénalité d'action.
+    - *Arès :* Régénère 25% des PF perdus. La Rs_Zone ne baisse plus lors des parades.
+    - *Hécate :* Coût des sorts réduit de 2 PM. Les sorts offensifs drainent 5% de l'Esprit max de la cible.
+
+// ###############################################################
+// #
+// #   VALORIA - LOGIQUE ALGORITHMIQUE POUR LE BOT DE COMBAT
+// #
+// ###############################################################
+
+// ### STRUCTURES DE DONNÉES DE BASE
+
+Character {
+  name: String,
+  faction: String,
+  hp: Integer,
+  stats: {
+    force: Integer,
+    maxForce: Integer,
+    vitesse: Integer, // en m/s
+    esprit: Integer,
+    maxEsprit: Integer
+  },
+  resistances: { // Calculées au début du combat
+    tete: Integer,
+    torse: Integer,
+    bras: Integer,
+    jambes: Integer
+  },
+  status: {
+    enAction: Boolean,
+    saignementStacks: Integer,
+    enHemorragie: Boolean,
+    eveilTurns: Integer
+  },
+  weapon: Weapon // peut être null
+}
+
+Weapon {
+  name: String,
+  type: ["contondant", "tranchant", "perforant"],
+  grade: String, // "E", "D", "C", etc.
+  rs: Integer
+}
+
+// ### FONCTION PRINCIPALE DE GESTION D'UNE ATTAQUE
+
+function handleAttack(attacker, defender, targetZone, forceUsed) {
+  
+  // -- Étape 1: Vérification de l'Esquive
+  // (Suppose une fonction qui calcule la distance)
+  distance = calculateDistance(attacker, defender);
+  if (checkEsquive(attacker, defender, distance) == true) {
+    narrate("Le défenseur esquive l'attaque !");
+    // L'attaquant perd son Esprit pour l'échec
+    attacker.stats.esprit -= attacker.stats.maxEsprit * 0.10;
+    return;
+  }
+
+  // -- Étape 2: Résolution de l'impact
+  if (attacker.weapon == null) {
+    resolveCorpsVsCorps(attacker, defender, targetZone, forceUsed);
+  } else {
+    switch (attacker.weapon.type) {
+      case "contondant":
+        resolveContondant(attacker, defender, targetZone, forceUsed);
+        break;
+      case "tranchant":
+        resolveTranchant(attacker, defender, targetZone, forceUsed);
+        break;
+      case "perforant":
+        resolvePerforant(attacker, defender, targetZone, forceUsed);
+        break;
+    }
+  }
+}
+
+// ### SOUS-FONCTIONS DE RÉSOLUTION D'IMPACT
+
+function resolveCorpsVsCorps(attacker, defender, targetZone, forceUsed) {
+  // Vérifier si forceUsed <= coupMax de la faction
+  if (forceUsed > getCoupMax(attacker.faction)) {
+    narrate("Force utilisée trop élevée !");
+    return;
+  }
+
+  attacker.stats.force -= forceUsed;
+  resistanceCible = defender.resistances[targetZone];
+
+  if (forceUsed > resistanceCible) { // Coup Critique
+    defender.stats.force -= forceUsed;
+    let damage = calculateDamage(forceUsed, resistanceCible);
+    defender.hp -= damage;
+    narrate("Coup critique ! Dégâts infligés.");
+    if (isPointSensible(targetZone)) {
+      handleEtourdissement(defender);
+    }
+  } else if (forceUsed == resistanceCible) { // Parade
+    defender.stats.force -= forceUsed;
+    if (defender.faction != "Arès" || defender.status.eveilTurns <= 0) {
+      defender.resistances[targetZone] -= 1;
+    }
+    narrate("Parade ! Les deux combattants perdent de l'endurance.");
+  } else { // Coup Faible
+    defender.stats.force -= forceUsed;
+    let recoilDamage = resistanceCible - forceUsed;
+    attacker.hp -= recoilDamage;
+    narrate("Coup trop faible ! L'attaquant subit des dégâts de recul.");
+    // L'attaquant perd son Esprit pour l'échec
+    attacker.stats.esprit -= attacker.stats.maxEsprit * 0.10;
+  }
+}
+
+function resolveTranchant(attacker, defender, targetZone, forceUsed) {
+  let weapon = attacker.weapon;
+  let penetration = getPenetrationFromGrade(weapon.grade);
+  let resistanceCible = defender.resistances[targetZone];
+  let effectiveResistance = resistanceCible * (1 - penetration);
+  let forceImpact = forceUsed + weapon.rs;
+
+  // Appliquer une logique similaire à CorpsVsCorps mais avec effectiveResistance et forceImpact
+  // ...
+  // Si des dégâts HP sont infligés:
+  applySaignement(defender);
+}
+
+// ### FONCTIONS DE MÉCANIQUES SPÉCIALES
+
+function checkEsquive(attacker, defender, distance) {
+  // Vitesse_Attaque peut être une fraction de la vitesse du personnage
+  let vitesseAttaque = attacker.stats.vitesse / 2; 
+  let tempsImpact = distance / vitesseAttaque;
+
+  let tempsReaction = getTempsReactionFromVitesse(defender.stats.vitesse);
+  if (defender.status.enAction == true) {
+    // Appliquer pénalité (sauf pour Hermès en Éveil)
+    if (defender.faction != "Hermès" || defender.status.eveilTurns <= 0) {
+        tempsReaction *= 2;
+    }
+  }
+
+  // TempsMouvementEsquive est aussi basé sur la vitesse
+  let tempsMouvement = getTempsMouvementFromVitesse(defender.stats.vitesse);
+  let tempsTotalRequis = tempsReaction + tempsMouvement;
+
+  return tempsTotalRequis < tempsImpact;
+}
+
+function handleEtourdissement(defender) {
+  let esprit = defender.stats.esprit;
+  let resistanceChance = 0;
+
+  if (esprit <= 20) {
+    resistanceChance = 5;
+  } else {
+    let paliers = floor((esprit - 20) / 10);
+    resistanceChance = 10 + (paliers * 5);
+  }
+
+  let roll = randomNumber(1, 100);
+  if (roll <= resistanceChance) {
+    narrate("Le défenseur résiste au choc mental !");
+    return;
+  }
+
+  // Logique pour déterminer si c'est Interruption ou Étourdissement
+  // (ex: si le roll est > 50, c'est un étourdissement complet)
+  if (roll > 50) {
+    defender.status.etourdi = true;
+    narrate("Le défenseur est étourdi et ne peut plus agir ce tour !");
+  } else {
+    // annuler l'action en cours du défenseur
+    narrate("Le défenseur est interrompu !");
+  }
+}
+
+function applyEveil(character, currentTurn) {
+    if (currentTurn == 3) {
+        character.status.eveilTurns = 2;
+        narrate(${character.name} entre en état d'Éveil !);
+        switch (character.faction) {
+            case "Atlas":
+                // Appliquer buffs Atlas...
+                break;
+            // ... autres factions
+        }
+    }
+}
+
+#################################################################
+#
+#   SECTION ADDITIVE : GESTION DE L'ÉQUIPEMENT ZONAL
+#
+#################################################################
+
+### 1. STRUCTURE DE L'INVENTAIRE DE CORPS
+
+L'inventaire de corps est désormais composé de 5 emplacements spécifiques, correspondant aux zones de résistance du personnage :
+- *Slot 1 : Tête* (Casques, etc.)
+- *Slot 2 : Torse* (Plastrons, etc.)
+- *Slot 3 : Bras* (Brassards, etc.)
+- *Slot 4 : Jambes* (Jambières, etc.)
+- *Slot 5 : Pieds / Accessoire* (Bottes, etc.)
+
+### 2. CALCUL DE LA RÉSISTANCE TOTALE
+
+La Résistance (Rs) d'une zone corporelle n'est plus seulement la résistance naturelle du personnage, mais la somme de sa résistance de base et de celle de l'équipement porté.
+
+- **Formule : Rs_Totale_Zone = Rs_Base_Personnage + Rs_Equipement**
+
+    - Rs_Base_Personnage : La valeur calculée à partir de la Force et du bonus de Faction.
+    - Rs_Equipement : La valeur de Rs de l'objet équipé dans le slot correspondant. Si aucun objet n'est équipé, cette valeur est 0.
+
+### 3. DURABILITÉ ET USURE DE L'ÉQUIPEMENT
+
+La statistique Rs d'un équipement représente à la fois sa puissance défensive et ses points de vie (sa durabilité).
+
+- *Mécanisme d'Usure :* Lorsqu'une attaque est bloquée ou parée par une zone équipée, c'est la **Rs de l'équipement qui diminue**, pas la résistance de base du personnage.
+    - **Parade Réussie (Force_Utilisée = Rs_Totale_Zone) :** La Rs de l'équipement dans cette zone baisse de 1 point.
+    - **Coup Faible sur Équipement (Force_Utilisée < Rs_Totale_Zone) :** Le défenseur perd de l'endurance (PF), mais l'équipement ne subit pas d'usure.
+    - *Cas Spécial (Objet vs Objet) :* Si l'équipement est frappé par une arme, il suit les règles d'usure de l'interaction Objet vs Objet (ex: -2 Rs en cas de choc égal).
+
+- *Destruction :* Si la Rs d'un équipement *tombe à 0 ou moins*, l'objet est considéré comme brisé.
+    - Il est immédiatement retiré du slot d'inventaire.
+    - La Rs_Totale_Zone du personnage retombe instantanément à sa Rs_Base_Personnage, créant une faille en plein combat.
+
+- *Zone non équipée :* Si une zone sans équipement subit une parade réussie, c'est la Rs_Base_Personnage de cette zone qui baisse de 1 point, comme défini précédemment (mécanique de "brise-garde").
+
+### EN RÉSUMÉ
+
+L'équipement agit comme une couche de protection sacrificielle. Il augmente considérablement la résistance d'une zone mais s'use à la place du personnage. La gestion de la durabilité de son équipement et le ciblage des zones non protégées de l'adversaire deviennent des stratégies de combat primordiales.
+
+// ###############################################################
+// #
+// #   VALORIA - MISE À JOUR ALGORITHMIQUE : GESTION D'ÉQUIPEMENT
+// #
+// ###############################################################
+
+// ### STRUCTURES DE DONNÉES MISES À JOUR
+
+Character {
+  name: String,
+  faction: String,
+  hp: Integer,
+  stats: { ... },
+  baseResistances: { // Résistances naturelles, calculées depuis la Force
+    tete: Integer,
+    torse: Integer,
+    bras: Integer,
+    jambes: Integer
+  },
+  equipment: { // Les objets portés, peuvent être null
+    tete: ArmorItem,
+    torse: ArmorItem,
+    bras: ArmorItem,
+    jambes: ArmorItem,
+    pieds: ArmorItem
+  },
+  // ... autres propriétés
+}
+
+ArmorItem {
+  name: String,
+  rs: Integer
+}
+
+// ### FONCTION CLÉ : CALCUL DYNAMIQUE DE LA RÉSISTANCE
+
+function getTotalZoneResistance(character, zone) {
+  let baseRes = character.baseResistances[zone];
+  let equipRes = 0;
+
+  if (character.equipment[zone] != null) {
+    equipRes = character.equipment[zone].rs;
+  }
+
+  return baseRes + equipRes;
+}
+
+
+// ### FONCTION DE GESTION D'ATTAQUE (MISE À JOUR)
+
+function resolveCorpsVsCorps(attacker, defender, targetZone, forceUsed) {
+  
+  // Le calcul de la résistance se fait maintenant dynamiquement
+  let resistanceCible = getTotalZoneResistance(defender, targetZone);
+  
+  attacker.stats.force -= forceUsed;
+
+  if (forceUsed > resistanceCible) { // Coup Critique
+    defender.stats.force -= forceUsed;
+    let damage = calculateDamage(forceUsed, resistanceCible);
+    defender.hp -= damage;
+    narrate("Coup critique !");
+    // ... logique d'étourdissement etc.
+
+  } else if (forceUsed == resistanceCible) { // Parade
+    defender.stats.force -= forceUsed;
+    narrate("Parade !");
+    
+    // NOUVELLE LOGIQUE D'USURE
+    let armorPiece = defender.equipment[targetZone];
+    if (armorPiece != null) {
+      // S'il y a un équipement, c'est lui qui s'use
+      armorPiece.rs -= 1;
+      narrate(L'équipement sur la zone [${targetZone}] perd 1 point de durabilité.);
+
+      // Vérification de la destruction
+      if (armorPiece.rs <= 0) {
+        defender.equipment[targetZone] = null;
+        narrate(L'équipement [${armorPiece.name}] s'est brisé !);
+      }
+    } else {
+      // S'il n'y a pas d'équipement, la résistance de base du personnage s'use
+      // Note : Cette partie peut être activée ou non selon les règles de "brise-garde" souhaitées
+      // defender.baseResistances[targetZone] -= 1;
+      // narrate(La garde du défenseur sur la zone [${targetZone}] s'affaiblit.);
+    }
+
+  } else { // Coup Faible
+    defender.stats.force -= forceUsed;
+    let recoilDamage = resistanceCible - forceUsed;
+    attacker.hp -= recoilDamage;
+    narrate("Coup trop faible ! L'attaquant subit des dégâts de recul.");
+    attacker.stats.esprit -= attacker.stats.maxEsprit * 0.10;
+  }
+}
+
+// Le reste de la logique (esquive, armes, etc.) reste le même,
+// mais utilisera toujours getTotalZoneResistance() pour obtenir la valeur
+// de défense actuelle de la cible avant de procéder aux calculs.
+
+Bien sûr. Voici le résumé dans un fichier texte structuré avec les deux volets demandés.
+#############################################################
+#            Spécifications des Mécaniques de Combat        #
+#                  Projet: Bot UniroList                    #
+#############################################################
+
+Ce document détaille le fonctionnement et l'implémentation de deux mécaniques de jeu avancées : l'Hémorragie et la gestion de l'Inactivité.
+
+=============================================================
+#                 VOLET 1 : EXPLICATIONS                    #
+=============================================================
+
+---
+## 1. HÉMORRAGIE
+---
+
+L'Hémorragie est un état grave qui sanctionne un combattant ayant subi des blessures profondes répétées.
+
+* *Déclencheur* : L'état s'active automatiquement dès qu'un combattant accumule son troisième effet "Saignement". À cet instant, les cumuls de Saignement sont consommés pour laisser place à l'Hémorragie.
+
+* *Effet* : Tant qu'un combattant est victime d'Hémorragie, il perd 10% de ses points de vie *actuels* au tout début de chacune de ses actions (que ce soit une attaque, une défense, ou une autre compétence). Les dégâts sont calculés avant que l'action ne soit résolue.
+
+* *Durée* : L'Hémorragie est un état permanent qui dure jusqu'à la fin du combat. Il ne peut être ni soigné ni purgé par des moyens standards.
+
+---
+## 2. GESTION DE L'INACTIVITÉ
+---
+
+Ce système est conçu pour maintenir le rythme du combat tout en offrant une certaine flexibilité pour pallier les problèmes de connexion ou les hésitations. Il repose sur un minuteur de 10 minutes par tour, des jetons de pénalité et une unique période de grâce.
+
+* *Le Minuteur de Tour (10 minutes)* :
+    * À chaque début de tour, un décompte de 10 minutes est lancé pour le joueur actif.
+    * Des rappels automatiques sont envoyés à des moments clés pour informer le joueur du temps restant : à 5 minutes, 2 minutes, et 1 minute de la fin.
+
+* *L'État d'Immobilité* :
+    * Si le joueur n'envoie pas son action avant la fin des 10 minutes, il est considéré comme "immobile".
+    * L'immobilité a pour effet d'annuler toute action ou sort qui était en préparation et qui devait se poursuivre durant ce tour. Le joueur devient alors vulnérable.
+
+* *La Période de Grâce (1 minute)* :
+    * Dès qu'un joueur devient immobile, une "période de grâce" d'une minute est déclenchée.
+    * Le joueur en retard a la possibilité d'envoyer son action pendant cette minute supplémentaire.
+    * *Important* : Chaque joueur ne peut bénéficier de cette grâce *qu'une seule fois* par combat.
+
+* *Les Jetons d'Inactivité et le Forfait* :
+    * Si un joueur utilise sa période de grâce avec succès, aucune pénalité n'est appliquée, mais sa "grâce" est consommée pour le reste du duel.
+    * S'il n'envoie toujours pas son action à la fin de la minute de grâce (ou s'il avait déjà utilisé sa grâce), il reçoit *1 jeton d'inactivité*.
+    * Son tour est alors sauté, et son adversaire peut jouer à nouveau.
+    * L'accumulation de *3 jetons d'inactivité* au cours du combat entraîne un *forfait* immédiat.
+
+
+=============================================================
+#                VOLET 2 : ALGORITHMIQUE                    #
+=============================================================
+
+---
+## 1. ALGORITHME DE L'HÉMORRAGIE
+---
+
+* *Localisation* : lib/combatLogic.js, au début de la fonction de résolution d'action.
+
+
+PROCÉDURE traiterAction(joueurActuel, action)
+DEBUT
+// --- Début de la logique d'Hémorragie ---
+SI joueurActuel.statuts CONTIENT "Hémorragie" ALORS
+    degatsHemorragie = ARRONDIR(joueurActuel.pv_actuels * 0.10)
+    joueurActuel.pv_actuels = joueurActuel.pv_actuels - degatsHemorragie
+    AjouterAuLogDeCombat(joueurActuel.nom + " perd " + degatsHemorragie + " PV à cause de l'hémorragie.")
+FIN SI
+// --- Fin de la logique d'Hémorragie ---
+
+// ... le reste du code pour traiter l'action ...
+
+FIN PROCÉDURE
+
+---
+## 2. ALGORITHME DE LA GESTION DE L'INACTIVITÉ
+---
+
+* *Localisation* : lib/combatManager.js
+* *Données requises par combattant* : jetonsInactivite (entier), graceUtilisee (booléen).
+
+
+PROCÉDURE demarrerTour(joueurActif)
+DEBUT
+// Lancer les minuteurs de rappel et le minuteur principal
+MINUTEUR_RAPPEL_5MIN = LancerTimer(300s, FONCTION() { EnvoyerMessage("Rappel : 5 minutes restantes.") })
+MINUTEUR_RAPPEL_2MIN = LancerTimer(480s, FONCTION() { EnvoyerMessage("Attention : 2 minutes restantes.") })
+MINUTEUR_RAPPEL_1MIN = LancerTimer(540s, FONCTION() { EnvoyerMessage("Dernière minute !") })
+MINUTEUR_FIN_DE_TOUR = LancerTimer(600s, FONCTION() { gererTempsEcoule(joueurActif) })
+FIN PROCÉDURE
+PROCÉDURE gererTempsEcoule(joueurEnRetard)
+DEBUT
+// Nettoyer les timers de rappel pour éviter les messages superflus
+AnnulerTimer(MINUTEUR_RAPPEL_5MIN)
+AnnulerTimer(MINUTEUR_RAPPEL_2MIN)
+AnnulerTimer(MINUTEUR_RAPPEL_1MIN)
+EnvoyerMessage(joueurEnRetard.nom + " est immobile. L'adversaire peut en profiter.")
+
+// Vérifier si la grâce est disponible
+SI joueurEnRetard.graceUtilisee == FAUX ALORS
+    EnvoyerMessage("Une période de grâce de 60 secondes commence.")
+    joueurEnRetard.graceUtilisee = VRAI  // La grâce est considérée comme "tentée"
+    MINUTEUR_GRACE = LancerTimer(60s, FONCTION() { sanctionnerInactivite(joueurEnRetard) })
+SINON
+    EnvoyerMessage("Période de grâce déjà utilisée. Sanction appliquée.")
+    sanctionnerInactivite(joueurEnRetard)
+FIN SI
+
+FIN PROCÉDURE
+PROCÉDURE sanctionnerInactivite(joueurEnRetard)
+DEBUT
+joueurEnRetard.jetonsInactivite = joueurEnRetard.jetonsInactivite + 1
+EnvoyerMessage(joueurEnRetard.nom + " reçoit 1 jeton d'inactivité. Total : " + joueurEnRetard.jetonsInactivite)
+SI joueurEnRetard.jetonsInactivite >= 3 ALORS
+    declarerForfait(joueurEnRetard)
+SINON
+    // Le tour du joueur est sauté, on relance le tour pour l'adversaire
+    prochainTour(adversaireDe(joueurEnRetard))
+FIN SI
+
+FIN PROCÉDURE
+// Note : Le code doit aussi gérer la réception d'un message pendant la période de grâce
+// pour annuler le MINUTEUR_GRACE et traiter l'action du joueur.

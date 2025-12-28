@@ -1,0 +1,21 @@
+# Techniques défensives (Rang B) : 8
+
+Description: Cette page regroupe les techniques déffensives de rang B.
+
+**1. Lame Inerte** : Lors d’un impact physique, ce sort annihile directement l’arme ou l’outil magique de l’ennemi (épée, catalyseur…). Coût : 12 PM. Détruit l’arme adverse, l’empêchant d’être utilisée au prochain tour. **Arès-Atlas-Hermès**
+
+**2. Sang de Plomb** : Rend le sang de l’ennemi plus dense, ralentissant ses réflexes et sa vitesse de déplacement. Nécessite un contact physique. Durée : 2 tours. Coût : 10 PM. **Arès-Atlas-Hermès**
+
+**3. Voile de Crainte** : Inflige la peur à l’ennemi, réduisant la puissance de ses prochaines techniques. Nécessite un contact physique. Durée : 2 tours. Coût : 11 PM. **Arès-Atlas-Hermès**
+
+**4. Fracture Occulte** : Rompt temporairement le lien d’un adversaire avec ses capacités magiques. Durée : 1 tour. Coût : 14 PM. Empêche toute utilisation de techniques magiques durant un tour. Ne fonctionne pas sur un ennemi déjà éveillé. Nécessite un contact physique. **Arès-Atlas-Hermès**
+
+**Pour les Hécates**
+
+**5. Rétroflux** : Inverse partiellement les flux magiques autour de l’ennemi, rendant ses sorts instables. Durée : 2 tours. Coût : 13 PM. 40 % de chance que la prochaine attaque magique échoue ou change de trajectoire.
+
+**6. Scellement Douloureux** : Appose une marque tortueuse sur la cible qui brûle à chaque tentative de lancer un sort. Durée : 3 tours. Coût : 12 PM. Inflige des dégâts à chaque incantation ennemie, le poussant à l’inaction.
+
+**7. Nébuleuse noire** : Brouille la perception magique de la cible. Durée : 2 tours. Coût : 11 PM. La cible perd la capacité de détecter les présences magiques ou de localiser une cible précise.
+
+**8. filament noir** : Lie la magie d’un ennemi à un objet ou une personne dans la zone. Durée : 2 tours. Coût : 15 PM. Si la cible lance un sort, celui-ci est redirigé vers la cible.

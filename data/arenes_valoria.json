@@ -1,0 +1,199 @@
+{
+  "arene_sylvestre": {
+    "id": "arene_sylvestre",
+    "nom": "Arène Sylvestre",
+    "nom_alternatifs": ["L'Arène Sylvestre", "Arene Sylvestre", "arene sylvestre"],
+    "description": "L'Arène sylvestre est un lieu de combat niché au cœur de la forêt ancienne proche d'Eldoria. Entourée de majestueux arbres centenaires, l'arène s'ouvre sur un paysage vibrant de fleurs sauvages colorées. Des poteaux en bois parsèment le terrain, utilisés initialement pour l'entraînement des gardes.",
+    "dimensions": {
+      "x_max": 40,
+      "y_max": 40,
+      "z_max": 2
+    },
+    "rayon": 20,
+    "perimetre": "125 m",
+    "position_depart": {
+      "joueur1": { "x": 5, "y": 20, "z": 0 },
+      "joueur2": { "x": 35, "y": 20, "z": 0 }
+    },
+    "obstacles": [
+      {"x": 10, "y": 10, "z": 0, "type": "poteau_bois", "hauteur": 2, "resistance": 10},
+      {"x": 10, "y": 10, "z": 1, "type": "poteau_bois"},
+      {"x": 12, "y": 10, "z": 0, "type": "poteau_bois", "hauteur": 2, "resistance": 10},
+      {"x": 12, "y": 10, "z": 1, "type": "poteau_bois"},
+      {"x": 14, "y": 12, "z": 0, "type": "poteau_bois", "hauteur": 2, "resistance": 10},
+      {"x": 14, "y": 12, "z": 1, "type": "poteau_bois"},
+      {"x": 20, "y": 15, "z": 0, "type": "poteau_bois", "hauteur": 2, "resistance": 10},
+      {"x": 20, "y": 15, "z": 1, "type": "poteau_bois"},
+      {"x": 26, "y": 18, "z": 0, "type": "poteau_bois", "hauteur": 2, "resistance": 10},
+      {"x": 26, "y": 18, "z": 1, "type": "poteau_bois"},
+      {"x": 30, "y": 25, "z": 0, "type": "poteau_bois", "hauteur": 2, "resistance": 10},
+      {"x": 30, "y": 25, "z": 1, "type": "poteau_bois"},
+      {"x": 15, "y": 30, "z": 0, "type": "poteau_bois", "hauteur": 2, "resistance": 10},
+      {"x": 15, "y": 30, "z": 1, "type": "poteau_bois"}
+    ],
+    "proprietes": {
+      "sol": "terre_battue",
+      "resistance_sol": 20,
+      "visibilite": "bonne",
+      "temperature_jour": 32,
+      "temperature_nuit": 15,
+      "distance_entre_poteaux": 1,
+      "hauteur_poteaux_cm": 170
+    },
+    "aleas": []
+  },
+  "aire_des_braves": {
+    "id": "aire_des_braves",
+    "nom": "Aire des Braves",
+    "nom_alternatifs": ["L'aire des braves", "Aire des braves", "aire des braves"],
+    "description": "L'Aire des braves est une ancienne arène en ruines, reliée au château de Valoria, où les chevaliers s'affrontent pour défendre leur honneur et perpétuer les traditions séculaires du royaume.",
+    "dimensions": {
+      "x_max": 7,
+      "y_max": 7,
+      "z_max": 3
+    },
+    "perimetre": "50 m²",
+    "spectateurs": 180,
+    "position_depart": {
+      "joueur1": { "x": 1, "y": 3, "z": 0 },
+      "joueur2": { "x": 6, "y": 3, "z": 0 }
+    },
+    "obstacles": [],
+    "proprietes": {
+      "sol": "terre_battue",
+      "resistance_sol": 20,
+      "visibilite": "excellente",
+      "temperature_jour": 28,
+      "temperature_nuit": 16
+    },
+    "aleas": []
+  },
+  "meryss_arena": {
+    "id": "meryss_arena",
+    "nom": "Meryss Arena",
+    "nom_alternatifs": ["Meryss Arena", "meryss arena", "Meryss"],
+    "description": "La Meryss Arena s'étend comme un miroir d'eau immobile au cœur de la mer de l'Équinoxe. Une fine nappe d'eau de 7 cm recouvre le sol, constellée de galets.",
+    "dimensions": {
+      "x_max": 20,
+      "y_max": 20,
+      "z_max": 2
+    },
+    "rayon": 10,
+    "spectateurs": 0,
+    "position_depart": {
+      "joueur1": { "x": 3, "y": 10, "z": 0 },
+      "joueur2": { "x": 17, "y": 10, "z": 0 }
+    },
+    "obstacles": [],
+    "proprietes": {
+      "sol": "nappe_eau_galets",
+      "resistance_sol": 3,
+      "visibilite": "parfaite",
+      "temperature_jour": 12,
+      "temperature_nuit": 12,
+      "eau_hauteur_cm": 7,
+      "benediction": true,
+      "cout_benediction": 1,
+      "effet_benediction": "triple_gains_vainqueur",
+      "max_benedictions_semaine": 3
+    },
+    "aleas": []
+  },
+  "sanctuaire_neive": {
+    "id": "sanctuaire_neive",
+    "nom": "Sanctuaire de Neive",
+    "nom_alternatifs": ["Sanctuaire de Neige", "Sanctuaire Neive", "sanctuaire de neive", "Neive"],
+    "description": "Lieu piégé dans un hiver éternel où un vieil homme pleura sa femme jusqu'à son dernier souffle. La température constante de -10°C et la neige créent un environnement mortel après 4 tours.",
+    "dimensions": {
+      "x_max": 80,
+      "y_max": 80,
+      "z_max": 3
+    },
+    "rayon": 40,
+    "perimetre": "251 m",
+    "position_depart": {
+      "joueur1": { "x": 10, "y": 40, "z": 0 },
+      "joueur2": { "x": 70, "y": 40, "z": 0 }
+    },
+    "obstacles": [],
+    "proprietes": {
+      "sol": "terre_enneigee",
+      "resistance_sol": 30,
+      "visibilite": "bonne",
+      "temperature_jour": -10,
+      "temperature_nuit": -10,
+      "hypothermie_apres_tours": 4,
+      "mort_par_froid": true,
+      "source_chaleur_rayon": 3,
+      "foret_limite": 40
+    },
+    "aleas": [
+      {
+        "type": "hypothermie",
+        "tours_avant_mort": 4,
+        "prevention": "source_chaleur_3m",
+        "declencheur": "duree_combat"
+      },
+      {
+        "type": "sortie_arene",
+        "effet": "defaite_automatique",
+        "declencheur": "depasser_40m_rayon"
+      }
+    ]
+  },
+  "arene_titan": {
+    "id": "arene_titan",
+    "nom": "Arène Titan",
+    "nom_alternatifs": ["Arène Titan", "Arene Titan", "arene titan", "Gaïa", "Gaia"],
+    "description": "L'arène Titan, aussi connue sous le nom Gaïa, est une majestueuse arène située dans les profondeurs du souterrain d'Eldoria. Mélange de styles gothique et romain avec colonnes imposantes, arches majestueuses et statues décoratives. Le sol est en marbre renforcé par des enchantements.",
+    "dimensions": {
+      "x_max": 80,
+      "y_max": 80,
+      "z_max": 10
+    },
+    "rayon": 40,
+    "spectateurs": 800,
+    "position_depart": {
+      "joueur1": { "x": 10, "y": 40, "z": 0 },
+      "joueur2": { "x": 70, "y": 40, "z": 0 }
+    },
+    "obstacles": [],
+    "proprietes": {
+      "sol": "marbre_enchante",
+      "resistance_sol": 50,
+      "visibilite": "excellente",
+      "temperature_jour": 17,
+      "temperature_nuit": 17,
+      "souterrain": true,
+      "style": "gothique_romain"
+    },
+    "aleas": []
+  },
+  "arene_rois_braves": {
+    "id": "arene_rois_braves",
+    "nom": "Arène des Rois Braves",
+    "nom_alternatifs": ["Arène des Rois Braves", "Arene des Rois Braves", "arene des rois braves", "Rois Braves"],
+    "description": "Arène légendaire réservée exclusivement aux combats entre les finalistes et champions d'Eldoria. Nichée au cœur de la cité, cette arène majestueuse est un symbole de courage et de détermination.",
+    "dimensions": {
+      "x_max": 80,
+      "y_max": 80,
+      "z_max": 5
+    },
+    "rayon": 40,
+    "perimetre": "251 m",
+    "position_depart": {
+      "joueur1": { "x": 10, "y": 40, "z": 0 },
+      "joueur2": { "x": 70, "y": 40, "z": 0 }
+    },
+    "obstacles": [],
+    "proprietes": {
+      "sol": "sol_regulier_plat",
+      "resistance_sol": 40,
+      "visibilite": "parfaite",
+      "temperature_jour": 32,
+      "temperature_nuit": 15,
+      "finalistes_seulement": true
+    },
+    "aleas": []
+  }
+}

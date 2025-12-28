@@ -1,0 +1,107 @@
+# Techniques Mixtes (Rang D) : 50
+
+Description: Cette page regroupe les techniques Mixtes de rang E.
+
+1. Marche-Rêve : Le lanceur peut marcher sur toute surface, y compris les murs ou l’eau, tant qu’il garde les yeux fermés. Il tombe s’il les ouvre.
+
+Coût : 9 Points de Mana par seconde.
+
+2. Souffle-Épine : En soufflant sur une plante ou des brindilles au sol, le lanceur les durcit brièvement pour en faire des projectiles naturels. Coût : 6 Points de Mana par souffle.
+
+3. Échange : Le lanceur échange de place avec un objet inanimé de moins de 3 kg dans un rayon de 5 mètres. Coût : 15 Points de Mana par échange.
+
+4. Mémoire d’Écorce : En touchant un arbre, le lanceur peut ressentir les présences qui l’ont frôlé au cours des dix dernières minutes. Coût : 10 Points de Mana.
+
+5. Oreille-Balancier : Permet d’entendre les conversations les plus proches même dans une foule ou un vacarme total, mais rend sourd à tout le reste. Coût : 7 Points de Mana par minute.
+
+6. Murmure de Poche : Le lanceur peut capturer un chuchotement dans une poche vide et le libérer plus tard, intact.
+
+Coût : 8 Points de Mana par capture.
+
+7. Clé de Plume : Déverrouille une serrure simple en insérant une plume ou une brindille à la place d’une clé. Coût : 11 Points de Mana par usage.
+
+8. Ombre-Liquide : Permet de masquer une silhouette dans son ombre mais rend incapable de bouger. Coût : 15 Points de Mana par minute.
+
+9. Tact d’Insecte : Le lanceur peut grimper aux murs comme une fourmi, mais devient aussi léger qu’un insecte. Coût : 13 Points de Mana par minute.
+
+10. Bave du Mensonge : Applique la main sur les lèvres, permet de mentir avec une voix parfaitement crédible, même sous détection magique. Coût : 14 Points de Mana par application.
+
+11. Regard-Verrou : Fixer une cible l’empêche de bouger tant qu'il est observé. Coût : 14 Points de Mana par seconde.
+
+12. Lanterne-Froide : Fait briller un objet sans émettre de chaleur ni de fumée, visible uniquement par le lanceur. Coût : 6 Points de Mana par heure.
+
+13. Digue-Mirage : Le sol paraît recouvert d’eau pour les créatures ennemies, ralentissant leur avancée. Coût : 13 Points de Mana pour une illusion de 10 m².
+
+14. Doigt subtils : D’un simple geste, fait se délacer n’importe quel nœud visible. Coût : 5 Points de Mana par nœud.
+
+15. Fil de Sable : Crée un fil solide reliant deux objets proches, mais se désagrège dès qu’il est tendu. Coût : 8 Points de Mana par lien.
+
+16. Faim de Vent : Aspire toute odeur dans un rayon de 2 mètres pendant 10 secondes. Coût : 7 Points de Mana.
+
+17. Peau de Caméléon : Change automatiquement la couleur de peau selon l’environnement, utile pour le camouflage. Coût : 15 Points de Mana par seconde.
+
+18. Goutte-Dérobée : Transforme une goutte de liquide en une perle solide, utilisable plus tard comme preuve ou échantillon. Coût : 9 Points de Mana par goutte.
+
+19. Brèche-Souvenir : Permet de revoir une action effectuée dans les 30 dernières secondes à l’endroit exact. Coût : 10 Points de Mana.
+
+20. Langue-Fixée : Empêche la cible de prononcer un mot spécifique pendant une minute. Coût : 11 Points de Mana.
+
+21. Plume-Veilleuse : Une plume enchantée flotte autour d’un dormeur et s’illumine si quelqu’un s’approche. Coût : 10 Points de Mana par nuit.
+
+22. Lien du Geste : Le prochain geste du lanceur est reproduit par une personne à moins de 3 mètres, même involontairement. Coût : 13 Points de Mana.
+
+23. Rideau de Bruit : Crée un brouhaha diffus dans une zone étroite pour couvrir une discussion discrète. Coût : 14 Points de Mana.
+
+24. Crinière de Lune : Donne aux cheveux du lanceur une lueur légère et apaisante, qui calme certaines créatures nocturnes. Coût : 8 Points de Mana.
+
+25. Bouton-Retour : Ramène instantanément un objet tenu dans la main droite à la main gauche. Coût : 5 Points de Mana par activation.
+
+26. Insensibilité thermique : Rend la température d’un objet neutre au toucher, même brûlant ou glacé. Coût : 9 Points de Mana.
+
+27- Carillon de Mousse : Génère un son agréable dans un rayon de 10 mètres qui empêche toute tentative d’écoute ou d’espionnage magique. Les sons extérieurs sont aussi étouffés. Coût : 11 Points de Mana pour 5 minutes d’effet.
+
+28. Haleine-Rosée : En soufflant sur une plante, l’humidifie et lui redonne temporairement vigueur ou éclat. Coût : 7 Points de Mana par souffle.
+
+29. Balancier Épineux : Un pendule fait de branches ou de fil se met à vibrer à la proximité d’un danger non-vivant. Coût : 12 Points de Mana par heure.
+
+30- Halètement du Gueux : Le lanceur mime la détresse respiratoire à la perfection. Toute tentative hostile est repoussée pendant 5 secondes (le lanceur étant perçu comme mourant ou inoffensif).
+
+Simuler en duel est interdit. Coût : 7 Points de Mana.
+
+31. Doigt de Buée : Permet d’écrire un message temporaire sur une vitre ou surface froide, visible uniquement à la lumière lunaire. Coût : 1 Points de Mana par mot.
+
+32. Liqueur Farceuse : Transforme le goût d’un liquide en quelque chose de radicalement opposé (amer devient sucré, etc.). Coût : 8 Points de Mana.
+
+33- Boussole Intime : Pendant une minute, le lanceur connaît la position approximative d’une personne qu’il a touchée dans les dernières 24h (orientation, distance, altitude). Coût : 9 Points de Mana.
+
+34. Peau-Cartouche : Une courte phrase peut être inscrite directement sur la peau du lanceur et y rester indélébile une heure. Coût : 6 Points de Mana par mot.
+
+35. Ronce-Sifflet : Une ronce enchantée pousse très lentement vers une source sonore unique. Coût : 10 Points de Mana.
+
+36. Craie Mnésique : Dessine un symbole qui, lorsqu’il est vu, rappelle une émotion forte vécue dans un lieu. Coût : 11 Points de Mana.
+
+37- Réplique Plate : Le prochain mot prononcé par le lanceur ou quelqu'un que le lanceur a touché est répété 5 secondes plus tard, à voix haute, par un autre individu aléatoire dans un rayon de 10 mètres. Coût : 6 Points de Mana.
+
+38. Langue de Pierre : Permet de parler avec une statue pendant quelques secondes. Réponses énigmatiques garanties. Coût : 13 Points de Mana par minute.
+
+39. Trace-Dérive : Le vent dévoile brièvement les dernières empreintes de pas ayant traversé la zone. Coût : 12 Points de Mana pour 10 m.
+
+40- Dureté : Le lanceur peut rendre dur un objet qu’il touche, pour une durée de 30 secondes. Coût : 10 Points de Mana.
+
+42. Lames-Lentes : Une lame tranchante paraît visuellement floue et molle pendant 3 secondes, désorientant l’adversaire. Coût : 14 Points de Mana.
+
+43. Voix d’Écharde : La voix du lanceur fait picoter les oreilles de ceux qui le méprisent. Coût : 9 Points de Mana par phrase.
+
+44. Rêve à Garde : En dormant, le lanceur laisse un écho magique qui hurle à la moindre intrusion. Coût : 10 Points de Mana par nuit.
+
+45. Lien d’Élan : Tant qu’il court sans s’arrêter, le lanceur peut se souvenir parfaitement de chaque détail croisé. Coût : 6 Points de Mana par course.
+
+46. Chaleur-Témoin : Un objet touché conserve la température du dernier être vivant qui l’a manipulé. Coût : 7 Points de Mana.
+
+Langue Commune : Pendant 1 heure, le lanceur comprend et parle la langue de son interlocuteur, mais oublie la sienne pendant la durée. Coût : 7 Points de Mana.
+
+48. Saut de Cendre : Un simple saut produit un nuage de poussière inoffensif, utile pour une diversion. Coût : 8 Points de Mana.
+
+49. Laisse-Miroir : Un miroir devient incapable de refléter le lanceur pendant 3 minutes. Coût : 13 Points de Mana.
+
+50. Chiffre-Terre : En traçant un chiffre au sol, le lanceur rend toute créature hésitante avant de le franchir. Coût : 10 Points de Mana.

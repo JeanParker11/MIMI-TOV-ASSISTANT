@@ -1,0 +1,6409 @@
+{
+  "canalisation_energetique_off": {
+    "id": "canalisation_energetique_off",
+    "nom": "Canalisation énergétique",
+    "rang": "E",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Permet de canaliser son énergie magique dans une partie du corps afin de la rendre plus endurante. Base fondamentale de l'attaque dans les combats magiques.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "buff_stat",
+        "stat": "force",
+        "valeur_min": 8,
+        "duree_secondes": 10,
+        "note": "Arès = 8, Hermès = 7, Atlas = 7"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "renforcement_energetique": {
+    "id": "renforcement_energetique",
+    "nom": "Renforcement énergétique",
+    "rang": "E",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "L'utilisateur insuffle son énergie dans un objet de contact (arme, outil, support), augmentant temporairement sa résistance structurelle. Effet dure entre 7 et 8 secondes selon la puissance du flux.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "objet_requis": "arme_equipee"
+      },
+      "effet": {
+        "type": "buff_arme",
+        "stat": "resistance",
+        "valeur": "+variable",
+        "duree_secondes": 8
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_min": 5
+      }
+    }
+  },
+  "expulsion_energetique": {
+    "id": "expulsion_energetique",
+    "nom": "Expulsion énergétique",
+    "rang": "E",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "L'utilisateur projette une impulsion de magie prenant la forme d'un filament lumineux ou d'un serpent en ligne droite. La portée dépend de la quantité d'énergie canalisée (1 point = 1 mètre, jusqu'à 9 maximum).",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "projectile_magique",
+        "degats": "variable",
+        "portee_metres": "1_par_point_mana",
+        "portee_max": 9
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_min": 1,
+        "valeur_max": 9
+      }
+    }
+  },
+  "cercle_repulsion": {
+    "id": "cercle_repulsion",
+    "nom": "Cercle de répulsion",
+    "rang": "E",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Un sceau circulaire apparaît sous les pieds de l'utilisateur. En libérant son énergie, celui-ci déclenche une onde de choc qui repousse tout ce qui se trouve dans le cercle à deux mètres au-delà de sa limite.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "zone_repulsion",
+        "rayon_max_metres": 9,
+        "distance_repulsion_metres": 2,
+        "effet_secondaire": "perturbation_flux_magiques"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 7
+      }
+    }
+  },
+  "poing_braise_d": {
+    "id": "poing_braise_d",
+    "nom": "Poing de braise",
+    "rang": "D",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Condense une grande quantité de mana dans le poing. Lors de l'impact, le poing libère une onde de chaleur brûlante qui consume l'ennemi.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "degats_feu",
+        "degats_base": "selon_force",
+        "effet_secondaire": {
+          "type": "brulure",
+          "degats_par_seconde": -3,
+          "duree": "jusqu_extinction"
+        }
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "scalpel_fournaise_d": {
+    "id": "scalpel_fournaise_d",
+    "nom": "Scalpel de Fournaise",
+    "rang": "D",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Fait converger une chaleur intense sur le tranchant d'une arme. Au contact, la lame brûle la zone ciblée.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "objet_requis": "arme_tranchante"
+      },
+      "effet": {
+        "type": "buff_arme",
+        "effet_supplementaire": "brulure_tranchant",
+        "degats_feu_bonus": "+variable"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "lame_incendiaire_d": {
+    "id": "lame_incendiaire_d",
+    "nom": "Lame incendiaire",
+    "rang": "D",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Fait apparaître une ou plusieurs lames de feu (9 max) projetables à distance (jusqu'à 9 mètres). La trajectoire est droite et la chaleur persistante.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "projectile_multiple",
+        "nombre_max": 9,
+        "portee_metres": 9,
+        "element": "feu",
+        "degats_par_lame": "variable"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "eclat_brasier_d": {
+    "id": "eclat_brasier_d",
+    "nom": "Éclat du brasier",
+    "rang": "D",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Tire une boule de feu concentrée d'un rouge vif. Explose au contact avec une petite zone d'effet (1 mètre).",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "projectile_explosif",
+        "element": "feu",
+        "rayon_explosion_metres": 1,
+        "degats": "variable"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "canalisation_energetique_def": {
+    "id": "canalisation_energetique_def",
+    "nom": "Canalisation énergétique",
+    "rang": "E",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Permet de canaliser son énergie magique dans une partie du corps afin de la rendre plus endurante. Base fondamentale de la défense dans les combats magiques.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "buff_defense",
+        "stat": "resistance",
+        "valeur_min": 8,
+        "duree_secondes": 10,
+        "note": "Arès = 8, Hermès = 7, Atlas = 7"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "exosquelette_1": {
+    "id": "exosquelette_1",
+    "nom": "Exosquelette 1",
+    "rang": "E",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "L'utilisateur canalise sa magie directement dans l'épiderme, créant une fine couche énergétique qui renforce l'ensemble du corps. Particulièrement efficace contre les attaques de zone ou les impacts multiples.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "armure_energetique",
+        "defense_globale": "+variable",
+        "resistance_chaleur": "augmentee",
+        "resistance_pression": "augmentee",
+        "duree_secondes": 15
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "cercle_protection": {
+    "id": "cercle_protection",
+    "nom": "Cercle de protection",
+    "rang": "E",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "L'utilisateur déploie un cercle magique flottant (coloré) qui sert de rempart frontal. Ce cercle intercepte les attaques physiques ou magiques selon sa résistance et vole en éclats lorsqu'elle est épuisée.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "bouclier_frontal",
+        "resistance": "variable",
+        "direction": "frontal",
+        "destruction": "si_resistance_epuisee"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 7
+      }
+    }
+  },
+  "dome_protecteur": {
+    "id": "dome_protecteur",
+    "nom": "Dôme protecteur",
+    "rang": "E",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "L'utilisateur génère une sphère magique stable autour de lui qui absorbe uniformément les impacts de toutes directions. Protection efficace contre les attaques de zone, mais vulnérable aux attaques concentrées ou précises.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "bouclier_spherique",
+        "protection": "omnidirectionnelle",
+        "resistance_repartie": true,
+        "faiblesse": "attaques_concentrees"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 8
+      }
+    }
+  },
+  "rempart_cendre_d": {
+    "id": "rempart_cendre_d",
+    "nom": "Rempart de Cendre",
+    "rang": "D",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "L'utilisateur crée un mur de cendres denses et chaudes sur 2 mètres de largeur. Ce mur bloque la vision et les projectiles pendant 3 secondes.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "mur_defensif",
+        "largeur_metres": 2,
+        "duree_secondes": 3,
+        "effets": ["bloque_vision", "bloque_projectiles"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "etreinte_ardente_d": {
+    "id": "etreinte_ardente_d",
+    "nom": "Étreinte ardente",
+    "rang": "D",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Enveloppe temporairement le corps d'un voile de feu inoffensif pour l'utilisateur, mais brûlant pour ceux qui s'en approchent au corps-à-corps.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "aura_defensive",
+        "element": "feu",
+        "effet_contact": "brulure_corps_a_corps",
+        "duree_secondes": 10
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "guerison_d": {
+    "id": "guerison_d",
+    "nom": "Guérison",
+    "rang": "D",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Le lanceur peut créer une sphère chargée d'énergie qui augmentera les PV de la première personne qu'elle touche. Idéal pour se guérir ou guérir des alliés.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "soin_pv",
+        "valeur": "+variable",
+        "cible": "premier_touche",
+        "peut_cibler_allie": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "morsure_aqueuse_d": {
+    "id": "morsure_aqueuse_d",
+    "nom": "Morsure aqueuse",
+    "rang": "D",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Transforme une arme en serpent d'eau grâce à l'énergie de l'utilisateur. Ce serpent peut s'étendre et mordre des cibles.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "objet_requis": "arme_equipee"
+      },
+      "effet": {
+        "type": "transformation_arme",
+        "forme": "serpent_eau",
+        "portee_extensible": true,
+        "degats": "variable"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "danseuse_d": {
+    "id": "danseuse_d",
+    "nom": "Danseuse",
+    "rang": "D",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Recouvre l'utilisateur d'une aura aqueuse qui augmente sa flexibilité et sa vitesse de +0,5 seconde sans améliorer son temps de réaction. Consomme 3 Points par seconde.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "buff_stat",
+        "stat": "vitesse_deplacement",
+        "valeur": 0.5,
+        "note": "N'améliore pas le temps de réaction"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_seconde": 3
+      }
+    }
+  },
+  "aiguilles_ecume_d": {
+    "id": "aiguilles_ecume_d",
+    "nom": "Aiguilles d'écume",
+    "rang": "D",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Projette une rafale de fines lames d'eau très rapides. Peu puissantes mais difficiles à esquiver.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "projectile_multiple",
+        "element": "eau",
+        "vitesse": "tres_rapide",
+        "puissance": "faible",
+        "difficulte_esquive": "elevee"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_min": 5,
+        "valeur": 9
+      }
+    }
+  },
+  "bulls_bulls_d": {
+    "id": "bulls_bulls_d",
+    "nom": "Bulls Bulls",
+    "rang": "D",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Lance une bulle d'eau vibrante qui explose sur commande ou au contact de l'ennemi, troublant momentanément ses sens et lui infligeant des dégâts.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "projectile_controle",
+        "element": "eau",
+        "effet_explosion": "trouble_sens",
+        "degats": "variable"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "coup_rafale_d": {
+    "id": "coup_rafale_d",
+    "nom": "Coup de rafale",
+    "rang": "D",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Charge un coup de paume libérant une onde de vent sec. Repousse l'adversaire et les obstacles.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "onde_repulsion",
+        "element": "vent",
+        "effet": "repousse"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "bond_ascensionnel_d": {
+    "id": "bond_ascensionnel_d",
+    "nom": "Bond ascensionnel",
+    "rang": "D",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Utilise l'air comprimé sous les pieds pour sauter plus haut.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "mobilite",
+        "action": "saut_augmente",
+        "element": "vent"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "serpent_zephyr_d": {
+    "id": "serpent_zephyr_d",
+    "nom": "Serpent du zéphyr",
+    "rang": "D",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Fait naître un souffle de vent fin et rapide qui se faufile à distance vers sa cible.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "projectile_cibl",
+        "element": "vent",
+        "trajectoire": "sinueuse",
+        "vitesse": "rapide"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "aile_tranchante_d": {
+    "id": "aile_tranchante_d",
+    "nom": "Aile tranchante",
+    "rang": "D",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Projette une lame d'air en arc horizontal ou vertical. Peut trancher la peau si elle touche avec précision.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "projectile_tranchant",
+        "element": "vent",
+        "forme": "arc",
+        "effet_precision": "tranchant"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "poing_tellurique_d": {
+    "id": "poing_tellurique_d",
+    "nom": "Poing tellurique",
+    "rang": "D",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Solidifie le bras en une masse de pierre lourde. Au contact, provoque une onde sismique dans un rayon de 1 m.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "transformation_membre",
+        "element": "terre",
+        "effet_secondaire": "onde_sismique",
+        "rayon_metres": 1
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "marteau_sedimentaire_d": {
+    "id": "marteau_sedimentaire_d",
+    "nom": "Marteau sédimentaire",
+    "rang": "D",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Crée brièvement une excroissance rocheuse en forme de marteau autour du bras. Le coup assène un choc assourdissant.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "creation_arme_temporaire",
+        "element": "terre",
+        "forme": "marteau",
+        "effet_impact": "assourdissement"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "fronde_minerale_d": {
+    "id": "fronde_minerale_d",
+    "nom": "Fronde minérale",
+    "rang": "D",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Projette une salve de pierres chauffées qui tournent sur elles-mêmes. Leur irrégularité les rend difficiles à bloquer.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "projectile_multiple",
+        "element": "terre",
+        "trajectoire": "rotative",
+        "difficulte_blocage": "elevee"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "eclat_geodique_d": {
+    "id": "eclat_geodique_d",
+    "nom": "Éclat géodique",
+    "rang": "D",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Fait surgir une pointe de pierre cristalline depuis le sol sous l'adversaire. Nécessite une préparation d'une seconde.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "temps_preparation": 1
+      },
+      "effet": {
+        "type": "piege_sol",
+        "element": "terre",
+        "forme": "pointe_cristalline"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "peau_liquide_d": {
+    "id": "peau_liquide_d",
+    "nom": "Peau Liquide",
+    "rang": "D",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Transforme temporairement la peau du lanceur en une surface aqueuse glissante, réduisant les dégâts de coup direct de 25% pendant 4 secondes.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "buff_defense",
+        "reduction_degats_pourcent": 25,
+        "duree_secondes": 4
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 7
+      }
+    }
+  },
+  "murmure_sous_marin_d": {
+    "id": "murmure_sous_marin_d",
+    "nom": "Murmure Sous-Marin",
+    "rang": "D",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Crée un cercle d'eau dense circulant autour du torse, réduisant la force d'impact et amortissant les sons sur 3 mètres.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "cercle_protecteur",
+        "element": "eau",
+        "reduction_impact": true,
+        "amortissement_son": 3
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "miroir_ecume_d": {
+    "id": "miroir_ecume_d",
+    "nom": "Miroir d'Écume",
+    "rang": "D",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Dresse un miroir d'eau flottant vertical qui absorbe une attaque magique avant de se dissoudre.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "bouclier_unique",
+        "element": "eau",
+        "absorption": "une_attaque_magique"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "bourrasque_d": {
+    "id": "bourrasque_d",
+    "nom": "Bourrasque",
+    "rang": "D",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "L'utilisateur déclenche une forte bourrasque par un coup qui repousse toutes les attaques dans un rayon de 1,5 mètre. Minimum 7 pour espérer repousser quelqu'un.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "zone_repulsion",
+        "element": "vent",
+        "rayon_metres": 1.5,
+        "force_min": 7
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "plongeon_aerien_d": {
+    "id": "plongeon_aerien_d",
+    "nom": "Plongeon Aérien",
+    "rang": "D",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Une poussée de vent est générée sous les pieds du lanceur pour esquiver une attaque vers l'arrière ou en hauteur. 2 Points par poussée.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "esquive_assistee",
+        "element": "vent",
+        "direction": ["arriere", "hauteur"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 2
+      }
+    }
+  },
+  "chambre_air_d": {
+    "id": "chambre_air_d",
+    "nom": "Chambre d'Air",
+    "rang": "D",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Crée un champ d'air dense autour du corps, réduisant la vitesse d'approche des projectiles ennemis.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "champ_protecteur",
+        "element": "vent",
+        "effet": "ralentissement_projectiles"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "cone_dissipation_d": {
+    "id": "cone_dissipation_d",
+    "nom": "Cône de Dissipation",
+    "rang": "D",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Projette une onde d'air vers l'avant en forme de cône, dissipant fumée, brume ou magie légère dans un angle de 60°.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "dissipation_zone",
+        "element": "vent",
+        "forme": "cone",
+        "angle_degres": 60
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "ecorce_sismique_d": {
+    "id": "ecorce_sismique_d",
+    "nom": "Écorce Sismique",
+    "rang": "D",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Renforce temporairement la peau de l'utilisateur en la rendant aussi résistante qu'une roche brute.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "buff_defense",
+        "element": "terre",
+        "resistance": "roche"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "pilier_rappel_d": {
+    "id": "pilier_rappel_d",
+    "nom": "Pilier de Rappel",
+    "rang": "D",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Fait surgir un bloc de pierre derrière le lanceur pour amortir une charge ou un recul brutal. S'active au contact du sol avec les pieds puis s'effondre après absorption du choc.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "contact_sol": true
+      },
+      "effet": {
+        "type": "structure_defensive",
+        "element": "terre",
+        "position": "arriere",
+        "effet": "amortissement"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "mur_quartz_d": {
+    "id": "mur_quartz_d",
+    "nom": "Mur de Quartz",
+    "rang": "D",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Élève un mur cristallin transparent entre le lanceur et l'ennemi. Résiste aux impacts.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "mur_defensif",
+        "element": "terre",
+        "materiau": "quartz",
+        "transparence": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "sol_ascendant_d": {
+    "id": "sol_ascendant_d",
+    "nom": "Sol Ascendant",
+    "rang": "D",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Soulève une dalle de pierre sous les pieds du lanceur pour le faire gagner de la hauteur ou l'extraire rapidement d'une zone dangereuse.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "mobilite_defensive",
+        "element": "terre",
+        "action": "elevation"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "frappe_lithoplasmatique_c": {
+    "id": "frappe_lithoplasmatique_c",
+    "nom": "Frappe Lithoplasmatique",
+    "rang": "C",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Le poing ou l'arme se charge de plasma instable. À l'impact, l'énergie explose sous forme d'arcs électriques secondaires dans un rayon d'un mètre.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "attaque_explosive",
+        "element": "foudre",
+        "effet_secondaire": "arcs_electriques",
+        "rayon_metres": 1
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 9,
+          "Hermès": 8,
+          "Atlas": 8
+        }
+      }
+    }
+  },
+  "genou_megavigne_c": {
+    "id": "genou_megavigne_c",
+    "nom": "Genou Mégavigne",
+    "rang": "C",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Une liane épaisse surgit du sol, s'enroule autour de la jambe du lanceur et renforce un coup de genou. Dégâts bruts + effet d'étourdissement.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "attaque_renforcee",
+        "element": "vegetation",
+        "membre": "jambe",
+        "effet_secondaire": "etourdissement"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "morsure_onyx_c": {
+    "id": "morsure_onyx_c",
+    "nom": "Morsure d'Onyx",
+    "rang": "C",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Le bras ou la jambe se couvre d'un alliage sombre et dense. Au contact, étourdit l'adversaire.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "transformation_membre",
+        "element": "metal",
+        "materiau": "onyx",
+        "effet_secondaire": "etourdissement"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 10,
+          "Hermès": 8,
+          "Atlas": 8
+        }
+      }
+    }
+  },
+  "percussion_phlogistique_c": {
+    "id": "percussion_phlogistique_c",
+    "nom": "Percussion Phlogistique",
+    "rang": "C",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Le pied ou le bras s'embrase d'un rouge magmatique, dense et lourd. Un coup de pied au contact du sol ou de l'adversaire explose en créant une onde de choc circulaire (2 mètres).",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "attaque_explosive",
+        "element": "lave",
+        "forme": "onde_choc_circulaire",
+        "rayon_metres": 2
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 9,
+          "Hermès": 8,
+          "Atlas": 8
+        }
+      }
+    }
+  },
+  "dard_magnesia_c": {
+    "id": "dard_magnesia_c",
+    "nom": "Dard de Magnésia",
+    "rang": "C",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Fait pousser un dard cristallin à la place des mains ou sur la lame. Une charge bien placée peut cristalliser la chair de l'adversaire.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "creation_arme_temporaire",
+        "element": "cristal",
+        "forme": "dard",
+        "effet_special": "cristallisation_chair"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 10,
+          "Hermès": 9,
+          "Atlas": 9
+        }
+      }
+    }
+  },
+  "serpent_teigneux_foudre_c": {
+    "id": "serpent_teigneux_foudre_c",
+    "nom": "Serpent teigneux de foudre",
+    "rang": "C",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Touche le sol avec ses pieds ou ses mains ce qui a pour conséquence de créer un serpent de foudre brûlant qui ondule vers une cible définie. Technique à double tranchant.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "contact_sol": true
+      },
+      "effet": {
+        "type": "invocation_elementaire",
+        "element": "foudre",
+        "forme": "serpent",
+        "trajectoire": "ondulante",
+        "danger": "double_tranchant"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_faction": {
+          "Arès": 10,
+          "Hermès": 9,
+          "Atlas": 9
+        }
+      }
+    }
+  },
+  "crampon_voltaique_c": {
+    "id": "crampon_voltaique_c",
+    "nom": "Crampon Voltaïque",
+    "rang": "C",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Hermès", "Atlas"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Le porteur concentre des charges dans l'un de ses pieds puis le pose au sol créant une empreinte presque invisible au sol qui explose au contact d'un ennemi. Minimum 7 Points d'énergie.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "piege_sol",
+        "element": "foudre",
+        "visibilite": "presque_invisible",
+        "declenchement": "contact_ennemi"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_min": 7,
+        "valeur_faction": {
+          "Arès": 8,
+          "Hermès": 7,
+          "Atlas": 7
+        }
+      }
+    }
+  },
+  "noeud_vegetal_c": {
+    "id": "noeud_vegetal_c",
+    "nom": "Nœud Végétal",
+    "rang": "C",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Projette à distance un faisceau de lianes en spirale qui enserre et comprime une cible. Portée : 7 mètres. Peut étouffer un ennemi.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "projectile_enserre",
+        "element": "vegetation",
+        "forme": "spirale",
+        "portee_metres": 7,
+        "effet": "compression_etouffement"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 12
+      }
+    }
+  },
+  "pointe_cendre_foudre_c": {
+    "id": "pointe_cendre_foudre_c",
+    "nom": "Pointe de Cendre-Foudre",
+    "rang": "C",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Lance une boule d'électricité brûlante qui reste en suspension dans l'air 1 seconde avant de frapper une cible violemment.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "projectile_retarde",
+        "element": "foudre_noire",
+        "delai_secondes": 1,
+        "puissance": "elevee"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 12
+      }
+    }
+  },
+  "ruisseau_igne_c": {
+    "id": "ruisseau_igne_c",
+    "nom": "Ruisseau Igné",
+    "rang": "C",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Hermès", "Atlas"]
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Projette un jet de lave concentrée sur une trajectoire fixe. Faible vitesse mais chaleur persistante et traînée au sol.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "projectile_continu",
+        "element": "lave",
+        "vitesse": "faible",
+        "effet_persistant": "trainee_sol"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 10
+      }
+    }
+  },
+  "marque_maurus_c": {
+    "id": "marque_maurus_c",
+    "nom": "Marque de Maurus",
+    "rang": "C",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Forme une marque d'ombre sur tout le corps de l'utilisateur, annulant toute attaque frontale physique ou magique de rang égal ou inférieur.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "bouclier_absolu",
+        "element": "ombre",
+        "protection": "frontale",
+        "annulation": "rang_egal_ou_inferieur"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 14
+      }
+    }
+  },
+  "epines_c": {
+    "id": "epines_c",
+    "nom": "Épines",
+    "rang": "C",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Quand l'utilisateur est touché, une barrière réflexive de piques se déploie autour de lui, blessant tous les ennemis dans un rayon de 1 mètre.",
+    "mecanique": {
+      "declencheur": "quand_touche",
+      "condition": null,
+      "effet": {
+        "type": "contre_attaque_zone",
+        "forme": "piques",
+        "rayon_metres": 1,
+        "effet": "degats_reflexifs"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_deploiement": 12
+      }
+    }
+  },
+  "fleur_vragne_c": {
+    "id": "fleur_vragne_c",
+    "nom": "Fleur de Vragne",
+    "rang": "C",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Invoque une grande corolle autour de l'utilisateur. Pendant 6 secondes, les attaques magiques sont absorbées et stockées (jusqu'à 17 PM) avant d'être dispersées dans le sol qui se voit rempli de fleurs de printemps.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "absorption_magique",
+        "element": "vegetation",
+        "duree_secondes": 6,
+        "capacite_pm": 17,
+        "effet_fin": "floraison_sol"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 15
+      }
+    }
+  },
+  "peau_elydre_c": {
+    "id": "peau_elydre_c",
+    "nom": "Peau d'Élydre",
+    "rang": "C",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Enduit temporairement le corps d'une protection minérale semi-organique qui divise par deux les dégâts physiques reçus pendant 10 secondes.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "buff_defense",
+        "materiau": "mineral_organique",
+        "reduction_degats_pourcent": 50,
+        "duree_secondes": 10
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 13
+      }
+    }
+  },
+  "transe_miroir_c": {
+    "id": "transe_miroir_c",
+    "nom": "Transe du Miroir",
+    "rang": "C",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Crée un double immobile de l'utilisateur en position de garde. Le double attire automatiquement la première attaque magique lancée dans les 5 secondes suivantes.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "leurre_magique",
+        "duree_secondes": 5,
+        "attraction": "premiere_attaque_magique"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 11
+      }
+    }
+  },
+  "kharin_c": {
+    "id": "kharin_c",
+    "nom": "Kharïn",
+    "rang": "C",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Un filet spectral entoure l'utilisateur, ralentissant de 70% toute personne, attaque ou projectile entrant dans un rayon de 2 mètres. Dure 3 secondes.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "zone_ralentissement",
+        "forme": "filet_spectral",
+        "rayon_metres": 2,
+        "ralentissement_pourcent": 70,
+        "duree_secondes": 3
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 14
+      }
+    }
+  },
+  "ecorce_balvoar_c": {
+    "id": "ecorce_balvoar_c",
+    "nom": "Écorce de Balvoar",
+    "rang": "C",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Fait pousser une couche d'écorce résistante sur une partie du corps ciblée (bras, torse ou jambes), réduisant les dégâts physiques de moitié pendant 15 secondes.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "armure_partielle",
+        "element": "vegetation",
+        "zones": ["bras", "torse", "jambes"],
+        "reduction_degats_pourcent": 50,
+        "duree_secondes": 15
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 12
+      }
+    }
+  },
+  "mer_lune_c": {
+    "id": "mer_lune_c",
+    "nom": "Mer de Lune",
+    "rang": "C",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "L'utilisateur reçoit une marque qui le rend totalement intangible sauf le bas de ses pieds.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "intangibilite",
+        "exception": "pieds",
+        "cout_par_seconde": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_seconde": 16
+      }
+    }
+  },
+  "champ_syldra_c": {
+    "id": "champ_syldra_c",
+    "nom": "Champ de Syldra",
+    "rang": "C",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Crée un champ gravitationnel inversé sur 1 mètre autour de l'utilisateur. Les projectiles ralentissent considérablement et tombent avant impact. Se méfier des attaques ciblées.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "champ_gravitationnel",
+        "rayon_metres": 1,
+        "effet": "ralentissement_projectiles",
+        "faiblesse": "attaques_ciblees"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_seconde": 13
+      }
+    }
+  },
+  "banniere_arkhyn_c": {
+    "id": "banniere_arkhyn_c",
+    "nom": "Bannière d'Arkhyn",
+    "rang": "C",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Une bannière magique se plante au sol pendant 10 secondes. Tant qu'elle est debout, les alliés dans un rayon de 2 mètres reçoivent 30% de dégâts en moins.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "buff_zone_allie",
+        "forme": "banniere",
+        "rayon_metres": 2,
+        "reduction_degats_pourcent": 30,
+        "duree_secondes": 10
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 15
+      }
+    }
+  },
+  "sang_primordial_b": {
+    "id": "sang_primordial_b",
+    "nom": "Sang Primordial",
+    "rang": "B",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Atlas", "Hermès"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Le sang de l'utilisateur entre en ébullition, décuplant la puissance musculaire brute par deux pendant deux tours. Chaque coup porté provoque une onde de choc mineure qui déséquilibre les ennemis proches. Fatigue intense après (immobilité 2 tours).",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "buff_stat",
+        "stat": "force",
+        "multiplicateur": 2,
+        "duree_tours": 2,
+        "effet_secondaire": "onde_choc_mineure",
+        "contrepartie": {
+          "type": "immobilite",
+          "duree_tours": 2
+        }
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 18
+      }
+    }
+  },
+  "pacte_ancetre_b": {
+    "id": "pacte_ancetre_b",
+    "nom": "Pacte de l'Ancêtre",
+    "rang": "B",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Atlas", "Hermès"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Invoque brièvement l'ombre d'un ancêtre combattant. Tant que l'effet est actif, chaque mouvement de l'utilisateur est doublé par une image rémanente qui inflige 30% des dégâts initiaux. Durée : 3 tours. Ne fonctionne que si le lanceur ne recule jamais.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "restriction": "aucune_retraite"
+      },
+      "effet": {
+        "type": "invocation_ombre",
+        "image_remanente": true,
+        "degats_supplementaires_pourcent": 30,
+        "duree_tours": 3
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 22
+      }
+    }
+  },
+  "cri_faille_b": {
+    "id": "cri_faille_b",
+    "nom": "Cri de Faille",
+    "rang": "B",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Atlas", "Hermès"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "En hurlant au moment de l'activation, l'utilisateur fracture légèrement le tissu sonore autour de lui. Pendant 2 tours, toutes ses attaques physiques génèrent un écho destructeur. Peut briser les armes fragiles dans un rayon de 2 mètres.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "action_requise": "hurlement"
+      },
+      "effet": {
+        "type": "buff_attaques",
+        "effet": "echo_destructeur",
+        "duree_tours": 2,
+        "effet_secondaire": "brise_armes_fragiles",
+        "rayon_metres": 2
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 20
+      }
+    }
+  },
+  "ancrage_colosse_b": {
+    "id": "ancrage_colosse_b",
+    "nom": "Ancrage du Colosse",
+    "rang": "B",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Atlas", "Hermès"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "L'utilisateur devient presque impossible à repousser ou renverser. Sa stabilité est parfaite, et il peut maintenir une posture offensive implacable. Durée : 3 tours. Réduit la vitesse de déplacement de moitié.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "buff_stabilite",
+        "resistance_repulsion": "maximale",
+        "duree_tours": 3,
+        "contrepartie": {
+          "type": "reduction_vitesse",
+          "pourcentage": 50
+        }
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 19
+      }
+    }
+  },
+  "chant_entropie_b": {
+    "id": "chant_entropie_b",
+    "nom": "Chant de l'Entropie",
+    "rang": "B",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Atlas", "Hermès"]
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "L'utilisateur entonne un chant inaudible pour les vivants, accordant à ses sorts une instabilité volatile. Pendant 2 tours, chaque sort a 50% de chance d'avoir un effet secondaire destructeur aléatoire (explosion, paralysie, corrosion).",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "buff_sorts",
+        "effet": "instabilite_volatile",
+        "duree_tours": 2,
+        "chance_effet_secondaire": 50,
+        "effets_possibles": ["explosion", "paralysie", "corrosion"],
+        "aleatoire": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 24
+      }
+    }
+  },
+  "marche_destructeur_b": {
+    "id": "marche_destructeur_b",
+    "nom": "Marche du destructeur",
+    "rang": "B",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Atlas", "Hermès"]
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "L'utilisateur trace des symboles flottants sous ses pieds, qui suivent ses mouvements. Pendant 3 tours, ses déplacements laissent des résidus magiques qui explosent 1 seconde après son passage. L'explosion de l'une entraîne celle de l'autre. Vitesse +20%.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "trace_explosive",
+        "duree_tours": 3,
+        "delai_explosion": 1,
+        "reaction_chaine": true,
+        "buff_vitesse": 20
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 21
+      }
+    }
+  },
+  "oeil_iskalyon_b": {
+    "id": "oeil_iskalyon_b",
+    "nom": "Œil d'Iskalyon",
+    "rang": "B",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Atlas", "Hermès"]
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Cette rune confère à l'utilisateur une perception accrue des flux magiques. Pendant 2 tours, il peut prédire les attaques magiques ennemies. Durée : 2 tours. N'affecte que les attaques magiques et ne marche pas en duel.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "restriction": "pas_en_duel"
+      },
+      "effet": {
+        "type": "perception_magique",
+        "prediction_attaques": true,
+        "duree_tours": 2,
+        "cible": "attaques_magiques_uniquement"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 23
+      }
+    }
+  },
+  "serenade_inversee_b": {
+    "id": "serenade_inversee_b",
+    "nom": "Sérénade Inversée",
+    "rang": "B",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Atlas", "Hermès"]
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "L'utilisateur active une vibration magique inversée autour de lui. Pendant 3 tours, tout sort lancé à proximité (allié comme ennemi) inverse ses propriétés : soin devient dégât, chaleur devient glace, lumière devient ombre. Rayon : 10 mètres.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "zone_inversion",
+        "rayon_metres": 10,
+        "duree_tours": 3,
+        "cible": "tous_sorts",
+        "inversions": {
+          "soin": "degats",
+          "chaleur": "glace",
+          "lumiere": "ombre"
+        }
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 25
+      }
+    }
+  },
+  "lame_inerte_b": {
+    "id": "lame_inerte_b",
+    "nom": "Lame Inerte",
+    "rang": "B",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Arès", "Atlas", "Hermès"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Lors d'un impact physique, ce sort annihile directement l'arme ou l'outil magique de l'ennemi (épée, catalyseur…). Détruit l'arme adverse, l'empêchant d'être utilisée au prochain tour.",
+    "mecanique": {
+      "declencheur": "lors_impact_physique",
+      "condition": null,
+      "effet": {
+        "type": "destruction_arme",
+        "cible": "arme_ennemie",
+        "duree_tours": 1
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 12
+      }
+    }
+  },
+  "sang_plomb_b": {
+    "id": "sang_plomb_b",
+    "nom": "Sang de Plomb",
+    "rang": "B",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Arès", "Atlas", "Hermès"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Rend le sang de l'ennemi plus dense, ralentissant ses réflexes et sa vitesse de déplacement. Nécessite un contact physique. Durée : 2 tours.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "contact_physique": true
+      },
+      "effet": {
+        "type": "debuff_ennemi",
+        "effet": "sang_dense",
+        "ralentissement_reflexes": true,
+        "ralentissement_vitesse": true,
+        "duree_tours": 2
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 10
+      }
+    }
+  },
+  "voile_crainte_b": {
+    "id": "voile_crainte_b",
+    "nom": "Voile de Crainte",
+    "rang": "B",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Arès", "Atlas", "Hermès"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Inflige la peur à l'ennemi, réduisant la puissance de ses prochaines techniques. Nécessite un contact physique. Durée : 2 tours.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "contact_physique": true
+      },
+      "effet": {
+        "type": "debuff_ennemi",
+        "statut": "peur",
+        "reduction_puissance": true,
+        "duree_tours": 2
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 11
+      }
+    }
+  },
+  "fracture_occulte_b": {
+    "id": "fracture_occulte_b",
+    "nom": "Fracture Occulte",
+    "rang": "B",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Arès", "Atlas", "Hermès"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Rompt temporairement le lien d'un adversaire avec ses capacités magiques. Durée : 1 tour. Empêche toute utilisation de techniques magiques durant un tour. Ne fonctionne pas sur un ennemi déjà éveillé. Nécessite contact physique.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "contact_physique": true,
+        "cible_non_eveillee": true
+      },
+      "effet": {
+        "type": "suppression_magie",
+        "duree_tours": 1
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 14
+      }
+    }
+  },
+  "retroflux_b": {
+    "id": "retroflux_b",
+    "nom": "Rétroflux",
+    "rang": "B",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Atlas", "Hermès"]
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Inverse partiellement les flux magiques autour de l'ennemi, rendant ses sorts instables. Durée : 2 tours. 40% de chance que la prochaine attaque magique échoue ou change de trajectoire.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "debuff_magie",
+        "effet": "flux_inverse",
+        "chance_echec": 40,
+        "duree_tours": 2
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 13
+      }
+    }
+  },
+  "scellement_douloureux_b": {
+    "id": "scellement_douloureux_b",
+    "nom": "Scellement Douloureux",
+    "rang": "B",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Atlas", "Hermès"]
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Appose une marque tortueuse sur la cible qui brûle à chaque tentative de lancer un sort. Durée : 3 tours. Inflige des dégâts à chaque incantation ennemie, le poussant à l'inaction.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "marque_punitive",
+        "declenchement": "a_chaque_sort",
+        "effet": "degats_brulure",
+        "duree_tours": 3
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 12
+      }
+    }
+  },
+  "nebuleuse_noire_b": {
+    "id": "nebuleuse_noire_b",
+    "nom": "Nébuleuse noire",
+    "rang": "B",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Atlas", "Hermès"]
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Brouille la perception magique de la cible. Durée : 2 tours. La cible perd la capacité de détecter les présences magiques ou de localiser une cible précise.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "debuff_perception",
+        "perte_detection_magique": true,
+        "perte_localisation": true,
+        "duree_tours": 2
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 11
+      }
+    }
+  },
+  "filament_noir_b": {
+    "id": "filament_noir_b",
+    "nom": "Filament noir",
+    "rang": "B",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Atlas", "Hermès"]
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Lie la magie d'un ennemi à un objet ou une personne dans la zone. Durée : 2 tours. Si la cible lance un sort, celui-ci est redirigé vers la cible liée.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "lien_magique",
+        "redirection_sorts": true,
+        "duree_tours": 2
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 15
+      }
+    }
+  },
+  "arret_phasique_a": {
+    "id": "arret_phasique_a",
+    "nom": "Arrêt Phasique",
+    "rang": "A",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Atlas", "Hermès"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 48,
+    "taux_reussite": 80,
+    "description": "L'utilisateur immobilise une zone circulaire de 6 mètres dans le temps pendant 5 secondes réelles. Toute entité ou projectile à l'intérieur reste figé. L'utilisateur et ses alliés sont immunisés. 1 fois toutes les 10 minutes ou par combat.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "magie_temps",
+        "effet": "gel_temporel_zone",
+        "rayon_metres": 6,
+        "duree_secondes": 5,
+        "immunite": ["utilisateur", "allies"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 26,
+        "cooldown_minutes": 10
+      }
+    }
+  },
+  "transfert_ancrage_a": {
+    "id": "transfert_ancrage_a",
+    "nom": "Transfert d'Ancrage",
+    "rang": "A",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Arès", "Atlas", "Hermès"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 48,
+    "taux_reussite": 80,
+    "description": "L'utilisateur échange instantanément sa position avec n'importe quel allié ou objet non vivant qu'il voit dans un rayon de 20 mètres. Autorise jusqu'à 2 échanges dans les 10 secondes après l'activation.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "cible_visible": true
+      },
+      "effet": {
+        "type": "magie_espace",
+        "effet": "echange_position",
+        "portee_metres": 20,
+        "cibles": ["allie", "objet_non_vivant"],
+        "echanges_max": 2,
+        "duree_fenetre_secondes": 10
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 24
+      }
+    }
+  },
+  "demi_lune_causale_a": {
+    "id": "demi_lune_causale_a",
+    "nom": "Demi-Lune Causale",
+    "rang": "A",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Atlas", "Hermès"]
+    },
+    "utilisations_par_rang": 48,
+    "taux_reussite": 80,
+    "description": "Le mage scelle un événement dans le futur proche : pendant 12 secondes, tout dégât subi est retardé dans le temps. À la fin, tous les dégâts accumulés sont compressés et réappliqués en un seul impact. Peut entraîner la mort brutale.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "magie_temps",
+        "effet": "retard_degats",
+        "duree_secondes": 12,
+        "compression_fin": true,
+        "danger": "mort_possible"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 28
+      }
+    }
+  },
+  "sursis_impact_a": {
+    "id": "sursis_impact_a",
+    "nom": "Sursis d'Impact",
+    "rang": "A",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Arès", "Atlas", "Hermès"],
+      "excluded": ["Hécate"]
+    },
+    "utilisations_par_rang": 48,
+    "taux_reussite": 80,
+    "description": "Juste avant de subir une attaque létale ou critique, l'utilisateur déclenche un gel temporel personnel. L'attaque est mise en pause pendant 3 secondes. Durant ce laps, un unique mouvement est possible. 1 usage par combat.",
+    "mecanique": {
+      "declencheur": "avant_attaque_letale",
+      "condition": null,
+      "effet": {
+        "type": "magie_temps",
+        "effet": "gel_personnel",
+        "duree_secondes": 3,
+        "actions_autorisees": ["esquive", "repli", "contre_attaque", "incantation_rapide"],
+        "limite": 1
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 25,
+        "limite_par_combat": 1
+      }
+    }
+  },
+  "miroir_gravitationnel_a": {
+    "id": "miroir_gravitationnel_a",
+    "nom": "Miroir Gravitationnel",
+    "rang": "A",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Atlas", "Hermès"]
+    },
+    "utilisations_par_rang": 48,
+    "taux_reussite": 80,
+    "description": "Le mage crée un champ inversé de gravité pendant 6 secondes sur une zone de 10 mètres. Toute attaque magique ou physique dirigée vers lui est détournée vers le ciel. Ne protège que contre les attaques frontales.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "magie_espace",
+        "effet": "gravite_inverse",
+        "rayon_metres": 10,
+        "duree_secondes": 6,
+        "detournement": "vers_ciel",
+        "protection": "frontale_uniquement",
+        "faiblesse": ["attaques_sol", "attaques_laterales"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 29
+      }
+    }
+  },
+  "lame_dernier_souffle_s": {
+    "id": "lame_dernier_souffle_s",
+    "nom": "Lame du Dernier Souffle",
+    "rang": "S",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 96,
+    "taux_reussite": 90,
+    "description": "Permet de lancer en abaissant sa main une tranchée de 13 mètres de haut, une attaque qui ignore toutes les défenses (magiques, physiques, spirituelles). Quiconque touché meurt immédiatement, même un éveillé. Utilisable une seule fois par mois.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "attaque_absolue",
+        "hauteur_metres": 13,
+        "ignore_defenses": true,
+        "effet": "mort_immediate",
+        "cible": "tous_touches"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 50,
+        "cooldown_jours": 30
+      }
+    }
+  },
+  "anastasis_chair_eternelle_s": {
+    "id": "anastasis_chair_eternelle_s",
+    "nom": "Anastasis - Rite de la Chair Éternelle",
+    "rang": "S",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 96,
+    "taux_reussite": 90,
+    "description": "Résurrection immédiate de soi et de tous les alliés morts à moins de 10 mètres, avec 50% de leurs capacités restaurées. Peut être utilisée en pleine bataille. Vide totalement la réserve de mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "resurrection",
+        "rayon_metres": 10,
+        "cibles": ["soi", "allies_morts"],
+        "restauration_pourcent": 50
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": "total",
+        "effet": "vide_reserve_complete"
+      }
+    }
+  },
+  "ordre_cendres_s": {
+    "id": "ordre_cendres_s",
+    "nom": "Ordre des Cendres",
+    "rang": "S",
+    "type": "active",
+    "categorie": "offensif",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 96,
+    "taux_reussite": 90,
+    "description": "Permet de rappeler un mort du passé (joueur ou PNJ) sous forme physique pendant 5 tours. Il combat avec ses souvenirs, sa puissance d'avant la mort. Conséquence : L'utilisateur est maudit 2 jours (réduction des stats de moitié).",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "invocation_mort",
+        "duree_tours": 5,
+        "puissance": "originale",
+        "contrepartie": {
+          "type": "malediction",
+          "duree_jours": 2,
+          "reduction_stats_pourcent": 50
+        }
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 45
+      }
+    }
+  },
+  "bastion_aeloria_s": {
+    "id": "bastion_aeloria_s",
+    "nom": "Bastion d'Aeloria",
+    "rang": "S",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 96,
+    "taux_reussite": 90,
+    "description": "Génère un dôme inviolable d'énergie divine autour d'un lieu (jusqu'à 20 m de diamètre), stoppant le temps à l'intérieur pour 30 secondes réelles. Idéal pour protéger, fuir ou guérir. Réutilisation : 1 fois tous les 15 jours.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "dome_inviolable",
+        "diametre_max_metres": 20,
+        "arret_temps_interieur": true,
+        "duree_secondes": 30,
+        "usages": ["protection", "fuite", "guerison"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 50,
+        "cooldown_jours": 15
+      }
+    }
+  },
+  "faille_oubli_s": {
+    "id": "faille_oubli_s",
+    "nom": "Faille de l'Oubli",
+    "rang": "S",
+    "type": "active",
+    "categorie": "defensif",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": ["Arès", "Atlas", "Hermès"]
+    },
+    "utilisations_par_rang": 96,
+    "taux_reussite": 90,
+    "description": "Crée une fracture mentale dans l'esprit de tous les ennemis proches, leur faisant oublier leurs sorts de rang A et S pendant 3 tours.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "fracture_mentale",
+        "cibles": "ennemis_proches",
+        "effet": "oubli_sorts",
+        "rangs_oublies": ["A", "S"],
+        "duree_tours": 3
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 48
+      }
+    }
+  },
+  "yeux_luisants_e": {
+    "id": "yeux_luisants_e",
+    "nom": "Yeux luisants",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Fait briller légèrement les yeux dans l'obscurité et permet donc d'y voir. Effet similaire à celui des chats. Nécessite 3 points de Mana par minute.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "vision_nocturne",
+        "duree": "par_minute"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_minute": 3
+      }
+    }
+  },
+  "marche_silencieuse_e": {
+    "id": "marche_silencieuse_e",
+    "nom": "Marche silencieuse",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Supprime tous les bruits de pas mais uniquement sur des sols en bois. Nécessite 4 points de Mana par minute.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "surface": "bois"
+      },
+      "effet": {
+        "type": "silence_deplacement",
+        "duree": "par_minute"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_minute": 4
+      }
+    }
+  },
+  "marche_reve_d": {
+    "id": "marche_reve_d",
+    "nom": "Marche-Rêve",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Le lanceur peut marcher sur toute surface, y compris les murs ou l'eau, tant qu'il garde les yeux fermés. Il tombe s'il les ouvre. Coût : 9 PM par seconde.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "yeux_fermes": true
+      },
+      "effet": {
+        "type": "marche_surface",
+        "surfaces": ["murs", "eau", "toute_surface"],
+        "restriction": "chute_si_yeux_ouverts"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_seconde": 9
+      }
+    }
+  },
+  "echange_d": {
+    "id": "echange_d",
+    "nom": "Échange",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Le lanceur échange de place avec un objet inanimé de moins de 3 kg dans un rayon de 5 mètres. Coût : 15 PM par échange.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "objet_max_kg": 3,
+        "objet_inanime": true
+      },
+      "effet": {
+        "type": "echange_position",
+        "portee_metres": 5
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 15
+      }
+    }
+  },
+  "oreille_balancier_d": {
+    "id": "oreille_balancier_d",
+    "nom": "Oreille-Balancier",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Permet d'entendre les conversations les plus proches même dans une foule ou un vacarme total, mais rend sourd à tout le reste. Coût : 7 PM par minute.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "audition_selective",
+        "cible": "conversation_proche",
+        "contrepartie": "surdite_reste"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_minute": 7
+      }
+    }
+  },
+  "regard_verrou_d": {
+    "id": "regard_verrou_d",
+    "nom": "Regard-Verrou",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Fixer une cible l'empêche de bouger tant qu'il est observé. Coût : 14 PM par seconde.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "contact_visuel": true
+      },
+      "effet": {
+        "type": "immobilisation",
+        "duree": "tant_que_regarde"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_seconde": 14
+      }
+    }
+  },
+  "peau_cameleon_d": {
+    "id": "peau_cameleon_d",
+    "nom": "Peau de Caméléon",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Change automatiquement la couleur de peau selon l'environnement, utile pour le camouflage. Coût : 15 PM par seconde.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "camouflage",
+        "adaptation_automatique": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_seconde": 15
+      }
+    }
+  },
+  "boussole_intime_d": {
+    "id": "boussole_intime_d",
+    "nom": "Boussole Intime",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Pendant une minute, le lanceur connaît la position approximative d'une personne qu'il a touchée dans les dernières 24h (orientation, distance, altitude). Coût : 9 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "contact_recent": "24h"
+      },
+      "effet": {
+        "type": "localisation",
+        "precision": "approximative",
+        "info": ["orientation", "distance", "altitude"],
+        "duree_minutes": 1
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "choeur_brume_c": {
+    "id": "choeur_brume_c",
+    "nom": "Chœur de Brume",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Une brume épaisse envahit un rayon de 10 mètres. Les sons y résonnent de manière déformée, rendant toute communication ou perception vocale confuse. Permet de rompre les stratégies basées sur les signaux. Coût : 9 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "zone_brume",
+        "rayon_metres": 10,
+        "effet": "deformation_sons",
+        "perturbation_communication": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "oeil_terre_c": {
+    "id": "oeil_terre_c",
+    "nom": "Œil de la Terre",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Une pierre du sol devient translucide au toucher et transmet pendant 1 minute ce qu'elle 'voit' dans un angle de 180°. Utilité : Surveillance ou reconnaissance à distance. Coût : 7 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "pierre_au_sol": true
+      },
+      "effet": {
+        "type": "surveillance",
+        "vision_angle": 180,
+        "duree_minutes": 1
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 7
+      }
+    }
+  },
+  "chambre_silencieuse_c": {
+    "id": "chambre_silencieuse_c",
+    "nom": "Chambre Silencieuse",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Toute zone délimitée (maximum 4 m²) devient parfaitement silencieuse pendant 20 secondes. Coût : 8 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "zone_silence",
+        "surface_max_m2": 4,
+        "duree_secondes": 20
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 8
+      }
+    }
+  },
+  "memoire_sol_c": {
+    "id": "memoire_sol_c",
+    "nom": "Mémoire du Sol",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "En posant la main sur un sol naturel, le lanceur perçoit les dernières perturbations importantes à cet endroit (pas lourds, combat, chute d'objet) sur les 5 derniers jours. Coût : 8 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "sol_naturel": true
+      },
+      "effet": {
+        "type": "lecture_memoire",
+        "source": "sol",
+        "periode_jours": 5,
+        "info": ["pas_lourds", "combat", "chute_objet"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 8
+      }
+    }
+  },
+  "memoire_ecorce_d": {
+    "id": "memoire_ecorce_d",
+    "nom": "Mémoire d'Écorce",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "En touchant un arbre, le lanceur peut ressentir les présences qui l'ont frôlé au cours des dix dernières minutes. Coût : 10 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "contact_arbre": true
+      },
+      "effet": {
+        "type": "lecture_memoire",
+        "source": "arbre",
+        "periode_minutes": 10,
+        "info": "presences_recentes"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 10
+      }
+    }
+  },
+  "ombre_liquide_d": {
+    "id": "ombre_liquide_d",
+    "nom": "Ombre-Liquide",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Permet de masquer une silhouette dans son ombre mais rend incapable de bouger. Coût : 15 PM par minute.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "camouflage_ombre",
+        "contrepartie": "immobilite"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_minute": 15
+      }
+    }
+  },
+  "tact_insecte_d": {
+    "id": "tact_insecte_d",
+    "nom": "Tact d'Insecte",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Le lanceur peut grimper aux murs comme une fourmi, mais devient aussi léger qu'un insecte. Coût : 13 PM par minute.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "escalade",
+        "capacite": "grimper_murs",
+        "contrepartie": "poids_insecte"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_minute": 13
+      }
+    }
+  },
+  "bave_mensonge_d": {
+    "id": "bave_mensonge_d",
+    "nom": "Bave du Mensonge",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Applique la main sur les lèvres, permet de mentir avec une voix parfaitement crédible, même sous détection magique. Coût : 14 PM par application.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "tromperie",
+        "credibilite": "maximale",
+        "bypass": "detection_magique"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 14
+      }
+    }
+  },
+  "carillon_mousse_d": {
+    "id": "carillon_mousse_d",
+    "nom": "Carillon de Mousse",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Génère un son agréable dans un rayon de 10 mètres qui empêche toute tentative d'écoute ou d'espionnage magique. Les sons extérieurs sont aussi étouffés. Coût : 11 PM pour 5 minutes.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "zone_anti_espionnage",
+        "rayon_metres": 10,
+        "duree_minutes": 5,
+        "bloque": ["ecoute", "espionnage_magique"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 11
+      }
+    }
+  },
+  "trace_derive_d": {
+    "id": "trace_derive_d",
+    "nom": "Trace-Dérive",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Le vent dévoile brièvement les dernières empreintes de pas ayant traversé la zone. Coût : 12 PM pour 10 m.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "revelation_traces",
+        "source": "empreintes_pas",
+        "portee_metres": 10
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 12
+      }
+    }
+  },
+  "mur_retention_c": {
+    "id": "mur_retention_c",
+    "nom": "Mur de rétention",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "L'utilisateur fait apparaître une surface verticale de deux mètres carrés. Tout projectile magique qui touche ce mur se fige dans le temps pendant 10 secondes avant de reprendre sa trajectoire. L'utilisateur peut changer la trajectoire du projectile en changeant celle du mur. Coût : 10 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "mur_temporel",
+        "surface_m2": 2,
+        "gel_projectiles": true,
+        "duree_gel_secondes": 10,
+        "redirection_possible": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 10
+      }
+    }
+  },
+  "givre_c": {
+    "id": "givre_c",
+    "nom": "Givre",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Un sceau bleu glacé apparaît sur une surface et y absorbe toute chaleur, rendant l'objet fragile ou cassant. Dégradation de matériaux ou piège invisible. Coût : 10 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "sceau_glace",
+        "effet": "fragilisation",
+        "usage": ["degradation", "piege"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 10
+      }
+    }
+  },
+  "flaque_lune_c": {
+    "id": "flaque_lune_c",
+    "nom": "Flaque de Lune",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Une flaque argentée se forme à l'endroit désigné. Toute personne qui y marche perd automatiquement l'équilibre. Coût : 9 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "piege_sol",
+        "effet": "perte_equilibre",
+        "forme": "flaque_argentee"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "rappel_tisons_c": {
+    "id": "rappel_tisons_c",
+    "nom": "Rappel des Tisons",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Tout charbon encore tiède dans un rayon de 30 mètres est réactivé en tison rougeoyant. Relance d'un feu éteint ou piège thermique. Coût : 7 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "charbon_tiede": true
+      },
+      "effet": {
+        "type": "reactivation_feu",
+        "rayon_metres": 30,
+        "usage": ["relance_feu", "piege_thermique"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 7
+      }
+    }
+  },
+  "fertilisation_c": {
+    "id": "fertilisation_c",
+    "nom": "Fertilisation",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Fait germer une plante parasite qui fragilise l'arme de l'adversaire. Coût : 9 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "sabotage_arme",
+        "methode": "plante_parasite",
+        "effet": "fragilisation"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "eclats_rotatifs_c": {
+    "id": "eclats_rotatifs_c",
+    "nom": "Éclats rotatifs",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Quatre fragments de lumière tournent autour de l'utilisateur. S'ils sont touchés, ils libèrent une onde sonore aiguë désorientant tous les combattants proches. Coût : 8 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "protection_reactive",
+        "nombre_fragments": 4,
+        "effet_contact": "onde_sonore_desorientation",
+        "cibles": "tous_combattants_proches"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 8
+      }
+    }
+  },
+  "trombe_argile_b": {
+    "id": "trombe_argile_b",
+    "nom": "Trombe d'Argile",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Le sol autour de l'utilisateur devient boueux, ralentissant les déplacements de tous, mais amortissant aussi les chocs et réduisant les dégâts de chute ou d'impact. Mana : 14 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "zone_terrain",
+        "effet": "sol_boueux",
+        "ralentissement": true,
+        "amortissement_chocs": true,
+        "reduction_degats_chute": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 14
+      }
+    }
+  },
+  "voix_fourres_b": {
+    "id": "voix_fourres_b",
+    "nom": "Voix des Fourrés",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Permet de transmettre des messages vocaux à travers la végétation dans un rayon de 300 mètres. Tous les végétaux deviennent des relais. Communication furtive. Mana : 13 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "vegetation_presente": true
+      },
+      "effet": {
+        "type": "communication",
+        "portee_metres": 300,
+        "relais": "vegetation",
+        "furtif": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 13
+      }
+    }
+  },
+  "carcan_ames_simulees_b": {
+    "id": "carcan_ames_simulees_b",
+    "nom": "Carcan des Âmes Simulées",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Crée autour de l'utilisateur trois copies spectrales qui suivent les volontés de l'utilisateur. Mana : 15 PM (5 PM par clone). Doute stratégique, leurre, diversion.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "invocation_clones",
+        "nombre": 3,
+        "controle": "volonte_utilisateur",
+        "usage": ["leurre", "diversion", "doute_strategique"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 15
+      }
+    }
+  },
+  "joug_bete_b": {
+    "id": "joug_bete_b",
+    "nom": "Joug de la Bête",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "L'utilisateur peut invoquer une bête sauvage (ours, wyverne, loup géant, etc.) avec des dimensions non exagérées. Mana : 12 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "invocation_bete",
+        "choix": ["ours", "wyverne", "loup_geant"],
+        "taille": "normale"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 12
+      }
+    }
+  },
+  "braise_lente_b": {
+    "id": "braise_lente_b",
+    "nom": "Braise Lente",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Une chaleur invisible se diffuse lentement dans une zone de 10 mètres, rendant les armes métalliques brûlantes au bout de 2 tours. Mana : 17 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "zone_chaleur",
+        "rayon_metres": 10,
+        "effet": "surchauffe_metal",
+        "delai_tours": 2,
+        "invisible": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 17
+      }
+    }
+  },
+  "langue_anatheme_b": {
+    "id": "langue_anatheme_b",
+    "nom": "Langue d'Anathème",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Pendant deux tours, toute personne qui parle dans un rayon de 15 mètres voit ses mots se transformer en langue incompréhensible, sauf pour le lanceur. Mana : 15 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "zone_communication",
+        "rayon_metres": 15,
+        "effet": "langage_incomprehensible",
+        "exception": "lanceur",
+        "duree_tours": 2
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 15
+      }
+    }
+  },
+  "tempest_b": {
+    "id": "tempest_b",
+    "nom": "Tempest",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Permet de contrôler de l'eau à sa guise dans un rayon de 7 mètres. Mana : 8 PM par seconde.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "eau_presente": true
+      },
+      "effet": {
+        "type": "controle_element",
+        "element": "eau",
+        "rayon_metres": 7,
+        "controle": "complet"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_seconde": 8
+      }
+    }
+  },
+  "crypte_portative_b": {
+    "id": "crypte_portative_b",
+    "nom": "Crypte Portative",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Permet de créer un petit caveau magique dans le sol, de 2 mètres de profondeur, pouvant contenir un corps, un objet, ou une créature. Disparaît après 24h. Mana : 18 PM. Cachette, sépulture, enfermement temporaire.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "creation_espace",
+        "profondeur_metres": 2,
+        "usage": ["cachette", "sepulture", "enfermement"],
+        "duree_heures": 24
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 18
+      }
+    }
+  },
+  "dominium_fulguris_a": {
+    "id": "dominium_fulguris_a",
+    "nom": "Dominium Fulguris",
+    "rang": "A",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 48,
+    "taux_reussite": 80,
+    "description": "Pendant 20 secondes, l'utilisateur devient le conducteur suprême de tout courant électrique dans un rayon de 30 mètres. Il peut attirer, repousser, rediriger ou absorber toute source de foudre (magique ou naturelle). Affecte aussi l'équipement métallique. Coût : 32 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "controle_element_supreme",
+        "element": "foudre",
+        "rayon_metres": 30,
+        "duree_secondes": 20,
+        "capacites": ["attirer", "repousser", "rediriger", "absorber"],
+        "cible_secondaire": "equipement_metallique"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 32
+      }
+    }
+  },
+  "mantellum_ignilave_a": {
+    "id": "mantellum_ignilave_a",
+    "nom": "Mantellum Ignilave",
+    "rang": "A",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 48,
+    "taux_reussite": 80,
+    "description": "L'utilisateur fait émerger sous ses pieds un manteau de lave vivante qu'il peut modeler, propulser, solidifier ou liquéfier à volonté. Il devient intouchable par la chaleur ou la roche fondue. Durée : 18 sec. Coût : 34 PM. Danger : Affecte l'environnement.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "controle_element_supreme",
+        "element": "lave",
+        "duree_secondes": 18,
+        "immunite": ["chaleur", "roche_fondue"],
+        "capacites": ["modeler", "propulser", "solidifier", "liquefier"],
+        "danger": "affecte_allies"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 34
+      }
+    }
+  },
+  "cercle_virelie_a": {
+    "id": "cercle_virelie_a",
+    "nom": "Cercle de Virelie",
+    "rang": "A",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 48,
+    "taux_reussite": 80,
+    "description": "L'utilisateur entre dans une transe auditive, et maîtrise toutes les vibrations de l'air dans un rayon de 25 mètres. Peut créer des zones de silence, des lames sonores tranchantes, ou faire imploser des tympans. Rend toute communication ennemie impossible. Durée : 25 sec. Coût : 31 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "controle_element_supreme",
+        "element": "vent_son",
+        "rayon_metres": 25,
+        "duree_secondes": 25,
+        "capacites": ["zones_silence", "lames_sonores", "implosion_tympans"],
+        "bloque_communication": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 31
+      }
+    }
+  },
+  "cryosphere_a": {
+    "id": "cryosphere_a",
+    "nom": "Cryosphère",
+    "rang": "A",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 48,
+    "taux_reussite": 80,
+    "description": "L'utilisateur invoque une sphère de glace intelligente orbitant autour de lui, capable d'agir par anticipation. Elle peut protéger, geler instantanément une attaque, ou lancer des pics vers plusieurs cibles. La glace générée est vivante et réactive. Durée : 20 sec. Coût : 30 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "invocation_sphere",
+        "element": "glace",
+        "intelligence": "reactive",
+        "capacites": ["protection", "gel_instantane", "attaque_pics"],
+        "duree_secondes": 20,
+        "limite": "une_sphere"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 30
+      }
+    }
+  },
+  "incandescence_verte_a": {
+    "id": "incandescence_verte_a",
+    "nom": "Incandescence Verte",
+    "rang": "A",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 48,
+    "taux_reussite": 80,
+    "description": "L'utilisateur provoque une germination accélérée d'arbres incandescents. Ces plantes brûlantes rampent, piègent, étranglent ou explosent. Permet de se régénérer lentement si contact avec le sol cendré. Durée : 22 sec. Coût : 33 PM. Risque : Instable en zone humide.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "germination_acceleree",
+        "element": "feu_plante",
+        "duree_secondes": 22,
+        "capacites": ["pieger", "etrangler", "exploser"],
+        "regeneration": "si_contact_sol_cendre",
+        "danger": "instable_zone_humide"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 33
+      }
+    }
+  },
+  "dominion_lave_s": {
+    "id": "dominion_lave_s",
+    "nom": "Dominion de Lave",
+    "rang": "S",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 96,
+    "taux_reussite": 90,
+    "description": "Permet de remodeler un territoire entier (jusqu'à 500 m²) en terrain de lave contrôlable, manipulable, invocable. Les entités ennemies subissent des dégâts constants. Effet secondaire : Immunité à la lave pendant 3 tours.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "transformation_terrain",
+        "element": "lave",
+        "surface_m2": 500,
+        "controle": "complet",
+        "degats_continus": "ennemis",
+        "immunite_lave": 3
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 50
+      }
+    }
+  },
+  "souffle_eon_s": {
+    "id": "souffle_eon_s",
+    "nom": "Souffle de l'Éon",
+    "rang": "S",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 96,
+    "taux_reussite": 90,
+    "description": "Gèle le temps dans une zone donnée pendant 2 secondes réelles, sauf pour l'utilisateur. Assez pour esquiver, frapper, déplacer un allié. Limite : 1 fois par combat.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "magie_temps",
+        "effet": "gel_temps_zone",
+        "duree_secondes": 2,
+        "exception": "utilisateur",
+        "limite_par_combat": 1
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 45
+      }
+    }
+  },
+  "crepuscule_dieux_s": {
+    "id": "crepuscule_dieux_s",
+    "nom": "Crépuscule des Dieux",
+    "rang": "S",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 96,
+    "taux_reussite": 90,
+    "description": "Déclenche un orage surnaturel qui altère la gravité, la lumière et la chaleur d'un champ de bataille. Change le comportement de certains sorts (ex : foudre amplifiée). Durée : 3 tours.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "alteration_champ_bataille",
+        "modifications": ["gravite", "lumiere", "chaleur"],
+        "amplification_sorts": true,
+        "duree_tours": 3
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 48
+      }
+    }
+  },
+  "invocation_zenith_perdu_s": {
+    "id": "invocation_zenith_perdu_s",
+    "nom": "Invocation du Zénith Perdu",
+    "rang": "S",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 96,
+    "taux_reussite": 90,
+    "description": "Invoque une entité céleste neutre qui juge la situation. Peut attaquer, soigner ou punir selon le karma magique des présents. 24 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "invocation_entite_celeste",
+        "alignement": "neutre",
+        "action": "selon_karma",
+        "capacites": ["attaque", "soin", "punition"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 24
+      }
+    }
+  },
+  "pacte_neant_s": {
+    "id": "pacte_neant_s",
+    "nom": "Pacte du Néant",
+    "rang": "S",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 96,
+    "taux_reussite": 90,
+    "description": "Supprime les règles physiques d'un espace donné pendant 1 tour : on peut marcher dans les airs, transpercer la pierre, et ignorer les effets gravitationnels. Contrecoup : L'utilisateur perd 60 de ses PV à la fin. 30 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "suppression_regles_physiques",
+        "duree_tours": 1,
+        "capacites": ["marche_aerienne", "transpercer_matiere", "ignorer_gravite"],
+        "contrepartie": {
+          "type": "perte_pv",
+          "valeur": 60
+        }
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 30
+      }
+    }
+  },
+  "flamme_mendiant_e": {
+    "id": "flamme_mendiant_e",
+    "nom": "Flamme du Mendiant",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Fait apparaître une petite flamme bleutée sur le bout d'un doigt. Insuffisante pour brûler, mais parfaite pour lire ou signaler sa présence dans le noir. Nécessite 3 points de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "lumiere",
+        "forme": "flamme_digitale",
+        "couleur": "bleue",
+        "usage": ["lecture", "signal"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 3
+      }
+    }
+  },
+  "toucher_glacial_e": {
+    "id": "toucher_glacial_e",
+    "nom": "Toucher glacial",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Refroidit l'extrémité des doigts jusqu'à atteindre une température très basse (-2 degrés) permettant de rafraîchir une boisson, soulager une petite brûlure ou créer de légères traces de givre. Nécessite 8 points de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "refroidissement",
+        "temperature": -2,
+        "usage": ["rafraichir", "soulager_brulure", "givre"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 8
+      }
+    }
+  },
+  "oreilles_attentives_e": {
+    "id": "oreilles_attentives_e",
+    "nom": "Oreilles attentives",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Augmente légèrement l'acuité auditive, permettant d'entendre les chuchotements à 5 mètres de distance. Nécessite 4 points de Mana par seconde.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "audition_amelioree",
+        "portee_metres": 5,
+        "cible": "chuchotements"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_seconde": 4
+      }
+    }
+  },
+  "main_magnetique_e": {
+    "id": "main_magnetique_e",
+    "nom": "Main magnétique",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Permet d'attirer de très petits objets métalliques (comme des trombones) à moins de 5 cm de la paume. Nécessite 5 points de Mana par attraction.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "magnetisme",
+        "cible": "petits_objets_metalliques",
+        "portee_cm": 5
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 5
+      }
+    }
+  },
+  "paume_lumineuse_e": {
+    "id": "paume_lumineuse_e",
+    "nom": "Paume lumineuse",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "La paume de la main émet une faible lueur pendant 2 minutes, suffisante pour éclairer une serrure dans le noir. Nécessite 3 points de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "lumiere",
+        "source": "paume",
+        "duree_minutes": 2,
+        "intensite": "faible"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 3
+      }
+    }
+  },
+  "souffle_epine_d": {
+    "id": "souffle_epine_d",
+    "nom": "Souffle-Épine",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "En soufflant sur une plante ou des brindilles au sol, le lanceur les durcit brièvement pour en faire des projectiles naturels. Coût : 6 PM par souffle.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "vegetation_presente": true
+      },
+      "effet": {
+        "type": "transformation_projectile",
+        "source": "plante_brindilles",
+        "durcissement": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 6
+      }
+    }
+  },
+  "murmure_poche_d": {
+    "id": "murmure_poche_d",
+    "nom": "Murmure de Poche",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Le lanceur peut capturer un chuchotement dans une poche vide et le libérer plus tard, intact. Coût : 8 PM par capture.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "poche_vide": true
+      },
+      "effet": {
+        "type": "capture_son",
+        "cible": "chuchotement",
+        "stockage": "poche",
+        "liberation_ulterieure": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 8
+      }
+    }
+  },
+  "cle_plume_d": {
+    "id": "cle_plume_d",
+    "nom": "Clé de Plume",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Déverrouille une serrure simple en insérant une plume ou une brindille à la place d'une clé. Coût : 11 PM par usage.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "serrure": "simple"
+      },
+      "effet": {
+        "type": "deverrouillage",
+        "objet_requis": ["plume", "brindille"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 11
+      }
+    }
+  },
+  "digue_mirage_d": {
+    "id": "digue_mirage_d",
+    "nom": "Digue-Mirage",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Le sol paraît recouvert d'eau pour les créatures ennemies, ralentissant leur avancée. Coût : 13 PM pour une illusion de 10 m².",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "illusion_terrain",
+        "apparence": "eau",
+        "surface_m2": 10,
+        "effet": "ralentissement_ennemi"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 13
+      }
+    }
+  },
+  "doigts_subtils_d": {
+    "id": "doigts_subtils_d",
+    "nom": "Doigts subtils",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "D'un simple geste, fait se délacer n'importe quel nœud visible. Coût : 5 PM par nœud.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "noeud_visible": true
+      },
+      "effet": {
+        "type": "delacement",
+        "cible": "noeud"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 5
+      }
+    }
+  },
+  "rideau_bruit_d": {
+    "id": "rideau_bruit_d",
+    "nom": "Rideau de Bruit",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Crée un brouhaha diffus dans une zone étroite pour couvrir une discussion discrète. Coût : 14 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "zone_bruit",
+        "effet": "brouhaha",
+        "usage": "couvrir_discussion"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 14
+      }
+    }
+  },
+  "langue_pierre_d": {
+    "id": "langue_pierre_d",
+    "nom": "Langue de Pierre",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Permet de parler avec une statue pendant quelques secondes. Réponses énigmatiques garanties. Coût : 13 PM par minute.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "statue_presente": true
+      },
+      "effet": {
+        "type": "communication_objet",
+        "cible": "statue",
+        "reponses": "enigmatiques"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_minute": 13
+      }
+    }
+  },
+  "durete_d": {
+    "id": "durete_d",
+    "nom": "Dureté",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Le lanceur peut rendre dur un objet qu'il touche, pour une durée de 30 secondes. Coût : 10 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "contact_objet": true
+      },
+      "effet": {
+        "type": "modification_materiau",
+        "effet": "durcissement",
+        "duree_secondes": 30
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 10
+      }
+    }
+  },
+  "chaine_lierre_c": {
+    "id": "chaine_lierre_c",
+    "nom": "Chaîne de Lierre",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Fait germer en un instant des lianes autour d'une structure en bois ou en pierre. Ces lianes s'enroulent et stabilisent la structure, ou l'entravent si elle est animée. Coût : 7 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "structure": ["bois", "pierre"]
+      },
+      "effet": {
+        "type": "germination_lianes",
+        "usage": ["stabilisation", "entrave"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 7
+      }
+    }
+  },
+  "feu_grele_c": {
+    "id": "feu_grele_c",
+    "nom": "Feu Grêle",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Fait pleuvoir des gouttes ardentes, sans précision ni visée, dans un rayon large (10 mètres). L'effet est plus dissuasif que létal. Coût : 11 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "zone_pluie_feu",
+        "rayon_metres": 10,
+        "precision": "faible",
+        "effet": "dissuasif"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 11
+      }
+    }
+  },
+  "cacophonie_cordes_c": {
+    "id": "cacophonie_cordes_c",
+    "nom": "Cacophonie des Cordes",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Fait vibrer toutes les cordes dans un rayon de 15 m (harpes, arcs, pièges…). Coût : 8 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "vibration_cordes",
+        "rayon_metres": 15,
+        "cibles": ["harpes", "arcs", "pieges"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 8
+      }
+    }
+  },
+  "ancre_sable_c": {
+    "id": "ancre_sable_c",
+    "nom": "Ancre de Sable",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Fait peser le sol sous les pieds d'un groupe de cibles, ralentissant leurs mouvements (vitesse divisée par 2). Coût : 11 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "zone_ralentissement",
+        "effet": "sol_pesant",
+        "reduction_vitesse": 50
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 11
+      }
+    }
+  },
+  "voile_frissons_c": {
+    "id": "voile_frissons_c",
+    "nom": "Voile des Frissons",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Provoque une sensation de froid intense sans température réelle, perturbant la concentration. Coût : 8 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "sensation_illusoire",
+        "sensation": "froid_intense",
+        "effet": "perturbation_concentration"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 8
+      }
+    }
+  },
+  "carapace_cendres_c": {
+    "id": "carapace_cendres_c",
+    "nom": "Carapace de Cendres",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Recouvre partiellement un allié de cendres épaisses qui absorbent les impacts physiques. Coût : 10 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "protection_allie",
+        "materiau": "cendres",
+        "absorption": "impacts_physiques"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 10
+      }
+    }
+  },
+  "marche_lointaine_c": {
+    "id": "marche_lointaine_c",
+    "nom": "Marche Lointaine",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Le son des pas de l'utilisateur semble provenir d'un autre endroit. Utilité : Fuite, infiltration, piège sonore. Coût : 7 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "projection_son",
+        "source": "pas",
+        "effet": "fausse_localisation",
+        "usage": ["fuite", "infiltration", "piege_sonore"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 7
+      }
+    }
+  },
+  "spongebob_c": {
+    "id": "spongebob_c",
+    "nom": "Spongebob",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "En touchant un objet naturel (porte, cailloux, arme…), l'utilisateur le rend spongieux et souple pendant 30 secondes. L'objet devient déformable, peut absorber un coup ou amortir une chute. Coût : 10 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "objet_naturel": true
+      },
+      "effet": {
+        "type": "modification_materiau",
+        "effet": "spongieux",
+        "duree_secondes": 30,
+        "capacites": ["deformable", "absorbe_coups", "amortit_chute"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 10
+      }
+    }
+  },
+  "ombre_verdict_c": {
+    "id": "ombre_verdict_c",
+    "nom": "Ombre du Verdict",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "L'ombre du lanceur s'étire et suit l'adversaire pendant deux minutes. Tant qu'elle est connectée, le moindre mensonge proféré par la cible produit un léger choc nerveux. Très utile en interrogatoire. Coût : 10 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "ombre_traquante",
+        "duree_minutes": 2,
+        "detection_mensonge": true,
+        "punition": "choc_nerveux",
+        "usage": "interrogatoire"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 10
+      }
+    }
+  },
+  "epine_lune_c": {
+    "id": "epine_lune_c",
+    "nom": "Épine de Lune",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Une petite plante argentée pousse instantanément sous les pieds de l'utilisateur. Si elle est écrasée, une lumière bleutée jaillit, exposant les êtres invisibles ou camouflés dans un rayon de 10 mètres pendant 8 secondes. Coût : 10 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "piege_revelation",
+        "declencheur": "ecrasement",
+        "rayon_metres": 10,
+        "cible": "invisibles_camoufles",
+        "duree_secondes": 8
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 10
+      }
+    }
+  },
+  "amalgame_i_c": {
+    "id": "amalgame_i_c",
+    "nom": "Amalgame I",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "L'utilisateur peut lier deux éléments avec la force de sa magie. La force de la liaison dépendra du nombre de mana utilisé. Coût : 9 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "liaison_elements",
+        "nombre_elements": 2,
+        "force": "variable_selon_mana"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "miroir_ephemere_e": {
+    "id": "miroir_ephemere_e",
+    "nom": "Miroir éphémère",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Transforme la surface d'une flaque d'eau en miroir parfait pendant 30 secondes. Nécessite 5 points de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "flaque_eau": true
+      },
+      "effet": {
+        "type": "transformation_surface",
+        "effet": "miroir",
+        "duree_secondes": 30
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 5
+      }
+    }
+  },
+  "langue_commune_d": {
+    "id": "langue_commune_d",
+    "nom": "Langue Commune",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Pendant 1 heure, le lanceur comprend et parle la langue de son interlocuteur, mais oublie la sienne pendant la durée. Coût : 7 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "traduction_langue",
+        "duree_heures": 1,
+        "contrepartie": "oubli_langue_natale"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 7
+      }
+    }
+  },
+  "saut_cendre_d": {
+    "id": "saut_cendre_d",
+    "nom": "Saut de Cendre",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Un simple saut produit un nuage de poussière inoffensif, utile pour une diversion. Coût : 8 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "diversion",
+        "nuage_poussiere": true,
+        "usage": "diversion"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 8
+      }
+    }
+  },
+  "laisse_miroir_d": {
+    "id": "laisse_miroir_d",
+    "nom": "Laisse-Miroir",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Un miroir devient incapable de refléter le lanceur pendant 3 minutes. Coût : 13 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "miroir_present": true
+      },
+      "effet": {
+        "type": "suppression_reflexion",
+        "duree_minutes": 3
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 13
+      }
+    }
+  },
+  "chiffre_terre_d": {
+    "id": "chiffre_terre_d",
+    "nom": "Chiffre-Terre",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "En traçant un chiffre au sol, le lanceur rend toute créature hésitante avant de le franchir. Coût : 10 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "barriere_psychologique",
+        "symbole": "chiffre",
+        "effet": "hesitation_franchir"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 10
+      }
+    }
+  },
+  "cri_fosses_c": {
+    "id": "cri_fosses_c",
+    "nom": "Cri des Fosses",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Si un trou, une faille ou un puits est dans un rayon de 15 mètres, l'utilisateur peut y faire résonner une voix humaine (ou inhumaine) amplifiée qui attire l'attention, crée une peur ou simule une présence. Coût : 5 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "cavite_presente": true,
+        "rayon_metres": 15
+      },
+      "effet": {
+        "type": "projection_voix",
+        "amplification": true,
+        "usage": ["attirer_attention", "creer_peur", "simuler_presence"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 5
+      }
+    }
+  },
+  "cle_eclipse_mineure_c": {
+    "id": "cle_eclipse_mineure_c",
+    "nom": "Clé de l'Éclipse Mineure",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "À la tombée du jour ou à l'aube, l'utilisateur peut plonger une zone de 10 mètres dans une pénombre illusoire pendant 10 secondes, rendant toute perception visuelle floue. Coût : 15 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "moment": ["crepuscule", "aube"]
+      },
+      "effet": {
+        "type": "zone_penombre",
+        "rayon_metres": 10,
+        "duree_secondes": 10,
+        "vision_floue": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 15
+      }
+    }
+  },
+  "sang_innocent_c": {
+    "id": "sang_innocent_c",
+    "nom": "Sang Innocent",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Si du sang non magique (animal ou humain) est au sol depuis moins de 3 minutes, l'utilisateur peut le faire s'évaporer et imprégner l'air, rendant tout sort de type Divination ou Poursuite inefficace pendant 1 minute. Coût : 6 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "sang_present": true,
+        "age_max_minutes": 3
+      },
+      "effet": {
+        "type": "contre_detection",
+        "evaporation_sang": true,
+        "bloque": ["divination", "poursuite"],
+        "duree_minutes": 1
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 6
+      }
+    }
+  },
+  "balancier_heures_melees_c": {
+    "id": "balancier_heures_melees_c",
+    "nom": "Balancier des Heures Mêlées",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Permet de reculer ou d'avancer de quelques minutes la sensation de fatigue dans une zone donnée. Cela affecte également les torches, les ombres, et le rythme biologique (sans changer le temps réel). Perturbe la coordination d'un groupe. Coût : 18 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "alteration_perception_temps",
+        "cible": "sensation_fatigue",
+        "affecte": ["torches", "ombres", "rythme_biologique"],
+        "perturbation_groupe": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 18
+      }
+    }
+  },
+  "graines_oubli_fertile_c": {
+    "id": "graines_oubli_fertile_c",
+    "nom": "Graines de l'Oubli Fertile",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "En semant ou en lançant une poignée de graines imbibées d'énergie, l'utilisateur accélère leur croissance jusqu'à former une végétation souple, mais dense. Bloquer un passage, créer une barrière, protéger un objet. Coût : 17 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "graines_preparees": true
+      },
+      "effet": {
+        "type": "croissance_acceleree",
+        "vegetation": "dense_souple",
+        "usage": ["bloquer_passage", "barriere", "protection"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 17
+      }
+    }
+  },
+  "chant_matiere_c": {
+    "id": "chant_matiere_c",
+    "nom": "Chant de la Matière",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Rend toute matière non magique (corde, métal, bois, pierre) dans une zone de 5 mètres plus friable ou plus souple pendant 30 secondes. Coût : 9 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "alteration_matiere",
+        "rayon_metres": 5,
+        "materiaux": ["corde", "metal", "bois", "pierre"],
+        "effet": ["friable", "souple"],
+        "duree_secondes": 30
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "resurrection_i_c": {
+    "id": "resurrection_i_c",
+    "nom": "Résurrection I",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Permet à l'utilisateur de réanimer brièvement un petit animal (comme un oiseau mort par exemple). L'animal se relève, s'avance jusqu'à 100 mètres, puis s'effondre de nouveau. Il ne transmet aucune information directe. Coût : 16 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "animal_mort": true,
+        "taille": "petit"
+      },
+      "effet": {
+        "type": "reanimation_temporaire",
+        "distance_max_metres": 100,
+        "information": false
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 16
+      }
+    }
+  },
+  "grincement_portes_c": {
+    "id": "grincement_portes_c",
+    "nom": "Grincement des Portes",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "L'utilisateur peut faire grincer, claquer ou trembler n'importe quelle porte, grille ou ouverture mécanique dans un rayon de 20 mètres, même verrouillée. L'effet est sonore uniquement. Coût : 5 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "manipulation_sonore",
+        "rayon_metres": 20,
+        "cibles": ["porte", "grille", "ouverture_mecanique"],
+        "effets": ["grincer", "claquer", "trembler"],
+        "sonore_uniquement": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 5
+      }
+    }
+  },
+  "priere_fossile_b": {
+    "id": "priere_fossile_b",
+    "nom": "Prière Fossile",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Fait apparaître un autel en pierre ancienne, indestructible, qui amplifie ou affaiblit certains sorts selon l'élément dominant de la zone (feu, vent, cendre…). Mana : 18 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "invocation_autel",
+        "materiau": "pierre_ancienne",
+        "indestructible": true,
+        "effet": "amplification_affaiblissement_elementaire"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 18
+      }
+    }
+  },
+  "bris_convention_b": {
+    "id": "bris_convention_b",
+    "nom": "Bris de Convention",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "L'utilisateur peut, pendant 3 tours, détourner les effets d'un sort défensif (le sien ou celui d'un autre) pour en faire une attaque instable. Mana : 16 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "conversion_sort",
+        "source": "defensif",
+        "destination": "attaque_instable",
+        "duree_tours": 3
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 16
+      }
+    }
+  },
+  "miroir_silences_b": {
+    "id": "miroir_silences_b",
+    "nom": "Miroir des Silences",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Pose au sol un cercle invisible qui, pendant 2 tours, reflète tout bruit produit dans un autre endroit aléatoire à 20 mètres. Mana : 15 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "reflexion_sonore",
+        "cercle_invisible": true,
+        "distance_metres": 20,
+        "duree_tours": 2,
+        "direction": "aleatoire"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 15
+      }
+    }
+  },
+  "faim_neant_b": {
+    "id": "faim_neant_b",
+    "nom": "Faim du Néant",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Toute source magique mineure (torche enchantée, arme runique de bas niveau…) dans un rayon de 5 mètres est désactivée pendant un tour, et l'utilisateur regagne 3 PM par objet affecté. Mana : 14 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "suppression_magie_mineure",
+        "rayon_metres": 5,
+        "duree_tours": 1,
+        "regeneration_pm": 3
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 14
+      }
+    }
+  },
+  "flot_nacre_b": {
+    "id": "flot_nacre_b",
+    "nom": "Flot de Nacre",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Une onde argentée balaye le sol, effaçant toutes traces de pas, d'odeur ou de sang sur 30 mètres. Mana : 12 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "effacement_traces",
+        "onde": "argentee",
+        "portee_metres": 30,
+        "efface": ["pas", "odeur", "sang"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 12
+      }
+    }
+  },
+  "cicatrice_pacte_b": {
+    "id": "cicatrice_pacte_b",
+    "nom": "Cicatrice de Pacte",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "L'utilisateur et un allié se lient pour 3 tours : si l'un reçoit un buff ou un soin, l'autre en bénéficie aussi, mais ils partagent aussi les malus. Mana : 16 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "lien_partage",
+        "duree_tours": 3,
+        "partage": ["buffs", "soins", "malus"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 16
+      }
+    }
+  },
+  "mue_breche_b": {
+    "id": "mue_breche_b",
+    "nom": "Mue de Brèche",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Permet de traverser un mur, une porte ou une surface rigide non magique, mais laisse une empreinte de magie détectable. Mana : 19 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "surface_non_magique": true
+      },
+      "effet": {
+        "type": "traversee_materiau",
+        "cibles": ["mur", "porte", "surface_rigide"],
+        "trace": "empreinte_magique_detectable"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 19
+      }
+    }
+  },
+  "langage_insectes_e": {
+    "id": "langage_insectes_e",
+    "nom": "Langage des insectes",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Permet de comprendre (mais pas de parler) le langage d'une espèce d'insecte spécifique pendant 2 minutes. Généralement peu instructif. Nécessite 8 points de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "comprehension_langue",
+        "cible": "insecte_specifique",
+        "unidirectionnel": true,
+        "duree_minutes": 2
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 8
+      }
+    }
+  },
+  "condensation_parlante_e": {
+    "id": "condensation_parlante_e",
+    "nom": "Condensation parlante",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "En parlant près d'une surface froide, les mots s'inscrivent brièvement dans la condensation avant de s'évaporer. Nécessite 5 points de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "surface_froide": true
+      },
+      "effet": {
+        "type": "inscription_condensation",
+        "ephemere": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 5
+      }
+    }
+  },
+  "lien_geste_d": {
+    "id": "lien_geste_d",
+    "nom": "Lien du Geste",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Le prochain geste du lanceur est reproduit par une personne à moins de 3 mètres, même involontairement. Coût : 13 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "reproduction_geste",
+        "portee_metres": 3,
+        "involontaire": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 13
+      }
+    }
+  },
+  "criniere_lune_d": {
+    "id": "criniere_lune_d",
+    "nom": "Crinière de Lune",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Donne aux cheveux du lanceur une lueur légère et apaisante, qui calme certaines créatures nocturnes. Coût : 8 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "lueur_apaisante",
+        "source": "cheveux",
+        "cible": "creatures_nocturnes",
+        "effet": "calme"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 8
+      }
+    }
+  },
+  "bouton_retour_d": {
+    "id": "bouton_retour_d",
+    "nom": "Bouton-Retour",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Ramène instantanément un objet tenu dans la main droite à la main gauche. Coût : 5 PM par activation.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "objet_main_droite": true
+      },
+      "effet": {
+        "type": "teleportation_objet",
+        "origine": "main_droite",
+        "destination": "main_gauche",
+        "instantane": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 5
+      }
+    }
+  },
+  "insensibilite_thermique_d": {
+    "id": "insensibilite_thermique_d",
+    "nom": "Insensibilité thermique",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Rend la température d'un objet neutre au toucher, même brûlant ou glacé. Coût : 9 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "contact_objet": true
+      },
+      "effet": {
+        "type": "neutralisation_temperature",
+        "cible": "objet"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "haleine_rosee_d": {
+    "id": "haleine_rosee_d",
+    "nom": "Haleine-Rosée",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "En soufflant sur une plante, l'humidifie et lui redonne temporairement vigueur ou éclat. Coût : 7 PM par souffle.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "plante_presente": true
+      },
+      "effet": {
+        "type": "revigoration_plante",
+        "humidification": true,
+        "temporaire": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 7
+      }
+    }
+  },
+  "balancier_epineux_d": {
+    "id": "balancier_epineux_d",
+    "nom": "Balancier Épineux",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Un pendule fait de branches ou de fil se met à vibrer à la proximité d'un danger non-vivant. Coût : 12 PM par heure.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "detection_danger",
+        "forme": "pendule",
+        "cible": "danger_non_vivant",
+        "signal": "vibration"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_heure": 12
+      }
+    }
+  },
+  "doigt_buee_d": {
+    "id": "doigt_buee_d",
+    "nom": "Doigt de Buée",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Permet d'écrire un message temporaire sur une vitre ou surface froide, visible uniquement à la lumière lunaire. Coût : 1 PM par mot.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "surface_froide": true
+      },
+      "effet": {
+        "type": "inscription_secrete",
+        "visibilite": "lumiere_lunaire",
+        "temporaire": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_mot": 1
+      }
+    }
+  },
+  "liqueur_farceuse_d": {
+    "id": "liqueur_farceuse_d",
+    "nom": "Liqueur Farceuse",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Transforme le goût d'un liquide en quelque chose de radicalement opposé (amer devient sucré, etc.). Coût : 8 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "liquide_present": true
+      },
+      "effet": {
+        "type": "inversion_gout",
+        "transformation": "oppose"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 8
+      }
+    }
+  },
+  "peau_cartouche_d": {
+    "id": "peau_cartouche_d",
+    "nom": "Peau-Cartouche",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Une courte phrase peut être inscrite directement sur la peau du lanceur et y rester indélébile une heure. Coût : 6 PM par mot.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "inscription_peau",
+        "duree_heures": 1,
+        "indelebile": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_mot": 6
+      }
+    }
+  },
+  "craie_mnesique_d": {
+    "id": "craie_mnesique_d",
+    "nom": "Craie Mnésique",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Dessine un symbole qui, lorsqu'il est vu, rappelle une émotion forte vécue dans un lieu. Coût : 11 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "symbole_emotionnel",
+        "declencheur": "vision",
+        "effet": "rappel_emotion_lieu"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 11
+      }
+    }
+  },
+  "replique_plate_d": {
+    "id": "replique_plate_d",
+    "nom": "Réplique Plate",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Le prochain mot prononcé par le lanceur ou quelqu'un que le lanceur a touché est répété 5 secondes plus tard, à voix haute, par un autre individu aléatoire dans un rayon de 10 mètres. Coût : 6 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "echo_vocal",
+        "delai_secondes": 5,
+        "rayon_metres": 10,
+        "individu": "aleatoire"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 6
+      }
+    }
+  },
+  "lames_lentes_d": {
+    "id": "lames_lentes_d",
+    "nom": "Lames-Lentes",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Une lame tranchante paraît visuellement floue et molle pendant 3 secondes, désorientant l'adversaire. Coût : 14 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "lame_presente": true
+      },
+      "effet": {
+        "type": "illusion_visuelle",
+        "cible": "lame",
+        "apparence": "floue_molle",
+        "duree_secondes": 3,
+        "effet": "desorientation"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 14
+      }
+    }
+  },
+  "reve_garde_d": {
+    "id": "reve_garde_d",
+    "nom": "Rêve à Garde",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "En dormant, le lanceur laisse un écho magique qui hurle à la moindre intrusion. Coût : 10 PM par nuit.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "sommeil": true
+      },
+      "effet": {
+        "type": "alarme_magique",
+        "declencheur": "intrusion",
+        "signal": "hurlement",
+        "duree": "nuit"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_nuit": 10
+      }
+    }
+  },
+  "tapisserie_b": {
+    "id": "tapisserie_b",
+    "nom": "Tapisserie",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Change temporairement l'apparence de l'environnement (mur devient ciel, sol devient cascade, etc.) dans un rayon de 5 mètres. Mana : 17 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "illusion_environnement",
+        "rayon_metres": 5,
+        "transformations": ["mur_ciel", "sol_cascade"],
+        "temporaire": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 17
+      }
+    }
+  },
+  "balancier_mepris_b": {
+    "id": "balancier_mepris_b",
+    "nom": "Balancier du Mépris",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Relance tous les effets de boost ou malus sur une cible (alliée ou ennemie), positifs comme négatifs. Utilité : Reset stratégique. Peut être bien ou catastrophique. Mana : 18 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "reset_effets",
+        "cible": "allie_ou_ennemi",
+        "relance": ["boosts", "malus"],
+        "impredictible": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 18
+      }
+    }
+  },
+  "semence_harmonie_b": {
+    "id": "semence_harmonie_b",
+    "nom": "Semence d'Harmonie",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Plante une graine magique dans le sol qui, au bout de 2 tours, pousse en un arbre apaisant : il calme les tensions (interrompt les combats sauf volonté active). Mana : 20 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "arbre_apaisant",
+        "delai_tours": 2,
+        "effet": "calme_tensions",
+        "interruption_combat": true,
+        "resistance": "volonte_active"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 20
+      }
+    }
+  },
+  "foulee_hallali_b": {
+    "id": "foulee_hallali_b",
+    "nom": "Foulée d'Hallali",
+    "rang": "B",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 24,
+    "taux_reussite": 70,
+    "description": "Tous les bruits de l'utilisateur (mouvement, respiration) sont amplifiés comme une charge de cavalerie pour une durée de 2 tours. Provoque la peur pendant deux tours. Mana : 14 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "amplification_sonore",
+        "source": ["mouvement", "respiration"],
+        "intensite": "charge_cavalerie",
+        "duree_tours": 2,
+        "effet_secondaire": "peur"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 14
+      }
+    }
+  },
+  "langue_feuille_e": {
+    "id": "langue_feuille_e",
+    "nom": "Langue de feuille",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Permet de discuter au toucher avec une plante ou un arbre. Nécessite 9 points de Mana par minute.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "contact_plante": true
+      },
+      "effet": {
+        "type": "communication_plante",
+        "bidirectionnel": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_minute": 9
+      }
+    }
+  },
+  "sechage_express_e": {
+    "id": "sechage_express_e",
+    "nom": "Séchage express",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Assèche instantanément les vêtements mouillés au toucher. Nécessite 5 points de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "vetement_mouille": true
+      },
+      "effet": {
+        "type": "sechage_instantane",
+        "cible": "vetements"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 5
+      }
+    }
+  },
+  "larmes_crocodile_e": {
+    "id": "larmes_crocodile_e",
+    "nom": "Larmes de crocodile",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Provoque des larmes à volonté sans émotion associée. Parfait pour attendrir ou simuler le chagrin. Nécessite 2 points de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "simulation_emotion",
+        "emotion": "chagrin",
+        "larmes": true,
+        "authentique": false
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 2
+      }
+    }
+  },
+  "marque_ephemere_e": {
+    "id": "marque_ephemere_e",
+    "nom": "Marque éphémère",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Crée un petit tatouage temporaire au toucher qui disparaît après 24 heures. Nécessite 10 points de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "contact_peau": true
+      },
+      "effet": {
+        "type": "tatouage_temporaire",
+        "duree_heures": 24
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 10
+      }
+    }
+  },
+  "detecteur_mensonge_mineur_e": {
+    "id": "detecteur_mensonge_mineur_e",
+    "nom": "Détecteur de mensonge mineur",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Fait picoter le bout du nez quand quelqu'un ment sur un sujet trivial (comme ce qu'il a mangé au petit-déjeuner). Inefficace pour les mensonges importants. Nécessite 7 points de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "detection_mensonge",
+        "niveau": "mineur",
+        "signal": "picotement_nez",
+        "limite": "sujets_triviaux"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 7
+      }
+    }
+  },
+  "lanterne_froide_d": {
+    "id": "lanterne_froide_d",
+    "nom": "Lanterne-Froide",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Fait briller un objet sans émettre de chaleur ni de fumée, visible uniquement par le lanceur. Coût : 6 PM par heure.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "objet_present": true
+      },
+      "effet": {
+        "type": "lumiere_selective",
+        "visible_par": "lanceur_uniquement",
+        "sans_chaleur": true,
+        "sans_fumee": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_heure": 6
+      }
+    }
+  },
+  "fil_sable_d": {
+    "id": "fil_sable_d",
+    "nom": "Fil de Sable",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Crée un fil solide reliant deux objets proches, mais se désagrège dès qu'il est tendu. Coût : 8 PM par lien.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "lien_fragile",
+        "solidite": "haute",
+        "rupture": "si_tendu"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 8
+      }
+    }
+  },
+  "faim_vent_d": {
+    "id": "faim_vent_d",
+    "nom": "Faim de Vent",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Aspire toute odeur dans un rayon de 2 mètres pendant 10 secondes. Coût : 7 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "suppression_odeur",
+        "rayon_metres": 2,
+        "duree_secondes": 10
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 7
+      }
+    }
+  },
+  "goutte_derobee_d": {
+    "id": "goutte_derobee_d",
+    "nom": "Goutte-Dérobée",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Transforme une goutte de liquide en une perle solide, utilisable plus tard comme preuve ou échantillon. Coût : 9 PM par goutte.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "liquide_present": true
+      },
+      "effet": {
+        "type": "solidification",
+        "cible": "goutte_liquide",
+        "forme": "perle",
+        "usage": ["preuve", "echantillon"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "breche_souvenir_d": {
+    "id": "breche_souvenir_d",
+    "nom": "Brèche-Souvenir",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Permet de revoir une action effectuée dans les 30 dernières secondes à l'endroit exact. Coût : 10 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "replay_action",
+        "fenetre_secondes": 30,
+        "lieu": "endroit_exact"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 10
+      }
+    }
+  },
+  "langue_fixee_d": {
+    "id": "langue_fixee_d",
+    "nom": "Langue-Fixée",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Empêche la cible de prononcer un mot spécifique pendant une minute. Coût : 11 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "censure_mot",
+        "mot": "specifique",
+        "duree_minutes": 1
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 11
+      }
+    }
+  },
+  "plume_veilleuse_d": {
+    "id": "plume_veilleuse_d",
+    "nom": "Plume-Veilleuse",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Une plume enchantée flotte autour d'un dormeur et s'illumine si quelqu'un s'approche. Coût : 10 PM par nuit.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "dormeur_present": true
+      },
+      "effet": {
+        "type": "alarme_sommeil",
+        "forme": "plume_flottante",
+        "signal": "illumination",
+        "declencheur": "approche"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_nuit": 10
+      }
+    }
+  },
+  "ronce_sifflet_d": {
+    "id": "ronce_sifflet_d",
+    "nom": "Ronce-Sifflet",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Une ronce enchantée pousse très lentement vers une source sonore unique. Coût : 10 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "vegetation_traquante",
+        "cible": "source_sonore",
+        "vitesse": "tres_lente"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 10
+      }
+    }
+  },
+  "voix_echarde_d": {
+    "id": "voix_echarde_d",
+    "nom": "Voix d'Écharde",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "La voix du lanceur fait picoter les oreilles de ceux qui le méprisent. Coût : 9 PM par phrase.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "effet_emotionnel",
+        "cible": "ceux_qui_meprisent",
+        "sensation": "picotement_oreilles"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_phrase": 9
+      }
+    }
+  },
+  "lien_elan_d": {
+    "id": "lien_elan_d",
+    "nom": "Lien d'Élan",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Tant qu'il court sans s'arrêter, le lanceur peut se souvenir parfaitement de chaque détail croisé. Coût : 6 PM par course.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "course_continue": true
+      },
+      "effet": {
+        "type": "memoire_amelioree",
+        "niveau": "parfait",
+        "cible": "details_visuels"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur_par_course": 6
+      }
+    }
+  },
+  "chaleur_temoin_d": {
+    "id": "chaleur_temoin_d",
+    "nom": "Chaleur-Témoin",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Un objet touché conserve la température du dernier être vivant qui l'a manipulé. Coût : 7 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "contact_objet": true
+      },
+      "effet": {
+        "type": "conservation_temperature",
+        "source": "dernier_etre_vivant",
+        "usage": "detection_manipulation"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 7
+      }
+    }
+  },
+  "haletement_gueux_d": {
+    "id": "haletement_gueux_d",
+    "nom": "Halètement du Gueux",
+    "rang": "D",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 6,
+    "taux_reussite": 40,
+    "description": "Le lanceur mime la détresse respiratoire à la perfection. Toute tentative hostile est repoussée pendant 5 secondes (le lanceur étant perçu comme mourant ou inoffensif). Simuler en duel est interdit. Coût : 7 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "pas_en_duel": true
+      },
+      "effet": {
+        "type": "simulation_detresse",
+        "duree_secondes": 5,
+        "effet": "repousse_hostilite"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 7
+      }
+    }
+  },
+  "nettoyage_dent_e": {
+    "id": "nettoyage_dent_e",
+    "nom": "Nettoyage de dent",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Élimine les résidus alimentaires entre les dents. Remplace efficacement le fil dentaire. Nécessite 2 points de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "nettoyage_hygiene",
+        "cible": "dents",
+        "usage": "fil_dentaire"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 2
+      }
+    }
+  },
+  "parfum_souvenir_e": {
+    "id": "parfum_souvenir_e",
+    "nom": "Parfum de souvenir",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Fait sentir à la personne touchée une odeur liée à un de ses souvenirs d'enfance. Nécessite 6 points de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "contact_personne": true
+      },
+      "effet": {
+        "type": "rappel_sensoriel",
+        "sens": "odorat",
+        "source": "souvenir_enfance"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 6
+      }
+    }
+  },
+  "illumination_digitale_e": {
+    "id": "illumination_digitale_e",
+    "nom": "Illumination digitale",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Fait briller l'ongle d'un doigt d'une faible lueur colorée pendant 5 minutes. Nécessite 3 points de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "lumiere",
+        "source": "ongle",
+        "couleur": "variable",
+        "duree_minutes": 5
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 3
+      }
+    }
+  },
+  "meche_coloree_e": {
+    "id": "meche_coloree_e",
+    "nom": "Mèche colorée",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Change la couleur d'une mèche de cheveux pendant 24 heures. Nécessite 4 points de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "coloration_temporaire",
+        "cible": "meche_cheveux",
+        "duree_heures": 24
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 4
+      }
+    }
+  },
+  "rouage_oblique_c": {
+    "id": "rouage_oblique_c",
+    "nom": "Rouage Oblique",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Modifie la gravité d'un objet ou édifice, l'obligeant à se pencher ou tomber dans un sens donné. Coût : 9 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "alteration_gravite",
+        "cible": "objet_ou_edifice",
+        "effet": "pencher_ou_tomber"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 9
+      }
+    }
+  },
+  "marque_cendre_c": {
+    "id": "marque_cendre_c",
+    "nom": "Marque-Cendre",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Marque un objet, une arme ou un vêtement avec une fine poussière grise. Cette marque devient lumineuse et chaude si l'objet est manipulé par quelqu'un d'autre que le lanceur. Utilité : Détection de vol. Coût : 6 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "marquage_detection",
+        "signal": ["lumineux", "chaleur"],
+        "declencheur": "manipulation_autre",
+        "usage": "detection_vol"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 6
+      }
+    }
+  },
+  "cloche_entrave_c": {
+    "id": "cloche_entrave_c",
+    "nom": "Cloche d'Entrave",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Invoque une clochette invisible accrochée à un point fixe ou mobile. Elle tinte légèrement à chaque mouvement dans un rayon de 3 mètres, sauf celui du lanceur. Coût : 8 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "alarme_invisible",
+        "forme": "clochette",
+        "rayon_metres": 3,
+        "signal": "tintement",
+        "exception": "lanceur"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 8
+      }
+    }
+  },
+  "murmure_caravane_c": {
+    "id": "murmure_caravane_c",
+    "nom": "Murmure de la Caravane",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "Permet de projeter une voix sur un rayon de 200 mètres, en la camouflant comme un murmure dans le vent, audible uniquement dans les abris, grottes, tentes ou véhicules. Idéal pour semer la confusion ou transmettre un message discret en voyage. Coût : 20 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "projection_voix_selective",
+        "portee_metres": 200,
+        "audible_dans": ["abris", "grottes", "tentes", "vehicules"],
+        "camouflage": "murmure_vent"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 20
+      }
+    }
+  },
+  "cendre_relais_c": {
+    "id": "cendre_relais_c",
+    "nom": "Cendre de Relais",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "En soufflant sur une poignée de cendres, l'utilisateur peut marquer une zone d'environ 5 m². Tout objet vivant ou non entrant dans la zone est momentanément lié au lanceur : il ressent son poids et sa vitesse. Peut servir pour anticiper une charge ou éviter une embuscade. Coût : 13 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "zone_detection",
+        "surface_m2": 5,
+        "lien": "poids_et_vitesse",
+        "usage": ["anticiper_charge", "eviter_embuscade"]
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 13
+      }
+    }
+  },
+  "brouillard_verre_c": {
+    "id": "brouillard_verre_c",
+    "nom": "Brouillard de Verre",
+    "rang": "C",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 12,
+    "taux_reussite": 60,
+    "description": "En frappant le sol ou une surface rocheuse, l'utilisateur provoque un nuage de poussière mêlé de minuscules éclats brillants. Ces éclats ne blessent pas mais gênent la vision, la respiration et perturbent la lumière. Coût : 18 PM.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "nuage_perturbateur",
+        "elements": ["poussiere", "eclats_brillants"],
+        "effets": ["gene_vision", "gene_respiration", "perturbation_lumiere"],
+        "non_blessant": true
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 18
+      }
+    }
+  },
+  "mue_volontaire_e": {
+    "id": "mue_volontaire_e",
+    "nom": "Mue volontaire",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Fait tomber la première couche de peau comme un serpent. Totalement inutile sauf pour semer des traces. Nécessite 7 points de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "mue_peau",
+        "usage": "semer_traces"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 7
+      }
+    }
+  },
+  "eclat_buccal_e": {
+    "id": "eclat_buccal_e",
+    "nom": "Éclat buccal",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Fait briller les dents. Nécessite 1 point de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "luminescence",
+        "cible": "dents"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 1
+      }
+    }
+  },
+  "acceleration_ongles_e": {
+    "id": "acceleration_ongles_e",
+    "nom": "Accélération des ongles",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Les ongles poussent d'un centimètre. Nécessite 1 point de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "croissance_ongles",
+        "distance_cm": 1
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 1
+      }
+    }
+  },
+  "mauvaise_haleine_e": {
+    "id": "mauvaise_haleine_e",
+    "nom": "Mauvaise haleine",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Provoque au toucher d'une cible une haleine désagréable pendant 5 minutes. Nécessite 5 points de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": {
+        "contact_cible": true
+      },
+      "effet": {
+        "type": "affliction_mineure",
+        "effet": "haleine_desagreable",
+        "duree_minutes": 5
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 5
+      }
+    }
+  },
+  "gel_narines_e": {
+    "id": "gel_narines_e",
+    "nom": "Gel des narines",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Stoppe temporairement les écoulements nasaux. Nécessite 2 points de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "arret_symptome",
+        "cible": "ecoulement_nasal"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 2
+      }
+    }
+  },
+  "brume_buccale_e": {
+    "id": "brume_buccale_e",
+    "nom": "Brume buccale",
+    "rang": "E",
+    "type": "active",
+    "categorie": "mixte",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "utilisations_par_rang": 3,
+    "taux_reussite": 20,
+    "description": "Crée une vapeur légère sortant de la bouche à chaque mot, donnant l'impression qu'il fait très froid autour de soi. Parfait pour impressionner. Nécessite 1 point de Mana.",
+    "mecanique": {
+      "declencheur": "commande_utilisateur",
+      "condition": null,
+      "effet": {
+        "type": "effet_visuel",
+        "vapeur": true,
+        "impression": "froid",
+        "usage": "impressionner"
+      },
+      "cout": {
+        "type": "mana",
+        "valeur": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+# Techniques Rang E+ — Offensives, Défensives et Mixtes
+
+Description: Versions améliorées des techniques de rang E, rédigées de manière complète et claire.
+
+**Techniques Rang E+ — Offensives, Défensives et Mixtes**
+
+> Itération améliorée des capacités de rang E. Même esprit, meilleure maîtrise.
+> 
+
+### Offensives (E+)
+
+**1- Canalisation focalisée :** Concentre l’énergie dans un membre ou une arme pour des frappes plus stables et pénétrantes. Nécessite 6 points de Mana.
+
+**2- Trempe arcanique :** Imprègne temporairement une arme ou un outil pour amortir les chocs et réduire l’érosion magique (≈ 12 s ou 2 impacts). Nécessite 7 points de Mana.
+
+**3- Javelot d’arcane :** Laisse partir un trait énergétique droit et rapide avec un léger auto‑guidage (jusqu’à 12 m). Peut percer une défense mineure ou dévier un projectile léger. Nécessite 8 points de Mana.
+
+**4- Sceau de renvoi :** Déclenche une onde propre qui repousse et renvoie les projectiles légers dans un angle d’environ 30° (rayon 9 m). Nécessite 8 points de Mana.
+
+### Défensives (E+)
+
+**1- Blindage ciblé :** Canalise la défense sur la zone menacée pour réduire fortement les dégâts frontaux durant une courte fenêtre (≈ 4 s). Nécessite 6 points de Mana.
+
+**2- Exosquelette II :** Forme une couche homogène à micro‑maillage sur le corps qui atténue les dégâts de zone et confère une faible résistance au feu et au froid (≈ 8 s). Nécessite 7 points de Mana.
+
+**3- Égide directionnelle :** Dresse un bouclier frontal mobile plus robuste, qui se fissure en deux étapes avant de céder et diffuse un cône d’atténuation à la rupture. Nécessite 8 points de Mana.
+
+**4- Dôme à relief :** Erige une sphère protectrice modulable, plus épaisse du côté attaqué, qui annule un projectile mineur puis conserve une bonne intégrité. Nécessite 8 points de Mana.
+
+### Mixtes (E+)
+
+**1- Flamme d’appoint :** Fait apparaître une petite flamme stable au bout du doigt pour lire, baliser ou souder un fil fin. Nécessite 3 points de Mana.
+
+**2- Toucher cryo‑fin :** Refroidit localement (≈ −6 °C) pour geler une pellicule d’eau et créer une micro‑adhérence. Nécessite 5 points de Mana.
+
+**3- Foulée feutrée :** Supprime les bruits de pas sur bois, pierre lisse et terre battue (le sprint rétablit le bruit). Nécessite 4 points de Mana par minute.
+
+**4- Iris nocturne :** Améliore la vision en faible luminosité et le contraste avec une légère brillance oculaire. Nécessite 3 points de Mana par minute.
+
+**5- Paume‑lanterne :** Émet une lueur diffuse lisible à 2–3 m et peut produire un bref flash à bout portant. Nécessite 3 points de Mana.
+
+**6- Teinte fugace :** Colore quelques mèches et motifs simples pour une identification d’équipe pendant 24 h. Nécessite 4 points de Mana.
+
+**7- Glyphe discret :** Appose une marque cutanée temporaire qui luit ou picote à l’approche de flux magiques mineurs (< 1 m). Nécessite 6 points de Mana.
+
+**8- Halo digital :** Fait briller un à deux doigts, avec couleur et intensité réglables, pour communiquer par signaux. Nécessite 3 points de Mana par minute.
+
+**9- Pulsation d’air :** Génère des micro‑bourrasques dirigées pour déplacer poussière, braises ou dévier une fumée légère sur 1–2 m. Nécessite 3 points de Mana.
+
+**10- Lissage hygiénique :** Nettoie et polit rapidement dents, lentilles et lames, en réduisant les odeurs pendant quelques heures. Nécessite 5 points de Mana.
+
+**11- Relâchement social :** Accroît la probabilité de bâillement et induit un léger relâchement à courte portée. Nécessite 4 points de Mana.
+
+**12- Pas d’architecture :** Module la résonance des pas pour amplifier, normaliser ou étouffer en milieux réverbérants. Nécessite 3 points de Mana par minute.
+
+**13- Rémanence olfactive :** Évoque une odeur familière liée à un souvenir, apportant un avantage relationnel contextuel. Nécessite 6 points de Mana.
+
+**14- Haleine spectrale :** Produit une brume vocale lisible en signaux très courts et masque un détail proche dans l’ombre. Nécessite 3 points de Mana.
+
+**15- Paume magnétique fine :** Exerce une attraction précise à ~10 cm sur de petits métaux pour récupérer et manipuler des éléments délicats. Nécessite 5 points de Mana.

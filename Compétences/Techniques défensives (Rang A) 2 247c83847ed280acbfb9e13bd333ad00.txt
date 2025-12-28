@@ -1,0 +1,21 @@
+# Techniques défensives (Rang A) : 2
+
+Description: Cette page regroupe les techniques défensives de rang A.
+
+**1.Sursis d’Impact** 
+
+Factions : Arès / Atlas / Hermès
+
+Type : Magie du Temps
+
+Juste avant de subir une attaque létale ou critique, l’utilisateur déclenche un gel temporel personnel. L’attaque est mise en pause pendant 3 secondes. Durant ce laps, l’utilisateur peut faire un unique mouvement (esquive, repli, contre-attaque, incantation rapide). Coût : 25 PM. Limite : 1 usage par combat.
+
+**2.Miroir Gravitationnel** 
+
+Factions : Hécate uniquement
+
+Type : Magie de l’Espace
+
+Le mage crée un champ inversé de gravité pendant 6 secondes sur une zone de 10 mètres. Toute attaque magique ou physique dirigée vers lui est détournée vers le ciel. Les ennemis dans la zone ressentent un flottement, réduisant leur mobilité. Ne protège que contre les attaques frontales.
+
+Coût : 29 PM. Contre : Inefficace contre attaques au sol ou latérales.

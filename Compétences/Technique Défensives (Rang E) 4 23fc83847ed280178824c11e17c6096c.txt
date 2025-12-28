@@ -1,0 +1,12 @@
+# Technique Défensives (Rang E) : 4
+
+Description: Cette page regroupe les techniques déffensives de rang E.
+
+**1- Canalisation énergétique :** permet de canaliser son énergie magique dans une partie du corps afin de la rendre plus endurante. Cette technique constitue la base fondamentale de l'attaque et de la défense dans les combats magiques. (Arès = 8, Hermès = 7, Atlas = 7)
+
+**2- Exosquelette 1 :** L'utilisateur canalise sa magie directement dans l'épiderme, créant une fine couche énergétique qui renforce l'ensemble du corps sans spécialisation. Ce renforcement global augmente légèrement la résistance aux chocs, à la chaleur et à la pression magique. Cette technique est particulièrement efficace contre les attaques de zone ou les impacts multiples. (Arès = 8, Hermès = 7, Atlas = 7)
+
+**3- Cercle de protection :** L'utilisateur déploie un cercle magique flottant (coloré) qui sert de rempart frontal. Ce cercle intercepte les attaques physiques ou magiques selon sa résistance et vole en éclats lorsqu'elle est épuisée, avant de se dissiper.
+La stabilité du cercle dépend de la concentration de l'utilisateur au moment de l'impact. Cette technique est idéale pour parer des frappes directes. Hécate uniquement.
+
+**4- Dome protecteur :** L'utilisateur génère une sphère magique stable autour de lui qui absorbe uniformément les impacts de toutes directions, offrant une protection efficace contre les attaques de zone. Cependant, sa structure répartit la puissance défensive, la rendant vulnérable aux attaques concentrées ou précises. Cette technique est principalement maîtrisée par les **Hécate**.

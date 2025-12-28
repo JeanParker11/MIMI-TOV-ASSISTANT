@@ -85,11 +85,34 @@ module.exports = {
       }
     }
 
-    // Correction : seulement 3 emplacements pour corps, sorts et cartes
-    const corps = fiche.corps || ["(vide)", "(vide)", "(vide)"];
+    // 5 emplacements pour corps selon le nouveau modèle
+    const corps = fiche.corps || ["Rien", "Haut usé", "Rien", "Rien", "Pantalon usé"];
     const sorts = fiche.sorts || ["(vide)", "(vide)", "(vide)"];
     const cartes = fiche.cartes || ["(vide)", "(vide)", "(vide)"];
     const stats = fiche.stats || { force: "?", esprit: "?", pouvoir: "?" };
+    const statsMax = fiche.statsMax || { force: stats.force, esprit: stats.esprit, pouvoir: stats.pouvoir };
+    
+    // Calculer l'état de fatigue basé sur la puissance restante
+    let etat = "En pleine forme";
+    const forceActuelle = parseInt(stats.force) || 0;
+    const forceMax = parseInt(statsMax.force) || forceActuelle;
+    const pouvoirActuel = parseInt(stats.pouvoir) || 0;
+    const pouvoirMax = parseInt(statsMax.pouvoir) || pouvoirActuel;
+    
+    // Moyenne de puissance (Force + Pouvoir) / 2
+    const puissanceActuelle = forceActuelle + pouvoirActuel;
+    const puissanceMax = forceMax + pouvoirMax;
+    const pourcentagePuissance = puissanceMax > 0 ? (puissanceActuelle / puissanceMax) * 100 : 100;
+    
+    if (pourcentagePuissance > 70) {
+      etat = "En pleine forme";
+    } else if (pourcentagePuissance >= 30) {
+      etat = "En état de se battre";
+    } else if (pourcentagePuissance >= 20) {
+      etat = "Fatigué";
+    } else {
+      etat = "Hors d'état de se battre";
+    }
     const validéePar = fiche.validéePar || "(inconnu)";
     
     // Formatage correct du numéro sans ajout automatique de "+"
@@ -106,9 +129,11 @@ module.exports = {
 
 *Inventaire de corps*
 ════════════════
-- 1️⃣: ${corps[0] || "(vide)"}
-- 2️⃣: ${corps[1] || "(vide)"}
-- 3️⃣: ${corps[2] || "(vide)"}
+- 🎩 Tête: ${corps[0] || "Rien"}
+- 👕 Torse: ${corps[1] || "Haut usé"}
+- 🤚 Bras: ${corps[2] || "Rien"}
+- ⚔️ Taille: ${corps[3] || "Rien"}
+- 👖 Jambes: ${corps[4] || "Pantalon usé"}
 
 *Inventaire de sorts*
 ═════════════════
@@ -124,9 +149,11 @@ module.exports = {
 
 𝗦𝘁𝗮𝘁𝗶𝘀𝘁𝗶𝗾𝘂𝗲𝘀
 ═════════════════
-👊🏼• 𝗙𝗼𝗿𝗰𝗲 : ${stats.force || "?"}
-🧠• 𝗘𝘀𝗽𝗿𝗶𝘁 : ${stats.esprit || "?"}
-🌀• 𝗣𝗼𝘂𝘃𝗼𝗶𝗿 : ${stats.pouvoir || "?"}
+👊🏼• 𝗙𝗼𝗿𝗰𝗲 : ${stats.force || "?"}/${statsMax.force || "?"}
+🧠• 𝗘𝘀𝗽𝗿𝗶𝘁 : ${stats.esprit || "?"}/${statsMax.esprit || "?"}
+🌀• 𝗣𝗼𝘂𝘃𝗼𝗶𝗿 : ${stats.pouvoir || "?"}/${statsMax.pouvoir || "?"}
+
+💫 𝗘𝘁𝗮𝘁 : ${etat} (${Math.round(pourcentagePuissance)}%)
 
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Fiche validée par : *${validéePar}*

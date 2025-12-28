@@ -1,0 +1,7 @@
+# Techniques défensives (Rang S) : 2
+
+Description: Cette page regroupe les techniques défensives de Rang A : 5
+
+**1 Bastion d’Aeloria** : Génère un dôme inviolable d’énergie divine autour d’un lieu (jusqu’à 20 m de diamètre), stoppant le temps à l’intérieur pour 30 secondes réelles. Idéal pour protéger, fuir ou guérir. Réutilisation : 1 fois tous les 15 jours. Prix : 11 000 FCFA
+
+**2 Faille de l’Oubli (Hécate uniquement)** : Crée une fracture mentale dans l’esprit de tous les ennemis proches, leur faisant oublier leurs sorts de rang A et S pendant 3 tours. Prix : 13 000 FCFA

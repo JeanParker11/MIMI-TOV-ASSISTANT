@@ -1,0 +1,133 @@
+# Techniques Mixtes (Rang C) : 35
+
+Description: Cette page regroupe les techniques Mixtes de rang C.
+
+1. **Chœur de Brume :** Une brume épaisse envahit un rayon de 10 mètres. Les sons y résonnent de manière déformée, rendant toute communication ou perception vocale confuse. Permet de rompre les stratégies basées sur les signaux ou les ordres vocaux. **Coût :** 9 PM
+
+2. **Mur de rétention :** L'utilisateur fait apparaître une surface verticale de deux mètres carrés. Tout projectile magique qui touche ce mur se fige dans le temps pendant 10 secondes avant de reprendre sa trajectoire. l'utilisateur peut donc changer la trajectoire du projectile en changeant donc celle du mur. **Coût :** 10 PM.
+
+3. **Éclats rotatifs :** Quatre fragments de lumière tournent autour de l’utilisateur. S’ils sont touchés, ils libèrent une onde sonore aiguë désorientant tous les combattants proches. **Coût :** 8 PM.
+
+---
+
+4. **Chaîne de Lierre :** Fait germer en un instant des lianes autour d’une structure en bois ou en pierre. Ces lianes s’enroulent et stabilisent la structure, ou l’entravent si elle est animée. **Coût :** 7 PM
+
+---
+
+5. **Feu Grêle :** Fait pleuvoir des gouttes ardentes, sans précision ni visée, dans un rayon large (10 mètres) L’effet est plus dissuasif que létal. Coût : 11 PM
+
+---
+
+6. **Œil de la Terre :** Une pierre du sol devient translucide au toucher et transmet pendant 1 minute ce qu’elle "voit" dans un angle de 180°. Utilité : Surveillance ou reconnaissance à distance. Coût : 7 PM
+
+---
+
+7. **Fertilisation : F**ait germer une plante parasite qui fragilise l’arme de l’adversaire. Coût : 9 PM
+
+---
+
+8. **Cacophonie des Cordes :** Fait vibrer toutes les cordes dans un rayon de 15 m (harpes, arcs, pièges…) Coût : 8 PM
+
+---
+
+9. **Givre :** Un sceau bleu glacé apparaît sur une surface et y absorbe toute chaleur, rendant l’objet fragile ou cassant. Dégradation de matériaux ou piège invisible. Coût : 10 PM
+
+---
+
+10. **Flaque de Lune :** Une flaque argentée se forme à l’endroit désigné. Toute personne qui y marche perd automatiquement l’équilibre. Coût : 9 PM
+
+---
+
+11. **Chambre Silencieuse :** Toute zone délimitée (maximum 4 m²) devient parfaitement silencieuse pendant 20 secondes. Coût : 8 PM
+
+---
+
+12. **Rappel des Tisons :** Tout charbon encore tiède dans un rayon de 30 mètres est réactivé en tison rougeoyant. Relance d’un feu éteint ou piège thermique. Coût : 7 PM
+
+---
+
+10. **Mémoire du Sol** : En posant la main sur un sol naturel, le lanceur perçoit les dernières perturbations importantes à cet endroit (pas lourds, combat, chute d’objet) sur les 5 derniers jours. **Coût** : 8 PM
+
+---
+
+14. **Ancre de Sable :** Fait peser le sol sous les pieds d’un groupe de cibles, ralentissant leurs mouvements. (leur vitesse divisée par 2)Coût : 11 PM
+
+---
+
+15. **Voile des Frissons :** Provoque une sensation de froid intense sans température réelle, perturbant la concentration. Coût : 8 PM
+
+---
+
+16. **Carapace de Cendres :** Recouvre partiellement un allié de cendres épaisses qui absorbent les impacts physiques. Coût : 10 PM
+
+---
+
+17. **Rouage Oblique :** Modifie la gravité d’un objet ou édifice, l’obligeant à se pencher ou tomber dans un sens donné. Coût : 9 PM
+
+---
+
+**18. Marque-Cendre** : Marque un objet, une arme ou un vêtement avec une fine poussière grise. Cette marque devient lumineuse et chaude si l’objet est manipulé par quelqu’un d’autre que le lanceur. **Utilité** : Détection de vol. **Coût** : 6 PM
+
+19. **Cloche d’Entrave** : Invoque une clochette invisible accrochée à un point fixe ou mobile. Elle tinte légèrement à chaque mouvement dans un rayon de 3 mètres, sauf celui du lanceur. **Coût** : 8 PM
+
+20. **Marche Lointaine :** Le son des pas de l’utilisateur semble provenir d’un autre endroit. Utilité : Fuite, infiltration, piège sonore. Coût : 7 PM
+
+---
+
+21. **Murmure de la Caravane :** Permet de projeter une voix sur un rayon de 200 mètres, en la camouflant comme un murmure dans le vent, audible uniquement dans les abris, grottes, tentes ou véhicules. Idéal pour semer la confusion ou transmettre un message discret en voyage. **Coût :** 20 PM
+
+---
+
+22. **Spongebob :** En touchant un objet naturel (porte, cailloux, arme…), l’utilisateur le rend spongieux et souple pendant 30 secondes. L’objet devient déformable, peut absorber un coup ou amortir une chute si les proportions sont bonnes. **Coût :** 10 PM
+
+---
+
+23. **Ombre du Verdict :** L’ombre du lanceur s’étire et suit l’adversaire pendant deux minutes. Tant qu’elle est connectée, le moindre mensonge proféré par la cible produit un léger choc nerveux. Très utile en interrogatoire. **Coût :** 10 PM
+
+---
+
+24. **Cendre de Relais :** En soufflant sur une poignée de cendres, l’utilisateur peut marquer une zone d’environ 5 m². Tout objet vivant ou non entrant dans la zone est momentanément "lié" au lanceur : il ressent son poids et sa vitesse. Peut servir pour anticiper une charge ou éviter une embuscade. **Coût :** 13 PM
+
+---
+
+25. **Épine de Lune :** Une petite plante argentée pousse instantanément sous les pieds de l'utilisateur. Si elle est écrasée, une lumière bleutée jaillit, exposant les êtres invisibles ou camouflés dans un rayon de 10 mètres pendant 8 secondes. **Coût :** 10 PM
+
+26. **Amalgame I :** L'utilisateur peut lier deux éléments avec la force de sa magie. la force de la liaison dépendra du nombre de magie utilisé. **Coût :** 9 PM
+
+---
+
+27. **Brouillard de Verre :** En frappant le sol ou une surface rocheuse, l’utilisateur provoque un nuage de poussière mêlé de minuscules éclats brillants. Ces éclats ne blessent pas mais gênent la vision, la respiration et perturbent la lumière. **Coût :** 18 PM
+
+---
+
+28. **Cri des Fosses :** Si un trou, une faille ou un puits est dans un rayon de 15 mètres, l’utilisateur peut y faire résonner une voix humaine (ou inhumaine) amplifiée qui attire l’attention, crée une peur ou simule une présence. **Coût :** Tous : 5 PM
+
+---
+
+29. **Clé de l’Éclipse Mineure :** À la tombée du jour ou à l'aube, l’utilisateur peut plonger une zone de 10 mètres dans une pénombre illusoire pendant 10 secondes, rendant toute perception visuelle floue, même pour les porteurs de torches. **Coût :** 15 PM
+
+---
+
+30. **Sang Innocent :** Si du sang non magique (animal ou humain) est au sol depuis moins de 3 minutes, l’utilisateur peut le faire s'évaporer et imprégner l’air, rendant tout sort de type Divination ou Poursuite inefficace pendant 1 minute. **Coût :** Tous : 6 PM
+
+---
+
+31. **Balancier des Heures Mêlées :** Permet de reculer ou d’avancer de quelques minutes la **sensation de fatigue** dans une zone donnée. Cela affecte également les torches, les ombres, et le rythme biologique des êtres vivants (sans changer le temps réel). **Utilité :** Perturber la coordination d’un groupe. **Coût : 18** PM
+
+---
+
+32. **Graines de l’Oubli Fertile :** En semant ou en lançant une poignée de graines qu'il a auparavant imbibé de son énergie, l’utilisateur accélère leur croissance jusqu’à ce qu’elles forment une végétation souple, mais dense. **Utilité :** Bloquer un passage, créer une barrière soudaine, protéger un objet. **Coût :** 17 PM
+
+---
+
+33. **Chant de la Matière :** Rend toute matière non magique (corde, métal, bois, pierre) dans une zone de 5 mètres **plus friable ou plus souple** pendant 30 secondes. **Coût :** 9 PM
+
+---
+
+34. **Résurrection I :** Permet à l’utilisateur de réanimer brièvement un petit animal (comme un oiseau mort par exemple). L'animal se relève, s'avance jusqu’à 100 mètres, puis s’effondre de nouveau. Il ne transmet aucune information directe. **Coût :** Tous : 16 PM
+
+---
+
+35. **Grincement des Portes :** L’utilisateur peut faire grincer, claquer ou trembler **n’importe quelle porte, grille ou ouverture mécanique** dans un rayon de 20 mètres, même verrouillée. L’effet est sonore uniquement. **Coût :** Tous : 5 PM
+
+---

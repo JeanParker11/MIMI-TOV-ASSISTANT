@@ -1,0 +1,43 @@
+# Techniques Offensives (Rang C) : 10
+
+Description: Cette page regroupe les techniques offensives de rang C.
+
+**1. Frappe Lithoplasmatique (Foudre condensée) :** Le poing ou l'arme se charge de plasma instable. À l’impact, l’énergie explose sous forme d’arcs électriques secondaires dans un rayon d’un mètre. Factions : (Arès = 9, Hermès = 8, Atlas = 8)
+
+---
+
+**2. Genou Mégavigne (Type : Végétation) :** Une liane épaisse surgit du sol, s’enroule autour de la jambe du lanceur et renforce un coup de genou. Dégâts bruts + effet d'étourdissement. Factions : (Arès = 8, Hermès = 7, Atlas = 7)
+
+---
+
+**3. Morsure d’Onyx (Type : Métal) :** Le bras ou la jambe se couvre d’un alliage sombre et dense. Au contact, étourdit l'adversaire. Factions : (Arès = 10, Hermès = 8, Atlas = 8)
+
+---
+
+**4. Percussion Phlogistique (**Type : Lave) : Le pied ou le bras s’embrase d’un rouge magmatique, dense et lourd. Un coup de pied au contact du sol ou de l'adversaire explose en créant une onde de choc circulaire (2 mètres). Factions : (Arès = 9, Hermès = 8, Atlas = 8)
+
+---
+
+**5. Dard de Magnésia (Type : Cristal instable) :** Fait pousser un dard cristallin à la place des mains ou sur la lame. Une charge bien placée peut cristalliser la chair de l'adversaire Factions : (Arès = 10, Hermès = 9, Atlas = 9)
+
+---
+
+**Serpent teigneux de foudre :** Touche le sol avec ses pieds ou ses mains ce qui a pour conséquence de créer un serpent de foudre brulant qui ondule vers une cible définie. Technique à double tranchant, faire attention. (Arès = 10, Hermès = 9, Atlas = 9)
+
+---
+
+**7. Crampon Voltaïque (Type : Foudre) :** Le porteur concentre des charges dans l'un de ses pieds puis le pose au sol créant une empreinte presque invisible au sol qui explose au contact d’un ennemi. Minimum 7 Points d'énergie.
+
+Factions : (Arès = 8, Hermès = 7, Atlas = 7)
+
+---
+
+**8. Nœud Végétal (**Type : Végétation) : Projette à distance un faisceau de lianes en spirale qui enserre et comprime une cible. Portée : 7 mètres. Peut étouffer un ennemi. Factions : (Hécate = 12)
+
+---
+
+**9. Pointe de Cendre-Foudre (**Type : Foudre noire) : Lance une boule d’électricité brûlante qui reste en suspension dans l’air 1 seconde avant de frapper une cible violemment. Factions : (Hécate = 12)
+
+---
+
+**10. Ruisseau Igné (**Type : Lave) : Projette un jet de lave concentrée sur une trajectoire fixe. Faible vitesse mais chaleur persistante et traînée au sol. Factions : (Hécate = 10)

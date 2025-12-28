@@ -1,0 +1,12 @@
+# Technique Offensive (Rang E) : 4
+
+Description: Cette page regroupe les techniques offensives de rang E.
+
+**1- Canalisation énergétique :** permet de canaliser son énergie magique dans une partie du corps afin de la rendre plus endurante. Cette technique est l’une des bases fondamentales de l’attaque et de la défense dans les combats magiques. (Arès = 8, Hermes = 7, Atlas = 7)
+
+**2- Renforcement énergétique :** l'utilisateur insuffle son énergie dans un objet de contact (arme, outil, support), augmentant temporairement sa résistance structurelle. Plus l'énergie investie est élevée, plus l'objet résiste aux chocs, à l'érosion ou aux impacts magiques. À ce rang, l'effet dure entre 7 et 8 secondes selon la puissance du flux. (Arès, Hermès, Atlas)
+
+**3- Expulsion énergétique :** L’utilisateur projette une impulsion de magie prenant la forme d’un filament lumineux ou d’un serpent en ligne droite. La portée dépend de la quantité d’énergie canalisée au moment du lancer (1 point = 1 mètre, jusqu’à 9 maximum à ce rang). **Hécate uniquement.**
+
+**4- Cercle de répulsion :** Un sceau circulaire apparaît sous les pieds de l'utilisateur. En libérant son énergie, celui-ci déclenche une onde de choc semblable à une puissante poussée d'air. Tout ce qui se trouve dans le cercle est repoussé à deux mètres au-delà de sa limite, et les flux magiques ennemis sont perturbés. Cependant, le sort reste peu efficace contre les attaques ciblées.
+Capacité maximale du cercle : 9 mètres de rayon à partir du lanceur. **Hécate uniquement.**

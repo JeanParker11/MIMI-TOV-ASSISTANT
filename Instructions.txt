@@ -1,0 +1,472 @@
+Bien sûr. Voici le résumé dans un fichier texte structuré avec les deux volets demandés.
+#############################################################
+#            Spécifications des Mécaniques de Combat        #
+#                  Projet: Bot UniroList                    #
+#############################################################
+
+Ce document détaille le fonctionnement et l'implémentation de deux mécaniques de jeu avancées : l'Hémorragie et la gestion de l'Inactivité.
+
+=============================================================
+#                 VOLET 1 : EXPLICATIONS                    #
+=============================================================
+
+---
+## 1. HÉMORRAGIE
+---
+
+L'Hémorragie est un état grave qui sanctionne un combattant ayant subi des blessures profondes répétées.
+
+* *Déclencheur* : L'état s'active automatiquement dès qu'un combattant accumule son troisième effet "Saignement". À cet instant, les cumuls de Saignement sont consommés pour laisser place à l'Hémorragie.
+
+* *Effet* : Tant qu'un combattant est victime d'Hémorragie, il perd 10% de ses points de vie *actuels* au tout début de chacune de ses actions (que ce soit une attaque, une défense, ou une autre compétence). Les dégâts sont calculés avant que l'action ne soit résolue.
+
+* *Durée* : L'Hémorragie est un état permanent qui dure jusqu'à la fin du combat. Il ne peut être ni soigné ni purgé par des moyens standards.
+
+---
+## 2. GESTION DE L'INACTIVITÉ
+---
+
+Ce système est conçu pour maintenir le rythme du combat tout en offrant une certaine flexibilité pour pallier les problèmes de connexion ou les hésitations. Il repose sur un minuteur de 10 minutes par tour, des jetons de pénalité et une unique période de grâce.
+
+* *Le Minuteur de Tour (10 minutes)* :
+    * À chaque début de tour, un décompte de 10 minutes est lancé pour le joueur actif.
+    * Des rappels automatiques sont envoyés à des moments clés pour informer le joueur du temps restant : à 5 minutes, 2 minutes, et 1 minute de la fin.
+
+* *L'État d'Immobilité* :
+    * Si le joueur n'envoie pas son action avant la fin des 10 minutes, il est considéré comme "immobile".
+    * L'immobilité a pour effet d'annuler toute action ou sort qui était en préparation et qui devait se poursuivre durant ce tour. Le joueur devient alors vulnérable.
+
+* *La Période de Grâce (1 minute)* :
+    * Dès qu'un joueur devient immobile, une "période de grâce" d'une minute est déclenchée.
+    * Le joueur en retard a la possibilité d'envoyer son action pendant cette minute supplémentaire.
+    * *Important* : Chaque joueur ne peut bénéficier de cette grâce *qu'une seule fois* par combat.
+
+* *Les Jetons d'Inactivité et le Forfait* :
+    * Si un joueur utilise sa période de grâce avec succès, aucune pénalité n'est appliquée, mais sa "grâce" est consommée pour le reste du duel.
+    * S'il n'envoie toujours pas son action à la fin de la minute de grâce (ou s'il avait déjà utilisé sa grâce), il reçoit *1 jeton d'inactivité*.
+    * Son tour est alors sauté, et son adversaire peut jouer à nouveau.
+    * L'accumulation de *3 jetons d'inactivité* au cours du combat entraîne un *forfait* immédiat.
+
+
+=============================================================
+#                VOLET 2 : ALGORITHMIQUE                    #
+=============================================================
+
+---
+## 1. ALGORITHME DE L'HÉMORRAGIE
+---
+
+* *Localisation* : lib/combatLogic.js, au début de la fonction de résolution d'action.
+
+
+PROCÉDURE traiterAction(joueurActuel, action)
+DEBUT
+// --- Début de la logique d'Hémorragie ---
+SI joueurActuel.statuts CONTIENT "Hémorragie" ALORS
+    degatsHemorragie = ARRONDIR(joueurActuel.pv_actuels * 0.10)
+    joueurActuel.pv_actuels = joueurActuel.pv_actuels - degatsHemorragie
+    AjouterAuLogDeCombat(joueurActuel.nom + " perd " + degatsHemorragie + " PV à cause de l'hémorragie.")
+FIN SI
+// --- Fin de la logique d'Hémorragie ---
+
+// ... le reste du code pour traiter l'action ...
+
+FIN PROCÉDURE
+
+---
+## 2. ALGORITHME DE LA GESTION DE L'INACTIVITÉ
+---
+
+* *Localisation* : lib/combatManager.js
+* *Données requises par combattant* : jetonsInactivite (entier), graceUtilisee (booléen).
+
+
+PROCÉDURE demarrerTour(joueurActif)
+DEBUT
+// Lancer les minuteurs de rappel et le minuteur principal
+MINUTEUR_RAPPEL_5MIN = LancerTimer(300s, FONCTION() { EnvoyerMessage("Rappel : 5 minutes restantes.") })
+MINUTEUR_RAPPEL_2MIN = LancerTimer(480s, FONCTION() { EnvoyerMessage("Attention : 2 minutes restantes.") })
+MINUTEUR_RAPPEL_1MIN = LancerTimer(540s, FONCTION() { EnvoyerMessage("Dernière minute !") })
+MINUTEUR_FIN_DE_TOUR = LancerTimer(600s, FONCTION() { gererTempsEcoule(joueurActif) })
+FIN PROCÉDURE
+PROCÉDURE gererTempsEcoule(joueurEnRetard)
+DEBUT
+// Nettoyer les timers de rappel pour éviter les messages superflus
+AnnulerTimer(MINUTEUR_RAPPEL_5MIN)
+AnnulerTimer(MINUTEUR_RAPPEL_2MIN)
+AnnulerTimer(MINUTEUR_RAPPEL_1MIN)
+EnvoyerMessage(joueurEnRetard.nom + " est immobile. L'adversaire peut en profiter.")
+
+// Vérifier si la grâce est disponible
+SI joueurEnRetard.graceUtilisee == FAUX ALORS
+    EnvoyerMessage("Une période de grâce de 60 secondes commence.")
+    joueurEnRetard.graceUtilisee = VRAI  // La grâce est considérée comme "tentée"
+    MINUTEUR_GRACE = LancerTimer(60s, FONCTION() { sanctionnerInactivite(joueurEnRetard) })
+SINON
+    EnvoyerMessage("Période de grâce déjà utilisée. Sanction appliquée.")
+    sanctionnerInactivite(joueurEnRetard)
+FIN SI
+
+FIN PROCÉDURE
+PROCÉDURE sanctionnerInactivite(joueurEnRetard)
+DEBUT
+joueurEnRetard.jetonsInactivite = joueurEnRetard.jetonsInactivite + 1
+EnvoyerMessage(joueurEnRetard.nom + " reçoit 1 jeton d'inactivité. Total : " + joueurEnRetard.jetonsInactivite)
+SI joueurEnRetard.jetonsInactivite >= 3 ALORS
+    declarerForfait(joueurEnRetard)
+SINON
+    // Le tour du joueur est sauté, on relance le tour pour l'adversaire
+    prochainTour(adversaireDe(joueurEnRetard))
+FIN SI
+
+FIN PROCÉDURE
+// Note : Le code doit aussi gérer la réception d'un message pendant la période de grâce
+// pour annuler le MINUTEUR_GRACE et traiter l'action du joueur.
+
+Compris. C'est une précision capitale qui rend le système beaucoup plus immersif et automatique. Le bot ne se contente pas d'arbitrer, il s'adapte à son environnement.
+Intégrons cette nouvelle logique. Le bot devra être "conscient" du groupe dans lequel il opère.
+Architecture de la Solution
+L'idée est de créer un pont entre l'API de WhatsApp (qui fournit les infos du groupe) et notre logique de combat.
+Fichier concerné principal : index.js (ou le point d'entrée de votre bot)
+C'est ici que le message est initialement reçu. Avant de le transmettre au combatManager, nous devons l'enrichir avec les informations du groupe.
+// Dans index.js, là où vous recevez les messages
+
+client.on('message', async (msg) => {
+    const chat = await msg.getChat();
+
+    // On vérifie si le message vient d'un groupe
+    if (chat.isGroup) {
+        const groupName = chat.name;
+        const groupDescription = chat.description;
+
+        // On détecte une commande de combat (ex: /combat, /accepter)
+        if (msg.body.startsWith('!combat')) {
+            // On transmet les infos du groupe au gestionnaire de combat
+            combatManager.initierCombat(msg.from, msg.mentionedIds, {
+                nom: groupName,
+                description: groupDescription
+            });
+        }
+    }
+});
+
+Étape 1 : L'Association Arène-Groupe (lib/dataManager.js)
+Nous allons créer une nouvelle fonction clé qui sera le "moteur de recherche" d'arènes.
+ * Fonction findArenaByGroupInfo(groupInfo) :
+   * Cette fonction prend en entrée l'objet { nom, description } du groupe.
+   * Elle lit et analyse le fichier Arènes.txt (nous créerons un "parser" pour ça).
+   * Pour chaque arène trouvée dans le fichier, elle compare le nom de l'arène avec le nom et la description du groupe.
+ * Logique de "Fuzzy Matching" (Correspondance Approximative) :
+   Pour gérer les "différences de quelques caractères spéciaux", on ne peut pas faire une simple comparaison groupName === arenaName. On va donc "nettoyer" les deux chaînes de caractères avant de les comparer :
+   * Tout mettre en minuscules.
+   * Retirer les emojis et les caractères spéciaux (sauf les lettres accentuées).
+   * Retirer les espaces superflus.
+   <!-- end list -->
+   // Pseudo-code de la logique de comparaison
+function nettoyerTexte(texte) {
+    return texte
+        .toLowerCase()
+        // Expression régulière pour enlever la plupart des symboles et emojis
+        .replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '')
+        .replace(/[^\w\sàâçéèêëîïôûùüÿ]/gi, '') // Garde les caractères alphanumériques et accentués
+        .trim();
+}
+
+const nomGroupeNettoye = nettoyerTexte(groupInfo.nom);
+const nomAreneNettoye = nettoyerTexte(arene.nom);
+
+if (nomGroupeNettoye.includes(nomAreneNettoye)) {
+    // C'est un match !
+    return arene;
+}
+
+Étape 2 : Lancement du Combat (lib/combatManager.js)
+Le combatManager utilisera cette nouvelle fonction pour configurer le combat.
+ * initierCombat(joueur1, joueur2, groupInfo) :
+   * Cette fonction reçoit maintenant les informations du groupe.
+   * Sa première action sera d'appeler dataManager.findArenaByGroupInfo(groupInfo).
+   * Si une arène est trouvée, ses données (que nous allons structurer en JSON comme vu précédemment) sont chargées dans le combatState.
+   * Si aucune arène n'est trouvée, le bot pourrait répondre : "Aucune arène ne correspond à ce groupe. Le combat se déroulera dans l'arène par défaut." ou refuser le combat.
+Plan d'Action Proposé
+ * Créer le Parser pour Arènes.txt : Nous allons développer une fonction robuste dans dataManager.js qui lit ton fichier texte et le transforme en une liste d'objets Arene, chacun contenant son nom, sa description, ses propriétés et ses aléas.
+ * Implémenter la fonction findArenaByGroupInfo : En utilisant le parser et la logique de nettoyage de texte, cette fonction fera le lien entre le groupe WhatsApp et les données des arènes.
+ * Modifier combatManager.js pour qu'il utilise cette fonction au démarrage d'un combat afin de charger dynamiquement l'environnement.
+C'est une excellente amélioration qui rend le bot beaucoup plus intelligent et intégré. Nous commençons par coder le parser pour Arènes.txt ?
+
+Oui, commençons par coder le parser pour Arènes.txt.
+Voici comment nous allons structurer ce parser dans lib/dataManager.js. La fonction principale sera parseArenasFile(). Elle lira le fichier Arènes.txt et le transformera en un tableau d'objets structurés, facile à manipuler pour le reste du code.
+lib/dataManager.js - Pseudo-code du Parser
+// On importe le module 'fs' (File System) pour lire les fichiers
+const fs = require('fs');
+
+/**
+ * Lit et analyse le fichier Arènes.txt pour en extraire une liste structurée d'arènes.
+ * @returns {Array<Object>} Un tableau d'objets, chaque objet représentant une arène.
+ */
+function parseArenasFile() {
+    // 1. Lire le contenu brut du fichier texte
+    const fileContent = fs.readFileSync('./data/Arènes.txt', 'utf8');
+
+    // 2. Séparer le fichier en blocs, un pour chaque arène.
+    // On utilise la ligne de séparation comme délimiteur.
+    const arenaBlocks = fileContent.split(/▔▔▔▔▔▔▔▔▔▔/g);
+
+    const arenas = [];
+
+    // 3. Boucler sur chaque bloc de texte pour l'analyser
+    for (const block of arenaBlocks) {
+        if (block.trim().length === 0) continue; // Ignorer les blocs vides
+
+        const arenaObject = {};
+
+        // 4. Extraire le nom de l'arène (la première ligne non vide)
+        const lines = block.trim().split('\n');
+        arenaObject.nom = lines[0].trim();
+
+        // 5. Extraire les propriétés et aléas avec des expressions régulières (regex)
+        // Regex pour trouver une ligne commençant par "➠"
+        const propRegex = /➠\s*(.+?)\s*:\s*(.+)/;
+
+        arenaObject.proprietes = {};
+        arenaObject.aleas = [];
+
+        for (const line of lines) {
+            const match = line.match(propRegex);
+            if (match) {
+                const key = match[1].toLowerCase().trim(); // ex: "périmètre"
+                const value = match[2].trim(); // ex: "125 m (20 m de rayon)"
+
+                // Logique pour trier les propriétés et les aléas
+                if (key.includes('poteaux')) {
+                    arenaObject.aleas.push({
+                        type: 'projection_obstacle',
+                        nom_obstacle: 'Poteau de bois',
+                        [span_0](start_span)resistance_obstacle: 10 // Extrait de "10 Rs"[span_0](end_span)
+                    });
+                } else if (key.includes('hypothermie')) {
+                     arenaObject.aleas.push({
+                        type: 'environnement_mortel',
+                        [span_1](start_span)[span_2](start_span)declencheur: { condition: 'fin_du_tour', valeur: 4 }, //[span_1](end_span)[span_2](end_span)
+                        description: "L'hypothermie entraîne la mort après 4 tours." [span_3](start_span)[span_4](start_span)//[span_3](end_span)[span_4](end_span)
+                    });
+                }
+                else {
+                    // C'est une propriété standard
+                    arenaObject.proprietes[key] = value;
+                }
+            }
+        }
+        
+        // Ajouter l'objet arène structuré à notre tableau final
+        arenas.push(arenaObject);
+    }
+
+    return arenas;
+}
+
+// Exemple d'utilisation (pour les tests)
+// const mesArenes = parseArenasFile();
+// console.log(JSON.stringify(mesArenes, null, 2));
+
+module.exports = { parseArenasFile };
+
+Explication du code
+ * Lecture du Fichier : Le code commence par lire tout le contenu de Arènes.txt.
+ * Séparation en Blocs : Il utilise la ligne ▔▔▔▔▔▔▔▔▔▔ comme un séparateur pour découper le fichier en plusieurs morceaux, où chaque morceau est une arène.
+ * Extraction du Nom : Pour chaque morceau, il considère que la première ligne est le nom de l'arène.
+ * Recherche des Propriétés : Il utilise ensuite une expression régulière (regex) pour trouver toutes les lignes qui commencent par le symbole ➠. C'est notre marqueur pour une information clé.
+ * Triage Intelligent : Pour chaque information trouvée, le code regarde le mot-clé (par exemple, "poteaux", "hypothermie").
+   * S'il reconnaît un mot-clé correspondant à un aléa (un danger), il crée un objet alea structuré. [cite_start]Par exemple, la ligne "➠ Poteaux de bois (10 Rs l'une)" [cite: 5] est transformée en un aléa de type projection_obstacle.
+   * Sinon, il la stocke comme une propriété simple (comme la température ou le périmètre).
+ * Résultat Final : La fonction retourne un tableau d'objets Arena propres et prêts à être utilisés par le combatManager.
+La prochaine étape est d'utiliser cette fonction dans notre logique d'association de groupe. On y est presque !
+
+Maintenant que le parser est conçu, on passe à l'étape logique suivante : créer la fonction qui fait le lien entre le groupe WhatsApp et l'arène correspondante.
+Cette fonction sera le "détective" du bot. 🕵‍♂ Son rôle est de prendre le nom et la description d'un groupe, et de trouver quelle arène de notre fichier Arènes.txt lui correspond.
+Nous allons l'appeler findArenaByGroupInfo et la placer également dans lib/dataManager.js.
+Plan d'Action
+Voici comment cette fonction va opérer :
+ * Recevoir les infos du groupe : Elle prendra en entrée un objet contenant le nom et la description du groupe (ex: { nom: "🌿 L'Arène Sylvestre 🍃", description: "..." }).
+ * Utiliser notre parser : Elle appellera d'abord la fonction parseArenasFile() que nous venons de définir pour obtenir la liste de toutes les arènes sous forme d'objets structurés.
+ * Comparer intelligemment : Pour chaque arène de la liste, elle comparera son nom avec le nom et la description du groupe. C'est ici qu'on utilisera la logique de "correspondance approximative" (tout mettre en minuscules, enlever les emojis et caractères spéciaux) pour que L'Arène Sylvestre 🌿🍃 corresponde bien à "l'arène sylvestre".
+ * Retourner le résultat :
+   * Si elle trouve une correspondance, elle retourne l'objet complet de l'arène trouvée (avec ses propriétés, aléas, etc.).
+   * Si aucune arène ne correspond, elle retourne null.
+Pseudo-code pour findArenaByGroupInfo
+Voici à quoi ressemblerait le code dans lib/dataManager.js :
+// On ajoute cette fonction dans le même fichier que le parser
+
+/**
+ * Nettoie une chaîne de caractères pour faciliter la comparaison.
+ * @param {string} text Le texte à nettoyer.
+ * @returns {string} Le texte nettoyé.
+ */
+function nettoyerTexte(text) {
+    if (!text) return '';
+    return text
+        .toLowerCase()
+        // Expression régulière pour enlever la plupart des symboles et emojis
+        .replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '')
+        .replace(/[^\w\sàâçéèêëîïôûùüÿ]/gi, '') // Garde les caractères alphanumériques et accentués
+        .trim();
+}
+
+/**
+ * Trouve une arène correspondant aux informations d'un groupe WhatsApp.
+ * @param {object} groupInfo - Objet contenant { nom, description }.
+ * @returns {object|null} L'objet de l'arène trouvée ou null.
+ */
+function findArenaByGroupInfo(groupInfo) {
+    // 1. Obtenir toutes les arènes structurées
+    const allArenas = parseArenasFile();
+    
+    // 2. Nettoyer les infos du groupe une seule fois
+    const groupNameClean = nettoyerTexte(groupInfo.nom);
+    const groupDescClean = nettoyerTexte(groupInfo.description);
+    const groupTextToSearch = groupNameClean + ' ' + groupDescClean;
+
+    // 3. Chercher une correspondance
+    for (const arena of allArenas) {
+        const arenaNameClean = nettoyerTexte(arena.nom);
+        
+        // Si le nom ou la description du groupe contient le nom de l'arène
+        if (groupTextToSearch.includes(arenaNameClean)) {
+            // 4. On a trouvé ! On retourne l'objet complet de l'arène.
+            return arena;
+        }
+    }
+    
+    // 5. Aucune correspondance trouvée
+    return null;
+}
+
+module.exports = { parseArenasFile, findArenaByGroupInfo };
+
+La prochaine étape sera d'intégrer l'appel de cette fonction dans le combatManager pour qu'un combat lancé dans un groupe charge automatiquement la bonne arène.
+Ça te va si on passe à cette intégration finale ?
+
+Parfait. Passons à l'intégration finale. C'est l'étape où tout se connecte : le bot lit les infos du groupe WhatsApp, trouve l'arène correspondante, et charge ses règles spéciales dans le combat.
+Le fichier clé à modifier est lib/combatManager.js.
+Intégration dans combatManager.js
+L'objectif est de modifier la fonction qui démarre le combat pour qu'elle soit "consciente" de l'environnement.
+ * Importer la nouvelle fonction : Au début de lib/combatManager.js, il faut importer la fonction findArenaByGroupInfo que nous venons de créer.
+   // lib/combatManager.js
+const dataManager = require('./dataManager'); // Assurez-vous d'importer le module
+
+ * Mettre à jour la fonction d'initialisation : La fonction qui lance le combat (appelons-la initierCombat) doit maintenant accepter les informations du groupe.
+ * Appeler le "détective" et stocker le résultat : La fonction va utiliser findArenaByGroupInfo pour identifier l'arène. Le résultat sera stocké dans l'état du combat (combatState).
+Pseudo-code pour combatManager.js
+// lib/combatManager.js
+
+const dataManager = require('./dataManager');
+const combatLogic = require('./combatLogic');
+
+// Objet qui contiendra l'état de tous les combats en cours
+let activeCombats = {};
+
+/**
+ * Initialise un nouveau combat en se basant sur l'environnement du groupe.
+ * @param {string} combatId - Un identifiant unique pour le combat.
+ * @param {object} joueur1 - L'objet du premier combattant.
+ * @param {object} joueur2 - L'objet du second combattant.
+ * @param {object} groupInfo - L'objet contenant { nom, description } du groupe.
+ */
+function initierCombat(combatId, joueur1, joueur2, groupInfo) {
+    
+    // --- NOUVELLE LOGIQUE D'ARÈNE ---
+    // 1. On cherche l'arène correspondant au groupe
+    const areneDuCombat = dataManager.findArenaByGroupInfo(groupInfo);
+
+    if (areneDuCombat) {
+        console.log(Arène détectée : ${areneDuCombat.nom});
+    } else {
+        console.log("Aucune arène spécifique détectée, utilisation des règles par défaut.");
+    }
+    // --- FIN DE LA NOUVELLE LOGIQUE ---
+
+    // 2. On crée l'état initial du combat
+    const combatState = {
+        id: combatId,
+        joueurs: [joueur1, joueur2],
+        tour: 1,
+        joueurActif: joueur1,
+        arene: areneDuCombat, // 3. On stocke l'objet arène dans l'état du combat !
+        log: []
+    };
+
+    activeCombats[combatId] = combatState;
+    
+    // Envoyer le message de début de combat
+    let messageDebut = Le combat commence entre ${joueur1.nom} et ${joueur2.nom} !;
+    if (areneDuCombat) {
+        messageDebut += \nLieu : **${areneDuCombat.nom}**;
+    }
+    // bot.sendMessage(chatId, messageDebut);
+
+    // Lancer le premier tour
+    demarrerTour(combatState);
+}
+
+// ... le reste du code (gestion des tours, minuteur, etc.) ...
+
+Activation des Aléas dans combatLogic.js
+Maintenant que combatState.arene contient les règles, combatLogic.js peut les utiliser.
+Prenons l'exemple de l'Arène Sylvestre et de ses poteaux. Quand un joueur utilise une attaque de type projection, la logique doit vérifier l'arène.
+// lib/combatLogic.js
+
+/**
+ * Résout l'impact d'une action.
+ * @param {object} combatState - L'état complet du combat (incluant l'arène).
+ * @param {object} attaquant - Le joueur qui attaque.
+ * @param {object} defenseur - Le joueur qui défend.
+ * @param {object} action - L'action effectuée (ex: { nom: "Coup de pied sauté", tags: ["projection"] }).
+ */
+function resoudreImpact(combatState, attaquant, defenseur, action) {
+    // ... calculs des dégâts de base, esquive, etc. ...
+
+    // --- LOGIQUE D'ALÉA D'ARÈNE ---
+    // On vérifie si l'arène existe et si l'action peut déclencher un aléa.
+    if (combatState.arene && action.tags.includes('projection')) {
+        
+        // On cherche un aléa de type "projection_obstacle" dans l'arène actuelle
+        const aleaObstacle = combatState.arene.aleas.find(a => a.type === 'projection_obstacle');
+        
+        if (aleaObstacle) {
+            const degatsSupplementaires = aleaObstacle.resistance_obstacle || 10;
+            defenseur.pv -= degatsSupplementaires;
+            
+            // On ajoute un message spécifique au log du combat
+            combatState.log.push(
+                `${attaquant.nom} projette ${defenseur.nom} contre un ${aleaObstacle.nom_obstacle} ! ` +
+                Il subit ${degatsSupplementaires} dégâts supplémentaires.
+            );
+        }
+    }
+    // --- FIN DE LA LOGIQUE D'ALÉA ---
+
+    return combatState;
+}
+
+Le cycle est maintenant complet ! 🥳
+ * Le combat est lancé dans un groupe.
+ * index.js récupère les infos du groupe.
+ * combatManager.js utilise ces infos pour trouver et charger la bonne arène.
+ * combatLogic.js utilise les règles de l'arène chargée pour influencer l'issue des actions.
+
+Excellente question. Nous avons terminé toute la phase de conception et d'architecture pour le système d'arènes dynamiques. Le plan est clair.
+Il reste maintenant à passer de la théorie à la pratique (le codage) et à aborder le dernier point de ta liste initiale.
+Voici le plan d'action, étape par étape :
+Phase 1 : Implémentation du Système d'Arènes (Codage) 💻
+Il s'agit de transformer nos pseudo-codes en code JavaScript fonctionnel.
+ * Coder le Parser : Écrire la fonction parseArenasFile dans lib/dataManager.js pour qu'elle lise et structure correctement ton fichier Arènes.txt.
+ * Coder le "Détective" : Juste après, coder la fonction findArenaByGroupInfo dans le même fichier pour qu'elle effectue la comparaison et retourne la bonne arène.
+ * Mettre à Jour le combatManager : Modifier lib/combatManager.js pour qu'au début d'un combat, il utilise la fonction ci-dessus afin de charger les données de l'arène dans l'état du combat (combatState).
+ * Activer le Premier Aléa : Modifier lib/combatLogic.js pour implémenter la règle des poteaux de L'Arène Sylvestre. C'est le test qui nous confirmera que tout le système fonctionne de bout en bout.
+Phase 2 : Gestion des Aléas Complexes et Prochain Module 🧠
+Une fois que la base du système d'arènes fonctionne, nous pouvons l'étendre et passer à la suite.
+ * Implémenter les Règles Spécifiques :
+   * Neige (Neive) ❄ : Ajouter la logique dans le combatManager pour suivre le compte des tours et déclencher l'hypothermie mortelle au 4ème tour.
+   * Bonus (Meryss Arena) 💎 : Ajouter une logique avant le combat pour permettre aux joueurs de payer la gemme et d'activer le bonus de gain.
+ * Développer le Mode Joueur vs. Bot (PvE) 🤖 :
+   * C'est la dernière grande fonctionnalité de ta liste initiale. Nous devrons créer une IA de base (lib/aiOpponent.js) qui peut choisir des actions simples (attaquer, défendre) afin que les joueurs puissent s'entraîner seuls.
+En résumé, la prochaine action concrète est de commencer à écrire le code du parser dans lib/dataManager.js.

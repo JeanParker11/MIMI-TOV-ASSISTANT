@@ -1,0 +1,107 @@
+ Absolument. Voici le document complet prêt à être exporté.
+1. Explication de la Structure des Armes
+Pour assurer une gestion simple et efficace de l'équipement, nous avons simplifié la structure de données des armes.
+Le champ faction n'est pas un champ descriptif (lore), mais un champ de règles que le bot utilise pour déterminer qui peut équiper l'arme.
+Ce champ est un objet contenant deux listes : allowed (autorisé) et excluded (exclu).
+allowed (Autorisé)
+Cette liste contient les factions qui ont le droit d'utiliser l'arme.
+ * Si l'arme est universelle (utilisable par tout le monde), on utilise le mot-clé spécial "Toutes".
+ * Si l'arme est réservée, on liste les factions autorisées (ex: ["Hécate", "Arès"]).
+excluded (Exclu)
+Cette liste est principalement utilisée quand allowed est réglé sur "Toutes". Elle permet d'interdire l'arme à des factions spécifiques.
+ * Exemple : Une arme "Toutes factions sauf Hécate" aurait :
+   * allowed: ["Toutes"]
+   * excluded: ["Hécate"]
+2. Algorithme de Vérification
+Voici l'algorithme (pseudo-code) que le bot utilisera pour vérifier si un joueur a le droit de s'équiper d'une arme, en se basant sur la faction du joueur et l'objet faction de l'arme.
+PROCÉDURE verifierEquipement(factionDuJoueur, factionDeLarme)
+DEBUT
+    
+    // Cas 1 : L'arme est universelle ("Toutes")
+    SI factionDeLarme.allowed CONTIENT "Toutes" ALORS
+        
+        // On vérifie si le joueur est spécifiquement exclu
+        SI factionDeLarme.excluded CONTIENT factionDuJoueur ALORS
+            RETOURNER FAUX (Accès refusé, car exclu)
+        SINON
+            RETOURNER VRAI (Accès autorisé, car universel et non exclu)
+        FIN SI
+    
+    // Cas 2 : L'arme est réservée à des factions spécifiques
+    SINON 
+        
+        // On vérifie si le joueur est dans la liste des autorisés
+        SI factionDeLarme.allowed CONTIENT factionDuJoueur ALORS
+            RETOURNER VRAI (Accès autorisé, car listé)
+        SINON
+            RETOURNER FAUX (Accès refusé, car non listé)
+        FIN SI
+
+FIN PROCÉDURE
+
+3. Structure JSON (Exemples)
+Voici le modèle de données JSON final pour les armes, incluant les différents cas de figure pour les factions.
+Exemple 1 : Arme Réservée (Hécate et Arès)
+{
+  "nom": "Lame de l'Aube",
+  "faction": {
+    "allowed": ["Hécate", "Arès"],
+    "excluded": []
+  },
+  "rang": "S",
+  "type": "tranchant",
+  "capacite": {
+    "nom": "Éclat Solaire",
+    "type": "active",
+    "description": "Une fois par combat, libère une vague d'énergie qui inflige 10 dégâts purs."
+  },
+  "resistance": 85,
+  "description": "Une lame forgée au cœur d'une étoile, elle brille d'une lumière sacrée.",
+  "inventaire": {
+    "actuel": 1,
+    "max_global": 5
+  },
+  "valeur": 1200
+}
+
+Exemple 2 : Arme Universelle (Toutes factions)
+{
+  "nom": "Couteau de Voyageur",
+  "faction": {
+    "allowed": ["Toutes"],
+    "excluded": []
+  },
+  "rang": "D",
+  "type": "perforant",
+  "capacite": null,
+  "resistance": 30,
+  "description": "Un couteau simple mais fiable.",
+  "inventaire": {
+    "actuel": 50,
+    "max_global": 1000
+  },
+  "valeur": 50
+}
+
+Exemple 3 : Arme Universelle "Sauf..." (Toutes sauf Atlas)
+{
+  "nom": "Sceptre de l'Ombre",
+  "faction": {
+    "allowed": ["Toutes"],
+    "excluded": ["Atlas"]
+  },
+  "rang": "A",
+  "type": "magique",
+  "capacite": {
+    "nom": "Drain de Vie",
+    "type": "sortilège",
+    "description": "Vole 5% des PV de l'adversaire au contact."
+  },
+  "resistance": 60,
+  "description": "Un sceptre qui semble absorber la lumière autour de lui. Refuse d'obéir aux disciples d'Atlas.",
+  "inventaire": {
+    "actuel": 3,
+    "max_global": 10
+  },
+  "valeur": 850
+}

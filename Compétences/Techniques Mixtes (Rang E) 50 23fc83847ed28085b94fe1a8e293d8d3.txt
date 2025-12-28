@@ -1,0 +1,103 @@
+# Techniques Mixtes (Rang E) : 50
+
+Description: Cette page regroupe les techniques Mixtes de rang E.
+
+**1- Mue volontaire :** Fait tomber la première couche de peau comme un serpent. Totalement inutile sauf pour semer des traces. Nécessite 7 points de Mana.
+
+**2- Éclat buccal :** Fait briller les dents. Nécessite 1 point de Mana.
+
+**3- Accélération des ongles :** Les ongles poussent d'un centimètre. Nécessite 1 point de Mana.
+
+**4- Mauvaise haleine :** Provoque au toucher d'une cible une haleine désagréable pendant 5 minutes. Nécessite 5 points de Mana.
+
+**5- Gel des narines :** Stoppe temporairement les écoulements nasaux. Nécessite 2 points de Mana.
+
+**6- Langue de feuille :** Permet de discuter au toucher avec une plante ou un arbre. Nécessite 9 points de Mana par minute.
+
+**7- Flamme du Mendiant :** Fait apparaître une petite flamme bleutée sur le bout d'un doigt. Insuffisante pour brûler, mais parfaite pour lire ou signaler sa présence dans le noir. Nécessite 3 points de Mana.
+
+**8- Brume buccale :** Crée une vapeur légère sortant de la bouche à chaque mot, donnant l'impression qu'il fait très froid autour de soi. Parfait pour impressionner… Nécessite 1 point de Mana.
+
+**9- Toucher glacial :** Refroidit l'extrémité des doigts jusqu'à atteindre une température très basse (-2 degrés) permettant de rafraîchir une boisson, soulager une petite brûlure ou créer de légères traces de givre sur une surface. Nécessite 8 points de Mana.
+
+**10- Oreilles attentives :** Augmente légèrement l'acuité auditive, permettant d'entendre les chuchotements à 5 mètres de distance. Nécessite 4 points de Mana par seconde.
+
+**11- Larmes de crocodile :** Provoque des larmes à volonté sans émotion associée. Parfait pour attendrir ou simuler le chagrin. Nécessite 2 points de Mana.
+
+**12- Fourmillement digital :** Crée une sensation de fourmillement dans la main de la personne touchée pendant 30 secondes. Totalement inoffensif. Nécessite 3 points de Mana.
+
+**13- Odeur de rose :** Émane une légère odeur de rose pendant 10 minutes. Couvre efficacement les mauvaises odeurs. Nécessite 5 points de Mana.
+
+**14- Yeux luisants :** Fait briller légèrement les yeux dans l'obscurité et permet donc d'y voir. Effet similaire à celui des chats. Nécessite 3 points de Mana par minute.
+
+**15- Séchage express :** Assèche instantanément les vêtements mouillés au toucher. Nécessite 5 points de Mana.
+
+**16- Voix de l'aube :** Modifie légèrement le timbre de la voix pour la rendre plus mélodieuse pendant 5 minutes. Nécessite 5 points de Mana.
+
+**17- Massage des tempes :** Apaise un léger mal de tête au toucher. N'a aucun effet sur les migraines sévères. Nécessite 6 points de Mana.
+
+**18- Réveil des papilles :** Augmente temporairement la sensibilité gustative pendant 10 minutes. Les saveurs semblent plus intenses. Nécessite 3 points de Mana.
+
+**19- Détecteur de mensonge mineur :** Fait picoter le bout du nez quand quelqu'un ment sur un sujet trivial (comme ce qu'il a mangé au petit-déjeuner). Inefficace pour les mensonges importants. Nécessite 7 points de Mana.
+
+**20- Marque éphémère :** Crée un petit tatouage temporaire au toucher qui disparaît après 24 heures. Nécessite 10 points de Mana.
+
+**21- Bourdonnement d'oreilles :** Provoque un léger bourdonnement dans les oreilles de la cible pendant 3 minutes. Agaçant mais pas handicapant. Nécessite 3 points de Mana.
+
+**22- Picotement de langue :** Fait ressentir comme des petites bulles de soda sur la langue pendant 2 minutes. Nécessite 1 point de Mana.
+
+**23- Main magnétique :** Permet d'attirer de très petits objets métalliques (comme des trombones) à moins de 5 cm de la paume. Nécessite 5 points de Mana par attraction.
+
+**24- Éternuement contrôlé :** Provoque un éternuement unique chez soi ou chez la personne touchée. Nécessite 2 points de Mana.
+
+**25- Parfum de souvenir :** Fait sentir à la personne touchée une odeur liée à un de ses souvenirs d'enfance. Nécessite 6 points de Mana.
+
+**26- Chatouillement fantôme :** Crée une sensation de chatouillis sur la nuque de la cible pendant 10 secondes. Nécessite 3 points de Mana.
+
+**27- Bulles de savon :** Génère de petites bulles de savon colorées sortant de la bouche lorsqu'on souffle. Nécessite 2 points de Mana.
+
+**28- Nettoyage de dent :** Élimine les résidus alimentaires entre les dents. Remplace efficacement le fil dentaire. Nécessite 2 points de Mana.
+
+**29- Marche silencieuse :** Supprime tous les bruits de pas mais uniquement sur des sols en bois. Nécessite 4 points de Mana par minute.
+
+**30- Langage des insectes :** Permet de comprendre (mais pas de parler) le langage d'une espèce d'insecte spécifique pendant 2 minutes. Généralement peu instructif. Nécessite 8 points de Mana.
+
+**31- Frisson contrôlé :** Provoque un frisson qui parcourt le corps entier. Utile pour simuler la peur ou le froid. Nécessite 2 point de Mana.
+
+**32- Poils hérissés :** Fait se dresser tous les poils des bras pendant 1 minute. Effet similaire à la chair de poule. Nécessite 2 points de Mana.
+
+**33- Illumination digitale :** Fait briller l'ongle d'un doigt d'une faible lueur colorée pendant 5 minutes. Nécessite 3 points de Mana.
+
+**34- Sensation de déjà-vu :** Provoque chez la personne touchée une intense sensation de déjà-vu pendant quelques secondes. Nécessite 4 points de Mana.
+
+**35- Petite brise :** Génère une légère brise fraîche autour de soi pendant 30 secondes. À peine suffisante pour agiter une feuille de papier. Nécessite 3 points de Mana.
+
+**36- Cheveux en mouvement :** Fait onduler doucement les cheveux comme s'ils flottaient dans l'eau pendant 1 minute. Effet purement esthétique. Nécessite 2 points de Mana.
+
+**37- Clin d'œil lumineux :** Projette un minuscule éclat de lumière lors d'un clin d'œil. Visible uniquement dans l'obscurité complète. Nécessite 2 points de Mana.
+
+**38- Pépin répulsif :** En crachant un pépin de fruit, celui-ci rebondit magiquement trois fois avant de s'arrêter. Nécessite 1 point de Mana.
+
+**39- Hoquet instantané :** Provoque un unique hoquet chez la personne touchée. Nécessite 2 points de Mana.
+
+**40- Mémoire du goût :** Permet de se rappeler exactement le goût d'un plat mangé dans les 7 derniers jours. Nécessite 3 points de Mana.
+
+**41- Bâillement contagieux :** Provoque un bâillement irrépressible chez toute personne qui vous regarde bâiller. Nécessite 4 points de Mana.
+
+**42- Doigt aimant :** Transforme temporairement l'index en aimant à poussière pendant 1 minute. Parfait pour nettoyer des surfaces délicates. Nécessite 2 points de Mana.
+
+**43- Échos des pas :** Fait résonner chaque pas comme si on marchait dans une grande cathédrale vide pendant 3 minutes. Nécessite 3 points de Mana.
+
+**44- Condensation parlante :** En parlant près d'une surface froide, les mots s'inscrivent brièvement dans la condensation avant de s'évaporer. Nécessite 5 points de Mana.
+
+**45- Paume lumineuse :** La paume de la main émet une faible lueur pendant 2 minutes, suffisante pour éclairer une serrure dans le noir. Nécessite 3 points de Mana.
+
+**46- Chauffage d'oreille :** Réchauffe les oreilles comme si on portait des cache-oreilles pendant 10 minutes. Nécessite 2 points de Mana.
+
+**47- Mèche colorée :** Change la couleur d'une mèche de cheveux pendant 24 heures. Nécessite 4 points de Mana.
+
+**48- Tache invisible :** Rend une tache sur un vêtement invisible pendant 3 heures. La tache est toujours présente mais ne peut être vue. Nécessite 6 points de Mana.
+
+**49- Prémonition futile :** Donne une vision fugace (2 secondes) d'un événement banal qui se produira dans les prochaines 24 heures. Exemple : voir quelqu'un se moucher. Nécessite 8 points de Mana.
+
+**50- Miroir éphémère :** Transforme la surface d'une flaque d'eau en miroir parfait pendant 30 secondes. Nécessite 5 points de Mana.

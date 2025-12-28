@@ -1,0 +1,13 @@
+# Techniques Mixtes (Rang S) : 5
+
+Description: Cette page regroupe les techniques Mixtes de Rang S : 5
+
+**1 Dominion de Lave** : Permet de remodeler un territoire entier (jusqu’à 500 m²) en terrain de lave contrôlable, manipulable, invocable. Les entités ennemies subissent des dégâts constants. Effet secondaire : Immunité à la lave pendant 3 tours. Prix : 4 000 FCFA
+
+**2 Souffle de l’Éon** : Gèle le temps dans une zone donnée pendant 2 secondes réelles, sauf pour l’utilisateur. Assez pour esquiver, frapper, déplacer un allié. Limite : 1 fois par combat. Prix : 3 000 FCFA
+
+**3 Crépuscule des Dieux** : Déclenche un orage surnaturel qui altère la gravité, la lumière et la chaleur d’un champ de bataille. Change le comportement de certains sorts (ex : foudre amplifiée). Durée : 3 tours. Prix : 2 000 FCFA
+
+**4 Invocation du Zénith Perdu :** Invoque une entité céleste neutre qui juge la situation. Peut attaquer, soigner ou punir selon le karma magique des présents. 24 PM.
+
+**5 Pacte du Néant** : Supprime les règles physiques d’un espace donné pendant 1 tour : on peut marcher dans les airs, transpercer la pierre, et ignorer les effets gravitationnels. Contrecoup : L’utilisateur perd 60 de ses PV à la fin. 30 PM.

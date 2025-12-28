@@ -1,0 +1,103 @@
+Pour la gestion des armes et armures on va créer la commande monarsenal 
+Elle va afficher un menu qui propose plusieurs options en rapport avec l'équipement Du joueur
+il pourra choisir d'équiper/de déséquiper un ou plusieurs équipements
+il pourra choisir de tenir une ou plusieurs armes (deux max, à raison d'une par main)
+Le bot devra aussi tenir compte de ces subtilités: vérifier si l'utilisateur possède une arme, si oui, dans quelle main, et si c'est le cas, a-t-il fait mention de son usage dans son pavé ? savoir si l'utilisateur se sert de sa main/son pied droit/gauche au moment d'une action
+
+pour les bonus/malus d'équipements, on va charger le fichier équipements.txt, il sera une base de données complète en txt qui va recenser tous les équipements, leur description, leur résistance, ainsi que leurs effets (à faire plus tard car je n'ai pas ces données)
+
+pour ce qui est de la durabilité et de l'usure, je crois avoir mentionné ça dans l'un des fichiers texte 
+
+je te copie l'extrait ici
+
+#### 2.3. Objet vs Objet (Logique des Armes Contondantes)
+- *Étape 1 : Vérification de Surcharge :* Si Force_Utilisée > 2 * Rs_Arme, l'arme se brise avant l'impact.
+- *Étape 2 : Résolution de l'Impact :*
+    - **Arme Trop Faible (Rs_Arme < Rs_Cible) :** L'arme se brise. Le porteur subit des dégâts de recul (Rs_Cible - Rs_Arme).
+    - **Arme Supérieure (Rs_Arme > Rs_Cible) :** La cible subit des dégâts (Rs_Arme + Force_Utilisée). L'arme perd 1 Rs d'usure.
+    - **Égalité (Rs_Arme = Rs_Cible) :** L'arme et la cible perdent 2 Rs d'usure.
+
+---
+
+je pense que c'est suffisamment explicite comme ça
+il va falloir tenir compte de ça et déduire des formules de réduction de résistance sur la base de calculs d'usure
+la durabilité est égale aux rs de l'arme, qui définit son statut
+91-100% de la durabilité d'origine: l'arme est considérée comme neuve
+70-90% de la durabilité d'origine: l'arme est considérée comme presque neuve
+30-69% de la durabilité d'origine: l'arme est considérée comme en bon état
+1-29% de la durabilité d'origine: l'arme est considérée comme usée
+il faudra donc prévoir la variable statut de l'arme dans tes calculs 
+
+pour les grades d'équipements, je pense avoir noté ça quelque part
+
+| Rang | Plage de stats |
+|------|----------------|
+| E    | 1–5            |
+| D    | 6–15           |
+| C    | 15–25          |
+| B    | 26–35          |
+| A    | 36–45          |
+| S    | 46–100         |
+
+
+Rends les compétences actives utilisables en pvp
+pour ce qui est de leur utilisation, le joueur va utiliser l'une de ses actions pour lancer sa compétence en écrivant le nom de celle-ci 
+dans le contexte, le bot doit détecter, analyser, comparer et intégrer l'information à son verdict
+il peut éventuellement la décrire de façon brève pour faciliter la recherche mais dans les faits, il devra chercher la compétence dans la liste des compétences actives et gérer leurs effets selon ça
+
+en ce qui concerne les coûts et autres tu vas devoir faire des estimations de moyennes de coûts selon les contenus de actives.json et passives.json
+
+tu vas en profiter pour lister tous les types d'effets, ça te sera utile pour savoir comment catégoriser d'éventuelles futures compétences à l'avenir
+
+pour ce qui est des cooldowns et conditions d'activation
+les conditions d'activations sont généralement définies dans les json des compétences 
+pour les cooldowns par exemple, on va aller sur de nouvelles bases
+D'abord, aucune compétence hormis celles des rangs E et S ne pourront s'utiliser au début d'un combat, les autres seront utilisables après avoir chargé
+
+Rang E: 1 tour d'effet pour 1 tour de chargement
+Rang D: 2 tours de chargement pour 1 tour d'effet
+Rang C: 3 tours de chargement pour 1 tour d'effet
+Rang B: 4 tours de chargement pour 2 tours d'effet
+Rang A: 5 tours de chargement pour 2 tours d'effet
+Rang S: 3 tours d'effet pour 6 tours de chargement 
+
+Maintenant qu'on a ça il va falloir mettre les fichiers des compétences à jour afin d'y intégrer ces informations
+de ce fait, toute allusion à de quelconques marqueurs de temps (heures, minutes, secondes), que ce soit dans les descriptions ou dans les durées d'effets, doivent être remplacées par leurs équivalents en tours
+
+pour ce qui est des effets je pense que ça a déjà été renseigné dans chacune des compétences
+
+pour la gestion de l'inactivité, le listener actif qui attend les pavés va rester actif pendant 6min
+une fois les 6min écoulées, il y aura une minute supplémentaire (utilisable une fois par combat et accordée une fois à chacun des combattants)
+si à l'issue de ces 6min, ou 7 selon les cas, il n'y a as eu de réponse au listener de la part du joueur dont c'est le tour, le bot prendra les mesures suivantes,
+l'individu est considéré comme immobile. de ce fait:
+toutes les actions entamées au précédent tour, et qui ont une suite dans le pavé qui n'est pas venu, ainsi que toutes les actions maintenues sont considérées comme annulées
+toute attaque dirigée contre un individu qui n'a pas envoyé son pavé, ou pas dans les temps sont considérés comme réussies si les conditions de base pour sa réussite sont respectées (portées et autres paramètres)
+les notifications auront lieu respectivement à 3,2 et 1min de l'heure de fin de latence (ou fin du timer selon ton mode opératoire)
+
+pour ce qui est des effets de statuts, attends je t'envoie ceux que j'ai déjà
+**Ignis🔥 (Brulure)**
+Inflige -2 PV la seconde ou par tour tant que le feu n'est pas éteint et perturbe la précision. En bonne quantité, elle réduit à 0 la tolérance au froid et ou à la foudre.
+
+**Glacis ❄️ (Gèle)**
+Ralenti de -1 la vitesse et dans le pire des cas (adversaire déjà mouillé) fige pour 3 tours. Gel est moins efficace sur les Atlas.
+
+**Fulmis**⚡️**(Charge)**
+Diminué de - 3pv par seconde ou par tour (3fois) la vie pour un total de -9pv. Et dans le pire des cas (adversaire déjà mouillé) diminue de -5/s (3fois) pour un total de -15.
+
+**Sylvaë 🌿(Végétal)**
+En bonne quantité, elle réduit à 0 la tolérance au feu.
+
+**Aeris🌪️ (Dispersion)**
+Sert à propager et à disperser les autres éléments présents à proximité.
+
+Après il y a les autres altérations de statut, par exemple
+
+la paralysie: qui annule les actions du tour de la cible sur laquelle elle est appliquée, ainsi que ses déplacements et autres pour les deux prochains tours. il est généralement déclenché par des attaques de foudre ou des objets avec cette capacité
+
+une récompense de pvp rapporte +1 diamant au vainqueur, rien au vaincu
+sauf cas exceptionnels comme les matchs à mérise arena ou d'autres événements précis (qu'on va implémenter plus tard)
+le palmarès et la banque se mettent automatiquement à jour
+
+dernier truc: tous les textes qui vont intervenir dans la modération, ou qui vont être utilisés par le bot doivent être traduits en json pour que le bot puisse comprendre et agir en conséquence
+
+

@@ -1,0 +1,26 @@
+# Techniques de rang E+
+
+### Canalisation focalisée
+
+- Effet: focalise l’énergie sur un membre ou une arme avec un meilleur rendement.
+- Bonus: +25 % de résistance locale et +10 % de pénétration magique pendant 8–10 s.
+
+- Contrepartie: légère fatigue du membre ciblé après l’effet.
+
+2) Renforcement énergétique → Trempe arcanique
+
+- Effet: imprègne un objet d’une trempe temporaire qui amortit les chocs et limite l’érosion magique.
+- Bonus: l’objet gagne 1 charge de non‑bris contre un impact violent et +20 % de stabilité vs magie.
+- Durée: 12 s ou 2 impacts majeurs.
+
+3) Expulsion énergétique → Javelot d’arcane
+
+- Effet: projectile plus droit et rapide, avec faible auto‑guidage sur 1 m.
+- Portée: 12 m capée.
+- Bonus: peut percer une défense mineure ou dévier un projectile léger.
+
+4) Cercle de répulsion → Sceau de renvoi
+
+- Effet: onde de choc plus nette, qui renvoie aussi les projectiles légers dans un angle de 30°.
+- Rayon: 9 m stable.
+- Bonus: perturbe 1 canal ennemi pendant 2 s s’il est pris dans la vague.

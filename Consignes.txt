@@ -129,3 +129,4 @@ Nb:
 2. Prévoir des commandes pour rajouter d'autres catégories d'objets (admin only)
 3. Prévoir une commande de restock qui renvoie la quantité de tous les articles à leurs valeurs d'origine (admin only)
 4. Prévoir une commande pour ajouter/modifier/supprimer un objet/une catégorie d'objets
+

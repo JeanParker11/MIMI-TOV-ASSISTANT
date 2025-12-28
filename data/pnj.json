@@ -1,0 +1,12 @@
+{
+  "entrainement_dummy": {
+    "pseudo": "Mannequin d'entraînement",
+    "faction": "Ares",
+    "stats": {
+      "force": "30",
+      "esprit": "100",
+      "pouvoir": "0"
+    },
+    "description": "Un simple mannequin de paille et de bois. Il ne riposte pas, mais il peut encaisser quelques coups."
+  }
+}

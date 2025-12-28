@@ -1,0 +1,368 @@
+Absolument. Voici la conversion de ton fichier CSV Compendium des Armes au format JSON, en appliquant toutes les règles que nous avons définies.
+J'ai mappé Dégâts sur resistance, assigné les types (tranchant, perforant, contondant) selon tes règles, converti les factions, extrait les capacités spéciales de la description, et renommé le type de capacité en type_skill.
+[
+  {
+    "nom": "Rame",
+    "faction": {
+      "allowed": ["Atlas"],
+      "excluded": []
+    },
+    "rang": "E",
+    "type": "contondant",
+    "capacite": null,
+    "resistance": 4,
+    "description": "Conçu dans un bois résistant, cet outil que l'on trouve dans toute bonne embarcation est aussi assez efficace comme moyen de défense.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 1200
+  },
+  {
+    "nom": "Hache de bûcheron",
+    "faction": {
+      "allowed": ["Atlas"],
+      "excluded": []
+    },
+    "rang": "D",
+    "type": "tranchant",
+    "capacite": null,
+    "resistance": 9,
+    "description": "Les bûcherons des montagnes apprécient particulièrement cet outil conçu pour abattre les plus gros arbres en un rien de temps.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 2700
+  },
+  {
+    "nom": "Bouclier Valorien",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "rang": "D",
+    "type": "contondant",
+    "capacite": null,
+    "resistance": 4,
+    "description": "Les voyageurs s'équipent souvent de ce bouclier fait de cuir et de bois robuste pour se protéger des attaques de bêtes sauvages ou de monstres peu puissants.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 1200
+  },
+  {
+    "nom": "Branche d’arbre",
+    "faction": {
+      "allowed": ["Arès"],
+      "excluded": []
+    },
+    "rang": "E",
+    "type": "contondant",
+    "capacite": {
+      "nom": "Ignition",
+      "type_skill": "passive",
+      "description": "En contact avec du feu, leur attaque est de 3 pour une résistance de 1."
+    },
+    "resistance": 2,
+    "description": "On peut trouver partout des branches d'arbre comme celle-ci. Elle est très agréable à manier, et peut tout à fait servir d'arme une fois équipée. En contact avec du feu, leur attaque est de 3 pour une résistance de 1.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 600
+  },
+  {
+    "nom": "Torche",
+    "faction": {
+      "allowed": ["Arès"],
+      "excluded": []
+    },
+    "rang": "E",
+    "type": "contondant",
+    "capacite": {
+      "nom": "Allumée",
+      "type_skill": "passive",
+      "description": "Allumée, l'attaque est de 3."
+    },
+    "resistance": 2,
+    "description": "Allumez cette torche pour qu’elle brûle sans s’arrêter, ou tout du moins, jusqu’à ce que vous la rangiez. Allumée, l'attaque est de 3.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 600
+  },
+  {
+    "nom": "Louche à Soupe",
+    "faction": {
+      "allowed": ["Arès"],
+      "excluded": []
+    },
+    "rang": "D",
+    "type": "contondant",
+    "capacite": null,
+    "resistance": 3,
+    "description": "Cet ustensile, qui sert aussi bien à servir la soupe qu'à cuisiner, a été taillé dans un bois très solide, ce qui peut faire assez mal quand il est utilisé en tant qu'arme.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 900
+  },
+  {
+    "nom": "Épée de voyageur",
+    "faction": {
+      "allowed": ["Arès"],
+      "excluded": []
+    },
+    "rang": "D",
+    "type": "tranchant",
+    "capacite": null,
+    "resistance": 4,
+    "description": "Cette épée est la marque de fabrique d'Elaine. souvent utilisée en pour se défendre contre les animaux sauvages. Peu solide, sa lame n’est pas très utile contre les montres, malheureusement.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 1200
+  },
+  {
+    "nom": "Épée de Soldat",
+    "faction": {
+      "allowed": ["Arès"],
+      "excluded": []
+    },
+    "rang": "D",
+    "type": "tranchant",
+    "capacite": null,
+    "resistance": 5,
+    "description": "Les soldats du château se servent de cette épée au bon tranchant pour affronter les monstres. La lame en métal bénéficie d'une excellente résistance.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 1500
+  },
+  {
+    "nom": "Épée de Chevalier",
+    "faction": {
+      "allowed": ["Arès"],
+      "excluded": []
+    },
+    "rang": "C",
+    "type": "tranchant",
+    "capacite": null,
+    "resistance": 6,
+    "description": "La facilité d'utilisation et la grande puissance de l'arme de prédilection des chevaliers du château d'Hyrule en font aujourd'hui une épée très appréciée des aventuriers aguerris.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 1800
+  },
+  {
+    "nom": "Hache du maître",
+    "faction": {
+      "allowed": ["Atlas"],
+      "excluded": []
+    },
+    "rang": "C",
+    "type": "tranchant",
+    "capacite": null,
+    "resistance": 15,
+    "description": "Cette hache à double tête purement conçue pour le combat et si lourde qu'elle nécessite une technique rodée pour la maîtriser, ce qui explique son nom.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 4500
+  },
+  {
+    "nom": "CRYONIA ❄",
+    "faction": {
+      "allowed": ["Atlas"],
+      "excluded": []
+    },
+    "rang": "A",
+    "type": "contondant",
+    "capacite": {
+      "nom": "Souffle Glacé",
+      "type_skill": "active",
+      "description": "Libère une fois tous les 4 tours un souffle glacé (Force de gel : 9) qui gèle tout ce qui entre en contact avec elle."
+    },
+    "resistance": 25,
+    "description": "Cette épée magique aurait été forgée avec du minerai qui repose sous la neige éternelle de la chaîne Lara. Elle libère une fois tous les 4 tours un souffle glacé qui gèle tout ce qui entre en contact avec elle. Force de gel : 9",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 75000
+  },
+  {
+    "nom": "Espadon Valorien",
+    "faction": {
+      "allowed": ["Atlas"],
+      "excluded": []
+    },
+    "rang": "D",
+    "type": "contondant",
+    "capacite": null,
+    "resistance": 6,
+    "description": "Cette épée est très appréciée des voyageurs qui tirent parti de son poids important pour envoyer voler le bouclier de l'ennemi qui tenterait de se protéger.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 1800
+  },
+  {
+    "nom": "Épée rouillée",
+    "faction": {
+      "allowed": ["Arès"],
+      "excluded": []
+    },
+    "rang": "D",
+    "type": "tranchant",
+    "capacite": null,
+    "resistance": 4,
+    "description": "Cette vieille épée rongée par la rouille a probablement appartenu à un très ancien bretteur de grand renom. Elle peut encore servir, mais se brisera très rapidement.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 1200
+  },
+  {
+    "nom": "Arc en bois",
+    "faction": {
+      "allowed": ["Hermès"],
+      "excluded": []
+    },
+    "rang": "D",
+    "type": "perforant",
+    "capacite": {
+      "nom": "Munitions limitées",
+      "type_skill": "passive",
+      "description": "Se brise automatiquement après 6 flèches."
+    },
+    "resistance": 4,
+    "description": "Cet arc en bois, idéal pour chasser du petit gibier, est peu efficace contre les monstres. Il vous permettra de tirer 6 flèches et se brisera automatiquement par la suite. Aucune force ne peut être appliquée aux arcs.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 1200
+  },
+  {
+    "nom": "Houe",
+    "faction": {
+      "allowed": ["Hermès"],
+      "excluded": []
+    },
+    "rang": "D",
+    "type": "contondant",
+    "capacite": null,
+    "resistance": 3,
+    "description": "Cet outil agricole sert habituellement à travailler la terre et à labourer les champs, mais sa confection robuste en fait aussi une arme efficace.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 900
+  },
+  {
+    "nom": "Lance Valorienne",
+    "faction": {
+      "allowed": ["Hermès"],
+      "excluded": []
+    },
+    "rang": "C",
+    "type": "perforant",
+    "capacite": null,
+    "resistance": 6,
+    "description": "Avec son excellente tenue en main et son maniement aisé, cette lance est appréciée des voyageurs qui doivent se défendre des animaux sauvages tels que le loup.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 1800
+  },
+  {
+    "nom": "Baguette de feu",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": []
+    },
+    "rang": "D",
+    "type": "contondant",
+    "capacite": {
+      "nom": "Boule de Feu",
+      "type_skill": "sortilège",
+      "description": "Produit des boules de feu qui consument tout ce qu'elles touchent. Ne pas frapper directement avec sous peine de la voir se casser rapidement."
+    },
+    "resistance": 5,
+    "description": "Cette baguette magique pends de la magie et produit des boules de feu qui consument tout ce qu'elles touchent. Ne pas frapper directement avec sous peine de la voir se casser rapidement.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 1500
+  },
+  {
+    "nom": "Boomerang",
+    "faction": {
+      "allowed": ["Toutes"],
+      "excluded": []
+    },
+    "rang": "D",
+    "type": "contondant",
+    "capacite": null,
+    "resistance": 2,
+    "description": "La forme singulière de cette arme lui permette de revenir vers son porteur après avoir été lancée.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 600
+  },
+  {
+    "nom": "Rateau",
+    "faction": {
+      "allowed": ["Hermès"],
+      "excluded": []
+    },
+    "rang": "E",
+    "type": "perforant",
+    "capacite": null,
+    "resistance": 2,
+    "description": "Cet outil agricole à quatre dents acérées est conçu pour ramasser le foin en un tour de main. Il est si léger que n'importe qui peut l'utiliser.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 600
+  },
+  {
+    "nom": "Baguette de glace",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": []
+    },
+    "rang": "D",
+    "type": "contondant",
+    "capacite": {
+      "nom": "Vague Glacée",
+      "type_skill": "sortilège",
+      "description": "Use de la magie pour produire des vagues glacées et est peu adaptée au combat au corps à corps."
+    },
+    "resistance": 5,
+    "description": "Cette baguette magique, dont on dit qu'elle aurait été conçue dans la glace de la chaîne Lara, use de la magie pour produire des vagues glacées et est peu adaptée au combat au corps à corps.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 1500
+  },
+  {
+    "nom": "Baguette de terre",
+    "faction": {
+      "allowed": ["Hécate"],
+      "excluded": []
+    },
+    "rang": "D",
+    "type": "contondant",
+    "capacite": {
+      "nom": "Soulèvement de Terre",
+      "type_skill": "sortilège",
+      "description": "Use de la magie pour produire des vagues de soulèvement de terre et est peu adaptée au combat au corps à corps."
+    },
+    "resistance": 5,
+    "description": "Cette baguette magique use de la magie pour produire des vagues de soulèvement de terre et est peu adaptée au combat au corps à corps.",
+    "inventaire": {
+      "max_global": null
+    },
+    "valeur": 1500
+  }
+]

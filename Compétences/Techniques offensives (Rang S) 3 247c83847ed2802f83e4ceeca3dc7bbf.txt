@@ -1,0 +1,9 @@
+# Techniques offensives (Rang S) : 3
+
+Description: Cette page regroupe les techniques offensives de Rang A : 5
+
+**1 Lame du Dernier Souffle :** Permet de lancer en abaissant sa main une tranchée de 13 mètres de haut, une attaque qui ignore toutes les défenses (magiques, physiques, spirituelles). Quiconque touché meurt immédiatement, même un éveillé. Limite : Utilisable une seule fois par mois. Prix : 4’000 FCFA
+
+**2 Anastasis Rite de la Chair Éternelle :** Résurrection immédiate de soi et de tous les alliés morts à moins de 10 mètres, avec 50 % de leurs capacités restaurées. Peut être utilisée en pleine bataille. Coût : Vide totalement la réserve de mana. Prix : 8’000 FCFA
+
+**3 Ordre des Cendres** : Permet de rappeler un mort du passé (joueur ou PNJ) sous forme physique pendant 5 tours. Il combat avec ses souvenirs, sa puissance d’avant la mort. Conséquence : L’utilisateur est maudit 2 jours (réduction des stats de moitié). Prix : 6 000 FCFA

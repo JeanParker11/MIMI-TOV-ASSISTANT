@@ -21,7 +21,7 @@ global.menuChannelLink = "https://whatsapp.com/channel/0029VbB8HEnGZNCkf0BPG01o"
 global.GEMINI_API_KEY = process.env.GEMINI_API_KEY || "AIzaSyCt-XKn9vTftIR2v9O0vfYR5G2DaOBAz1M";
 
 // 📱 Configuration WhatsApp
-global.WA_PHONE_NUMBER = process.env.WA_PHONE_NUMBER || "+22896896296";
+global.WA_PHONE_NUMBER = process.env.WA_PHONE_NUMBER || "+2250140403358";
 
 // 📦 Configuration de sauvegarde
 global.BACKUP_ZIP_NAME = "Données UNIROLIST";
