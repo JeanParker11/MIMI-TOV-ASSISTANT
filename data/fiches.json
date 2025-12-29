@@ -61,7 +61,7 @@
       ""
     ],
     "sorts": [
-      "",
+      "Illumination digitale : Fait briller l'ongle d'un doigt d'une faible lueur colorée pendant 5 minutes. Nécessite 3 points de Mana.",
       "",
       ""
     ],
@@ -467,7 +467,7 @@
       "(vide)"
     ]
   },
-  "63097985343661@lid": {
+  "104080580047056@lid": {
     "pseudo": "Kuroro Lucifer",
     "tel": "237656257421",
     "faction": "Arès",
@@ -487,32 +487,6 @@
       "pouvoir": "50"
     },
     "validéePar": "Altheos.",
-    "cartes": [
-      "(vide)",
-      "(vide)",
-      "(vide)"
-    ]
-  },
-  "240939662590055@lid": {
-    "pseudo": "Valt C. Kaëin",
-    "tel": "+223 76744998",
-    "faction": "Arès",
-    "corps": [
-      "Ensemble Usé (Défense : 0)",
-      "Insigne de cuivre",
-      ""
-    ],
-    "sorts": [
-      "Éclat buccal : Fait briller les dents. Nécessite 1 point de Mana.",
-      "Fourmillement digital : Crée une sensation de fourmillement dans la main de la personne touchée pendant 30 secondes. Totalement inoffensif. Nécessite 3 points de Mana.",
-      "Frisson contrôlé : Provoque un frisson qui parcourt le corps entier. Utile pour simuler la peur ou le froid. Nécessite 2 point de Mana."
-    ],
-    "stats": {
-      "force": "40",
-      "esprit": "50",
-      "pouvoir": "60"
-    },
-    "validéePar": "Manouel_🪽🎧",
     "cartes": [
       "(vide)",
       "(vide)",
@@ -1062,6 +1036,358 @@
       "force": "60",
       "esprit": "50",
       "pouvoir": "40"
+    },
+    "validéePar": "𝙹𝚎𝚊𝚗 𝙿𝚊𝚛𝚔𝚎𝚛 🐼"
+  },
+  "+22896896296": {
+    "pseudo": "Jean Parker ",
+    "tel": "+22896896296",
+    "faction": "Hermès",
+    "force": "50",
+    "esprit": "50",
+    "pouvoir": "50",
+    "status": "approved",
+    "cartes": [
+      "(vide)",
+      "(vide)",
+      "(vide)"
+    ]
+  },
+  "158218575708301@lid": {
+    "pseudo": "Lustful Orsted",
+    "tel": "+225 0715234148",
+    "faction": "Hécates",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "25",
+      "esprit": "50",
+      "pouvoir": "75"
+    },
+    "validéePar": "Ōsshun"
+  },
+  "27351022837939@lid": {
+    "pseudo": "Kerjin",
+    "tel": "+242 053956735",
+    "faction": "Hécates",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "55",
+      "esprit": "45",
+      "pouvoir": "50"
+    },
+    "validéePar": "Raël"
+  },
+  "138903755440379@lid": {
+    "pseudo": "Arthur Nava",
+    "tel": "+24165307025",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "50",
+      "esprit": "50",
+      "pouvoir": "50"
+    },
+    "validéePar": "𝙹𝚎𝚊𝚗 𝙿𝚊𝚛𝚔𝚎𝚛 🐼"
+  },
+  "35124309659650@lid": {
+    "pseudo": "Uzi F. Bradox.",
+    "tel": "+22376810234",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "55",
+      "esprit": "50",
+      "pouvoir": "45"
+    },
+    "validéePar": "Raël"
+  },
+  "28416124403822@lid": {
+    "pseudo": "Kaito.",
+    "tel": "+225 0717367363",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "25",
+      "esprit": "60",
+      "pouvoir": "65"
+    },
+    "validéePar": "𝙹𝚎𝚊𝚗 𝙿𝚊𝚛𝚔𝚎𝚛 🐼"
+  },
+  "47833470222392@lid": {
+    "pseudo": "𝗧𝗛𝗘_𝗗_𝗔́𝗕𝗜𝗦𝗖𝗢𝗡",
+    "tel": "+2250576509952",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "25",
+      "esprit": "50",
+      "pouvoir": "75"
+    },
+    "validéePar": "Raël"
+  },
+  "2302773620831@lid": {
+    "pseudo": "𝗞𝗔𝗜𝗗𝗘𝗡_𝗔́𝗕𝗜𝗦𝗖𝗢𝗡",
+    "tel": "+2250595457009",
+    "faction": "Hécates",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "20",
+      "esprit": "40",
+      "pouvoir": "90"
+    },
+    "validéePar": "Raël"
+  },
+  "210316143140987@lid": {
+    "pseudo": "VECTA",
+    "tel": "+243 0858549885",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "85",
+      "esprit": "30",
+      "pouvoir": "35"
+    },
+    "validéePar": "𝙹𝚎𝚊𝚗 𝙿𝚊𝚛𝚔𝚎𝚛 🐼"
+  },
+  "198952129425561@lid": {
+    "pseudo": "Artoria Lycoris",
+    "tel": "+237658004980",
+    "faction": "Arès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "50",
+      "esprit": "50",
+      "pouvoir": "50"
+    },
+    "validéePar": "Raël"
+  },
+  "27681668227140@lid": {
+    "pseudo": "Jarel_gewelle",
+    "tel": "+241 06 76 71 80",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "50",
+      "esprit": "50",
+      "pouvoir": "50"
+    },
+    "validéePar": "Raël"
+  },
+  "43959325855831@lid": {
+    "pseudo": "Fritz",
+    "tel": "+2250170879227",
+    "faction": "Hécates",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "25",
+      "esprit": "50",
+      "pouvoir": "75"
+    },
+    "validéePar": "Raël"
+  },
+  "215264348078270@lid": {
+    "pseudo": "Ranpo Édogawa",
+    "tel": "+23680670750",
+    "faction": "Hécates",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "30",
+      "esprit": "85",
+      "pouvoir": "35"
+    },
+    "validéePar": "𝙹𝚎𝚊𝚗 𝙿𝚊𝚛𝚔𝚎𝚛 🐼"
+  },
+  "259571197194349@lid": {
+    "pseudo": "Mufasa",
+    "tel": "+225 0718294357",
+    "faction": "Hermès",
+    "corps": [
+      "Ensemble Usé (Défense : 0)",
+      "Insigne de cuivre",
+      ""
+    ],
+    "sorts": [
+      "",
+      "",
+      ""
+    ],
+    "cartes": [
+      "",
+      "",
+      ""
+    ],
+    "stats": {
+      "force": "30",
+      "esprit": "40",
+      "pouvoir": "80"
     },
     "validéePar": "𝙹𝚎𝚊𝚗 𝙿𝚊𝚛𝚔𝚎𝚛 🐼"
   }

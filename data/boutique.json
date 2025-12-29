@@ -4,8 +4,8 @@
     "taux_change": 1000
   },
   "valoria": {
-    "diamants": 10000001572671920,
-    "rulith": 99000109697,
+    "diamants": 10000001572672928,
+    "rulith": 8.000000000700001e+34,
     "transactions": [
       {
         "date": "2025-10-17T10:09:27.996Z",
@@ -105,6 +105,132 @@
         "joueur": "141287764295866@lid",
         "article": "Tenue d'Hiver",
         "description": "Vente Tenue d'Hiver"
+      },
+      {
+        "date": "2025-12-01T17:13:54.233Z",
+        "type": "conversion",
+        "montant": 1,
+        "devise": "Ru",
+        "joueur": "104080580047056@lid",
+        "article": "Taxe conversion Ru→💎",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-12-01T17:20:51.180Z",
+        "type": "conversion",
+        "montant": 1,
+        "devise": "Ru",
+        "joueur": "104080580047056@lid",
+        "article": "Taxe conversion 💎→Ru",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-12-01T17:32:04.812Z",
+        "type": "achat",
+        "montant": 28,
+        "devise": "Ru",
+        "joueur": "104080580047056@lid",
+        "article": "Tenue d'Hiver",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-12-01T17:32:04.822Z",
+        "type": "vente",
+        "montant": 2772,
+        "devise": "Ru",
+        "joueur": "104080580047056@lid",
+        "article": "Tenue d'Hiver",
+        "description": "Vente Tenue d'Hiver"
+      },
+      {
+        "date": "2025-12-18T10:37:37.793Z",
+        "type": "conversion",
+        "montant": 1,
+        "devise": "Ru",
+        "joueur": "141287764295866@lid",
+        "article": "Taxe conversion 💎→Ru",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-12-18T10:38:27.414Z",
+        "type": "conversion",
+        "montant": 1000000157264935,
+        "devise": "Ru",
+        "joueur": "57312647610606@lid",
+        "article": "Taxe conversion 💎→Ru",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-12-18T10:39:24.002Z",
+        "type": "conversion",
+        "montant": 7e+24,
+        "devise": "Ru",
+        "joueur": "57312647610606@lid",
+        "article": "Taxe conversion 💎→Ru",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-12-18T10:40:16.267Z",
+        "type": "conversion",
+        "montant": 8.0000000000000005e+34,
+        "devise": "Ru",
+        "joueur": "57312647610606@lid",
+        "article": "Taxe conversion 💎→Ru",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-12-18T10:41:26.552Z",
+        "type": "conversion",
+        "montant": 1,
+        "devise": "Ru",
+        "joueur": "141287764295866@lid",
+        "article": "Taxe conversion Ru→💎",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-12-18T13:52:00.991Z",
+        "type": "conversion",
+        "montant": 1,
+        "devise": "Ru",
+        "joueur": "101933129924854@lid",
+        "article": "Taxe conversion 💎→Ru",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-12-18T13:52:55.737Z",
+        "type": "achat",
+        "montant": 40,
+        "devise": "Ru",
+        "joueur": "101933129924854@lid",
+        "article": "Marteau de Forge",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-12-18T13:52:55.752Z",
+        "type": "vente",
+        "montant": 3960,
+        "devise": "Ru",
+        "joueur": "101933129924854@lid",
+        "article": "Marteau de Forge",
+        "description": "Vente Marteau de Forge"
+      },
+      {
+        "date": "2025-12-20T12:38:26.422Z",
+        "type": "achat",
+        "montant": 50,
+        "devise": "Ru",
+        "joueur": "141287764295866@lid",
+        "article": "Épée de Lumière",
+        "description": "Taxe 1%"
+      },
+      {
+        "date": "2025-12-20T12:38:26.429Z",
+        "type": "vente",
+        "montant": 4950,
+        "devise": "Ru",
+        "joueur": "141287764295866@lid",
+        "article": "Épée de Lumière",
+        "description": "Vente Épée de Lumière"
       }
     ]
   },
@@ -131,9 +257,9 @@
         "resistance": 3,
         "effets": "Résistance au froid extrême, conservation de la mobilité",
         "malus": "Aucun",
-        "stock": 8,
+        "stock": 7,
         "image": "https://files.catbox.moe/iy27pv.jpg",
-        "updatedAt": "2025-10-23T14:34:32.531Z"
+        "updatedAt": "2025-12-01T17:32:04.800Z"
       },
       "tenue_mineur": {
         "id": "tenue_mineur",
@@ -216,7 +342,7 @@
         "type": "Potion",
         "effets": "Restaure 50% de votre forme physique. Les potions ne sont pas permises en duels.",
         "stock": 12,
-        "image": "https://files.catbox.moe/1002705617.jpg"
+        "image": "https://files.catbox.moe/vapau6.jpg"
       },
       "malice_medusa": {
         "id": "malice_medusa",
@@ -241,8 +367,9 @@
         "rang": "A",
         "degats": "2d8+3",
         "poids": 2.5,
-        "stock": 1,
-        "image": "https://files.catbox.moe/4wx890.jpg"
+        "stock": 0,
+        "image": "https://files.catbox.moe/4wx890.jpg",
+        "updatedAt": "2025-12-20T12:38:26.416Z"
       },
       "hermes_lance_valorienne": {
         "id": "hermes_lance_valorienne",
@@ -427,8 +554,9 @@
         "rang": "D",
         "degats": "2d6+1",
         "poids": 3.5,
-        "stock": 1,
-        "image": "https://i.imgur.com/example4.jpg"
+        "stock": 0,
+        "image": "https://i.imgur.com/example4.jpg",
+        "updatedAt": "2025-12-18T13:52:55.730Z"
       },
       "atlas_epée_deux_mains": {
         "id": "atlas_epée_deux_mains",
@@ -503,6 +631,14 @@
         "poids": 1.1,
         "stock": 20,
         "image": "https://files.catbox.moe/1002705616.jpg"
+      },
+      "3n83cxzs9": {
+        "nom": "Fiole de régénération physique",
+        "description": "Une fiole circulaire contenant un liquide verdâtre. Cette potion est un incontournable de Valoria. Créee pour restaurer 50% de votre vigueur physique. Rappel, les potions ne sont pas permis en duel.",
+        "prix": 3000,
+        "devise": "Ru",
+        "image": "https://files.catbox.moe/vapau6.jpg",
+        "createdAt": "2025-12-20T13:34:52.593Z"
       }
     },
     "insignes": {

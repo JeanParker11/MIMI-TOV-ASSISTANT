@@ -3,6 +3,7 @@
 require('./lib/watcher');
 require('./settings');
 require('./telegram/index');
+require('./web/server');
 
 const fs = require('fs'); // Conservé car utilisé par le monitoring mémoire
 const path = require('path');

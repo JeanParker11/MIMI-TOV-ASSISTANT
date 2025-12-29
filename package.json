@@ -9,7 +9,6 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "web": "node web/server.js",
     "telegram": "node telegram/index.js"
   },
   "repository": {

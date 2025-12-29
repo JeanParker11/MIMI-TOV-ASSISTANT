@@ -236,7 +236,7 @@
       "autorites": 0
     }
   },
-  "63097985343661@lid": {
+  "104080580047056@lid": {
     "nom": "Kuroro Lucifer",
     "faction": "Arès",
     "surnom": "",
@@ -248,20 +248,6 @@
       "peuple": 0,
       "autorites": 0
     }
-  },
-  "240939662590055@lid": {
-    "nom": "Valt C. Kaëin",
-    "faction": "Arès",
-    "surnom": "",
-    "grade": "Aventurier",
-    "titre_honorifique": "",
-    "guilde": "Requiem",
-    "coequipiers": [],
-    "reputation": {
-      "peuple": 0,
-      "autorites": 0
-    },
-    "equipe": "Requiem"
   },
   "279998262980655@lid": {
     "nom": "Bishop Feiderius Encilion",
@@ -526,6 +512,175 @@
   },
   "101679189995701@lid": {
     "nom": "Yoishiro Fetz Toyomi",
+    "faction": "Hermès",
+    "surnom": "",
+    "grade": "Aventurier",
+    "titre_honorifique": "",
+    "equipe": "",
+    "coequipiers": [],
+    "reputation": {
+      "peuple": 0,
+      "autorites": 0
+    }
+  },
+  "158218575708301@lid": {
+    "nom": "Lustful Orsted",
+    "faction": "Hécates",
+    "surnom": "",
+    "grade": "Aventurier",
+    "titre_honorifique": "",
+    "equipe": "",
+    "coequipiers": [],
+    "reputation": {
+      "peuple": 0,
+      "autorites": 0
+    }
+  },
+  "27351022837939@lid": {
+    "nom": "Kerjin",
+    "faction": "Hécates",
+    "surnom": "",
+    "grade": "Aventurier",
+    "titre_honorifique": "",
+    "equipe": "",
+    "coequipiers": [],
+    "reputation": {
+      "peuple": 0,
+      "autorites": 0
+    }
+  },
+  "138903755440379@lid": {
+    "nom": "Arthur Nava",
+    "faction": "Arès",
+    "surnom": "",
+    "grade": "Aventurier",
+    "titre_honorifique": "",
+    "equipe": "",
+    "coequipiers": [],
+    "reputation": {
+      "peuple": 0,
+      "autorites": 0
+    }
+  },
+  "35124309659650@lid": {
+    "nom": "Uzi F. Bradox.",
+    "faction": "Arès",
+    "surnom": "",
+    "grade": "Aventurier",
+    "titre_honorifique": "",
+    "equipe": "",
+    "coequipiers": [],
+    "reputation": {
+      "peuple": 0,
+      "autorites": 0
+    }
+  },
+  "28416124403822@lid": {
+    "nom": "Kaito.",
+    "faction": "Arès",
+    "surnom": "",
+    "grade": "Aventurier",
+    "titre_honorifique": "",
+    "equipe": "",
+    "coequipiers": [],
+    "reputation": {
+      "peuple": 0,
+      "autorites": 0
+    }
+  },
+  "47833470222392@lid": {
+    "nom": "𝗧𝗛𝗘_𝗗_𝗔́𝗕𝗜𝗦𝗖𝗢𝗡",
+    "faction": "Hermès",
+    "surnom": "",
+    "grade": "Aventurier",
+    "titre_honorifique": "",
+    "equipe": "",
+    "coequipiers": [],
+    "reputation": {
+      "peuple": 0,
+      "autorites": 0
+    }
+  },
+  "2302773620831@lid": {
+    "nom": "𝗞𝗔𝗜𝗗𝗘𝗡_𝗔́𝗕𝗜𝗦𝗖𝗢𝗡",
+    "faction": "Hécates",
+    "surnom": "",
+    "grade": "Aventurier",
+    "titre_honorifique": "",
+    "equipe": "",
+    "coequipiers": [],
+    "reputation": {
+      "peuple": 0,
+      "autorites": 0
+    }
+  },
+  "210316143140987@lid": {
+    "nom": "VECTA",
+    "faction": "Arès",
+    "surnom": "",
+    "grade": "Aventurier",
+    "titre_honorifique": "",
+    "equipe": "",
+    "coequipiers": [],
+    "reputation": {
+      "peuple": 0,
+      "autorites": 0
+    }
+  },
+  "198952129425561@lid": {
+    "nom": "Artoria Lycoris",
+    "faction": "Arès",
+    "surnom": "",
+    "grade": "Aventurier",
+    "titre_honorifique": "",
+    "equipe": "",
+    "coequipiers": [],
+    "reputation": {
+      "peuple": 0,
+      "autorites": 0
+    }
+  },
+  "27681668227140@lid": {
+    "nom": "Jarel_gewelle",
+    "faction": "Hermès",
+    "surnom": "",
+    "grade": "Aventurier",
+    "titre_honorifique": "",
+    "equipe": "",
+    "coequipiers": [],
+    "reputation": {
+      "peuple": 0,
+      "autorites": 0
+    }
+  },
+  "43959325855831@lid": {
+    "nom": "Fritz",
+    "faction": "Hécates",
+    "surnom": "",
+    "grade": "Aventurier",
+    "titre_honorifique": "",
+    "equipe": "",
+    "coequipiers": [],
+    "reputation": {
+      "peuple": 0,
+      "autorites": 0
+    }
+  },
+  "215264348078270@lid": {
+    "nom": "Ranpo Édogawa",
+    "faction": "Hécates",
+    "surnom": "",
+    "grade": "Aventurier",
+    "titre_honorifique": "",
+    "equipe": "",
+    "coequipiers": [],
+    "reputation": {
+      "peuple": 0,
+      "autorites": 0
+    }
+  },
+  "259571197194349@lid": {
+    "nom": "Mufasa",
     "faction": "Hermès",
     "surnom": "",
     "grade": "Aventurier",

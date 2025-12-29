@@ -1,21 +1,21 @@
 {
   "197728047001675@lid": {
-    "diamants": 4,
+    "diamants": 3,
     "rulith": 0,
-    "totalDiamantsRecus": 4,
+    "totalDiamantsRecus": 5,
     "totalRulithRecus": 0
   },
   "57312647610606@lid": {
-    "diamants": 10000001572649340,
-    "rulith": 16830000990,
-    "totalDiamantsRecus": 7.600000000759293e+30,
+    "diamants": 700000000000000000000,
+    "rulith": 7.920000000693e+38,
+    "totalDiamantsRecus": 8.000076000700015e+35,
     "totalRulithRecus": 0
   },
   "149667295842488@lid": {
     "diamants": 1,
-    "rulith": 0,
+    "rulith": 2500,
     "totalDiamantsRecus": 3,
-    "totalRulithRecus": 0
+    "totalRulithRecus": 2500
   },
   "150006430445773@lid": {
     "diamants": 0,
@@ -24,15 +24,15 @@
     "totalRulithRecus": 0
   },
   "201644973240574@lid": {
-    "diamants": 4,
+    "diamants": 5,
     "rulith": 1970,
-    "totalDiamantsRecus": 2511,
+    "totalDiamantsRecus": 2512,
     "totalRulithRecus": 1050
   },
   "17193173573705@lid": {
-    "diamants": 7,
+    "diamants": 8,
     "rulith": 500,
-    "totalDiamantsRecus": 5019,
+    "totalDiamantsRecus": 5020,
     "totalRulithRecus": 500
   },
   "275522722504856@lid": {
@@ -42,9 +42,9 @@
     "totalRulithRecus": 0
   },
   "48103767945356@lid": {
-    "diamants": 10,
+    "diamants": 15,
     "rulith": 10790,
-    "totalDiamantsRecus": 124,
+    "totalDiamantsRecus": 129,
     "totalRulithRecus": 10000
   },
   "39268919578754@lid": {
@@ -78,9 +78,9 @@
     "totalRulithRecus": 0
   },
   "98947657920580@lid": {
-    "diamants": 1,
+    "diamants": 2,
     "rulith": 0,
-    "totalDiamantsRecus": 2,
+    "totalDiamantsRecus": 3,
     "totalRulithRecus": 0
   },
   "60430307307540@lid": {
@@ -102,9 +102,9 @@
     "totalRulithRecus": 0
   },
   "101933129924854@lid": {
-    "diamants": 4,
-    "rulith": 500,
-    "totalDiamantsRecus": 6,
+    "diamants": 5,
+    "rulith": 460,
+    "totalDiamantsRecus": 11,
     "totalRulithRecus": 500
   },
   "72057001906230@lid": {
@@ -113,28 +113,22 @@
     "totalDiamantsRecus": 2,
     "totalRulithRecus": 0
   },
-  "63097985343661@lid": {
-    "diamants": 2,
-    "rulith": 3930,
-    "totalDiamantsRecus": 24,
-    "totalRulithRecus": 6050
-  },
-  "240939662590055@lid": {
-    "diamants": 1,
-    "rulith": 0,
-    "totalDiamantsRecus": 500003,
-    "totalRulithRecus": 0
+  "104080580047056@lid": {
+    "diamants": 0,
+    "rulith": 880,
+    "totalRulithRecus": null,
+    "totalDiamantsRecus": null
   },
   "141287764295866@lid": {
     "diamants": 100090,
-    "rulith": 4321,
+    "rulith": 12301,
     "totalDiamantsRecus": 100119,
-    "totalRulithRecus": 21
+    "totalRulithRecus": 13021
   },
   "279998262980655@lid": {
-    "diamants": 0,
+    "diamants": 2,
     "rulith": 0,
-    "totalDiamantsRecus": 2
+    "totalDiamantsRecus": 4
   },
   "272030981193786@lid": {
     "diamants": 0,
@@ -165,9 +159,9 @@
     "rulith": 0
   },
   "206259097656@lid": {
-    "diamants": 2.0999999999999996,
+    "diamants": 2.1000000000000227,
     "rulith": 1480,
-    "totalDiamantsRecus": 13016,
+    "totalDiamantsRecus": 14016,
     "totalRulithRecus": 8121
   },
   "254399955894388@lid": {
@@ -179,9 +173,9 @@
     "rulith": 0
   },
   "55886701703283@lid": {
-    "diamants": 0,
+    "diamants": 2,
     "rulith": 1490,
-    "totalDiamantsRecus": 1,
+    "totalDiamantsRecus": 3,
     "totalRulithRecus": 500
   },
   "265816129941672@lid": {
@@ -197,5 +191,45 @@
     "rulith": 1090,
     "totalDiamantsRecus": 3,
     "totalRulithRecus": 100
+  },
+  "166164332302368@lid": {
+    "diamants": 0,
+    "rulith": 0
+  },
+  "162199976816689@lid": {
+    "diamants": 0,
+    "rulith": 0
+  },
+  "16781041242297@lid": {
+    "diamants": 0,
+    "rulith": 0
+  },
+  "244375485448320@lid": {
+    "diamants": 0,
+    "rulith": 0
+  },
+  "101679189995701@lid": {
+    "diamants": 0,
+    "rulith": 0
+  },
+  "+22896896296": {
+    "diamants": 0,
+    "rulith": 0
+  },
+  "158218575708301@lid": {
+    "diamants": 0,
+    "rulith": 0
+  },
+  "47833470222392@lid": {
+    "diamants": 2,
+    "rulith": 0,
+    "totalDiamantsRecus": 2,
+    "totalRulithRecus": 0
+  },
+  "138903755440379@lid": {
+    "diamants": 3,
+    "rulith": 0,
+    "totalDiamantsRecus": 3,
+    "totalRulithRecus": 0
   }
 }

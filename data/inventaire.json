@@ -1,6 +1,20 @@
 {
   "141287764295866@lid": {
-    "armes": [],
+    "armes": [
+      {
+        "id": "hermes_epée_lumière",
+        "nom": "Épée de Lumière",
+        "description": "Une épée légendaire des messagers d'Hermes, rapide et précise",
+        "prix": 5000,
+        "devise": "Ru",
+        "rang": "A",
+        "degats": "2d8+3",
+        "poids": 2.5,
+        "image": "https://files.catbox.moe/4wx890.jpg",
+        "achetéLe": "2025-12-20T12:38:26.438Z",
+        "equipé": false
+      }
+    ],
     "armures": [
       {
         "id": "tenue_hiver",
@@ -18,6 +32,20 @@
     ],
     "objets": [],
     "sorts": [],
-    "lastUpdated": "2025-10-23T14:34:32.550Z"
+    "lastUpdated": "2025-12-20T12:38:26.438Z"
+  },
+  "104080580047056@lid": {
+    "armes": [],
+    "armures": [],
+    "objets": [],
+    "sorts": [],
+    "lastUpdated": "2025-12-01T17:32:04.840Z"
+  },
+  "101933129924854@lid": {
+    "armes": [],
+    "armures": [],
+    "objets": [],
+    "sorts": [],
+    "lastUpdated": "2025-12-18T13:52:55.773Z"
   }
 }
